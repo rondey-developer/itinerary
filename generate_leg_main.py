@@ -4,7 +4,7 @@ html_content = '''<!DOCTYPE html>
 <html lang="zh-HK">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>東京 & 草津溫泉 浪漫雙人之旅 | 區間導航地圖</title>
   
   <!-- Google Fonts -->
@@ -64,6 +64,11 @@ html_content = '''<!DOCTYPE html>
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
+    html, body {
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
+
     body {
       font-family: var(--font-sans);
       background-color: var(--bg-page);
@@ -71,8 +76,8 @@ html_content = '''<!DOCTYPE html>
       line-height: 1.55;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      overflow: hidden;
       height: 100vh;
+      height: 100dvh;
       display: flex;
       flex-direction: column;
     }
@@ -107,6 +112,8 @@ html_content = '''<!DOCTYPE html>
       letter-spacing: -0.015em;
       white-space: nowrap;
     }
+    .brand-title-mobile { display: none; }
+    .brand-title-full { display: inline; }
 
     .brand-pill {
       font-size: 0.72rem;
@@ -483,23 +490,23 @@ html_content = '''<!DOCTYPE html>
     }
     @media (max-width: 960px) {
       .ofm-switcher-control {
-        top: 50px;
+        top: 48px;
         right: 8px;
         bottom: auto;
-        padding: 3px 7px;
-        gap: 3px;
-        border-radius: 20px;
+        padding: 2px 5px;
+        gap: 2px;
+        border-radius: 16px;
         box-shadow: 0 2px 8px rgba(0,0,0,0.12);
       }
       .ofm-label {
-        font-size: 0.66rem;
-        padding: 1px 4px;
+        font-size: 0.64rem;
+        padding: 1px 3px;
       }
       .ofm-label-desktop { display: none; }
       .ofm-label-mobile { display: inline; }
       .ofm-style-btn {
-        padding: 3px 7px;
-        font-size: 0.66rem;
+        padding: 2px 6px;
+        font-size: 0.64rem;
       }
     }
 
@@ -760,8 +767,9 @@ html_content = '''<!DOCTYPE html>
 
     .venue-actions {
       display: flex;
+      flex-wrap: wrap;
       gap: 6px;
-      flex-shrink: 0;
+      align-items: center;
     }
 
     .btn-action-pill {
@@ -822,6 +830,8 @@ html_content = '''<!DOCTYPE html>
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 4px;
       font-size: 0.82rem;
       font-weight: 800;
       color: var(--sumi-ink);
@@ -962,7 +972,7 @@ html_content = '''<!DOCTYPE html>
 
     .popup-inner {
       font-family: var(--font-sans);
-      max-width: 250px;
+      max-width: 280px;
       padding: 4px;
     }
 
@@ -981,15 +991,17 @@ html_content = '''<!DOCTYPE html>
     .popup-sub { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 6px; }
     .popup-desc { font-size: 0.8rem; color: #555; line-height: 1.45; margin-bottom: 10px; }
 
-    .popup-button-row { display: flex; gap: 6px; }
+    .popup-button-row { display: flex; flex-wrap: wrap; gap: 5px; }
     .popup-btn {
-      flex: 1;
+      flex: 1 1 calc(50% - 5px);
+      min-width: 70px;
       text-align: center;
-      font-size: 0.74rem;
+      font-size: 0.72rem;
       font-weight: 700;
-      padding: 5px 8px;
+      padding: 5px 6px;
       border-radius: 6px;
       text-decoration: none;
+      white-space: nowrap;
     }
     .btn-detail { background: var(--primary); color: #fff; }
     .btn-gmaps { background: var(--bg-subtle); color: var(--text-main); border: 1px solid var(--border-color); }
@@ -997,27 +1009,34 @@ html_content = '''<!DOCTYPE html>
     /* Mobile Layout & Responsive System */
     @media (max-width: 960px) {
       .top-navbar {
-        height: 48px;
-        padding: 0 10px;
+        height: calc(48px + env(safe-area-inset-top, 0px));
+        padding: env(safe-area-inset-top, 0px) 10px 0 10px;
         overflow: hidden;
       }
       .brand-group {
         gap: 6px;
+        min-width: 0;
       }
-      .brand-title {
-        font-size: 0.94rem;
+      .brand-title-full { display: none; }
+      .brand-title-mobile {
+        display: inline;
+        font-size: 0.90rem;
+        font-weight: 800;
         white-space: nowrap;
       }
       .brand-pill {
         display: none; /* Hide date pill on small screens to prevent wrapping */
       }
       .nav-buttons {
-        gap: 5px;
+        gap: 4px;
+        flex-shrink: 0;
       }
       .btn-nav-action {
-        padding: 5px 9px;
-        font-size: 0.72rem;
-        border-radius: 20px;
+        padding: 4px 7px;
+        font-size: 0.70rem;
+        border-radius: 16px;
+        flex-shrink: 0;
+        gap: 3px;
       }
       .btn-nav-action .nav-btn-text-full {
         display: none;
@@ -1035,10 +1054,13 @@ html_content = '''<!DOCTYPE html>
         gap: 6px;
         z-index: 999;
         flex-shrink: 0;
+        width: 100%;
+        box-sizing: border-box;
       }
       .mobile-tab-btn {
-        flex: 1;
-        padding: 6px 6px;
+        flex: 1 1 0;
+        min-width: 0;
+        padding: 6px 4px;
         border-radius: 20px;
         border: 1px solid #e2ded5;
         background: #fdfbf7;
@@ -1064,8 +1086,9 @@ html_content = '''<!DOCTYPE html>
       /* Responsive App Viewport Modes */
       .app-viewport {
         flex-direction: column;
-        height: calc(100% - 48px - 42px);
+        height: calc(100% - 48px - 42px - env(safe-area-inset-top, 0px));
         overflow: hidden;
+        max-width: 100vw;
       }
 
       /* View Mode: Map (Default on Mobile) */
@@ -1106,6 +1129,59 @@ html_content = '''<!DOCTYPE html>
         border-top: 1px solid var(--border-color);
       }
 
+      /* Card Footer Row on Mobile */
+      .card-footer-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+      .venue-location-text {
+        width: 100%;
+        white-space: normal;
+        word-break: break-word;
+        font-size: 0.74rem;
+        line-height: 1.35;
+      }
+      .venue-actions {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        justify-content: flex-start;
+      }
+      .btn-action-pill {
+        padding: 4px 10px;
+        font-size: 0.72rem;
+      }
+
+      /* Panel Header on Mobile */
+      .panel-header {
+        padding: 10px 14px;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .panel-header-left h2 {
+        font-size: 0.95rem;
+      }
+      .panel-header-left p {
+        display: none;
+      }
+      .panel-toggle-btn {
+        display: none !important;
+      }
+      .panel-quick-actions {
+        display: flex;
+        gap: 6px;
+        flex-shrink: 0;
+      }
+      .btn-panel-action {
+        padding: 4px 9px;
+        font-size: 0.72rem;
+      }
+      .panel-scroll-area {
+        padding-bottom: calc(30px + env(safe-area-inset-bottom, 0px));
+      }
+
       /* Map Overlays */
       .map-overlay-controls {
         top: 8px;
@@ -1116,29 +1192,52 @@ html_content = '''<!DOCTYPE html>
         gap: 4px;
         border-radius: 30px;
         -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
       }
       .day-selector-btn {
-        padding: 5px 10px;
-        font-size: 0.74rem;
+        flex-shrink: 0;
+        padding: 5px 9px;
+        font-size: 0.72rem;
         border-radius: 20px;
       }
 
       .leg-status-banner {
-        bottom: 10px;
+        bottom: calc(10px + env(safe-area-inset-bottom, 0px));
         left: 8px;
         right: 8px;
         max-width: calc(100% - 16px);
-        padding: 7px 10px;
-        gap: 8px;
+        padding: 8px 10px;
+        gap: 6px;
         border-radius: 12px;
         box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+        flex-wrap: wrap;
+      }
+      .leg-status-info {
+        flex: 1 1 180px;
+        min-width: 0;
       }
       .leg-route-title {
         font-size: 0.76rem;
         line-height: 1.3;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
       .leg-sub-text {
         font-size: 0.68rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .leg-banner-actions {
+        display: flex;
+        gap: 5px;
+        flex-shrink: 0;
+        margin-left: auto;
+      }
+      .btn-replay-leg {
+        padding: 4px 8px;
+        font-size: 0.70rem;
       }
 
       /* Hide Leaflet zoom controls on mobile touchscreens to avoid clutter */
@@ -1190,7 +1289,10 @@ html_content = '''<!DOCTYPE html>
     <div class="brand-group">
       <span style="font-size:1.2rem;">🌸</span>
       <div>
-        <h1 class="brand-title">東京 · 草津 ｜ 侘寂雙人行旅</h1>
+        <h1 class="brand-title">
+          <span class="brand-title-full">東京 · 草津 ｜ 侘寂雙人行旅</span>
+          <span class="brand-title-mobile">東京 · 草津</span>
+        </h1>
       </div>
       <span class="brand-pill">9/25 – 9/29 · 5天4夜</span>
     </div>
@@ -1211,18 +1313,18 @@ html_content = '''<!DOCTYPE html>
   <!-- Mobile Segmented View Switcher -->
   <nav class="mobile-segmented-bar" aria-label="檢視模式切換">
     <button class="mobile-tab-btn active" id="tab-map" onclick="setMobileView('map')">
-      <span>🗺️ 地圖導航</span>
+      <span>🗺️ 地圖</span>
     </button>
     <button class="mobile-tab-btn" id="tab-list" onclick="setMobileView('list')">
-      <span>📋 詳細行程</span>
+      <span>📋 行程</span>
     </button>
     <button class="mobile-tab-btn" id="tab-split" onclick="setMobileView('split')">
-      <span>◫ 分割視角</span>
+      <span>◫ 分割</span>
     </button>
   </nav>
 
   <!-- Application Viewport: Map is Dominant -->
-  <div class="app-viewport">
+  <div class="app-viewport view-mode-map">
     
     <!-- Dominant Interactive Map Stage -->
     <main class="map-container">
@@ -1251,7 +1353,7 @@ html_content = '''<!DOCTYPE html>
 
       <!-- OpenFreeMap Vector Theme Switcher (https://openfreemap.org/) -->
       <div class="ofm-switcher-control">
-        <span class="ofm-label"><span class="ofm-label-desktop">🗺️ OpenFreeMap</span><span class="ofm-label-mobile">🗺️ 地圖</span></span>
+        <span class="ofm-label"><span class="ofm-label-desktop">🗺️ OpenFreeMap</span><span class="ofm-label-mobile">🗺️</span></span>
         <button class="ofm-style-btn" id="ofm-btn-liberty" onclick="switchOpenFreeMapStyle('liberty')">Liberty</button>
         <button class="ofm-style-btn" id="ofm-btn-bright" onclick="switchOpenFreeMapStyle('bright')">Bright</button>
         <button class="ofm-style-btn active" id="ofm-btn-positron" onclick="switchOpenFreeMapStyle('positron')">Positron</button>
@@ -1267,7 +1369,7 @@ html_content = '''<!DOCTYPE html>
           <div class="leg-route-title" id="leg-title-display">點擊任一景點：僅顯示從上一站抵達此處的路線</div>
           <div class="leg-sub-text" id="leg-subtitle-display">點選卡片查看即時區間交通動態 🚇</div>
         </div>
-        <div style="display:flex; gap:5px; flex-shrink:0;">
+        <div class="leg-banner-actions" style="display:flex; gap:5px; flex-shrink:0;">
           <a class="btn-replay-leg" id="btn-yahoo-banner" href="#" target="_blank" style="display:none; background:#f0f9ff; color:#0369a1; border-color:#bae6fd; text-decoration:none;">
             <span>🚆 Yahoo! 乘換</span>
           </a>
@@ -2378,18 +2480,28 @@ html_content = '''<!DOCTYPE html>
 
     // OpenFreeMap vector layer (https://openfreemap.org/)
     let currentOfmStyle = 'positron';
-    let openFreeMapLayer = L.maplibreGL({
-      style: 'https://tiles.openfreemap.org/styles/positron',
-      attribution: '<a href="https://openfreemap.org" target="_blank">OpenFreeMap</a> | <a href="https://www.openmaptiles.org/" target="_blank">© OpenMapTiles</a> © <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>'
-    }).addTo(map);
+    let openFreeMapLayer = null;
+    try {
+      openFreeMapLayer = L.maplibreGL({
+        style: 'https://tiles.openfreemap.org/styles/positron',
+        attribution: '<a href="https://openfreemap.org" target="_blank">OpenFreeMap</a> | <a href="https://www.openmaptiles.org/" target="_blank">© OpenMapTiles</a> © <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>'
+      }).addTo(map);
+    } catch(err) {
+      console.warn('MapLibre GL fallback to standard tiles:', err);
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap'
+      }).addTo(map);
+    }
 
     function switchOpenFreeMapStyle(styleName) {
       currentOfmStyle = styleName;
       if (openFreeMapLayer) {
-        const mlMap = openFreeMapLayer.getMaplibreMap();
-        if (mlMap) {
-          mlMap.setStyle('https://tiles.openfreemap.org/styles/' + styleName);
-        }
+        try {
+          const mlMap = openFreeMapLayer.getMaplibreMap();
+          if (mlMap) {
+            mlMap.setStyle('https://tiles.openfreemap.org/styles/' + styleName);
+          }
+        } catch(e) { console.warn(e); }
       }
       document.querySelectorAll('.ofm-style-btn').forEach(b => b.classList.remove('active'));
       const activeBtn = document.getElementById('ofm-btn-' + styleName);
