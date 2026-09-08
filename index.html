@@ -16,37 +16,53 @@
   <link href="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css" rel="stylesheet" crossorigin=""/>
   
   <style>
+    /*
+     * Design Read: Interactive romance trip itinerary & transit map for a couple in Tokyo & Kusatsu Onsen.
+     * Vibe: Refined Japanese modern editorial + Tokyo transit-native clarity.
+     * Dials: VARIANCE: 7 / MOTION: 6 / DENSITY: 4 (Anti-slop frontend taste skill)
+     */
     :root {
-      --primary: #9e2846;
-      --primary-dark: #781830;
-      --primary-light: #fef1f3;
-      --accent-gold: #c59341;
-      --accent-gold-light: #fef8ee;
-      --accent-blue: #2563eb;
-      --accent-emerald: #059669;
-      --bg-body: #f8f6f2;
-      --bg-card: #ffffff;
-      --bg-subtle: #f4f0e8;
-      --text-main: #1c1917;
-      --text-muted: #66615b;
-      --border-color: #e5dfd5;
-      --shadow-sm: 0 2px 8px rgba(28, 25, 23, 0.04);
-      --shadow-md: 0 8px 24px rgba(28, 25, 23, 0.08);
-      --radius-sm: 10px;
-      --radius-md: 16px;
-      --radius-lg: 24px;
-      --font-serif: 'Noto Serif TC', Georgia, serif;
-      --font-sans: 'Noto Sans TC', system-ui, -apple-system, sans-serif;
+      --primary: #9b223e;
+      --primary-hover: #7e182f;
+      --primary-subtle: rgba(155, 34, 62, 0.07);
+      --primary-glow: rgba(155, 34, 62, 0.22);
+      
+      --bg-page: #faf9f6;
+      --bg-surface: #ffffff;
+      --bg-subtle: #f4f2ee;
+      --bg-subtle-hover: #ece9e3;
+      
+      --border-subtle: rgba(0, 0, 0, 0.07);
+      --border-medium: rgba(0, 0, 0, 0.12);
+      --border-focus: rgba(155, 34, 62, 0.35);
+      
+      --text-main: #181716;
+      --text-secondary: #4a4744;
+      --text-muted: #7c7873;
+      
+      --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.03);
+      --shadow-sm: 0 2px 6px -1px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
+      --shadow-md: 0 6px 20px -3px rgba(0, 0, 0, 0.07), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
+      --shadow-lg: 0 16px 36px -6px rgba(0, 0, 0, 0.10), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
+      
+      --radius-sm: 8px;
+      --radius-card: 14px;
+      --radius-pill: 9999px;
+      
+      --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic Medium", "Noto Sans TC", sans-serif;
+      --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans TC", sans-serif;
+      --font-mono: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, monospace;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: var(--font-sans);
-      background-color: var(--bg-body);
+      background-color: var(--bg-page);
       color: var(--text-main);
-      line-height: 1.6;
+      line-height: 1.55;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       overflow: hidden;
       height: 100vh;
       display: flex;
@@ -55,81 +71,93 @@
 
     /* Clean Solid Top Navigation */
     .top-navbar {
-      height: 56px;
-      background: #ffffff;
-      border-bottom: 1px solid var(--border-color);
+      height: 54px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border-subtle);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 16px;
+      padding: 0 18px;
       z-index: 1000;
       flex-shrink: 0;
-      box-shadow: 0 1px 6px rgba(0,0,0,0.03);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
     }
 
     .brand-group {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 9px;
     }
 
     .brand-title {
-      font-family: var(--font-serif);
-      font-size: 1.12rem;
-      font-weight: 700;
-      color: var(--primary);
-      letter-spacing: -0.01em;
+      font-family: var(--font-display);
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.015em;
       white-space: nowrap;
     }
 
     .brand-pill {
-      font-size: 0.74rem;
-      background: var(--accent-gold-light);
-      color: #8c5b14;
-      border: 1px solid #f6deb3;
-      padding: 2px 10px;
-      border-radius: 20px;
+      font-size: 0.72rem;
+      background: var(--primary-subtle);
+      color: var(--primary);
+      border: 1px solid rgba(155, 34, 62, 0.15);
+      padding: 2px 9px;
+      border-radius: var(--radius-pill);
       font-weight: 700;
       white-space: nowrap;
+      font-variant-numeric: tabular-nums;
     }
 
     .nav-buttons {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
     }
 
     .btn-nav-action {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 6px 13px;
-      border-radius: 40px;
-      font-size: 0.78rem;
+      gap: 5px;
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 0.76rem;
       font-weight: 700;
       cursor: pointer;
       text-decoration: none;
-      transition: all 0.2s ease;
-      border: 1px solid var(--border-color);
-      background: #fff;
-      color: var(--text-main);
+      transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 1px solid var(--border-subtle);
+      background: #ffffff;
+      color: var(--text-secondary);
       white-space: nowrap;
+      box-shadow: var(--shadow-xs);
     }
 
     .btn-nav-action:hover {
       background: var(--bg-subtle);
-      border-color: #cfc5b5;
+      color: var(--text-main);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-nav-action:active {
+      transform: scale(0.98);
     }
 
     .btn-nav-primary {
-      background: linear-gradient(135deg, #a12b48 0%, #7d1c35 100%);
+      background: linear-gradient(135deg, #9b223e 0%, #7e182f 100%);
       color: #fff;
-      border: none;
-      box-shadow: 0 3px 10px rgba(161, 43, 72, 0.35);
+      border: 1px solid rgba(155, 34, 62, 0.4);
+      box-shadow: 0 2px 8px var(--primary-glow);
     }
     .btn-nav-primary:hover {
+      background: linear-gradient(135deg, #a82745 0%, #8c1b35 100%);
+      color: #fff;
       transform: translateY(-1px);
-      box-shadow: 0 5px 14px rgba(161, 43, 72, 0.45);
+      box-shadow: 0 4px 14px var(--primary-glow);
     }
 
     /* Mobile Segmented Control Bar (hidden on desktop) */
@@ -162,67 +190,73 @@
     /* Floating Navigation Controls */
     .map-overlay-controls {
       position: absolute;
-      top: 18px;
-      left: 20px;
+      top: 16px;
+      left: 18px;
       z-index: 500;
       display: flex;
-      gap: 8px;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(14px);
-      padding: 6px 8px;
-      border-radius: 50px;
+      gap: 5px;
+      background: rgba(255, 255, 255, 0.90);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      padding: 5px 6px;
+      border-radius: var(--radius-pill);
       box-shadow: var(--shadow-md);
-      border: 1px solid rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.85);
       overflow-x: auto;
-      max-width: calc(100% - 40px);
+      max-width: calc(100% - 36px);
       scrollbar-width: none;
     }
     .map-overlay-controls::-webkit-scrollbar { display: none; }
 
     .day-selector-btn {
-      padding: 8px 16px;
-      border-radius: 40px;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
       border: none;
       background: transparent;
-      color: var(--text-muted);
-      font-size: 0.82rem;
+      color: var(--text-secondary);
+      font-size: 0.78rem;
       font-weight: 700;
       cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
       white-space: nowrap;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .day-selector-btn.active {
       background: var(--primary);
       color: #fff;
-      box-shadow: 0 4px 12px rgba(158, 40, 70, 0.35);
+      box-shadow: 0 3px 10px var(--primary-glow);
     }
 
     .day-selector-btn:hover:not(.active) {
-      background: var(--bg-subtle);
+      background: var(--bg-subtle-hover);
       color: var(--text-main);
     }
 
-    /* Leg Navigation Indicator Banner */
+    .day-selector-btn:active {
+      transform: scale(0.97);
+    }
+
+    /* Leg Navigation Indicator Banner (Dynamic Island look) */
     .leg-status-banner {
       position: absolute;
-      bottom: 24px;
-      left: 20px;
+      bottom: 20px;
+      left: 18px;
       z-index: 500;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(14px);
-      padding: 12px 20px;
-      border-radius: var(--radius-sm);
-      box-shadow: var(--shadow-md);
-      border: 1px solid var(--border-color);
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      padding: 10px 18px;
+      border-radius: 14px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-subtle);
       display: flex;
       align-items: center;
-      gap: 16px;
-      font-size: 0.82rem;
-      max-width: calc(100% - 40px);
+      gap: 14px;
+      font-size: 0.80rem;
+      max-width: calc(100% - 36px);
     }
 
     .leg-status-info {
@@ -566,24 +600,26 @@
 
     /* Clean Solid Itinerary Card */
     .venue-card {
-      border: 1px solid var(--border-color);
-      background: #ffffff;
-      border-radius: var(--radius-sm);
-      padding: 14px 16px;
-      transition: all 0.2s ease;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-surface);
+      border-radius: var(--radius-card);
+      padding: 15px 17px;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
       cursor: pointer;
+      box-shadow: var(--shadow-xs);
     }
 
     .venue-card:hover {
-      border-color: var(--accent-gold);
+      border-color: rgba(155, 34, 62, 0.25);
       transform: translateY(-2px);
-      box-shadow: var(--shadow-sm);
+      box-shadow: var(--shadow-md);
     }
 
     .venue-card.active-selected-card {
       border-color: var(--primary);
-      background: #fffcfd;
-      box-shadow: 0 4px 14px rgba(158, 40, 70, 0.15);
+      border-left: 4px solid var(--primary);
+      background: #fffbfb;
+      box-shadow: 0 4px 20px -2px rgba(155, 34, 62, 0.14);
     }
 
     .card-top-row {
@@ -594,34 +630,40 @@
     }
 
     .card-time-pill {
-      font-size: 0.78rem;
-      font-weight: 800;
+      font-size: 0.76rem;
+      font-weight: 700;
       color: var(--primary);
-      background: var(--primary-light);
+      background: var(--primary-subtle);
+      border: 1px solid rgba(155, 34, 62, 0.12);
       padding: 2px 8px;
-      border-radius: 6px;
+      border-radius: var(--radius-pill);
       display: inline-flex;
       align-items: center;
       gap: 4px;
+      font-family: var(--font-mono);
+      font-variant-numeric: tabular-nums;
     }
 
     .card-status-pill {
-      font-size: 0.72rem;
+      font-size: 0.70rem;
       font-weight: 700;
       padding: 2px 8px;
-      border-radius: 6px;
+      border-radius: var(--radius-pill);
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
     }
 
     .pill-booking {
-      background: #e6f7ef;
-      color: #0b784a;
-      border: 1px solid #b3e6cc;
+      background: rgba(16, 185, 129, 0.08);
+      color: #047857;
+      border: 1px solid rgba(16, 185, 129, 0.22);
     }
 
     .pill-sightseeing {
-      background: #fdf5e6;
-      color: #a86500;
-      border: 1px solid #f9e2b3;
+      background: rgba(245, 158, 11, 0.08);
+      color: #92400e;
+      border: 1px solid rgba(245, 158, 11, 0.22);
     }
 
     .venue-japanese-name {
@@ -649,15 +691,19 @@
     }
 
     .venue-highlight-note {
-      background: var(--bg-subtle);
-      border-left: 3px solid var(--accent-gold);
-      border-radius: 4px;
-      padding: 8px 12px;
+      background: #fbf9f6;
+      border-left: 3px solid var(--primary);
+      border-radius: 6px;
+      padding: 9px 12px;
       font-size: 0.78rem;
-      color: #5d5955;
+      color: #4b4844;
+      line-height: 1.55;
       margin-bottom: 10px;
+      border-top: 1px solid rgba(0,0,0,0.03);
+      border-right: 1px solid rgba(0,0,0,0.03);
+      border-bottom: 1px solid rgba(0,0,0,0.03);
     }
-    .venue-highlight-note strong { color: #222; }
+    .venue-highlight-note strong { color: var(--text-main); }
 
     /* Leg Origin Helper Banner inside Card */
     .card-from-leg-pill {
@@ -696,22 +742,28 @@
     }
 
     .btn-action-pill {
-      color: var(--primary);
+      color: var(--text-secondary);
       text-decoration: none;
       font-weight: 700;
-      font-size: 0.74rem;
+      font-size: 0.72rem;
       display: inline-flex;
       align-items: center;
       gap: 4px;
-      padding: 3px 8px;
-      border-radius: 4px;
-      background: var(--bg-subtle);
-      border: 1px solid var(--border-color);
-      transition: all 0.15s ease;
+      padding: 3px 9px;
+      border-radius: var(--radius-pill);
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      transition: all 0.16s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: var(--shadow-xs);
     }
     .btn-action-pill:hover {
-      background: var(--primary-light);
-      border-color: var(--primary);
+      background: var(--bg-subtle);
+      color: var(--text-main);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-sm);
+    }
+    .btn-action-pill:active {
+      transform: scale(0.97);
     }
 
     /* Clean Solid Transit Guide */
@@ -1271,7 +1323,7 @@
               <div class="venue-chinese-subtitle">Sukiyabashi Jiro • 六本木之丘 櫸坂通 3F 江戶前壽司</div>
               <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">🚆 今日起點：百合ヶ丘駅 (神奈川県) ➔ 小田急線・千代田線直達六本木之丘 (車程約45分)</div>
               <p class="venue-details">
-                世界傳奇「壽司之神」小野二郎之子——小野隆主理。極致純粹的江戶前板前握壽司，米飯溫度精確，魚生刀工絕倫，是一生難忘的頂級味蕾盛宴。
+                世界傳奇「壽司之神」小野二郎之子（小野隆大師）親自握製。極致純粹的江戶前板前握壽司，米飯溫度精確，魚生刀工絕倫，是一生難忘的頂級味蕾盛宴。
               </p>
               <div class="venue-highlight-note">
                 <strong>💡 禮儀小貼士：</strong>師傅刷好醬汁握好送上後，建議在數秒內以手或筷直接享用最佳溫度；店內禁止噴過濃香水。
