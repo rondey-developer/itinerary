@@ -22,35 +22,41 @@
      * Dials: VARIANCE: 7 / MOTION: 6 / DENSITY: 4 (Anti-slop frontend taste skill)
      */
     :root {
-      --primary: #9b223e;
-      --primary-hover: #7e182f;
-      --primary-subtle: rgba(155, 34, 62, 0.07);
-      --primary-glow: rgba(155, 34, 62, 0.22);
+      /* Japandi Aesthetic: Wabi-Sabi Washi & Scandinavian Minimalist Cedar */
+      --primary: #985635; /* Hinoki Cedar / Warm Terracotta */
+      --primary-hover: #7e4428;
+      --primary-subtle: rgba(152, 86, 53, 0.08);
+      --primary-glow: rgba(152, 86, 53, 0.20);
       
-      --bg-page: #faf9f6;
+      --sumi-ink: #22201d; /* Deep Calligraphy Charcoal Ink */
+      
+      --bg-page: #f7f5f0; /* Unbleached Handcrafted Washi / Ecru Linen */
       --bg-surface: #ffffff;
-      --bg-subtle: #f4f2ee;
-      --bg-subtle-hover: #ece9e3;
+      --bg-surface-warm: #fcfbf9;
+      --bg-subtle: #efece4; /* Muted Wood / Stone */
+      --bg-subtle-hover: #e5e1d6;
       
-      --border-subtle: rgba(0, 0, 0, 0.07);
-      --border-medium: rgba(0, 0, 0, 0.12);
-      --border-focus: rgba(155, 34, 62, 0.35);
+      --border-subtle: rgba(34, 32, 29, 0.08);
+      --border-medium: rgba(34, 32, 29, 0.15);
+      --border-wood: #dfd8cc;
+      --border-focus: rgba(152, 86, 53, 0.38);
       
-      --text-main: #181716;
-      --text-secondary: #4a4744;
-      --text-muted: #7c7873;
+      --text-main: #22201d; /* Sumi Ink */
+      --text-secondary: #56524b; /* Cedar Bark Gray */
+      --text-muted: #8a857c; /* River Pebble Gray */
       
-      --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.03);
-      --shadow-sm: 0 2px 6px -1px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
-      --shadow-md: 0 6px 20px -3px rgba(0, 0, 0, 0.07), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
-      --shadow-lg: 0 16px 36px -6px rgba(0, 0, 0, 0.10), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
+      --shadow-xs: 0 1px 2px rgba(34, 32, 29, 0.03);
+      --shadow-sm: 0 2px 6px -1px rgba(34, 32, 29, 0.04), 0 1px 3px rgba(34, 32, 29, 0.02);
+      --shadow-md: 0 6px 20px -3px rgba(34, 32, 29, 0.06), 0 2px 6px -1px rgba(34, 32, 29, 0.03);
+      --shadow-lg: 0 14px 34px -4px rgba(34, 32, 29, 0.09), 0 4px 12px -2px rgba(34, 32, 29, 0.03);
       
       --radius-sm: 8px;
       --radius-card: 14px;
       --radius-pill: 9999px;
       
-      --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic Medium", "Noto Sans TC", sans-serif;
-      --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans TC", sans-serif;
+      --font-serif: -apple-system, BlinkMacSystemFont, "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif TC", "Shippori Mincho", serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans TC", sans-serif;
+      --font-display: -apple-system, BlinkMacSystemFont, "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif TC", serif;
       --font-mono: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, monospace;
     }
 
@@ -148,13 +154,13 @@
     }
 
     .btn-nav-primary {
-      background: linear-gradient(135deg, #9b223e 0%, #7e182f 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
       color: #fff;
       border: 1px solid rgba(155, 34, 62, 0.4);
       box-shadow: 0 2px 8px var(--primary-glow);
     }
     .btn-nav-primary:hover {
-      background: linear-gradient(135deg, #a82745 0%, #8c1b35 100%);
+      background: linear-gradient(135deg, #a65e3a 0%, #7e4428 100%);
       color: #fff;
       transform: translateY(-1px);
       box-shadow: 0 4px 14px var(--primary-glow);
@@ -539,11 +545,11 @@
       color: #fff;
     }
 
-    .badge-d1 { background: #e07a7e; }
-    .badge-d2 { background: #9b51e0; }
-    .badge-d3 { background: #2f80ed; }
-    .badge-d4 { background: #10b981; }
-    .badge-d5 { background: #f59e0b; }
+    .badge-d1 { background: #a65b63; } /* Akane Muted Rose */
+    .badge-d2 { background: #4a5b70; } /* Japanese Indigo Slate */
+    .badge-d3 { background: #3b7080; } /* Ocean Mist Teal */
+    .badge-d4 { background: #3b6953; } /* Kusatsu Hinoki Pine */
+    .badge-d5 { background: #985635; } /* Sandalwood Terracotta */
 
     .day-title-text h3 {
       font-size: 0.95rem;
@@ -655,15 +661,21 @@
     }
 
     .pill-booking {
-      background: rgba(16, 185, 129, 0.08);
-      color: #047857;
-      border: 1px solid rgba(16, 185, 129, 0.22);
+      background: rgba(46, 82, 65, 0.08);
+      color: #234736;
+      border: 1px solid rgba(46, 82, 65, 0.20);
     }
 
     .pill-sightseeing {
-      background: rgba(245, 158, 11, 0.08);
-      color: #92400e;
-      border: 1px solid rgba(245, 158, 11, 0.22);
+      background: rgba(152, 86, 53, 0.08);
+      color: #7d4428;
+      border: 1px solid rgba(152, 86, 53, 0.20);
+    }
+
+    .pill-onsen {
+      background: rgba(59, 77, 97, 0.08);
+      color: #2b3947;
+      border: 1px solid rgba(59, 77, 97, 0.20);
     }
 
     .venue-japanese-name {
@@ -717,7 +729,7 @@
       font-size: 0.72rem;
       font-weight: 700;
       margin-bottom: 10px;
-      border: 1px solid #e2e8f0;
+      border: 1px solid var(--border-wood);
     }
 
     .card-footer-row {
@@ -734,11 +746,16 @@
       display: flex;
       align-items: center;
       gap: 4px;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     .venue-actions {
       display: flex;
       gap: 6px;
+      flex-shrink: 0;
     }
 
     .btn-action-pill {
@@ -755,6 +772,8 @@
       border: 1px solid var(--border-subtle);
       transition: all 0.16s cubic-bezier(0.16, 1, 0.3, 1);
       box-shadow: var(--shadow-xs);
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .btn-action-pill:hover {
       background: var(--bg-subtle);
@@ -768,8 +787,8 @@
 
     /* Clean Solid Transit Guide */
     .transit-guide-box {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
+      background: var(--bg-surface-warm);
+      border: 1px solid var(--border-wood);
       border-radius: 10px;
       padding: 14px;
       margin: 10px 0;
@@ -781,10 +800,10 @@
       align-items: center;
       font-size: 0.82rem;
       font-weight: 800;
-      color: #1e293b;
+      color: var(--sumi-ink);
       margin-bottom: 12px;
       padding-bottom: 8px;
-      border-bottom: 1px solid #e2e8f0;
+      border-bottom: 1px solid var(--border-wood);
     }
 
     .transit-step-item {
@@ -810,7 +829,7 @@
       font-family: monospace;
       font-size: 0.82rem;
       font-weight: 800;
-      color: #0f172a;
+      color: var(--text-main);
       width: 44px;
       text-align: right;
     }
@@ -830,7 +849,7 @@
     .step-marker-dot.end { background: #ef4444; box-shadow: 0 0 0 2px #ef4444; }
 
     .step-desc-wrap { flex: 1; }
-    .step-station-name { font-weight: 800; font-size: 0.88rem; color: #1e293b; }
+    .step-station-name { font-weight: 800; font-size: 0.88rem; color: var(--sumi-ink); }
     .step-subline {
       font-size: 0.76rem;
       color: #64748b;
@@ -1147,9 +1166,9 @@
     <div class="brand-group">
       <span style="font-size:1.2rem;">🌸</span>
       <div>
-        <h1 class="brand-title">東京 & 草津 浪漫雙人行</h1>
+        <h1 class="brand-title">東京 · 草津 ｜ 侘寂雙人行旅</h1>
       </div>
-      <span class="brand-pill">9/25 – 9/29 • 5天4夜</span>
+      <span class="brand-pill">9/25 – 9/29 · 5天4夜</span>
     </div>
 
     <div class="nav-buttons">
@@ -1209,9 +1228,9 @@
       <!-- OpenFreeMap Vector Theme Switcher (https://openfreemap.org/) -->
       <div class="ofm-switcher-control">
         <span class="ofm-label"><span class="ofm-label-desktop">🗺️ OpenFreeMap</span><span class="ofm-label-mobile">🗺️ 地圖</span></span>
-        <button class="ofm-style-btn active" id="ofm-btn-liberty" onclick="switchOpenFreeMapStyle('liberty')">Liberty</button>
+        <button class="ofm-style-btn" id="ofm-btn-liberty" onclick="switchOpenFreeMapStyle('liberty')">Liberty</button>
         <button class="ofm-style-btn" id="ofm-btn-bright" onclick="switchOpenFreeMapStyle('bright')">Bright</button>
-        <button class="ofm-style-btn" id="ofm-btn-positron" onclick="switchOpenFreeMapStyle('positron')">Positron</button>
+        <button class="ofm-style-btn active" id="ofm-btn-positron" onclick="switchOpenFreeMapStyle('positron')">Positron</button>
       </div>
 
       <!-- Leaflet Map Container -->
@@ -1287,7 +1306,7 @@
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 小田急線 新百合ヶ丘駅 直通商場 5F</span>
                 <div class="venue-actions">
-                  <button class="btn-action-pill" style="background:#fff0f3; color:#9e2846; border-color:#fecdd3; font-weight:700;" onclick="jumpToMapFromCard('shanes-burg', event)">🗺️ 路線</button>
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard('shanes-burg', event)">🗺️ 路線</button>
                   <a href="https://tabelog.com/kanagawa/A1405/A140508/14009641/" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">📖 食べログ</a>
                   <a href="https://maps.google.com/?q=Shane's+Burg+Shin-Yurigaoka" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🗺️ Google 地圖</a>
                 </div>
@@ -1331,7 +1350,7 @@
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 六本木ヒルズ けやき坂通り 3F</span>
                 <div class="venue-actions">
-                  <button class="btn-action-pill" style="background:#fff0f3; color:#9e2846; border-color:#fecdd3; font-weight:700;" onclick="jumpToMapFromCard('jiro', event)">🗺️ 路線</button>
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard('jiro', event)">🗺️ 路線</button>
                   <a href="https://maps.app.goo.gl/Brh2wvb1fPBVpNn79" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🗺️ Google 地圖</a>
                 </div>
               </div>
@@ -1345,7 +1364,7 @@
               </div>
               <div class="venue-japanese-name">🗼 東京タワー (Tokyo Tower)</div>
               <div class="venue-chinese-subtitle">Main Deck 150m 展望台 ‧ 透明玻璃步道</div>
-              <div class="card-from-leg-pill" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">
+              <div class="card-from-leg-pill" style="background:#f5efe6; color:#784528; border-color:#e0d5c3;">
                 🚗 上一站：すきやばし 次郎 ➔ 計程車前往東京鐵塔 (車程約10分)
               </div>
               <p class="venue-details">
@@ -1354,7 +1373,7 @@
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 港區芝公園 4-2-8</span>
                 <div class="venue-actions">
-                  <button class="btn-action-pill" style="background:#fff0f3; color:#9e2846; border-color:#fecdd3; font-weight:700;" onclick="jumpToMapFromCard('tokyo-tower', event)">🗺️ 路線</button>
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard('tokyo-tower', event)">🗺️ 路線</button>
                   <a href="https://www.tokyotower.co.jp/" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🌐 官方網站</a>
                 </div>
               </div>
@@ -1368,7 +1387,7 @@
               </div>
               <div class="venue-japanese-name">🍸 VIRTÙ (フォーシーズンズホテル東京大手町 39F)</div>
               <div class="venue-chinese-subtitle">Four Seasons Hotel Tokyo at Otemachi • 法日融合巴黎沙龍風</div>
-              <div class="card-from-leg-pill" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">
+              <div class="card-from-leg-pill" style="background:#f5efe6; color:#784528; border-color:#e0d5c3;">
                 🚗 上一站：東京タワー ➔ 沿日比谷通前往大手町 (車程約15分)
               </div>
               <p class="venue-details">
@@ -1380,7 +1399,7 @@
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 大手町 1-2-1 酒店 39 樓</span>
                 <div class="venue-actions">
-                  <button class="btn-action-pill" style="background:#fff0f3; color:#9e2846; border-color:#fecdd3; font-weight:700;" onclick="jumpToMapFromCard('virtu', event)">🗺️ 路線</button>
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard('virtu', event)">🗺️ 路線</button>
                   <a href="https://www.fourseasons.com/tokyo-otemachi/dining/lounges/virtu/" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🍸 酒單預覽</a>
                 </div>
               </div>
@@ -1394,7 +1413,7 @@
               </div>
               <div class="venue-japanese-name">🍣 くら寿司 無添蔵 新宿店 (Muten Kura Sushi)</div>
               <div class="venue-chinese-subtitle">藏壽司頂級精緻和食品牌 ‧ 新宿高野大樓 6F (東口徒步1分)</div>
-              <div class="card-from-leg-pill" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">
+              <div class="card-from-leg-pill" style="background:#f5efe6; color:#784528; border-color:#e0d5c3;">
                 🚇 上一站：VIRTÙ (大手町) ➔ 前往新宿店 (丸之內線直達約19分 / 計程車約18分)
               </div>
               <p class="venue-details">
@@ -1408,7 +1427,7 @@
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 新宿高野ビル 6F</span>
                 <div class="venue-actions">
-                  <button class="btn-action-pill" style="background:#fff0f3; color:#9e2846; border-color:#fecdd3; font-weight:700;" onclick="jumpToMapFromCard('kura-sushi', event)">🗺️ 路線</button>
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard('kura-sushi', event)">🗺️ 路線</button>
                   <a href="https://shop.kurasushi.co.jp/detail/663" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🌐 官方店鋪資訊</a>
                   <a href="https://maps.google.com/?q=無添蔵+新宿店" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🗺️ Google 導航</a>
                 </div>
@@ -1452,7 +1471,7 @@
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 JR舞濱站 轉乘 迪士尼度假區線單軌電車</span>
                 <div class="venue-actions">
-                  <button class="btn-action-pill" style="background:#fff0f3; color:#9e2846; border-color:#fecdd3; font-weight:700;" onclick="jumpToMapFromCard('disneysea', event)">🗺️ 路線</button>
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard('disneysea', event)">🗺️ 路線</button>
                   <a href="https://www.tokyodisneyresort.jp/tc/tds/" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">📱 官方中文指南</a>
                 </div>
               </div>
@@ -1466,7 +1485,7 @@
               </div>
               <div class="venue-japanese-name">🛳️ S.S.コロンビア・ダイニングルーム</div>
               <div class="venue-chinese-subtitle">S.S. Columbia Dining Room • 20世紀奢華遠洋巨輪 B-Deck 大餐廳</div>
-              <div class="card-from-leg-pill" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">
+              <div class="card-from-leg-pill" style="background:#f5efe6; color:#784528; border-color:#e0d5c3;">
                 🚶 上一站：園區遊玩 / 夢幻泉鄉 ➔ 沿港灣步行至美國海濱哥倫比亞號
               </div>
               <p class="venue-details">
@@ -1478,7 +1497,7 @@
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 美國海濱 哥倫比亞號 3F 船艙</span>
                 <div class="venue-actions">
-                  <button class="btn-action-pill" style="background:#fff0f3; color:#9e2846; border-color:#fecdd3; font-weight:700;" onclick="jumpToMapFromCard('ss-columbia', event)">🗺️ 路線</button>
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard('ss-columbia', event)">🗺️ 路線</button>
                   <a href="https://www.tokyodisneyresort.jp/tc/tds/restaurant/detail/431/" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🍽️ 餐廳詳情</a>
                 </div>
               </div>
@@ -1493,7 +1512,7 @@
               <span class="day-badge-tag badge-d4">Day 4</span>
               <div class="day-title-text">
                 <h3>9月28日 (星期一) • 草津溫泉祕境與櫻井旅館</h3>
-                <span>日本第一名湯 ‧ 湯畑浴衣散策 ‧ 會席料理</span>
+                <span>日本第一名湯 · 湯畑散策 · 湯揉攪湯秀 · 西之河原露天風呂</span>
               </div>
             </div>
             <div class="day-accordion-control">
@@ -1577,20 +1596,24 @@
             <div class="venue-card" id="card-sakurai" onclick="selectStopLeg('sakurai')">
               <div class="card-top-row">
                 <span class="card-time-pill">⏰ 13:30 登記入住</span>
-                <span class="card-status-pill pill-booking">✓ 頂級溫泉旅館</span>
+                <span class="card-status-pill pill-booking">✓ 頂級溫泉旅館 (已預約)</span>
               </div>
               <div class="venue-japanese-name">♨️ 草津温泉 ホテル櫻井 (Hotel Sakurai)</div>
-              <div class="venue-chinese-subtitle">五星級溫泉旅館 ‧ 引流萬代、西之河原等 3 種天然源泉</div>
-              <div class="card-from-leg-pill" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">
+              <div class="venue-chinese-subtitle">草津五星名宿 · 引流萬代、西之河原等 3 種天然名湯</div>
+              <div class="card-from-leg-pill" style="background:#f5efe6; color:#784528; border-color:#e0d5c3;">
                 🚆 上一站：百合ヶ丘/新宿/赤羽 ➔ 特急草津四萬號 & 國道292號巴士直達櫻井
               </div>
               <p class="venue-details">
-                草津規模最大也最負盛名的溫泉旅館。擁有全長約30米的巨大天然溫泉大浴場與巨石露天風呂。入住後先挑選喜歡的花色浴衣，在大浴場好好洗滌疲憊，肌膚瞬間潤滑。
+                草津規模最大也最負盛名的溫泉旅館。擁有全長約30米的巨大天然溫泉大浴場與巨石露天風呂。入住後先挑選成對的日式花色浴衣，在大浴場好好洗滌疲憊，享受極致滑嫩的泉質。
               </p>
+              <div class="venue-highlight-note">
+                <strong>🏮 旅館亮點：</strong>晚上 18:30 享用上州和牛壽喜燒豪華會席料理；晚上 20:15 於挑高大廳欣賞旅館著名的和太鼓擊鼓秀與傳統攪湯「湯揉（湯もみ）」舞姿！<br>
+                <strong>💰 貼心提醒：</strong>房內備有迎賓綠茶與溫泉點心，睡前可再次到露天風呂仰望無光害的群馬滿天星斗。
+              </div>
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 群馬縣草津町 465-4</span>
                 <div class="venue-actions">
-                  <button class="btn-action-pill" style="background:#fff0f3; color:#9e2846; border-color:#fecdd3; font-weight:700;" onclick="jumpToMapFromCard('sakurai', event)">🗺️ 路線</button>
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard('sakurai', event)">🗺️ 路線</button>
                   <a href="https://www.hotel-sakurai.co.jp/" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">♨️ 旅館官網</a>
                 </div>
               </div>
@@ -1599,22 +1622,82 @@
             <!-- Yubatake -->
             <div class="venue-card" id="card-yubatake" onclick="selectStopLeg('yubatake')">
               <div class="card-top-row">
-                <span class="card-time-pill">⏰ 15:30 – 18:00</span>
-                <span class="card-status-pill pill-sightseeing">浴衣街區漫遊</span>
+                <span class="card-time-pill">⏰ 15:30 – 16:00</span>
+                <span class="card-status-pill pill-sightseeing">草津心臟地標</span>
               </div>
-              <div class="venue-japanese-name">🏮 湯畑 (Yubatake) & 溫泉街</div>
-              <div class="venue-chinese-subtitle">草津地標 ‧ 翠綠沸騰泉水 ‧ 免費足湯 ‧ 溫泉饅頭</div>
-              <div class="card-from-leg-pill" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">
+              <div class="venue-japanese-name">🏮 湯畑 (Yubatake) & 溫泉街散策</div>
+              <div class="venue-chinese-subtitle">翡翠沸騰泉水 · 湯煙亭足湯 · 溫泉布丁與現蒸饅頭</div>
+              <div class="card-from-leg-pill" style="background:#f5efe6; color:#784528; border-color:#e0d5c3;">
                 👘 上一站：草津温泉 ホテル櫻井 ➔ 漫步至湯畑溫泉街中心 (約10分)
               </div>
               <p class="venue-details">
-                換上日式浴衣與木屐，搭接駁車或散步至湯畑。看著中央木槽奔流而下的翡翠綠溫泉與裊裊白煙，一起在「湯煙亭」泡足湯、品嚐現蒸熱呼呼的溫泉饅頭；黃昏點燈時分更是極致浪漫。
+                換上日式浴衣與木屐，搭接駁車或散步至湯畑。看著中央木槽奔流而下的翡翠綠高溫溫泉與裊裊白煙，坐在木質「湯煙亭」一同享受露天足湯，品嚐現蒸出爐熱呼呼的溫泉饅頭與名物布丁。
               </p>
+              <div class="venue-highlight-note">
+                <strong>🍮 必吃名物推薦：</strong><br>
+                · <strong>草津プリン (Kusatsu Pudding)</strong>：招牌「湯畑布丁」上層為如翡翠綠泉水般的果凍，下層為濃醇澤西牛乳布丁；還有現蒸溫泉布丁！<br>
+                · <strong>松むら饅頭 (Matsumura Manju)</strong>：昭和20年創業草津第一名饅頭，薄皮黑糖包裹綿密紅豆餡，熱騰騰香甜不膩。<br>
+                · <strong>本家ちぎら</strong>：熱情招待剛出爐溫泉饅頭與現泡熱茶。
+              </div>
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 草津町中心街區</span>
                 <div class="venue-actions">
-                  <button class="btn-action-pill" style="background:#fff0f3; color:#9e2846; border-color:#fecdd3; font-weight:700;" onclick="jumpToMapFromCard('yubatake', event)">🗺️ 路線</button>
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard('yubatake', event)">🗺️ 路線</button>
                   <a href="https://maps.google.com/?q=Yubatake+Kusatsu" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🗺️ Google 地圖</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Netsunoyu -->
+            <div class="venue-card" id="card-netsunoyu" onclick="selectStopLeg('netsunoyu')">
+              <div class="card-top-row">
+                <span class="card-time-pill">⏰ 16:00 – 16:30</span>
+                <span class="card-status-pill pill-onsen">百年江戶傳統</span>
+              </div>
+              <div class="venue-japanese-name">♨️ 熱乃湯 (Netsunoyu) · 湯もみと踊りショー</div>
+              <div class="venue-chinese-subtitle">木板攪湯秀 · 歌詠草津節民謠 · 有形民俗文化財</div>
+              <div class="card-from-leg-pill" style="background:#f5efe6; color:#784528; border-color:#e0d5c3;">
+                👣 上一站：湯畑 (Yubatake) ➔ 湯畑池畔西側建築 (步行1分)
+              </div>
+              <p class="venue-details">
+                草津溫泉自古源泉高達50℃以上無法直接入浴，江戶時期便發展出不加一滴冷水、純以長木板攪動溫泉使其降溫並柔化水質的「湯もみ（湯揉）」技藝。現場伴隨節奏整齊的「草津節」歌聲與拍水聲，震撼又極具文化底蘊。
+              </p>
+              <div class="venue-highlight-note">
+                <strong>🎟️ 觀賞資訊：</strong>門票大人 ¥700。每日下午場次為 15:30 / 16:00 / 16:30。建議 15:50 於門口排隊購票入場。<br>
+                <strong>📸 拍照重點：</strong>二樓看台能居高臨下拍攝木板激起漫天溫泉水花的精彩瞬間！
+              </div>
+              <div class="card-footer-row">
+                <span class="venue-location-text">📍 草津町草津 414 (湯畑旁)</span>
+                <div class="venue-actions">
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard('netsunoyu', event)">🗺️ 路線</button>
+                  <a href="https://www.kusatsu-onsen.ne.jp/netsunoyu/" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">♨️ 熱乃湯官網</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sainokawara Park -->
+            <div class="venue-card" id="card-sainokawara" onclick="selectStopLeg('sainokawara')">
+              <div class="card-top-row">
+                <span class="card-time-pill">⏰ 16:45 – 18:00</span>
+                <span class="card-status-pill pill-sightseeing">仙境地熱步道</span>
+              </div>
+              <div class="venue-japanese-name">🌲 西の河原公園 & 西の河原露天風呂</div>
+              <div class="venue-chinese-subtitle">翡翠地熱溪流 · 石燈籠步道 · 日本最大500㎡大露天風呂</div>
+              <div class="card-from-leg-pill" style="background:#f5efe6; color:#784528; border-color:#e0d5c3;">
+                🚶 上一站：熱乃湯 / 湯畑 ➔ 沿西之河原通林蔭漫步 (約10分)
+              </div>
+              <p class="venue-details">
+                沿著古色古香的西之河原通往上游漫步，步道兩旁熱氣蒸騰、湧出翡翠綠色的天然溫泉溪流。沿途有結緣地藏菩薩、鳥居與足湯。步道盡頭坐落著日本屈指可數的「西之河原露天風呂」，男女池總計超過500平方公尺，被群山紅葉環抱，視野極其壯闊。
+              </p>
+              <div class="venue-highlight-note">
+                <strong>💡 浪漫建議：</strong>黃昏時分步道兩側石燈籠點亮，如夢似幻；可一同在溪畔足湯小憩拍照。若想體驗森林大露天風呂，門票 ¥700，需自備毛巾或現場購買。<br>
+                <strong>🏮 夜間散策：</strong>回旅館享用完會席料理後，晚上 20:00 可再漫步回湯畑欣賞「夜の湯畑點燈（ライトアップ）」，紫金色光影映照熱氣，如入宮崎駿童話世界。
+              </div>
+              <div class="card-footer-row">
+                <span class="venue-location-text">📍 草津町大字草津 521-3</span>
+                <div class="venue-actions">
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard('sainokawara', event)">🗺️ 路線</button>
+                  <a href="https://sainokawara.com/" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🌲 露天風呂官網</a>
                 </div>
               </div>
             </div>
@@ -1725,7 +1808,7 @@
               </div>
               <div class="venue-japanese-name">🥩 ウルフギャング・ステーキハウス シグニチャー 青山店</div>
               <div class="venue-chinese-subtitle">Wolfgang's Steakhouse Signature Aoyama • 頂級乾式熟成黑安格斯丁骨牛排</div>
-              <div class="card-from-leg-pill" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">
+              <div class="card-from-leg-pill" style="background:#f5efe6; color:#784528; border-color:#e0d5c3;">
                 🚅 上一站：草津溫泉 (退房) ➔ 新幹線抵達外苑前站4a出口
               </div>
               <p class="venue-details">
@@ -1737,7 +1820,7 @@
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 外苑前站 4a 出口直達 THE ARGYLE AOYAMA 1F/2F</span>
                 <div class="venue-actions">
-                  <button class="btn-action-pill" style="background:#fff0f3; color:#9e2846; border-color:#fecdd3; font-weight:700;" onclick="jumpToMapFromCard('wolfgang', event)">🗺️ 路線</button>
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard('wolfgang', event)">🗺️ 路線</button>
                   <a href="https://wolfgangssteakhouse.jp/" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🥩 官方網站</a>
                   <a href="https://maps.google.com/?q=Wolfgang's+Steakhouse+Signature+Aoyama" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🗺️ Google 地圖</a>
                 </div>
@@ -1752,7 +1835,7 @@
               </div>
               <div class="venue-japanese-name">🌆 渋谷スクランブル交差点 & MIYASHITA PARK</div>
               <div class="venue-chinese-subtitle">Shibuya • 宮下公園屋頂草坪 ‧ 潮流購物 ‧ SHIBUYA SKY 夜景</div>
-              <div class="card-from-leg-pill" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">
+              <div class="card-from-leg-pill" style="background:#f5efe6; color:#784528; border-color:#e0d5c3;">
                 🚇 上一站：ウルフギャング (青山) ➔ 沿青山通前往澀谷十字路口
               </div>
               <p class="venue-details">
@@ -1761,7 +1844,7 @@
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 澀谷車站周邊</span>
                 <div class="venue-actions">
-                  <button class="btn-action-pill" style="background:#fff0f3; color:#9e2846; border-color:#fecdd3; font-weight:700;" onclick="jumpToMapFromCard('shibuya', event)">🗺️ 路線</button>
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard('shibuya', event)">🗺️ 路線</button>
                   <a href="https://maps.google.com/?q=Shibuya+Crossing" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🗺️ Google 地圖</a>
                 </div>
               </div>
@@ -1775,7 +1858,7 @@
               </div>
               <div class="venue-japanese-name">🎷 ニューヨーク バー / New York Bar (パーク ハイアット 東京 52F)</div>
               <div class="venue-chinese-subtitle">Park Hyatt Tokyo 52F • 《愛情，不用翻譯》傳奇爵士高空酒吧</div>
-              <div class="card-from-leg-pill" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">
+              <div class="card-from-leg-pill" style="background:#f5efe6; color:#784528; border-color:#e0d5c3;">
                 🚕 上一站：渋谷スクランブル交差点 ➔ 計程車直達西新宿柏悅酒店 (約12分)
               </div>
               <p class="venue-details">
@@ -1787,7 +1870,7 @@
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 新宿區西新宿 3-7-1-2 新宿公園塔 52 樓</span>
                 <div class="venue-actions">
-                  <button class="btn-action-pill" style="background:#fff0f3; color:#9e2846; border-color:#fecdd3; font-weight:700;" onclick="jumpToMapFromCard('new-york-bar', event)">🗺️ 路線</button>
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard('new-york-bar', event)">🗺️ 路線</button>
                   <a href="https://maps.google.com/?q=Park+Hyatt+Tokyo+New+York+Bar" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🗺️ Google 地圖</a>
                 </div>
               </div>
@@ -1965,11 +2048,11 @@
         id: 'sakurai',
         day: 4,
         title: "草津温泉 ホテル櫻井 (Hotel Sakurai)",
-        sub: "草津五星級名宿",
+        sub: "五星名宿 · 萬代與西之河原雙天然名湯",
         time: "9/28 13:30",
         lat: 36.6212,
         lng: 138.5996,
-        color: "#10b981",
+        color: "#3b6953",
         lastStopName: "百合ヶ丘駅 (神奈川県)",
         vehicle: "🚆",
         routeCoords: [
@@ -1992,12 +2075,12 @@
       'yubatake': {
         id: 'yubatake',
         day: 4,
-        title: "湯畑 (Yubatake)",
-        sub: "草津溫泉心臟地標",
+        title: "湯畑 (Yubatake) & 溫泉街散策",
+        sub: "翡翠滾沸泉源 · 湯煙亭足湯 · 溫泉布丁與現蒸饅頭",
         time: "9/28 15:30",
         lat: 36.6208,
         lng: 138.5960,
-        color: "#10b981",
+        color: "#3b6953",
         lastStopName: "草津温泉 ホテル櫻井",
         vehicle: "👘",
         routeCoords: [
@@ -2005,6 +2088,41 @@
           [36.6210, 138.5980], // Town slope
           [36.6209, 138.5970], // Foot bath square
           [36.6208, 138.5960]  // Current Stop: Yubatake center
+        ]
+      },
+      'netsunoyu': {
+        id: 'netsunoyu',
+        day: 4,
+        title: "熱乃湯 (Netsunoyu) · 湯もみと踊りショー",
+        sub: "草津百年傳統攪湯秀 · 歌詠草津節民謠 (已登錄有形民俗文化財)",
+        time: "9/28 16:00",
+        lat: 36.6206,
+        lng: 138.5957,
+        color: "#3b6953",
+        lastStopName: "湯畑 (Yubatake)",
+        vehicle: "♨️",
+        routeCoords: [
+          [36.6208, 138.5960], // Last Stop: Yubatake center
+          [36.6206, 138.5957]  // Current Stop: Netsunoyu
+        ]
+      },
+      'sainokawara': {
+        id: 'sainokawara',
+        day: 4,
+        title: "西の河原公園 & 西の河原露天風呂",
+        sub: "地熱白煙翡翠溪谷 · 日本最大500㎡森林巨石大露天風呂",
+        time: "9/28 16:45",
+        lat: 36.6235,
+        lng: 138.5888,
+        color: "#3b6953",
+        lastStopName: "熱乃湯 (Netsunoyu)",
+        vehicle: "🌲",
+        routeCoords: [
+          [36.6206, 138.5957], // Last Stop: Netsunoyu
+          [36.6212, 138.5940], // Sainokawara-dori street
+          [36.6218, 138.5920], // Park entrance wooden bridge
+          [36.6225, 138.5905], // Geothermal stream & Jizo statues
+          [36.6235, 138.5888]  // Current Stop: Sainokawara Open-Air Bath
         ]
       },
       'wolfgang': {
@@ -2077,9 +2195,9 @@
     L.control.zoom({ position: 'bottomright' }).addTo(map);
 
     // OpenFreeMap vector layer (https://openfreemap.org/)
-    let currentOfmStyle = 'liberty';
+    let currentOfmStyle = 'positron';
     let openFreeMapLayer = L.maplibreGL({
-      style: 'https://tiles.openfreemap.org/styles/liberty',
+      style: 'https://tiles.openfreemap.org/styles/positron',
       attribution: '<a href="https://openfreemap.org" target="_blank">OpenFreeMap</a> | <a href="https://www.openmaptiles.org/" target="_blank">© OpenMapTiles</a> © <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>'
     }).addTo(map);
 
@@ -2259,7 +2377,7 @@
       }).addTo(map);
 
       const mainLine = L.polyline(leg.routeCoords, {
-        color: leg.color || '#9e2846',
+        color: leg.color || '#985635',
         weight: 4.5,
         opacity: 1.0
       }).addTo(map);
@@ -2282,7 +2400,7 @@
 
       // 5. Fit map camera bounds to frame ONLY this leg!
       const legBounds = L.latLngBounds(leg.routeCoords);
-      map.fitBounds(legBounds.pad(0.3), { animate: true, duration: 1.0 });
+      map.fitBounds(legBounds.pad(0.3), { maxZoom: 16, animate: true, duration: 1.0 });
 
       // 6. Highlight Marker and Open Details
       document.querySelectorAll('.map-pin-badge').forEach(p => p.classList.remove('highlight-active'));
