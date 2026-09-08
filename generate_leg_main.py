@@ -303,6 +303,10 @@ html_content = '''<!DOCTYPE html>
     }
 
     .btn-replay-leg {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
       background: var(--bg-subtle);
       border: 1px solid var(--border-color);
       color: var(--text-main);
@@ -786,6 +790,24 @@ html_content = '''<!DOCTYPE html>
     .btn-action-pill:active {
       transform: scale(0.97);
     }
+    .btn-action-pill.pill-yahoo {
+      color: #0369a1;
+      border-color: #bae6fd;
+      background: #f0f9ff;
+    }
+    .btn-action-pill.pill-yahoo:hover {
+      background: #e0f2fe;
+      border-color: #7dd3fc;
+      color: #0284c7;
+    }
+    .btn-yahoo-popup {
+      background: #f0f9ff;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+    }
+    .btn-yahoo-popup:hover {
+      background: #e0f2fe;
+    }
 
     /* Clean Solid Transit Guide */
     .transit-guide-box {
@@ -1243,9 +1265,12 @@ html_content = '''<!DOCTYPE html>
         <div class="live-pulse-beacon"></div>
         <div class="leg-status-info">
           <div class="leg-route-title" id="leg-title-display">點擊任一景點：僅顯示從上一站抵達此處的路線</div>
-          <div class="leg-sub-text" id="leg-subtitle-display">點選卡片查看即時區間交通動態 🚗</div>
+          <div class="leg-sub-text" id="leg-subtitle-display">點選卡片查看即時區間交通動態 🚇</div>
         </div>
         <div style="display:flex; gap:5px; flex-shrink:0;">
+          <a class="btn-replay-leg" id="btn-yahoo-banner" href="#" target="_blank" style="display:none; background:#f0f9ff; color:#0369a1; border-color:#bae6fd; text-decoration:none;">
+            <span>🚆 Yahoo! 乘換</span>
+          </a>
           <button class="btn-replay-leg" id="btn-replay-leg" onclick="replayCurrentLeg()" style="display:none;">
             <span>▶ 重播</span>
           </button>
@@ -1297,7 +1322,7 @@ html_content = '''<!DOCTYPE html>
               </div>
               <div class="venue-japanese-name">🥩 シェーンズバーグ 新百合ヶ丘店</div>
               <div class="venue-chinese-subtitle">Shane's Burg • 新百合之丘 Elmi Road 5F 美式漢堡排專門店</div>
-              <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">📍 今日起點：百合ヶ丘駅 (神奈川県) ➔ 前往新百合ヶ丘エルミロード (車程約5分 / 徒步約12分)</div>
+              <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">🚆 今日起點：百合ヶ丘駅 ➔ 小田急小田原線直達新百合ヶ丘駅 (1站2分，南口直通商場 5F / 徒步約12分)</div>
               <p class="venue-details">
                 每日新鮮現打手作特級牛肉漢堡排，經炭火高溫封烤，肉汁飽滿。在美式木質溫暖氛圍中放鬆用餐，為美好旅程揭開序幕！
               </p>
@@ -1309,6 +1334,7 @@ html_content = '''<!DOCTYPE html>
                 <span class="venue-location-text">📍 小田急線 新百合ヶ丘駅 直通商場 5F</span>
                 <div class="venue-actions">
                   <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard(\'shanes-burg\', event)">🗺️ 路線</button>
+                  <a href="https://transit.yahoo.co.jp/search/result?from=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98&to=%E6%96%B0%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98" target="_blank" class="btn-action-pill pill-yahoo" onclick="event.stopPropagation()">🚆 Yahoo! 乘換</a>
                   <a href="https://tabelog.com/kanagawa/A1405/A140508/14009641/" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">📖 食べログ</a>
                   <a href="https://maps.google.com/?q=Shane's+Burg+Shin-Yurigaoka" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🗺️ Google 地圖</a>
                 </div>
@@ -1334,6 +1360,66 @@ html_content = '''<!DOCTYPE html>
           </div>
 
           <div class="day-block-body">
+            <!-- Day 2 Tokyo Subway Transit Schedule -->
+            <div class="transit-guide-box">
+              <div class="transit-guide-title">
+                <span>🚇 Day 2 東京地鐵高效率巡航（Yahoo! 乗換案内）</span>
+                <span style="color:#059669;">全日地下鐵 • 零塞車 • 零計程車</span>
+              </div>
+
+              <div class="transit-step-item">
+                <div class="step-time-box">12:15</div>
+                <div class="step-marker-dot start"></div>
+                <div class="step-desc-wrap">
+                  <div class="step-station-name">百合ヶ丘 ➔ 乃木坂 [C05] (六本木之丘)</div>
+                  <div class="step-subline">
+                    <span class="subline-badge">小田急線・千代田線直通</span>
+                    <span>約42分 • ¥429</span>
+                    <span>5號出口徒步6分至次郎壽司</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="transit-step-item">
+                <div class="step-time-box">15:15</div>
+                <div class="step-marker-dot"></div>
+                <div class="step-desc-wrap">
+                  <div class="step-station-name">六本木 [E23] ➔ 赤羽橋 [E21] (東京鐵塔)</div>
+                  <div class="step-subline">
+                    <span class="subline-badge">都営大江戸線 (大門・両国方面)</span>
+                    <span>2站 3分 • ¥178</span>
+                    <span>中之橋口出站徒步5分直達鐵塔</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="transit-step-item">
+                <div class="step-time-box">17:15</div>
+                <div class="step-marker-dot"></div>
+                <div class="step-desc-wrap">
+                  <div class="step-station-name">御成門 [I06] ➔ 大手町 [I09] (四季酒店 VIRTÙ)</div>
+                  <div class="step-subline">
+                    <span class="subline-badge">都営三田線 (西高島平行)</span>
+                    <span>3站 6分 • ¥178</span>
+                    <span>C2b出口地下直通四季酒店39F</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="transit-step-item">
+                <div class="step-time-box">19:35</div>
+                <div class="step-marker-dot end"></div>
+                <div class="step-desc-wrap">
+                  <div class="step-station-name">大手町 [M18] ➔ 新宿三丁目 [M09] (無添蔵壽司)</div>
+                  <div class="step-subline">
+                    <span class="subline-badge">東京Metro丸ノ内線 (荻窪行)</span>
+                    <span>9站 19分 • ¥209</span>
+                    <strong style="color:#10b981;">A7/B2出口直通高野大樓6F！🍣</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <!-- Sukiyabashi Jiro -->
             <div class="venue-card" id="card-jiro" onclick="selectStopLeg('jiro')">
               <div class="card-top-row">
@@ -1342,7 +1428,7 @@ html_content = '''<!DOCTYPE html>
               </div>
               <div class="venue-japanese-name">🍣 すきやばし 次郎 六本木ヒルズ店</div>
               <div class="venue-chinese-subtitle">Sukiyabashi Jiro • 六本木之丘 櫸坂通 3F 江戶前壽司</div>
-              <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">🚆 今日起點：百合ヶ丘駅 (神奈川県) ➔ 小田急線・千代田線直達六本木之丘 (車程約45分)</div>
+              <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">🚆 今日起點：百合ヶ丘駅 ➔ 小田急線・千代田線直達乃木坂駅 (車程約42分，5號出口漫步6分至六本木之丘)</div>
               <p class="venue-details">
                 世界傳奇「壽司之神」小野二郎之子（小野隆大師）親自握製。極致純粹的江戶前板前握壽司，米飯溫度精確，魚生刀工絕倫，是一生難忘的頂級味蕾盛宴。
               </p>
@@ -1353,6 +1439,7 @@ html_content = '''<!DOCTYPE html>
                 <span class="venue-location-text">📍 六本木ヒルズ けやき坂通り 3F</span>
                 <div class="venue-actions">
                   <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard(\'jiro\', event)">🗺️ 路線</button>
+                  <a href="https://transit.yahoo.co.jp/search/result?from=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98&to=%E4%B9%83%E6%9C%A8%E5%9D%82" target="_blank" class="btn-action-pill pill-yahoo" onclick="event.stopPropagation()">🚆 Yahoo! 乘換</a>
                   <a href="https://maps.app.goo.gl/Brh2wvb1fPBVpNn79" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🗺️ Google 地圖</a>
                 </div>
               </div>
@@ -1366,16 +1453,20 @@ html_content = '''<!DOCTYPE html>
               </div>
               <div class="venue-japanese-name">🗼 東京タワー (Tokyo Tower)</div>
               <div class="venue-chinese-subtitle">Main Deck 150m 展望台 ‧ 透明玻璃步道</div>
-              <div class="card-from-leg-pill" style="background:#f5efe6; color:#784528; border-color:#e0d5c3;">
-                🚗 上一站：すきやばし 次郎 ➔ 計程車前往東京鐵塔 (車程約10分)
+              <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">
+                🚇 上一站：すきやばし 次郎 ➔ 都営大江戸線直達赤羽橋駅 (六本木➔赤羽橋 2站3分 ¥178，中之橋口徒步5分)
               </div>
               <p class="venue-details">
-                從六本木搭乘計程車約10分鐘即可抵達。登上 150 米主展望台俯瞰東京全景與台場海灣，走在驚險的透明玻璃地板合影，並參拜東京最高的戀愛神社「タワー大神宮」。
+                從六本木站搭乘都営大江戸線僅 2 站（約3分鐘）直達赤羽橋站，自中之橋口出站漫步 5 分鐘即可仰望壯麗鐵塔！登上 150 米主展望台俯瞰東京全景與台場海灣，走在驚險的透明玻璃地板合影，並參拜東京最高的戀愛神社「タワー大神宮」。
               </p>
+              <div class="venue-highlight-note">
+                <strong>🚇 Yahoo! 乘換指引：</strong>六本木駅 (E23) 搭乘都営大江戸線 (大門・両国方面) ➔ 赤羽橋駅 (E21)，車程 3 分鐘，票價 ¥178。出站抬頭即是東京鐵塔，免除地面塞車與計程車費用！
+              </div>
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 港區芝公園 4-2-8</span>
                 <div class="venue-actions">
                   <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard(\'tokyo-tower\', event)">🗺️ 路線</button>
+                  <a href="https://transit.yahoo.co.jp/search/result?from=%E5%85%AD%E6%9C%AC%E6%9C%A8&to=%E8%B5%A4%E7%BE%BD%E6%A9%8B" target="_blank" class="btn-action-pill pill-yahoo" onclick="event.stopPropagation()">🚆 Yahoo! 乘換</a>
                   <a href="https://www.tokyotower.co.jp/" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🌐 官方網站</a>
                 </div>
               </div>
@@ -1389,19 +1480,21 @@ html_content = '''<!DOCTYPE html>
               </div>
               <div class="venue-japanese-name">🍸 VIRTÙ (フォーシーズンズホテル東京大手町 39F)</div>
               <div class="venue-chinese-subtitle">Four Seasons Hotel Tokyo at Otemachi • 法日融合巴黎沙龍風</div>
-              <div class="card-from-leg-pill" style="background:#f5efe6; color:#784528; border-color:#e0d5c3;">
-                🚗 上一站：東京タワー ➔ 沿日比谷通前往大手町 (車程約15分)
+              <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">
+                🚇 上一站：東京タワー ➔ 都営三田線直達大手町 (御成門駅➔大手町駅僅3站6分 ¥178，C2b出口直通四季酒店)
               </div>
               <p class="venue-details">
-                榮登「亞洲50佳酒吧」！挑高雙層落地窗俯瞰皇居御苑與新宿天際線晚霞。室內兼具1920年代巴黎裝飾藝術與現代摩登氣派，品味獨創的《Smoked Ume Fashioned》調酒。
+                從東京鐵塔穿過芝公園林蔭漫步約 6 分鐘抵達御成門站，搭乘都営三田線僅 3 站（6分鐘）直達大手町！地下道直結 Otemachi One 與東京大手町四季酒店 39 樓。榮登「亞洲50佳酒吧」！挑高雙層落地窗俯瞰皇居御苑與新宿天際線晚霞，品味獨創調酒。
               </p>
               <div class="venue-highlight-note">
+                <strong>🚇 Yahoo! 乘換指引：</strong>御成門駅 (I06) 搭乘都営三田線 (西高島平行) ➔ 大手町駅 (I09)，車程 6 分鐘，票價 ¥178。C2b 出口直結酒店電梯廳，無縫優雅抵達。<br>
                 <strong>👔 服裝要求（Smart Casual）：</strong>男士請著長褲與有領襯衫、皮鞋（勿穿拖鞋、短褲）；女士建議典雅洋裝或精緻便服。
               </div>
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 大手町 1-2-1 酒店 39 樓</span>
                 <div class="venue-actions">
                   <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard(\'virtu\', event)">🗺️ 路線</button>
+                  <a href="https://transit.yahoo.co.jp/search/result?from=%E5%BE%A1%E6%88%90%E9%96%80&to=%E5%A4%A7%E6%89%8B%E7%94%BA" target="_blank" class="btn-action-pill pill-yahoo" onclick="event.stopPropagation()">🚆 Yahoo! 乘換</a>
                   <a href="https://www.fourseasons.com/tokyo-otemachi/dining/lounges/virtu/" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🍸 酒單預覽</a>
                 </div>
               </div>
@@ -1415,14 +1508,14 @@ html_content = '''<!DOCTYPE html>
               </div>
               <div class="venue-japanese-name">🍣 くら寿司 無添蔵 新宿店 (Muten Kura Sushi)</div>
               <div class="venue-chinese-subtitle">藏壽司頂級精緻和食品牌 ‧ 新宿高野大樓 6F (東口徒步1分)</div>
-              <div class="card-from-leg-pill" style="background:#f5efe6; color:#784528; border-color:#e0d5c3;">
-                🚇 上一站：VIRTÙ (大手町) ➔ 前往新宿店 (丸之內線直達約19分 / 計程車約18分)
+              <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">
+                🚇 上一站：VIRTÙ (大手町) ➔ 東京Metro丸之內線直達新宿 (大手町駅➔新宿三丁目駅約19分 ¥209，A7/B2出口直通)
               </div>
               <p class="venue-details">
                 為女友特別挑選藏壽司旗下的頂級高階品牌「無添蔵」！有別於一般迴轉壽司，店內裝潢高雅如隱世料亭，主打職人本格和食、嚴選特級生魚片、現炸天婦羅與特製高湯烏龍麵，同時保留情侶必玩、每吃 5 盤抽一次的「畢庫拉碰 (ビッくらポン)」扭蛋遊戲，精緻度與浪漫趣味兼具！
               </p>
               <div class="venue-highlight-note">
-                <strong>💡 交通資訊：</strong>東京地下鐵丸之內線「大手町駅」直達「新宿三丁目駅」(A7/B2出口直通新宿高野大樓 6F) 或 JR 新宿駅東口徒步1分。<br>
+                <strong>💡 交通資訊（Yahoo! 乘換推薦）：</strong>東京地下鐵丸之內線「大手町駅」(M18) 直達「新宿三丁目駅」(M09，9站19分，¥209)，A7/B2 出口直通新宿高野大樓 6F，或由 JR 新宿駅東口徒步1分即達。<br>
                 <strong>💰 人均預算：</strong>約 ¥2,000 – ¥3,500。<br>
                 <strong>📍 店鋪地址：</strong>東京都新宿区新宿3-26-11 新宿高野ビル6F (電話: 03-6457-7609)
               </div>
@@ -1430,6 +1523,7 @@ html_content = '''<!DOCTYPE html>
                 <span class="venue-location-text">📍 新宿高野ビル 6F</span>
                 <div class="venue-actions">
                   <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard(\'kura-sushi\', event)">🗺️ 路線</button>
+                  <a href="https://transit.yahoo.co.jp/search/result?from=%E5%A4%A7%E6%89%8B%E7%94%BA&to=%E6%96%B0%E5%AE%BF%E4%B8%89%E4%B8%81%E7%9B%AE" target="_blank" class="btn-action-pill pill-yahoo" onclick="event.stopPropagation()">🚆 Yahoo! 乘換</a>
                   <a href="https://shop.kurasushi.co.jp/detail/663" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🌐 官方店鋪資訊</a>
                   <a href="https://maps.google.com/?q=無添蔵+新宿店" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🗺️ Google 導航</a>
                 </div>
@@ -1474,6 +1568,7 @@ html_content = '''<!DOCTYPE html>
                 <span class="venue-location-text">📍 JR舞濱站 轉乘 迪士尼度假區線單軌電車</span>
                 <div class="venue-actions">
                   <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard(\'disneysea\', event)">🗺️ 路線</button>
+                  <a href="https://transit.yahoo.co.jp/search/result?from=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98&to=%E8%88%9E%E6%B5%9C" target="_blank" class="btn-action-pill pill-yahoo" onclick="event.stopPropagation()">🚆 Yahoo! 乘換</a>
                   <a href="https://www.tokyodisneyresort.jp/tc/tds/" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">📱 官方中文指南</a>
                 </div>
               </div>
@@ -1527,7 +1622,7 @@ html_content = '''<!DOCTYPE html>
             <!-- Exact Transit Schedule Card -->
             <div class="transit-guide-box">
               <div class="transit-guide-title">
-                <span>🚆 前往草津溫泉乘車時刻表（依路線2）</span>
+                <span>🚆 前往草津溫泉乘車時刻表（Yahoo! 乗換案内 路線2）</span>
                 <span style="color:#059669;">全程 3h 58m • ¥6,353 (198.8 km)</span>
               </div>
 
@@ -1616,6 +1711,7 @@ html_content = '''<!DOCTYPE html>
                 <span class="venue-location-text">📍 群馬縣草津町 465-4</span>
                 <div class="venue-actions">
                   <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard('sakurai', event)">🗺️ 路線</button>
+                  <a href="https://transit.yahoo.co.jp/search/result?from=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98&to=%E8%8D%89%E6%B4%A5%E6%B8%A9%E6%B3%89" target="_blank" class="btn-action-pill pill-yahoo" onclick="event.stopPropagation()">🚆 Yahoo! 乘換</a>
                   <a href="https://www.hotel-sakurai.co.jp/" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">♨️ 旅館官網</a>
                 </div>
               </div>
@@ -1726,7 +1822,7 @@ html_content = '''<!DOCTYPE html>
             <!-- Exact Return Transit Schedule Card -->
             <div class="transit-guide-box">
               <div class="transit-guide-title">
-                <span>🚅 回程交通：草津溫泉 → 外苑前 (青山)</span>
+                <span>🚅 回程交通：草津溫泉 → 外苑前 (青山)（Yahoo! 乗換案内 最佳路線）</span>
                 <span style="color:#059669;">13:35 抵達 • 完美接駁 14:30 牛排！</span>
               </div>
 
@@ -1823,6 +1919,7 @@ html_content = '''<!DOCTYPE html>
                 <span class="venue-location-text">📍 外苑前站 4a 出口直達 THE ARGYLE AOYAMA 1F/2F</span>
                 <div class="venue-actions">
                   <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard(\'wolfgang\', event)">🗺️ 路線</button>
+                  <a href="https://transit.yahoo.co.jp/search/result?from=%E8%8D%89%E6%B4%A5%E6%B8%A9%E6%B3%89&to=%E5%A4%96%E8%8B%91%E5%89%8D" target="_blank" class="btn-action-pill pill-yahoo" onclick="event.stopPropagation()">🚆 Yahoo! 乘換</a>
                   <a href="https://wolfgangssteakhouse.jp/" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🥩 官方網站</a>
                   <a href="https://maps.google.com/?q=Wolfgang's+Steakhouse+Signature+Aoyama" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🗺️ Google 地圖</a>
                 </div>
@@ -1837,16 +1934,20 @@ html_content = '''<!DOCTYPE html>
               </div>
               <div class="venue-japanese-name">🌆 渋谷スクランブル交差点 & MIYASHITA PARK</div>
               <div class="venue-chinese-subtitle">Shibuya • 宮下公園屋頂草坪 ‧ 潮流購物 ‧ SHIBUYA SKY 夜景</div>
-              <div class="card-from-leg-pill" style="background:#f5efe6; color:#784528; border-color:#e0d5c3;">
-                🚇 上一站：ウルフギャング (青山) ➔ 沿青山通前往澀谷十字路口
+              <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">
+                🚇 上一站：ウルフギャング (青山) ➔ 東京Metro銀座線直達澀谷 (外苑前駅➔澀谷駅僅2站4分 ¥178，宮下公園/八公口出站)
               </div>
               <p class="venue-details">
-                走進世界最著名的澀谷十字路口感受東京脈搏；逛逛極具設計感的 MIYASHITA PARK（宮下公園），在空中綠地坐看山手線穿梭；亦可預訂 SHIBUYA SKY 俯瞰無死角璀璨夜景。
+                從餐廳漫步 1 分鐘由外苑前站搭乘東京Metro銀座線，僅需 4 分鐘直達澀谷站！走進世界最著名的澀谷十字路口感受東京脈搏；逛逛極具設計感的 MIYASHITA PARK（宮下公園），在空中綠地坐看山手線穿梭；亦可預訂 SHIBUYA SKY 俯瞰無死角璀璨夜景。
               </p>
+              <div class="venue-highlight-note">
+                <strong>🚇 Yahoo! 乘換指引：</strong>外苑前駅 (G03) 搭乘東京地下鐵銀座線 (渋谷行) ➔ 渋谷駅 (G01)，車程 4 分鐘，票價 ¥178。八公口或宮下公園出口直達核心商圈。
+              </div>
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 澀谷車站周邊</span>
                 <div class="venue-actions">
                   <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard(\'shibuya\', event)">🗺️ 路線</button>
+                  <a href="https://transit.yahoo.co.jp/search/result?from=%E5%A4%96%E8%8B%91%E5%89%8D&to=%E6%B8%8B%E8%B0%B7" target="_blank" class="btn-action-pill pill-yahoo" onclick="event.stopPropagation()">🚆 Yahoo! 乘換</a>
                   <a href="https://maps.google.com/?q=Shibuya+Crossing" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🗺️ Google 地圖</a>
                 </div>
               </div>
@@ -1860,19 +1961,21 @@ html_content = '''<!DOCTYPE html>
               </div>
               <div class="venue-japanese-name">🎷 ニューヨーク バー / New York Bar (パーク ハイアット 東京 52F)</div>
               <div class="venue-chinese-subtitle">Park Hyatt Tokyo 52F • 《愛情，不用翻譯》傳奇爵士高空酒吧</div>
-              <div class="card-from-leg-pill" style="background:#f5efe6; color:#784528; border-color:#e0d5c3;">
-                🚕 上一站：渋谷スクランブル交差点 ➔ 計程車直達西新宿柏悅酒店 (約12分)
+              <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">
+                🚆 上一站：渋谷スクランブル交差点 ➔ JR山手線直達新宿 (渋谷駅➔新宿駅僅3站7分 ¥178，南口地下通道漫步至柏悅酒店)
               </div>
               <p class="venue-details">
-                歷經全面重金改裝，於2025年底奢華重開！坐落於西新宿柏悅酒店頂層 52 樓，四面頂級落地窗倒映著無限延伸的東京璀璨燈海。現場國際爵士樂隊演奏，舉起馬丁尼對飲，為這趟旅程畫下最完美的句點。
+                從澀谷站搭乘 JR 山手線僅 3 站（約7分鐘）極速直達新宿站！由南口漫步西新宿摩天大樓地下大道抵達新宿公園塔。歷經全面重金改裝，於2025年底奢華重開！坐落於西新宿柏悅酒店頂層 52 樓，四面頂級落地窗倒映著無限延伸的東京璀璨燈海。現場國際爵士樂隊演奏，舉起馬丁尼對飲，為這趟旅程畫下最完美的句點。
               </p>
               <div class="venue-highlight-note">
+                <strong>🚆 Yahoo! 乘換指引：</strong>渋谷駅搭乘 JR 山手線外環 (新宿・池袋方面) ➔ 新宿駅 (3站7分，¥178)。南口/甲州街道出站沿林蔭地下連通道漫步至新宿公園塔52樓，亦可於新宿西口搭乘新宿WE巴士直達，或由代々木轉乘都営大江戸線至都庁前駅A4出口徒步6分。<br>
                 <strong>👔 服裝提醒：</strong>請著 Smart Casual（男士請勿穿著拖鞋或無領背心）。
               </div>
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 新宿區西新宿 3-7-1-2 新宿公園塔 52 樓</span>
                 <div class="venue-actions">
                   <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard(\'new-york-bar\', event)">🗺️ 路線</button>
+                  <a href="https://transit.yahoo.co.jp/search/result?from=%E6%B8%8B%E8%B0%B7&to=%E6%96%B0%E5%AE%BF" target="_blank" class="btn-action-pill pill-yahoo" onclick="event.stopPropagation()">🚆 Yahoo! 乘換</a>
                   <a href="https://maps.google.com/?q=Park+Hyatt+Tokyo+New+York+Bar" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🗺️ Google 地圖</a>
                 </div>
               </div>
@@ -1896,7 +1999,7 @@ html_content = '''<!DOCTYPE html>
   
   <script>
     // EXACT POINT-TO-POINT LEGS (From Last Stop to This Stop)
-    // Only show the path from last stop when clicking a stop!
+    // 100% Metro & JR Transit, Zero Taxi, Tracing Yahoo! Transit Paths!
     const legDefinitions = {
       'shanes-burg': {
         id: 'shanes-burg',
@@ -1907,13 +2010,15 @@ html_content = '''<!DOCTYPE html>
         lat: 35.6033,
         lng: 139.5080,
         color: "#e07a7e",
-        lastStopName: "百合ヶ丘駅 (神奈川県)",
-        vehicle: "🚗",
+        lastStopName: "百合ヶ丘駅 (小田急小田原線)",
+        vehicle: "🚆",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98&to=%E6%96%B0%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98",
         routeCoords: [
-          [35.6092, 139.5173], // Origin: 百合ヶ丘駅 (神奈川県川崎市)
-          [35.6065, 139.5135], // Odakyu Line / Setagaya-dori
-          [35.6045, 139.5100], // Shinyurigaoka Station North
-          [35.6033, 139.5080]  // Current Stop: シェーンズバーグ 新百合ヶ丘店 (Elmi Road 5F)
+          [35.6092, 139.5173], // Origin: 百合ヶ丘駅 (小田急小田原線)
+          [35.6068, 139.5132], // 小田急線沿線軌道
+          [35.6048, 139.5100], // 新百合ヶ丘駅北側
+          [35.6038, 139.5085], // 新百合ヶ丘駅 (南口直通)
+          [35.6033, 139.5080]  // Current Stop: 新百合ヶ丘エルミロード 5F
         ]
       },
       'jiro': {
@@ -1927,17 +2032,20 @@ html_content = '''<!DOCTYPE html>
         color: "#9b51e0",
         lastStopName: "百合ヶ丘駅 (神奈川県)",
         vehicle: "🚆",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98&to=%E4%B9%83%E6%9C%A8%E5%9D%82",
         routeCoords: [
-          [35.6092, 139.5173], // Origin: 百合ヶ丘駅 (神奈川県)
-          [35.6175, 139.5520], // Mukogaoka-Yuen
-          [35.6200, 139.5700], // Noborito / Tama River
-          [35.6400, 139.6000], // Seijo-Gakuenmae
-          [35.6540, 139.6450], // Kyodo
-          [35.6615, 139.6670], // Shimokitazawa
-          [35.6690, 139.6795], // Yoyogi-Uehara (Transfer to Chiyoda Line)
-          [35.6675, 139.7020], // Harajuku / Meiji-Jingumae
-          [35.6652, 139.7123], // Omotesando
-          [35.6665, 139.7265], // Nogizaka Station
+          [35.6092, 139.5173], // Origin: 百合ヶ丘駅 (小田急小田原線)
+          [35.6175, 139.5520], // 向ヶ丘遊園駅
+          [35.6200, 139.5700], // 登戸駅 (多摩川)
+          [35.6400, 139.6000], // 成城学園前駅
+          [35.6540, 139.6450], // 経堂駅
+          [35.6615, 139.6670], // 下北沢駅
+          [35.6690, 139.6795], // 代々木上原駅 (直通/換乘千代田線)
+          [35.6685, 139.6890], // 代々木公園駅
+          [35.6675, 139.7020], // 明治神宮前駅
+          [35.6652, 139.7123], // 表参道駅
+          [35.6665, 139.7265], // 乃木坂駅 (東京メトロ千代田線 C05)
+          [35.6610, 139.7285], // 乃木坂 5號出口 往六本木之丘
           [35.6586978, 139.7291446] // Current Stop: すきやばし 次郎 六本木ヒルズ店
         ]
       },
@@ -1951,13 +2059,16 @@ html_content = '''<!DOCTYPE html>
         lng: 139.7454329,
         color: "#9b51e0",
         lastStopName: "すきやばし 次郎 六本木ヒルズ店",
-        vehicle: "🚕",
+        vehicle: "🚇",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E5%85%AD%E6%9C%AC%E6%9C%A8&to=%E8%B5%A4%E7%BE%BD%E6%A9%8B",
         routeCoords: [
-          [35.6586978, 139.7291446], // Last Stop: Jiro
-          [35.6602, 139.7298],       // Roppongi-dori
-          [35.6628, 139.7340],       // Roppongi Crossing
-          [35.6605, 139.7390],       // Roppongi 1-chome
-          [35.6585, 139.7425],       // Gaien-Higashi-dori
+          [35.6586978, 139.7291446], // Last Stop: Jiro Roppongi Hills
+          [35.6628, 139.7314],       // 六本木駅 (都営大江戸線 E23)
+          [35.6590, 139.7340],       // 大江戸線地下隧道 (六本木➔麻布十番)
+          [35.6548, 139.7371],       // 麻布十番駅 (E22)
+          [35.6540, 139.7410],       // 大江戸線轉向
+          [35.6550, 139.7437],       // 赤羽橋駅 (E21 - 中之橋口)
+          [35.6565, 139.7445],       // 櫻田通 / 赤羽橋交叉口
           [35.6585805, 139.7454329]  // Current Stop: Tokyo Tower
         ]
       },
@@ -1971,14 +2082,17 @@ html_content = '''<!DOCTYPE html>
         lng: 139.7645,
         color: "#9b51e0",
         lastStopName: "東京タワー",
-        vehicle: "🚕",
+        vehicle: "🚇",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E5%BE%A1%E6%88%90%E9%96%80&to=%E5%A4%A7%E6%89%8B%E7%94%BA",
         routeCoords: [
           [35.6585805, 139.7454329], // Last Stop: Tokyo Tower
-          [35.6620, 139.7485],       // Shiba Park / Onarimon
-          [35.6700, 139.7540],       // Toranomon
-          [35.6760, 139.7580],       // Hibiya Park / Imperial Palace
-          [35.6815, 139.7620],       // Marunouchi
-          [35.6872, 139.7645]        // Current Stop: VIRTÙ (Otemachi)
+          [35.6598, 139.7485],       // 芝公園漫步
+          [35.6613, 139.7515],       // 御成門駅 (都営三田線 I06 A5出口)
+          [35.6698, 139.7558],       // 内幸町駅 (I07)
+          [35.6755, 139.7600],       // 日比谷駅 (I08)
+          [35.6820, 139.7628],       // 二重橋前・大手町南地下鐵
+          [35.6865, 139.7640],       // 大手町駅 (I09 - C2b出口地下直通)
+          [35.6872, 139.7645]        // Current Stop: VIRTÙ (Otemachi One 39F)
         ]
       },
       'kura-sushi': {
@@ -1992,13 +2106,20 @@ html_content = '''<!DOCTYPE html>
         color: "#9b51e0",
         lastStopName: "VIRTÙ (大手町)",
         vehicle: "🚇",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E5%A4%A7%E6%89%8B%E7%94%BA&to=%E6%96%B0%E5%AE%BF%E4%B8%89%E4%B8%81%E7%9B%AE",
         routeCoords: [
-          [35.6872, 139.7645], // Last Stop: VIRTÙ (Otemachi)
-          [35.6908, 139.7540], // Takebashi / Kudanshita
-          [35.6875, 139.7300], // Yotsuya (Shinjuku-dori)
-          [35.6885, 139.7125], // Shinjuku-Gyoenmae
-          [35.6912, 139.7065], // Shinjuku 3-chome
-          [35.692927, 139.705178] // Current Stop: 無添蔵 新宿店 (Takano Building 6F)
+          [35.6872, 139.7645], // Last Stop: VIRTÙ (大手町)
+          [35.6865, 139.7640], // 大手町駅 (東京メトロ丸ノ内線 M18)
+          [35.6812, 139.7671], // 東京駅 (M17)
+          [35.6720, 139.7640], // 銀座駅 (M16)
+          [35.6740, 139.7510], // 霞ケ関駅 (M15)
+          [35.6745, 139.7450], // 国会議事堂前駅 (M14)
+          [35.6770, 139.7370], // 赤坂見附駅 (M13)
+          [35.6855, 139.7300], // 四ツ谷駅 (M12)
+          [35.6878, 139.7205], // 四谷三丁目駅 (M11)
+          [35.6885, 139.7125], // 新宿御苑前駅 (M10)
+          [35.6912, 139.7065], // 新宿三丁目駅 (M09 - A7/B2出口地下直結)
+          [35.692927, 139.705178] // Current Stop: 無添蔵 新宿店 (新宿高野大樓 6F)
         ]
       },
       'disneysea': {
@@ -2012,19 +2133,20 @@ html_content = '''<!DOCTYPE html>
         color: "#2f80ed",
         lastStopName: "百合ヶ丘駅 (神奈川県)",
         vehicle: "🚆",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98&to=%E8%88%9E%E6%B5%9C",
         routeCoords: [
-          [35.6092, 139.5173], // Origin: 百合ヶ丘駅 (神奈川県)
-          [35.6200, 139.5700], // Noborito
-          [35.6615, 139.6670], // Shimokitazawa
-          [35.6690, 139.6795], // Yoyogi-Uehara
-          [35.6900, 139.7000], // Shinjuku Station
-          [35.6850, 139.7400], // Yotsuya
-          [35.6815, 139.7670], // Tokyo Station (Transfer to JR Keiyo Line)
-          [35.6550, 139.8150], // Shiomi
-          [35.6450, 139.8300], // Shin-Kiba
-          [35.6380, 139.8600], // Kasai-Rinkai-Koen
-          [35.6358, 139.8835], // Maihama Station
-          [35.6320, 139.8845], // Disney Resort Gateway
+          [35.6092, 139.5173], // Origin: 百合ヶ丘駅 (小田急小田原線)
+          [35.6200, 139.5700], // 登戸駅
+          [35.6615, 139.6670], // 下北沢駅
+          [35.6690, 139.6795], // 代々木上原駅
+          [35.6900, 139.7000], // 新宿駅 (換乘 JR 中央線快速)
+          [35.6850, 139.7400], // 四ツ谷駅
+          [35.6815, 139.7670], // 東京駅 (換乘 JR 京葉線快速)
+          [35.6550, 139.8150], // 潮見駅 (JR京葉線)
+          [35.6450, 139.8300], // 新木場駅 (JR京葉線)
+          [35.6380, 139.8600], // 葛西臨海公園駅 (JR京葉線)
+          [35.6358, 139.8835], // 舞浜駅 (JR京葉線南口)
+          [35.6320, 139.8845], // リゾートゲートウェイ・ステーション (迪士尼單軌)
           [35.6267, 139.8851]  // Current Stop: 東京ディズニーシー 入口
         ]
       },
@@ -2057,20 +2179,21 @@ html_content = '''<!DOCTYPE html>
         color: "#3b6953",
         lastStopName: "百合ヶ丘駅 (神奈川県)",
         vehicle: "🚆",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98&to=%E8%8D%89%E6%B4%A5%E6%B8%A9%E6%B3%89",
         routeCoords: [
-          [35.6092, 139.5173], // Origin: 百合ヶ丘駅 (神奈川県) 08:55發
-          [35.6250, 139.5750], // Odakyu Line
-          [35.6900, 139.7005], // Shinjuku Station
-          [35.7775, 139.7215], // Akabane Station
-          [35.9065, 139.6240], // Omiya
-          [36.1400, 139.3800], // Kumagaya
-          [36.3220, 139.0130], // Takasaki
-          [36.4950, 139.0030], // Shibukawa
-          [36.5600, 138.8500], // Nakanojo
-          [36.5600, 138.6500], // Naganoharakusatsuguchi Station
-          [36.5750, 138.6300], // Route 292 Highway
-          [36.5950, 138.6150], // Mountain Ascent
-          [36.6180, 138.6010], // Kusatsu Bus Terminal
+          [35.6092, 139.5173], // Origin: 百合ヶ丘駅 (08:55發)
+          [35.6250, 139.5750], // 小田急線
+          [35.6900, 139.7005], // 新宿駅 (09:39到/09:51發, 換乘JR埼京線)
+          [35.7775, 139.7215], // 赤羽駅 (10:04到/10:10發, 換乘JR特急草津・四万1號)
+          [35.9065, 139.6240], // 大宮駅 (JR高崎線)
+          [36.1400, 139.3800], // 熊谷駅
+          [36.3220, 139.0130], // 高崎駅 (JR上越線/吾妻線)
+          [36.4950, 139.0030], // 渋川駅
+          [36.5600, 138.8500], // 中之条駅
+          [36.5600, 138.6500], // 長野原草津口駅 (12:18到/12:31發, 換乘JR巴士關東)
+          [36.5750, 138.6300], // 國道292號
+          [36.5950, 138.6150], // 草津山道
+          [36.6180, 138.6010], // 草津温泉バスターミナル (12:53抵達)
           [36.6212, 138.5996]  // Current Stop: Hotel Sakurai
         ]
       },
@@ -2138,15 +2261,18 @@ html_content = '''<!DOCTYPE html>
         color: "#f59e0b",
         lastStopName: "草津溫泉 (退房) ➔ 新幹線返京",
         vehicle: "🚅",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E8%8D%89%E6%B4%A5%E6%B8%A9%E6%B3%89&to=%E5%A4%96%E8%8B%91%E5%89%8D",
         routeCoords: [
-          [36.6208, 138.5960], // Last Stop: Kusatsu Onsen
-          [36.5600, 138.6500], // Naganoharakusatsuguchi
-          [36.3220, 139.0130], // Takasaki Station
-          [35.9065, 139.6240], // Omiya (Shinkansen)
-          [35.6812, 139.7671], // Tokyo Station
-          [35.6660, 139.7580], // Shimbashi
-          [35.6720, 139.7280], // Akasaka-mitsuke (Ginza Line)
-          [35.6698, 139.7180]  // Current Stop: Gaienmae Exit 4a (Wolfgang's)
+          [36.6208, 138.5960], // Last Stop: Kusatsu Onsen (09:20發 JR巴士)
+          [36.5600, 138.6500], // 長野原草津口駅 (09:48到/10:08發 JR吾妻線)
+          [36.3220, 139.0130], // 高崎駅 (11:35到/12:04發 JR新幹線たにがわ410號)
+          [35.9065, 139.6240], // 大宮駅 (新幹線)
+          [35.6812, 139.7671], // 東京駅 (13:00到/13:13發 JR山手線外環)
+          [35.6660, 139.7580], // 新橋駅 (13:17到/13:26發 東京Metro銀座線)
+          [35.6695, 139.7420], // 虎ノ門駅 (銀座線)
+          [35.6720, 139.7280], // 赤坂見附駅 (銀座線)
+          [35.6705, 139.7175], // 外苑前駅 (G03 - 4a出口)
+          [35.6698, 139.7180]  // Current Stop: Gaienmae Exit 4a (THE ARGYLE AOYAMA / Wolfgang's)
         ]
       },
       'shibuya': {
@@ -2160,11 +2286,13 @@ html_content = '''<!DOCTYPE html>
         color: "#f59e0b",
         lastStopName: "ウルフギャング・ステーキハウス (青山)",
         vehicle: "🚇",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E5%A4%96%E8%8B%91%E5%89%8D&to=%E6%B8%8B%E8%B0%B7",
         routeCoords: [
           [35.6698, 139.7180], // Last Stop: Wolfgang's Aoyama
-          [35.6660, 139.7100], // Omotesando
-          [35.6610, 139.7040], // Miyamasuzaka
-          [35.6595, 139.7005]  // Current Stop: Shibuya Crossing
+          [35.6705, 139.7175], // 外苑前駅 (東京メトロ銀座線 G03)
+          [35.6652, 139.7123], // 表参道駅 (G02)
+          [35.6588, 139.7015], // 渋谷駅 (G01 - 銀座線月台)
+          [35.6595, 139.7005]  // Current Stop: Shibuya Crossing & MIYASHITA PARK
         ]
       },
       'new-york-bar': {
@@ -2177,11 +2305,16 @@ html_content = '''<!DOCTYPE html>
         lng: 139.6910,
         color: "#f59e0b",
         lastStopName: "渋谷スクランブル交差点 & MIYASHITA PARK",
-        vehicle: "🚕",
+        vehicle: "🚆",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E6%B8%8B%E8%B0%B7&to=%E6%96%B0%E5%AE%BF",
         routeCoords: [
-          [35.6595, 139.7005], // Last Stop: Shibuya
-          [35.6700, 139.7020], // Harajuku / Meiji-dori
-          [35.6820, 139.6980], // Koshu Kaido
+          [35.6595, 139.7005], // Last Stop: Shibuya Crossing
+          [35.6585, 139.7013], // JR 渋谷駅 (JR山手線外回り月台)
+          [35.6702, 139.7027], // 原宿駅 (JR山手線)
+          [35.6830, 139.7020], // 代々木駅 (JR山手線)
+          [35.6896, 139.7006], // 新宿駅 (JR山手線 南口/甲州街道)
+          [35.6875, 139.6960], // 西新宿地下道 / 甲州街道步道
+          [35.6860, 139.6925], // 新宿公園塔 (Shinjuku Park Tower 1F)
           [35.6856, 139.6910]  // Current Stop: Park Hyatt Tokyo (New York Bar 52F)
         ]
       }
@@ -2269,10 +2402,11 @@ html_content = '''<!DOCTYPE html>
           <div class="popup-title">${leg.title}</div>
           <div class="popup-sub">${leg.sub}</div>
           <div style="font-size:0.75rem; color:#0b784a; font-weight:700; margin-bottom:6px;">
-            🚗 上一站：${leg.lastStopName}
+            ${leg.vehicle || '🚇'} 上一站：${leg.lastStopName}
           </div>
           <div class="popup-button-row">
             <button onclick="viewCardDetails('${spotId}')" class="popup-btn btn-detail">詳細行程</button>
+            ${leg.yahooUrl ? `<a href="${leg.yahooUrl}" target="_blank" class="popup-btn btn-yahoo-popup" onclick="event.stopPropagation()">🚆 Yahoo! 乘換</a>` : ''}
             <a href="https://maps.google.com/?q=${encodeURIComponent(leg.title)}" target="_blank" class="popup-btn btn-gmaps">Google 導航</a>
           </div>
         </div>
@@ -2398,7 +2532,7 @@ html_content = '''<!DOCTYPE html>
       activeLegLayers.push(originMarker);
 
       // 4. Animate Vehicle Moving specifically along THIS leg
-      animateVehicleOnLeg(leg.routeCoords, leg.vehicle || '🚗');
+      animateVehicleOnLeg(leg.routeCoords, leg.vehicle || '🚇');
 
       // 5. Fit map camera bounds to frame ONLY this leg!
       const legBounds = L.latLngBounds(leg.routeCoords);
@@ -2420,10 +2554,19 @@ html_content = '''<!DOCTYPE html>
         <span style="color:#a12b48; margin: 0 4px;">➔</span> 
         <span style="color:#0f172a; font-weight:900;">${leg.title}</span>
       `;
-      document.getElementById('leg-subtitle-display').textContent = `交通動態行駛中：僅顯示本區間直達路線 (${leg.vehicle})`;
-      document.getElementById('btn-replay-leg').style.display = 'inline-block';
+      document.getElementById('leg-subtitle-display').textContent = `大眾運輸直達路線 (${leg.vehicle || '🚇'}) ‧ Yahoo! 乘換案内推薦`;
+      document.getElementById('btn-replay-leg').style.display = 'inline-flex';
       const btnViewCard = document.getElementById('btn-view-card-banner');
-      if (btnViewCard) btnViewCard.style.display = 'inline-block';
+      if (btnViewCard) btnViewCard.style.display = 'inline-flex';
+      const btnYahooBanner = document.getElementById('btn-yahoo-banner');
+      if (btnYahooBanner) {
+        if (leg.yahooUrl) {
+          btnYahooBanner.href = leg.yahooUrl;
+          btnYahooBanner.style.display = 'inline-flex';
+        } else {
+          btnYahooBanner.style.display = 'none';
+        }
+      }
 
       // 8. Highlight Card in Drawer and ensure Accordion is expanded
       document.querySelectorAll('.venue-card').forEach(c => c.classList.remove('active-selected-card'));
@@ -2505,10 +2648,12 @@ html_content = '''<!DOCTYPE html>
       map.fitBounds(group.getBounds().pad(0.12));
 
       document.getElementById('leg-title-display').textContent = '點擊任一景點：僅顯示從上一站抵達此處的路線';
-      document.getElementById('leg-subtitle-display').textContent = '點選卡片查看即時區間交通動態 🚗';
+      document.getElementById('leg-subtitle-display').textContent = '點選卡片查看即時區間交通動態 🚇';
       document.getElementById('btn-replay-leg').style.display = 'none';
       const btnViewCard = document.getElementById('btn-view-card-banner');
       if (btnViewCard) btnViewCard.style.display = 'none';
+      const btnYahooBanner = document.getElementById('btn-yahoo-banner');
+      if (btnYahooBanner) btnYahooBanner.style.display = 'none';
       document.querySelectorAll('.venue-card').forEach(c => c.classList.remove('active-selected-card'));
     }
 
@@ -2579,10 +2724,12 @@ html_content = '''<!DOCTYPE html>
       document.getElementById('leg-title-display').innerHTML = `
         <span style="color:#0f172a; font-weight:800;">📅 第 ${day} 天景點已展開</span>
       `;
-      document.getElementById('leg-subtitle-display').textContent = '請點選地圖圖釘或行程卡片，即刻繪製從「上一站」直達此處的專屬路線 🚗';
+      document.getElementById('leg-subtitle-display').textContent = '請點選地圖圖釘或行程卡片，即刻繪製從「上一站」直達此處的專屬路線 🚇';
       document.getElementById('btn-replay-leg').style.display = 'none';
       const btnViewCard = document.getElementById('btn-view-card-banner');
       if (btnViewCard) btnViewCard.style.display = 'none';
+      const btnYahooBanner = document.getElementById('btn-yahoo-banner');
+      if (btnYahooBanner) btnYahooBanner.style.display = 'none';
     }
 
     // ACCORDION TOGGLES
