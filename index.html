@@ -901,6 +901,147 @@
       font-weight: 700;
     }
 
+    /* Dual-Plan Nightcap Card & Selector */
+    .nightcap-card {
+      border: 1.5px solid #cbd5e1;
+      position: relative;
+    }
+    .nightcap-toggle-bar {
+      display: flex;
+      gap: 8px;
+      margin: 12px 0 14px 0;
+      background: #f1f5f9;
+      padding: 6px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+    }
+    .nightcap-tab-btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 6px;
+      border-radius: 9px;
+      border: 1.5px solid transparent;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      text-align: center;
+      gap: 2px;
+    }
+    .nightcap-tab-btn .tab-icon {
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+    .nightcap-tab-btn .tab-title {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #475569;
+    }
+    .nightcap-tab-btn .tab-badge {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: #64748b;
+    }
+    .nightcap-tab-btn.active#btn-plan-sg {
+      background: #ffffff;
+      border-color: #d97706;
+      box-shadow: 0 2px 8px rgba(217, 119, 6, 0.18);
+    }
+    .nightcap-tab-btn.active#btn-plan-sg .tab-title {
+      color: #b45309;
+    }
+    .nightcap-tab-btn.active#btn-plan-sg .tab-badge {
+      color: #d97706;
+      font-weight: 700;
+    }
+    .nightcap-tab-btn.active#btn-plan-wh {
+      background: #ffffff;
+      border-color: #059669;
+      box-shadow: 0 2px 8px rgba(5, 150, 105, 0.18);
+    }
+    .nightcap-tab-btn.active#btn-plan-wh .tab-title {
+      color: #047857;
+    }
+    .nightcap-tab-btn.active#btn-plan-wh .tab-badge {
+      color: #059669;
+      font-weight: 700;
+    }
+    .nightcap-compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    @media (max-width: 600px) {
+      .nightcap-compare-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .compare-col {
+      border: 1.5px solid #e2e8f0;
+      background: #f8fafc;
+      border-radius: 10px;
+      padding: 10px 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 0.76rem;
+      line-height: 1.5;
+    }
+    .compare-col:hover {
+      border-color: #cbd5e1;
+      transform: translateY(-1px);
+    }
+    .compare-col.active-col.col-sg {
+      border: 2px solid #d97706;
+      background: #fffbeb;
+      box-shadow: 0 2px 8px rgba(217, 119, 6, 0.12);
+    }
+    .compare-col.active-col.col-wh {
+      border: 2px solid #059669;
+      background: #ecfdf5;
+      box-shadow: 0 2px 8px rgba(5, 150, 105, 0.12);
+    }
+    .compare-col .col-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .compare-col .col-emoji {
+      font-size: 1.35rem;
+      line-height: 1;
+    }
+    .compare-col .col-name {
+      font-weight: 800;
+      font-size: 0.86rem;
+      color: #0f172a;
+    }
+    .compare-col .col-sub {
+      font-size: 0.7rem;
+      color: #64748b;
+    }
+    .compare-col .col-prop-row {
+      margin-bottom: 5px;
+      color: #334155;
+    }
+    .compare-col .col-prop-row strong {
+      color: #0f172a;
+    }
+    .plan-badge-pill {
+      font-size: 0.70rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      background: #fef3c7;
+      color: #b45309;
+      border: 1px solid #fde68a;
+      margin-left: auto;
+    }
+
     /* Map Elements */
     .map-pin-badge {
       width: 34px;
@@ -1449,8 +1590,8 @@
             <div class="day-title-wrap">
               <span class="day-badge-tag badge-d2">Day 2</span>
               <div class="day-title-text">
-                <h3>9月26日 (星期六) • 壽司之神、鐵塔與高空酒吧</h3>
-                <span>六本木板前 ‧ 浪漫鐵塔 ‧ 亞洲50最佳酒吧</span>
+                <h3>9月26日 (星期六) • 壽司之神、鐵塔、高空酒吧與深夜微醺</h3>
+                <span>六本木板前 ‧ 浪漫鐵塔 ‧ 50佳酒吧 ‧ 無添蔵壽司 ‧ 續攤調酒/精釀</span>
               </div>
             </div>
             <div class="day-accordion-control">
@@ -1508,13 +1649,29 @@
 
               <div class="transit-step-item">
                 <div class="step-time-box">19:35</div>
-                <div class="step-marker-dot end"></div>
+                <div class="step-marker-dot"></div>
                 <div class="step-desc-wrap">
                   <div class="step-station-name">大手町 [M18] ➔ 新宿三丁目 [M09] (無添蔵壽司)</div>
                   <div class="step-subline">
                     <span class="subline-badge">東京Metro丸ノ内線 (荻窪行)</span>
                     <span>9站 19分 • ¥209</span>
                     <strong style="color:#10b981;">A7/B2出口直通高野大樓6F！🍣</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="transit-step-item">
+                <div class="step-time-box">21:45</div>
+                <div class="step-marker-dot end"></div>
+                <div class="step-desc-wrap">
+                  <div class="step-station-name">無添蔵 ➔ 續攤微醺（雙方案自由選）</div>
+                  <div class="step-subline">
+                    <span class="subline-badge" style="background:#fef3c7; color:#92400e;">🍸 方案 A (The SG Club)</span>
+                    <span>新宿三丁目 [F13] ➔ 渋谷 [F16] (副都心線 2站5分 ¥178 徒步7分)</span>
+                  </div>
+                  <div class="step-subline" style="margin-top:2px;">
+                    <span class="subline-badge" style="background:#d1fae5; color:#065f46;">🍺 方案 B (Watering Hole)</span>
+                    <span>出高野大樓沿明治通り往南漫步約 8分直達 (代々木駅東口旁)</span>
                   </div>
                 </div>
               </div>
@@ -1626,6 +1783,114 @@
                   <a href="https://transit.yahoo.co.jp/search/result?from=%E5%A4%A7%E6%89%8B%E7%94%BA&to=%E6%96%B0%E5%AE%BF%E4%B8%89%E4%B8%81%E7%9B%AE" target="_blank" class="btn-action-pill pill-yahoo" onclick="event.stopPropagation()">🚆 Yahoo! 乘換</a>
                   <a href="https://shop.kurasushi.co.jp/detail/663" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🌐 官方店鋪資訊</a>
                   <a href="https://maps.google.com/?q=無添蔵+新宿店" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🗺️ Google 導航</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Day 2 Nightcap Dual-Plan Choice: The SG Club vs Watering Hole -->
+            <div class="venue-card nightcap-card" id="card-day2-nightcap" onclick="selectStopLeg(currentNightcapChoice === 'wh' ? 'watering-hole' : 'sg-club')">
+              <div class="card-top-row">
+                <span class="card-time-pill">⏰ 21:45 – 23:15 (雙方案自由選)</span>
+                <span class="card-status-pill pill-sightseeing">🍸 微醺二續攤 ‧ 現場隨選</span>
+              </div>
+              <div class="venue-japanese-name">
+                <span>🥂 晚餐後續攤微醺方案</span>
+                <span class="plan-badge-pill" id="current-plan-badge">方案 A：The SG Club</span>
+              </div>
+              <div class="venue-chinese-subtitle">享受完無添蔵握壽司與扭蛋後，為浪漫夜晚精緻收尾！兩種微醺氛圍任選：</div>
+
+              <!-- Selector Tab Bar -->
+              <div class="nightcap-toggle-bar" onclick="event.stopPropagation()">
+                <button type="button" class="nightcap-tab-btn active" id="btn-plan-sg" onclick="switchNightcapPlan('sg', event, true)">
+                  <span class="tab-icon">🍸</span>
+                  <span class="tab-title">方案 A：The SG Club (渋谷)</span>
+                  <span class="tab-badge">世界50大酒吧 #14 ‧ 和風調酒</span>
+                </button>
+                <button type="button" class="nightcap-tab-btn" id="btn-plan-wh" onclick="switchNightcapPlan('wh', event, true)">
+                  <span class="tab-icon">🍺</span>
+                  <span class="tab-title">方案 B：Watering Hole (代々木)</span>
+                  <span class="tab-badge">21款鮮打精釀生啤 ‧ 新宿南散策</span>
+                </button>
+              </div>
+
+              <!-- At-a-glance Dual Plan Comparison Grid -->
+              <div class="nightcap-compare-grid" onclick="event.stopPropagation()">
+                <div class="compare-col col-sg active-col" id="col-summary-sg" onclick="switchNightcapPlan('sg', event, true)">
+                  <div class="col-header">
+                    <span class="col-emoji">🍸</span>
+                    <div>
+                      <div class="col-name">The SG Club</div>
+                      <div class="col-sub">渋谷・神南 ‧ 傳奇調酒師後藤振吾旗艦店</div>
+                    </div>
+                  </div>
+                  <div class="col-prop-row"><strong>風格：</strong>1860幕府武士紐約交流靈感，復古摩登沙龍</div>
+                  <div class="col-prop-row"><strong>特色：</strong>焙茶/抹茶浸泡調酒、和風威士忌特調</div>
+                  <div class="col-prop-row"><strong>交通：</strong>新宿三丁目 ➔ 副都心線直達渋谷 (5分)，漫步神南7分</div>
+                  <div class="col-prop-row"><strong>回程：</strong>渋谷搭JR山手線7分至新宿 ➔ 小田急直達百合ヶ丘</div>
+                  <div class="col-prop-row"><strong>預算：</strong>約 ¥2,500 – ¥4,500 / 人</div>
+                </div>
+
+                <div class="compare-col col-wh" id="col-summary-wh" onclick="switchNightcapPlan('wh', event, true)">
+                  <div class="col-header">
+                    <span class="col-emoji">🍺</span>
+                    <div>
+                      <div class="col-name">Watering Hole</div>
+                      <div class="col-sub">千駄ヶ谷/代々木 ‧ 東京精釀啤酒指標聖殿</div>
+                    </div>
+                  </div>
+                  <div class="col-prop-row"><strong>風格：</strong>溫暖木質美式小酒吧，氣氛親切熱鬧</div>
+                  <div class="col-prop-row"><strong>特色：</strong>每日21款日本地酒/歐美精釀生啤、手作輕食</div>
+                  <div class="col-prop-row"><strong>交通：</strong>無添蔵出發往南漫步約8分 (或副都心線1站至北參道)</div>
+                  <div class="col-prop-row"><strong>回程：</strong>徒步3分至代々木駅 ➔ JR 1站至新宿 ➔ 小田急直達百合ヶ丘</div>
+                  <div class="col-prop-row"><strong>預算：</strong>約 ¥1,800 – ¥3,000 / 人</div>
+                </div>
+              </div>
+
+              <!-- Plan A: The SG Club Detailed Panel -->
+              <div class="nightcap-detail-box" id="nightcap-detail-sg">
+                <div class="card-from-leg-pill" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">
+                  🚇 方案 A 交通：無添蔵 (新宿三丁目駅 F13) ➔ 東京Metro副都心線直達渋谷 (F16 2站5分 ¥178) ➔ 神南漫步7分
+                </div>
+                <p class="venue-details">
+                  由世界頂級傳奇調酒大師後藤振吾 (Shingo Gokan) 主理的經典旗艦酒吧，連續多年穩坐「World's 50 Best Bars」世界前列！以 1860 年江戶幕府武士使節團遠赴紐約交流為歷史靈感，交融幕末東洋底蘊與紐約復古風情。1F「Guzzle」節奏明快輕鬆，B1F「Sip」奢華神祕鞋匠風格，極推烘焙茶、抹茶或是和風木桶熟成特調，與心愛之人在此小酌，浪漫至極。
+                </p>
+                <div class="venue-highlight-note">
+                  <strong>💡 營業時間與入座：</strong>週六營業至 02:00（L.O. 01:30），無須繁瑣預約，直接於 1F 詢問入座，若人多可現場登記候位。<br>
+                  <strong>🚇 Yahoo! 乘換指引：</strong>新宿三丁目駅 [F13] 搭乘副都心線直達渋谷駅 [F16]（5分 ¥178）。自 B1/宮下公園方向出口出站，沿神南坡道漫步 7 分抵達。<br>
+                  <strong>📍 地址：</strong>東京都渋谷区神南1-7-8 (03-6427-0204)
+                </div>
+                <div class="card-footer-row">
+                  <span class="venue-location-text">📍 渋谷区神南 1-7-8</span>
+                  <div class="venue-actions">
+                    <button class="btn-action-pill" style="background:#fef3c7; color:#b45309; border-color:#fde68a; font-weight:700;" onclick="jumpToMapFromCard('sg-club', event)">🗺️ 路線</button>
+                    <a href="https://transit.yahoo.co.jp/search/result?from=%E6%96%B0%E5%AE%BF%E4%B8%89%E4%B8%81%E7%9B%AE&to=%E6%B8%8B%E8%B0%B7" target="_blank" class="btn-action-pill pill-yahoo" onclick="event.stopPropagation()">🚆 Yahoo! 乘換</a>
+                    <a href="https://sg-management.jp/" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🍸 官方網站</a>
+                    <a href="https://maps.google.com/?q=The+SG+Club+Tokyo" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🗺️ Google 導航</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Plan B: Watering Hole Detailed Panel -->
+              <div class="nightcap-detail-box" id="nightcap-detail-wh" style="display: none;">
+                <div class="card-from-leg-pill" style="background:#d1fae5; color:#065f46; border-color:#a7f3d0;">
+                  🚶 方案 B 交通：無添蔵 (新宿高野大樓) ➔ 沿明治通り悠閒南下漫步約 8 分直達 (或搭副都心線1站至北參道)
+                </div>
+                <p class="venue-details">
+                  東京精釀啤酒愛好者的朝聖殿堂！店主與首席侍酒師嚴選來自日本各地卓越微型酒廠（如志賀高原、箕面、京都Brewing）以及美歐名廠的 21 根鮮打生啤龍頭（21 Taps）。室內採溫暖質樸的木質調與手繪插畫黑板，氛圍熱鬧親切毫無拘束。點兩杯香氣馥郁的 Fresh Hazy IPA 或水果酸啤，在微涼的東京初秋夜晚暢聊，溫馨愜意！
+                </p>
+                <div class="venue-highlight-note">
+                  <strong>💡 營業時間與酒單特色：</strong>週六營業至 23:30（L.O. 22:30）。每日更換即時 Tap List，可提供小杯 (Small) 品飲試飲，兩人點不同口味互相品嚐超合適！<br>
+                  <strong>🚶 交通指引：</strong>無添蔵用餐結束後，出高野大樓沿明治通往南漫步約 650 公尺（約8分鐘），過代代木東口即達，夜風清爽免擠電車！<br>
+                  <strong>📍 地址：</strong>東京都渋谷区千駄ヶ谷5-26-5 代々木シティホームズ 103 (03-6380-6115)
+                </div>
+                <div class="card-footer-row">
+                  <span class="venue-location-text">📍 渋谷区千駄ヶ谷 5-26-5 (代々木駅東口徒步3分)</span>
+                  <div class="venue-actions">
+                    <button class="btn-action-pill" style="background:#d1fae5; color:#047857; border-color:#a7f3d0; font-weight:700;" onclick="jumpToMapFromCard('watering-hole', event)">🗺️ 路線</button>
+                    <a href="https://transit.yahoo.co.jp/search/result?from=%E6%96%B0%E5%AE%BF%E4%B8%89%E4%B8%81%E7%9B%AE&to=%E4%BB%A3%E3%80%85%E6%9C%A8" target="_blank" class="btn-action-pill pill-yahoo" onclick="event.stopPropagation()">🚆 Yahoo! 乘換</a>
+                    <a href="https://wateringhole.jp/" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🍺 官方即時酒單</a>
+                    <a href="https://maps.google.com/?q=Watering+Hole+Sendagaya" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🗺️ Google 導航</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -2251,6 +2516,48 @@
           [35.692927, 139.705178] // Current Stop: 無添蔵 新宿店 (新宿高野大樓 6F)
         ]
       },
+      'sg-club': {
+        id: 'sg-club',
+        day: 2,
+        title: "The SG Club (渋谷)",
+        sub: "World's 50 Best Bars #14 ‧ 傳奇和風調酒",
+        time: "9/26 21:45",
+        lat: 35.66448,
+        lng: 139.70014,
+        color: "#d97706",
+        lastStopName: "無添蔵 新宿店 (新宿三丁目)",
+        vehicle: "🚇",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E6%96%B0%E5%AE%BF%E4%B8%89%E4%B8%81%E7%9B%AE&to=%E6%B8%8B%E8%B0%B7",
+        routeCoords: [
+          [35.692927, 139.705178], // Last Stop: 無添蔵 (新宿高野大樓)
+          [35.6912, 139.7065],     // 新宿三丁目駅 (東京メトロ副都心線 F13)
+          [35.6800, 139.7050],     // 北参道駅 (F14)
+          [35.6690, 139.7040],     // 明治神宮前〈原宿〉駅 (F15)
+          [35.6600, 139.7025],     // 渋谷駅 (F16 宮下公園地下/B1出口)
+          [35.6625, 139.7010],     // 神南一丁目交差点
+          [35.66448, 139.70014]    // Current Stop: The SG Club (渋谷区神南1-7-8)
+        ]
+      },
+      'watering-hole': {
+        id: 'watering-hole',
+        day: 2,
+        title: "Watering Hole (代々木/千駄ヶ谷)",
+        sub: "21款頂級精釀生啤酒聖殿 ‧ 新宿南口散策",
+        time: "9/26 21:45",
+        lat: 35.6845,
+        lng: 139.7042,
+        color: "#059669",
+        lastStopName: "無添蔵 新宿店 (新宿三丁目)",
+        vehicle: "🚶",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E6%96%B0%E5%AE%BF%E4%B8%89%E4%B8%81%E7%9B%AE&to=%E4%BB%A3%E3%80%85%E6%9C%A8",
+        routeCoords: [
+          [35.692927, 139.705178], // Last Stop: 無添蔵 (新宿高野大樓)
+          [35.6905, 139.7048],     // 新宿駅東南口・NEWoMan 前
+          [35.6875, 139.7045],     // 高島屋タイムズスクエア南側・明治通り
+          [35.6855, 139.7043],     // 代々木駅東口前
+          [35.6845, 139.7042]      // Current Stop: Watering Hole (渋谷区千駄ヶ谷5-26-5)
+        ]
+      },
       'disneysea': {
         id: 'disneysea',
         day: 3,
@@ -2511,17 +2818,61 @@
     let movingVehicleMarker = null;
     let animFrameId = null;
     let currentLegId = null;
+    let currentNightcapChoice = 'sg';
 
     function buildPin(color, dayNum, spotId) {
+      let iconContent = `D${dayNum}`;
+      if (spotId === 'sg-club') iconContent = '🍸';
+      else if (spotId === 'watering-hole') iconContent = '🍺';
       return L.divIcon({
         className: 'pin-holder',
         html: `<div class="map-pin-badge" id="pin-${spotId}" style="background-color: ${color};">
-          <span>D${dayNum}</span>
+          <span>${iconContent}</span>
         </div>`,
         iconSize: [34, 34],
         iconAnchor: [17, 34],
         popupAnchor: [0, -34]
       });
+    }
+
+    function switchNightcapPlan(choice, event, updateMap = true) {
+      if (event) event.stopPropagation();
+      currentNightcapChoice = choice;
+
+      const isSg = choice === 'sg';
+      const tabSg = document.getElementById('btn-plan-sg');
+      const tabWh = document.getElementById('btn-plan-wh');
+      if (tabSg && tabWh) {
+        tabSg.classList.toggle('active', isSg);
+        tabWh.classList.toggle('active', !isSg);
+      }
+
+      const colSg = document.getElementById('col-summary-sg');
+      const colWh = document.getElementById('col-summary-wh');
+      if (colSg && colWh) {
+        colSg.classList.toggle('active-col', isSg);
+        colWh.classList.toggle('active-col', !isSg);
+      }
+
+      const detailSg = document.getElementById('nightcap-detail-sg');
+      const detailWh = document.getElementById('nightcap-detail-wh');
+      if (detailSg && detailWh) {
+        detailSg.style.display = isSg ? 'block' : 'none';
+        detailWh.style.display = isSg ? 'none' : 'block';
+      }
+
+      const badge = document.getElementById('current-plan-badge');
+      if (badge) {
+        badge.textContent = isSg ? '方案 A：The SG Club' : '方案 B：Watering Hole';
+        badge.style.background = isSg ? '#fef3c7' : '#d1fae5';
+        badge.style.color = isSg ? '#b45309' : '#047857';
+        badge.style.borderColor = isSg ? '#fde68a' : '#a7f3d0';
+      }
+
+      if (updateMap) {
+        const targetLegId = isSg ? 'sg-club' : 'watering-hole';
+        selectStopLeg(targetLegId, false);
+      }
     }
 
     // Base Home Station Marker: 百合ヶ丘駅 (神奈川県)
@@ -2635,7 +2986,15 @@
       if (window.innerWidth <= 960 && currentMobileView === 'map') {
         setMobileView('list');
       }
-      const cardEl = document.getElementById('card-' + spotId);
+      let targetCardId = spotId;
+      if (spotId === 'sg-club') {
+        targetCardId = 'day2-nightcap';
+        switchNightcapPlan('sg', null, false);
+      } else if (spotId === 'watering-hole') {
+        targetCardId = 'day2-nightcap';
+        switchNightcapPlan('wh', null, false);
+      }
+      const cardEl = document.getElementById('card-' + targetCardId);
       const leg = legDefinitions[spotId];
       if (leg) {
         const parentBlock = document.getElementById('block-day-' + leg.day);
@@ -2649,7 +3008,7 @@
         document.querySelectorAll('.venue-card').forEach(c => c.classList.remove('active-selected-card'));
         cardEl.classList.add('active-selected-card');
         setTimeout(() => {
-          cardEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          scrollToElementInPanel(cardEl);
         }, 120);
       }
     }
@@ -2727,7 +3086,15 @@
 
       // 8. Highlight Card in Drawer and ensure Accordion is expanded
       document.querySelectorAll('.venue-card').forEach(c => c.classList.remove('active-selected-card'));
-      const cardEl = document.getElementById('card-' + spotId);
+      let targetCardId = spotId;
+      if (spotId === 'sg-club') {
+        targetCardId = 'day2-nightcap';
+        switchNightcapPlan('sg', null, false);
+      } else if (spotId === 'watering-hole') {
+        targetCardId = 'day2-nightcap';
+        switchNightcapPlan('wh', null, false);
+      }
+      const cardEl = document.getElementById('card-' + targetCardId);
       const parentBlock = document.getElementById('block-day-' + leg.day);
       if (parentBlock && parentBlock.classList.contains('collapsed')) {
         parentBlock.classList.remove('collapsed');
@@ -2800,6 +3167,7 @@
       document.querySelectorAll('.day-selector-btn').forEach(b => b.classList.remove('active'));
       document.querySelector('.day-selector-btn:first-child').classList.add('active');
 
+      Object.values(mapPins).forEach(m => m.addTo(map));
       const allMarkers = Object.values(mapPins);
       const group = new L.featureGroup(allMarkers);
       map.fitBounds(group.getBounds().pad(0.12));
@@ -2995,6 +3363,14 @@ DTSTART;TZID=Asia/Tokyo:20260926T200000
 DTEND;TZID=Asia/Tokyo:20260926T213000
 DESCRIPTION:藏壽司旗下頂級精緻品牌「無添蔵」，新宿高野大樓 6F，職人手作生魚片與本格天婦羅、精選壽司
 LOCATION:無添蔵 新宿店 (東京都新宿区新宿3-26-11 新宿高野ビル6F)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:微醺二續攤：The SG Club (渋谷) 或 Watering Hole (代々木) [雙方案任選]
+DTSTART;TZID=Asia/Tokyo:20260926T214500
+DTEND;TZID=Asia/Tokyo:20260926T231500
+DESCRIPTION:藏壽司無添蔵晚餐後的浪漫續攤：【方案A】世界50大酒吧 The SG Club（後藤振吾和風調酒）或【方案B】21款精釀生啤 Watering Hole。結束後均可於新宿/代代木搭乘小田急線直達百合之丘。
+LOCATION:The SG Club (渋谷区神南1-7-8) / Watering Hole (渋谷区千駄ヶ谷5-26-5)
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
