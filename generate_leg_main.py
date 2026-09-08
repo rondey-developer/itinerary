@@ -1808,8 +1808,8 @@ html_content = '''<!DOCTYPE html>
             <div class="day-title-wrap">
               <span class="day-badge-tag badge-d5">Day 5</span>
               <div class="day-title-text">
-                <h3>9月29日 (星期二) • 新幹線、頂級牛排與爵士之夜</h3>
-                <span>青山沃夫岡 ‧ 澀谷潮流 ‧ 柏悅高空酒吧</span>
+                <h3>9月29日 (星期二) • 新幹線、牛排、冠軍咖啡與神秘之夜</h3>
+                <span>青山沃夫岡 ‧ 表参道冠軍手沖 ‧ 女友秘密企劃 ‧ 柏悅高空酒吧</span>
               </div>
             </div>
             <div class="day-accordion-control">
@@ -1926,29 +1926,58 @@ html_content = '''<!DOCTYPE html>
               </div>
             </div>
 
-            <!-- Shibuya -->
-            <div class="venue-card" id="card-shibuya" onclick="selectStopLeg('shibuya')">
+            <!-- Philocoffea Omotesando -->
+            <div class="venue-card" id="card-philocoffea" onclick="selectStopLeg('philocoffea')">
               <div class="card-top-row">
-                <span class="card-time-pill">⏰ 19:30 (晚上 7:30)</span>
-                <span class="card-status-pill pill-sightseeing">澀谷霓虹熱潮</span>
+                <span class="card-time-pill">⏰ 16:45 – 18:00 (午後咖啡)</span>
+                <span class="card-status-pill pill-sightseeing">☕ 世界冠軍精品手沖</span>
               </div>
-              <div class="venue-japanese-name">🌆 渋谷スクランブル交差点 & MIYASHITA PARK</div>
-              <div class="venue-chinese-subtitle">Shibuya • 宮下公園屋頂草坪 ‧ 潮流購物 ‧ SHIBUYA SKY 夜景</div>
+              <div class="venue-japanese-name">☕ PHILOCOFFEA 表参道店 (Philocoffea)</div>
+              <div class="venue-chinese-subtitle">世界沖煮大賽冠軍 粕谷哲 旗艦店 ‧ 4:6 Method 極致手沖</div>
               <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">
-                🚇 上一站：ウルフギャング (青山) ➔ 東京Metro銀座線直達澀谷 (外苑前駅➔澀谷駅僅2站4分 ¥178，宮下公園/八公口出站)
+                🚶 上一站：ウルフギャング (青山) ➔ 沿青山通悠閒漫步至表参道 (徒步約8分 / 銀座線1站1分)
               </div>
               <p class="venue-details">
-                從餐廳漫步 1 分鐘由外苑前站搭乘東京Metro銀座線，僅需 4 分鐘直達澀谷站！走進世界最著名的澀谷十字路口感受東京脈搏；逛逛極具設計感的 MIYASHITA PARK（宮下公園），在空中綠地坐看山手線穿梭；亦可預訂 SHIBUYA SKY 俯瞰無死角璀璨夜景。
+                享用完頂級牛排午餐後，漫步至 2016 年世界沖煮大賽（World Brewers Cup）冠軍粕谷哲的東京旗艦店 PHILOCOFFEA 表参道！座落於 GREEN TERRACE 表参道綠植露台的地下一樓，空間極簡純粹、採光靜謐。由頂尖咖啡師以傳奇「4:6 Method」手沖嚴選莊園單品豆，香氣層次分明；亦有燕麥奶拿鐵與手工巴斯克乳酪蛋糕，在表参道街角共享愜意悠閒的午後咖啡時光。
               </p>
               <div class="venue-highlight-note">
-                <strong>🚇 Yahoo! 乘換指引：</strong>外苑前駅 (G03) 搭乘東京地下鐵銀座線 (渋谷行) ➔ 渋谷駅 (G01)，車程 4 分鐘，票價 ¥178。八公口或宮下公園出口直達核心商圈。
+                <strong>💡 推薦必點：</strong>粕谷哲冠軍「4:6 Method 特選單品手沖」（推薦哥倫比亞厭氧或藝妓豆）、特調冠軍拿鐵、手工巴斯克乳酪蛋糕。<br>
+                <strong>📍 店鋪位置：</strong>東京都港区北青山3-8-15 GREEN TERRACE表参道 B1F（表参道駅 A1/B2 出口徒步約 2 分鐘，營業至 19:00）。
               </div>
               <div class="card-footer-row">
-                <span class="venue-location-text">📍 澀谷車站周邊</span>
+                <span class="venue-location-text">📍 GREEN TERRACE 表参道 B1F</span>
                 <div class="venue-actions">
-                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard(\'shibuya\', event)">🗺️ 路線</button>
-                  <a href="https://transit.yahoo.co.jp/search/result?from=%E5%A4%96%E8%8B%91%E5%89%8D&to=%E6%B8%8B%E8%B0%B7" target="_blank" class="btn-action-pill pill-yahoo" onclick="event.stopPropagation()">🚆 Yahoo! 乘換</a>
-                  <a href="https://maps.google.com/?q=Shibuya+Crossing" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🗺️ Google 地圖</a>
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard(\'philocoffea\', event)">🗺️ 路線</button>
+                  <a href="https://transit.yahoo.co.jp/search/result?from=%E5%A4%96%E8%8B%91%E5%89%8D&to=%E8%A1%A8%E5%8F%82%E9%81%93" target="_blank" class="btn-action-pill pill-yahoo" onclick="event.stopPropagation()">🚆 Yahoo! 乘換</a>
+                  <a href="https://philocoffea.com/" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">☕ 官方網站</a>
+                  <a href="https://maps.google.com/?q=PHILOCOFFEA+Omotesando" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🗺️ Google 地圖</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Girlfriend's Secret Spot -->
+            <div class="venue-card" id="card-secret-girlfriend" onclick="selectStopLeg('secret-girlfriend')">
+              <div class="card-top-row">
+                <span class="card-time-pill">⏰ 18:30 – 21:00 (浪漫神秘時光)</span>
+                <span class="card-status-pill pill-booking" style="background:#fdf2f8; color:#be185d; border:1px solid #fbcfe8;">🤫 女友秘密企劃</span>
+              </div>
+              <div class="venue-japanese-name">✨ 女友專屬神秘行程 (Girlfriend's Secret Plan)</div>
+              <div class="venue-chinese-subtitle">女友親自規劃 ‧ 浪漫保密 ‧ 敬請期待！</div>
+              <div class="card-from-leg-pill" style="background:#fdf2f8; color:#9d174d; border-color:#fbcfe8;">
+                ✨ 上一站：PHILOCOFFEA (表参道) ➔ 前往神秘地點 (跟著女友走就對了！)
+              </div>
+              <p class="venue-details">
+                今晚的精華時光徹底交由另一半親自秘密規劃！告別死板的既定清單，把主導權完全交給最愛的她——可能是她私藏已久的夢幻選品店、浪漫夜景散策、隱藏版甜點小酌，或是專屬於兩人的秘密打卡點。男生請徹底放鬆，牽好她的手，帶著期待的心情迎接未知驚喜！❤️
+              </p>
+              <div class="venue-highlight-note" style="border-left-color:#ec4899; background:#fff7fa;">
+                <strong>🤫 TOP SECRET：</strong>此時段（約 18:30 – 21:00）為女友專屬主場，內容暫時保密！神秘行程結束後，21:30 將一同搭乘電車前往壓軸終點站：西新宿柏悅酒店 52F New York Bar 享受高空爵士酒吧夜景！
+              </div>
+              <div class="card-footer-row">
+                <span class="venue-location-text">📍 女友心中的秘密地點 (東京)</span>
+                <div class="venue-actions">
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard(\'secret-girlfriend\', event)">🗺️ 路線</button>
+                  <a href="https://transit.yahoo.co.jp/search/result?from=%E8%A1%A8%E5%8F%82%E9%81%93&to=%E6%B8%8B%E8%B0%B7" target="_blank" class="btn-action-pill pill-yahoo" onclick="event.stopPropagation()">🚆 Yahoo! 乘換</a>
+                  <button class="btn-action-pill" style="background:#fdf2f8; color:#be185d; border-color:#fbcfe8;" onclick="showToast(\'🤫 女友說：這是最高機密！當天到現場就知道了 ❤️\'); event.stopPropagation();">🤫 查看秘密</button>
                 </div>
               </div>
             </div>
@@ -1962,13 +1991,13 @@ html_content = '''<!DOCTYPE html>
               <div class="venue-japanese-name">🎷 ニューヨーク バー / New York Bar (パーク ハイアット 東京 52F)</div>
               <div class="venue-chinese-subtitle">Park Hyatt Tokyo 52F • 《愛情，不用翻譯》傳奇爵士高空酒吧</div>
               <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">
-                🚆 上一站：渋谷スクランブル交差点 ➔ JR山手線直達新宿 (渋谷駅➔新宿駅僅3站7分 ¥178，南口地下通道漫步至柏悅酒店)
+                🚆 上一站：女友專屬神秘行程 ➔ JR山手線直達新宿 (澀谷/原宿➔新宿僅7分 ¥178，南口地下通道漫步至柏悅酒店)
               </div>
               <p class="venue-details">
-                從澀谷站搭乘 JR 山手線僅 3 站（約7分鐘）極速直達新宿站！由南口漫步西新宿摩天大樓地下大道抵達新宿公園塔。歷經全面重金改裝，於2025年底奢華重開！坐落於西新宿柏悅酒店頂層 52 樓，四面頂級落地窗倒映著無限延伸的東京璀璨燈海。現場國際爵士樂隊演奏，舉起馬丁尼對飲，為這趟旅程畫下最完美的句點。
+                結束了女友精心安排的神秘驚喜後，搭乘 JR 山手線直達新宿，由南口漫步西新宿摩天大樓地下大道抵達新宿公園塔。歷經全面重金改裝，於2025年底奢華重開！坐落於西新宿柏悅酒店頂層 52 樓，四面頂級落地窗倒映著無限延伸的東京璀璨燈海。現場國際爵士樂隊演奏，舉起馬丁尼對飲，為這趟旅程畫下最完美的句點。
               </p>
               <div class="venue-highlight-note">
-                <strong>🚆 Yahoo! 乘換指引：</strong>渋谷駅搭乘 JR 山手線外環 (新宿・池袋方面) ➔ 新宿駅 (3站7分，¥178)。南口/甲州街道出站沿林蔭地下連通道漫步至新宿公園塔52樓，亦可於新宿西口搭乘新宿WE巴士直達，或由代々木轉乘都営大江戸線至都庁前駅A4出口徒步6分。<br>
+                <strong>🚆 Yahoo! 乘換指引：</strong>渋谷/原宿駅搭乘 JR 山手線外環 (新宿・池袋方面) ➔ 新宿駅 (約7分，¥178)。南口/甲州街道出站沿林蔭地下連通道漫步至新宿公園塔52樓，亦可於新宿西口搭乘新宿WE巴士直達，或由代々木轉乘都営大江戸線至都庁前駅A4出口徒步6分。<br>
                 <strong>👔 服裝提醒：</strong>請著 Smart Casual（男士請勿穿著拖鞋或無領背心）。
               </div>
               <div class="card-footer-row">
@@ -2275,24 +2304,42 @@ html_content = '''<!DOCTYPE html>
           [35.6698, 139.7180]  // Current Stop: Gaienmae Exit 4a (THE ARGYLE AOYAMA / Wolfgang's)
         ]
       },
-      'shibuya': {
-        id: 'shibuya',
+      'philocoffea': {
+        id: 'philocoffea',
         day: 5,
-        title: "渋谷スクランブル交差点 & MIYASHITA PARK",
-        sub: "澀谷夜色潮流散策",
-        time: "9/29 19:30",
-        lat: 35.6595,
-        lng: 139.7005,
+        title: "PHILOCOFFEA 表参道店",
+        sub: "世界沖煮冠軍 粕谷哲 旗艦精品咖啡",
+        time: "9/29 16:45",
+        lat: 35.66614,
+        lng: 139.71350,
         color: "#f59e0b",
         lastStopName: "ウルフギャング・ステーキハウス (青山)",
-        vehicle: "🚇",
-        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E5%A4%96%E8%8B%91%E5%89%8D&to=%E6%B8%8B%E8%B0%B7",
+        vehicle: "☕",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E5%A4%96%E8%8B%91%E5%89%8D&to=%E8%A1%A8%E5%8F%82%E9%81%93",
         routeCoords: [
-          [35.6698, 139.7180], // Last Stop: Wolfgang's Aoyama
-          [35.6705, 139.7175], // 外苑前駅 (東京メトロ銀座線 G03)
-          [35.6652, 139.7123], // 表参道駅 (G02)
-          [35.6588, 139.7015], // 渋谷駅 (G01 - 銀座線月台)
-          [35.6595, 139.7005]  // Current Stop: Shibuya Crossing & MIYASHITA PARK
+          [35.6698, 139.7180], // Last Stop: Wolfgang's Aoyama (外苑前)
+          [35.6685, 139.7160], // 青山通り步道
+          [35.6672, 139.7145], // 北青山3丁目街角
+          [35.66614, 139.71350] // Current Stop: GREEN TERRACE 表参道 B1F (PHILOCOFFEA)
+        ]
+      },
+      'secret-girlfriend': {
+        id: 'secret-girlfriend',
+        day: 5,
+        title: "✨ 女友專屬神秘行程 (Girlfriend's Secret Plan)",
+        sub: "女友親自神秘策劃 ‧ 浪漫保密 ‧ 敬請期待！",
+        time: "9/29 18:30",
+        lat: 35.6610,
+        lng: 139.7040,
+        color: "#ec4899",
+        lastStopName: "PHILOCOFFEA 表参道店",
+        vehicle: "🎁",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E8%A1%A8%E5%8F%82%E9%81%93&to=%E6%B8%8B%E8%B0%B7",
+        routeCoords: [
+          [35.66614, 139.71350], // Last Stop: PHILOCOFFEA 表参道店
+          [35.6652, 139.7123],   // 表参道駅 (東京メトロ銀座線/千代田線)
+          [35.6635, 139.7085],   // 神宮前 / 貓街浪漫步道
+          [35.6610, 139.7040]    // Current Stop: 女友專屬神秘地點 🤫
         ]
       },
       'new-york-bar': {
@@ -2304,11 +2351,11 @@ html_content = '''<!DOCTYPE html>
         lat: 35.6856,
         lng: 139.6910,
         color: "#f59e0b",
-        lastStopName: "渋谷スクランブル交差点 & MIYASHITA PARK",
+        lastStopName: "✨ 女友專屬神秘行程",
         vehicle: "🚆",
         yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E6%B8%8B%E8%B0%B7&to=%E6%96%B0%E5%AE%BF",
         routeCoords: [
-          [35.6595, 139.7005], // Last Stop: Shibuya Crossing
+          [35.6610, 139.7040], // Last Stop: 女友專屬神秘行程
           [35.6585, 139.7013], // JR 渋谷駅 (JR山手線外回り月台)
           [35.6702, 139.7027], // 原宿駅 (JR山手線)
           [35.6830, 139.7020], // 代々木駅 (JR山手線)
@@ -2873,11 +2920,20 @@ LOCATION:ウルフギャング・ステーキハウス シグニチャー 青山
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:散策：渋谷スクランブル交差点 & MIYASHITA PARK
-DTSTART;TZID=Asia/Tokyo:20260929T193000
+SUMMARY:咖啡：PHILOCOFFEA 表参道店 (世界沖煮冠軍手沖)
+DTSTART;TZID=Asia/Tokyo:20260929T164500
+DTEND;TZID=Asia/Tokyo:20260929T180000
+DESCRIPTION:世界沖煮大賽冠軍粕谷哲旗艦店，GREEN TERRACE表参道 B1F，4:6 Method 頂級手沖咖啡與下午茶
+LOCATION:PHILOCOFFEA 表参道店 (東京都港区北青山3-8-15 B1F)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:✨ 女友專屬神秘行程 (Girlfriend's Secret Surprise)
+DTSTART;TZID=Asia/Tokyo:20260929T183000
 DTEND;TZID=Asia/Tokyo:20260929T210000
-DESCRIPTION:走過澀谷十字路口，逛宮下公園空中綠地商場
-LOCATION:渋谷
+DESCRIPTION:由女友親自秘密策劃的專屬驚喜行程！敬請期待 ❤️
+LOCATION:東京 (女友神秘地點 🤫)
+STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:酒吧：ニューヨーク バー (パーク ハイアット 東京 52F)
