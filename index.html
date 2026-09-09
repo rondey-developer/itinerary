@@ -1042,6 +1042,95 @@
       margin-left: auto;
     }
 
+    /* Dual-Plan Day 5 Afternoon Cafe Card & Selector */
+    .cafe-choice-card {
+      border: 1.5px solid #cbd5e1;
+      position: relative;
+    }
+    .cafe-toggle-bar {
+      display: flex;
+      gap: 8px;
+      margin: 12px 0 14px 0;
+      background: #f1f5f9;
+      padding: 6px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+    }
+    .cafe-tab-btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 6px;
+      border-radius: 9px;
+      border: 1.5px solid transparent;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      text-align: center;
+      gap: 2px;
+    }
+    .cafe-tab-btn .tab-icon {
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+    .cafe-tab-btn .tab-title {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #475569;
+    }
+    .cafe-tab-btn .tab-badge {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: #64748b;
+    }
+    .cafe-tab-btn.active#btn-plan-philo {
+      background: #ffffff;
+      border-color: #d97706;
+      box-shadow: 0 2px 8px rgba(217, 119, 6, 0.18);
+    }
+    .cafe-tab-btn.active#btn-plan-philo .tab-title {
+      color: #b45309;
+    }
+    .cafe-tab-btn.active#btn-plan-philo .tab-badge {
+      color: #d97706;
+      font-weight: 700;
+    }
+    .cafe-tab-btn.active#btn-plan-granny {
+      background: #ffffff;
+      border-color: #e11d48;
+      box-shadow: 0 2px 8px rgba(225, 29, 72, 0.18);
+    }
+    .cafe-tab-btn.active#btn-plan-granny .tab-title {
+      color: #be123c;
+    }
+    .cafe-tab-btn.active#btn-plan-granny .tab-badge {
+      color: #e11d48;
+      font-weight: 700;
+    }
+    .cafe-compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    @media (max-width: 600px) {
+      .cafe-compare-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .compare-col.active-col.col-philo {
+      border: 2px solid #d97706;
+      background: #fffbeb;
+      box-shadow: 0 2px 8px rgba(217, 119, 6, 0.12);
+    }
+    .compare-col.active-col.col-granny {
+      border: 2px solid #e11d48;
+      background: #fff1f2;
+      box-shadow: 0 2px 8px rgba(225, 29, 72, 0.12);
+    }
+
     /* Map Elements */
     .map-pin-badge {
       width: 34px;
@@ -1903,8 +1992,8 @@
             <div class="day-title-wrap">
               <span class="day-badge-tag badge-d3">Day 3</span>
               <div class="day-title-text">
-                <h3>9月27日 (星期日) • 東京迪士尼海洋奇幻日</h3>
-                <span>夢幻泉鄉 ‧ 貢多拉 ‧ 豪華客輪晚宴</span>
+                <h3>9月27日 (星期日) • 東京迪士尼海洋 ‧ 刺激冒險與奇幻日</h3>
+                <span>驚魂古塔 ‧ 刺激四大天王衝刺 ‧ 夢幻泉鄉 ‧ S.S.哥倫比亞號晚宴</span>
               </div>
             </div>
             <div class="day-accordion-control">
@@ -1921,13 +2010,19 @@
                 <span class="card-status-pill pill-booking">一日遊園門票</span>
               </div>
               <div class="venue-japanese-name">🏰 東京ディズニーシー (Tokyo DisneySea)</div>
-              <div class="venue-chinese-subtitle">地中海港灣 ‧ 夢幻泉鄉 (Fantasy Springs) ‧ 翱翔</div>
-              <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">🚆 今日起點：百合ヶ丘駅 (神奈川県) ➔ 小田急線・JR京葉線・單軌直達迪士尼海洋 (約75分，建議07:30出發)</div>
+              <div class="venue-chinese-subtitle">刺激四大天王衝刺 ‧ 夢幻泉鄉 (Fantasy Springs) ‧ 翱翔</div>
+              <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">
+                🚆 今日起點：百合ヶ丘駅 (神奈川県) ➔ 小田急線・JR京葉線・單軌直達迪士尼海洋 (約75分，建議07:30出發，08:15前抵達排隊)
+              </div>
               <p class="venue-details">
-                公認全世界造景最浪漫精緻的迪士尼樂園！搭乘威尼斯貢多拉遊船聽船夫吟唱、探訪全新「夢幻泉鄉」（冰雪奇緣、長髮公主、小飛俠），體驗震撼的《翱翔：夢幻奇航》。
+                公認全世界造景最浪漫精緻的迪士尼樂園！不僅有夢幻唯美的威尼斯貢多拉與全新「夢幻泉鄉」（冰雪奇緣、長髮公主、小飛俠），更有全亞洲最頂級的刺激設施群！開園即刻啟動高效率搶票與直衝策略，痛快暢玩各大尖叫設施！
               </p>
               <div class="venue-highlight-note">
-                <strong>📱 入園關鍵操作：</strong>09:00 一刷過閘門立刻打開官方 App 搶購「夢幻泉鄉 DPA 快速通關」；同時抽《翱翔》40週年免費優先券。
+                <strong>🎢 刺激愛好者一日最佳通關節奏：</strong><br>
+                • <strong>09:00 刷進閘門瞬間（App 手速關鍵）：</strong>打開官方 App 優先搶購「夢幻泉鄉 DPA（冰雪奇緣或小飛俠）」+ 預約傍晚 17:45「驚魂古塔 DPA（¥1,500/人）」！<br>
+                • <strong>09:15 開園第一衝 (Rope Drop)：</strong>直奔神秘島免排隊爽刷 🌋【地心探險之旅】（園區速度之王 75 km/h，火山爆發破風暴衝俯衝）！<br>
+                • <strong>11:00 勇闖失落河三角洲：</strong>連刷 🐍【印第安納瓊斯 水晶骷髏頭魔宮】（巨石滾落越野逃脫）與 🔥【忿怒雙神】（園區唯一 360° 垂直大翻轉雲霄飛車）！<br>
+                • <strong>下午：</strong>悠閒體驗夢幻泉鄉打卡、威尼斯貢多拉遊船與達菲熊紀念品採購。
               </div>
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 JR舞濱站 轉乘 迪士尼度假區線單軌電車</span>
@@ -1935,6 +2030,37 @@
                   <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard('disneysea', event)">🗺️ 路線</button>
                   <a href="https://transit.yahoo.co.jp/search/result?from=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98&to=%E8%88%9E%E6%B5%9C" target="_blank" class="btn-action-pill pill-yahoo" onclick="event.stopPropagation()">🚆 Yahoo! 乘換</a>
                   <a href="https://www.tokyodisneyresort.jp/tc/tds/" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">📱 官方中文指南</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tower of Terror -->
+            <div class="venue-card" id="card-tower-of-terror" onclick="selectStopLeg('tower-of-terror')">
+              <div class="card-top-row">
+                <span class="card-time-pill">⏰ 17:45 – 18:45 (黃昏夜景場)</span>
+                <span class="card-status-pill pill-sightseeing" style="background:#f5f3ff; color:#6d28d9; border:1px solid #ddd6fe;">⚡ 刺激必玩 ‧ 負G力失重</span>
+              </div>
+              <div class="venue-japanese-name">🏨 タワー・オブ・テラー / 驚魂古塔 (Tower of Terror)</div>
+              <div class="venue-chinese-subtitle">紐約高塔飯店 ‧ 38米連續垂直自由落體 ‧ 頂樓眺望東京灣百萬夜景</div>
+              <div class="card-from-leg-pill" style="background:#f5f3ff; color:#5b21b6; border-color:#ddd6fe;">
+                🚶 上一站：神秘島 / 夢幻泉鄉 ➔ 沿港灣漫步前往美國海濱百老匯大道 (徒步約7分)
+              </div>
+              <p class="venue-details">
+                迪士尼海洋公認失重爽度最高、尖叫不斷的傳奇室內自由落體設施！探訪 1912 年紐約市保存協會開放參觀的「高塔飯店」，親睹貪婪探險家高塔三世所掠奪的非洲詛咒偶像「希利奇烏湯杜 (Shiriki Utundu)」。電梯內神像雙眼冒出詭異綠光憑空消失後，電梯隨即失控極速攀升至 38 米頂樓！
+              </p>
+              <div class="venue-highlight-note" style="border-left-color:#8b5cf6; background:#faf5ff;">
+                <strong>⚡ 驚魂古塔核心遊玩與拍照秘訣：</strong><br>
+                • <strong>黃昏夜景與高空俯衝：</strong>電梯升至最高點時，雙開落地窗瞬間猛烈敞開！黃昏傍晚時可將整座地中海港灣、哥倫比亞巨輪與東京灣百萬夜景盡收眼底——隨後立刻在夜色中筆直下墜，連續多次無預警垂直疾升暴降，極致負 G 力整個人飄離椅面！<br>
+                • <strong>拍照瞬間：</strong>頂樓大門打開時閃光燈一閃即為抓拍點，記得提前約好擺出搞怪或驚恐表情，下樓後可於螢幕查看照片編號！<br>
+                • <strong>防飄提醒：</strong>負 G 力極強，米奇/達菲髮箍、帽子、包包請務必摘下放入座位下方置物網袋。<br>
+                • <strong>完美銜接：</strong>古塔正對面即是 S.S. 哥倫比亞號，體驗完步行 2 分鐘（約150公尺）即可優雅登上 19:20 的郵輪豪華晚餐！
+              </div>
+              <div class="card-footer-row">
+                <span class="venue-location-text">📍 美國海濱 高塔飯店 (Hotel Hightower)</span>
+                <div class="venue-actions">
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard('tower-of-terror', event)">🗺️ 路線</button>
+                  <a href="https://www.tokyodisneyresort.jp/tc/tds/attraction/detail/235/" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">⚡ 設施官方介紹</a>
+                  <a href="https://maps.google.com/?q=Tower+of+Terror+Tokyo+DisneySea" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🗺️ Google 地圖</a>
                 </div>
               </div>
             </div>
@@ -1948,10 +2074,10 @@
               <div class="venue-japanese-name">🛳️ S.S.コロンビア・ダイニングルーム</div>
               <div class="venue-chinese-subtitle">S.S. Columbia Dining Room • 20世紀奢華遠洋巨輪 B-Deck 大餐廳</div>
               <div class="card-from-leg-pill" style="background:#f5efe6; color:#784528; border-color:#e0d5c3;">
-                🚶 上一站：園區遊玩 / 夢幻泉鄉 ➔ 沿港灣步行至美國海濱哥倫比亞號
+                🚶 上一站：驚魂古塔 (美國海濱) ➔ 穿過海濱廣場步行2分鐘直達巨輪 (約150公尺)
               </div>
               <p class="venue-details">
-                登上停泊在美國海濱的宏偉蒸氣客輪。在水晶吊燈、古典浮雕與純白桌巾的愛德華時代沙龍內，享用烤頂級牛肉與炙煎沙朗牛排套餐，沉浸在優雅的古典樂與紅酒香氣中。
+                登上停泊在美國海濱的宏偉蒸氣客輪。在剛經歷完驚魂古塔的尖叫心跳後，正好走進這座愛德華時代古典沙龍放鬆心情！在水晶吊燈、古典浮雕與純白桌巾環繞下，享用烤頂級牛肉與炙煎沙朗牛排套餐，沉浸在優雅的古典樂與紅酒香氣中。
               </p>
               <div class="venue-highlight-note">
                 <strong>🎆 晚餐後接續：</strong>20:30 在地中海港灣欣賞壓軸水上光雕煙火秀《堅信！～夢想之海～（Believe! Sea of Dreams）》。
@@ -2291,31 +2417,112 @@
               </div>
             </div>
 
-            <!-- Philocoffea Omotesando -->
-            <div class="venue-card" id="card-philocoffea" onclick="selectStopLeg('philocoffea')">
+            <!-- Day 5 Afternoon Cafe Dual-Plan Choice: Philocoffea vs Granny Smith -->
+            <div class="venue-card cafe-choice-card" id="card-day5-cafe" onclick="selectStopLeg(currentDay5CafeChoice === 'granny' ? 'granny-smith' : 'philocoffea')">
               <div class="card-top-row">
-                <span class="card-time-pill">⏰ 16:45 – 18:00 (午後咖啡)</span>
-                <span class="card-status-pill pill-sightseeing">☕ 世界冠軍精品手沖</span>
+                <span class="card-time-pill">⏰ 16:45 – 18:00 (雙方案自由選)</span>
+                <span class="card-status-pill pill-sightseeing">☕ 午後咖啡甜點 ‧ 現場隨選</span>
               </div>
-              <div class="venue-japanese-name">☕ PHILOCOFFEA 表参道店 (Philocoffea)</div>
-              <div class="venue-chinese-subtitle">世界沖煮大賽冠軍 粕谷哲 旗艦店 ‧ 4:6 Method 極致手沖</div>
-              <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">
-                🚶 上一站：ウルフギャング (青山) ➔ 沿青山通悠閒漫步至表参道 (徒步約8分 / 銀座線1站1分)
+              <div class="venue-japanese-name">
+                <span>☕ 午後咖啡與甜點時光</span>
+                <span class="plan-badge-pill" id="current-cafe-plan-badge" style="background:#fef3c7; color:#b45309; border-color:#fde68a;">方案 A：PHILOCOFFEA</span>
               </div>
-              <p class="venue-details">
-                享用完頂級牛排午餐後，漫步至 2016 年世界沖煮大賽（World Brewers Cup）冠軍粕谷哲的東京旗艦店 PHILOCOFFEA 表参道！座落於 GREEN TERRACE 表参道綠植露台的地下一樓，空間極簡純粹、採光靜謐。由頂尖咖啡師以傳奇「4:6 Method」手沖嚴選莊園單品豆，香氣層次分明；亦有燕麥奶拿鐵與手工巴斯克乳酪蛋糕，在表参道街角共享愜意悠閒的午後咖啡時光。
-              </p>
-              <div class="venue-highlight-note">
-                <strong>💡 推薦必點：</strong>粕谷哲冠軍「4:6 Method 特選單品手沖」（推薦哥倫比亞厭氧或藝妓豆）、特調冠軍拿鐵、手工巴斯克乳酪蛋糕。<br>
-                <strong>📍 店鋪位置：</strong>東京都港区北青山3-8-15 GREEN TERRACE表参道 B1F（表参道駅 A1/B2 出口徒步約 2 分鐘，營業至 19:00）。
+              <div class="venue-chinese-subtitle">享用完頂級牛排後，漫步至表参道・青山街角！兩種風格午後時光任選：</div>
+
+              <!-- Selector Tab Bar -->
+              <div class="cafe-toggle-bar" onclick="event.stopPropagation()">
+                <button type="button" class="cafe-tab-btn active" id="btn-plan-philo" onclick="switchDay5CafePlan('philo', event, true)">
+                  <span class="tab-icon">☕</span>
+                  <span class="tab-title">方案 A：PHILOCOFFEA (表参道)</span>
+                  <span class="tab-badge">世界沖煮冠軍 粕谷哲 ‧ 4:6 極致手沖</span>
+                </button>
+                <button type="button" class="cafe-tab-btn" id="btn-plan-granny" onclick="switchDay5CafePlan('granny', event, true)">
+                  <span class="tab-icon">🥧</span>
+                  <span class="tab-title">方案 B：GRANNY SMITH (青山)</span>
+                  <span class="tab-badge">溫熱手作蘋果派 ‧ 香草冰淇淋 ‧ 骨董通</span>
+                </button>
               </div>
-              <div class="card-footer-row">
-                <span class="venue-location-text">📍 GREEN TERRACE 表参道 B1F</span>
-                <div class="venue-actions">
-                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard('philocoffea', event)">🗺️ 路線</button>
-                  <a href="https://transit.yahoo.co.jp/search/result?from=%E5%A4%96%E8%8B%91%E5%89%8D&to=%E8%A1%A8%E5%8F%82%E9%81%93" target="_blank" class="btn-action-pill pill-yahoo" onclick="event.stopPropagation()">🚆 Yahoo! 乘換</a>
-                  <a href="https://philocoffea.com/" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">☕ 官方網站</a>
-                  <a href="https://maps.google.com/?q=PHILOCOFFEA+Omotesando" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🗺️ Google 地圖</a>
+
+              <!-- At-a-glance Dual Plan Comparison Grid -->
+              <div class="cafe-compare-grid" onclick="event.stopPropagation()">
+                <div class="compare-col col-philo active-col" id="col-summary-philo" onclick="switchDay5CafePlan('philo', event, true)">
+                  <div class="col-header">
+                    <span class="col-emoji">☕</span>
+                    <div>
+                      <div class="col-name">PHILOCOFFEA 表参道</div>
+                      <div class="col-sub">北青山・綠植露台 B1F ‧ 冠軍精品手沖</div>
+                    </div>
+                  </div>
+                  <div class="col-prop-row"><strong>風格：</strong>極簡純粹、採光天星、靜謐清水模庭園</div>
+                  <div class="col-prop-row"><strong>特色：</strong>粕谷哲「4:6 法」頂級單品豆、解膩首選</div>
+                  <div class="col-prop-row"><strong>搭配：</strong>手工巴斯克乳酪蛋糕、燕麥奶拿鐵</div>
+                  <div class="col-prop-row"><strong>交通：</strong>ウルフギャング漫步青山通約 8 分 (或銀座線1站)</div>
+                  <div class="col-prop-row"><strong>預算：</strong>約 ¥800 – ¥1,800 / 人</div>
+                </div>
+
+                <div class="compare-col col-granny" id="col-summary-granny" onclick="switchDay5CafePlan('granny', event, true)">
+                  <div class="col-header">
+                    <span class="col-emoji">🥧</span>
+                    <div>
+                      <div class="col-name">GRANNY SMITH 青山店</div>
+                      <div class="col-sub">南青山・骨董通り ‧ 美式手作蘋果派傳奇</div>
+                    </div>
+                  </div>
+                  <div class="col-prop-row"><strong>風格：</strong>溫馨鄉村木質暖調、甜美香氣、戀人約會感滿分</div>
+                  <div class="col-prop-row"><strong>特色：</strong>4大經典溫熱現烤蘋果派 + 一整球香草冰淇淋</div>
+                  <div class="col-prop-row"><strong>搭配：</strong>深焙手沖黑咖啡、有機紅茶、香醇拿鐵</div>
+                  <div class="col-prop-row"><strong>交通：</strong>ウルフギャング漫步南青山骨董通約 8-9 分</div>
+                  <div class="col-prop-row"><strong>預算：</strong>約 ¥1,000 – ¥1,800 / 人</div>
+                </div>
+              </div>
+
+              <!-- Plan A: Philocoffea Detailed Panel -->
+              <div class="cafe-detail-box" id="cafe-detail-philo">
+                <div class="card-from-leg-pill" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">
+                  🚶 方案 A 交通：ウルフギャング (青山) ➔ 沿青山通悠閒漫步至表参道 GREEN TERRACE (徒步約8分 / 銀座線1站1分 ¥178)
+                </div>
+                <p class="venue-details">
+                  享用完頂級牛排午餐後，漫步至 2016 年世界沖煮大賽（World Brewers Cup）冠軍粕谷哲的東京旗艦店 PHILOCOFFEA 表参道！座落於 GREEN TERRACE 表参道綠植露台的地下一樓，空間極簡純粹、採光靜謐。由頂尖咖啡師以傳奇「4:6 Method」手沖嚴選莊園單品豆，香氣層次分明；剛吃完大份量牛排時來上一杯，是最完美的清爽解膩救星！
+                </p>
+                <div class="venue-highlight-note">
+                  <strong>💡 推薦必點：</strong>粕谷哲冠軍「4:6 Method 特選單品手沖」（推薦哥倫比亞厭氧或藝妓豆）、特調冠軍拿鐵、手工巴斯克乳酪蛋糕。<br>
+                  <strong>📍 店鋪位置：</strong>東京都港区北青山3-8-15 GREEN TERRACE表参道 B1F（表参道駅 A1/B2 出口徒步約 2 分鐘，營業至 19:00）。
+                </div>
+                <div class="card-footer-row">
+                  <span class="venue-location-text">📍 GREEN TERRACE 表参道 B1F</span>
+                  <div class="venue-actions">
+                    <button class="btn-action-pill" style="background:#fef3c7; color:#b45309; border-color:#fde68a; font-weight:700;" onclick="jumpToMapFromCard('philocoffea', event)">🗺️ 路線</button>
+                    <a href="https://transit.yahoo.co.jp/search/result?from=%E5%A4%96%E8%8B%91%E5%89%8D&to=%E8%A1%A8%E5%8F%82%E9%81%93" target="_blank" class="btn-action-pill pill-yahoo" onclick="event.stopPropagation()">🚆 Yahoo! 乘換</a>
+                    <a href="https://philocoffea.com/" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">☕ 官方網站</a>
+                    <a href="https://maps.google.com/?q=PHILOCOFFEA+Omotesando" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🗺️ Google 地圖</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Plan B: Granny Smith Detailed Panel -->
+              <div class="cafe-detail-box" id="cafe-detail-granny" style="display: none;">
+                <div class="card-from-leg-pill" style="background:#ffe4e6; color:#9f1239; border-color:#fecdd3;">
+                  🚶 方案 B 交通：ウルフギャング (青山) ➔ 沿青山通轉入南青山骨董通り悠閒漫步約 8-9 分直達 (或搭銀座線1站至表参道駅B1/B3出口徒步3分)
+                </div>
+                <p class="venue-details">
+                  全東京最具人氣的美式手作蘋果派傳奇名店！以「祖母在美式鄉村廚房烘焙的溫暖手作風味」為核心，店內飄散著濃郁肉桂與現烤蘋果香氣。招牌現烤溫熱蘋果派搭配一大球香醇香草冰淇淋，酥脆派皮與香甜微酸的蘋果果肉在口中冰熱融化，極度幸福浪漫！亦可外帶回飯店作為深夜甜蜜點心。
+                </p>
+                <div class="venue-highlight-note" style="border-left-color:#e11d48; background:#fff1f2;">
+                  <strong>💡 4 款人氣蘋果派指南：</strong><br>
+                  • <strong>Dutch Crumble (荷蘭奶酥)：</strong>頂層鋪滿黑糖燕麥奶酥粒，隱含波本威士忌香氣，酥脆口感第一名！<br>
+                  • <strong>Classic Rum Raisin (經典藍姆葡萄)：</strong>蘭姆酒漬葡萄乾香氣醇厚，經典大人風味。<br>
+                  • <strong>French D'amandes (法式杏仁)：</strong>杏仁奶油餡綿密芬芳，與烤蘋果完美融合。<br>
+                  • <strong>England Special (英式卡士達)：</strong>滑順特製卡士達奶油，無肉桂、無酒精，不習慣肉桂者的最愛！<br>
+                  <strong>📍 店鋪位置：</strong>東京都港区南青山5-8-9 (表参道駅 B1/B3 出口徒步約 3 分鐘，營業至 20:00，內用低消一杯飲品)。
+                </div>
+                <div class="card-footer-row">
+                  <span class="venue-location-text">📍 東京都港区南青山 5-8-9 (骨董通り)</span>
+                  <div class="venue-actions">
+                    <button class="btn-action-pill" style="background:#ffe4e6; color:#be123c; border-color:#fecdd3; font-weight:700;" onclick="jumpToMapFromCard('granny-smith', event)">🗺️ 路線</button>
+                    <a href="https://transit.yahoo.co.jp/search/result?from=%E5%A4%96%E8%8B%91%E5%89%8D&to=%E8%A1%A8%E5%8F%82%E9%81%93" target="_blank" class="btn-action-pill pill-yahoo" onclick="event.stopPropagation()">🚆 Yahoo! 乘換</a>
+                    <a href="https://grannysmith-pie.com/" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🥧 官方網站</a>
+                    <a href="https://maps.google.com/?q=GRANNY+SMITH+APPLE+PIE+%26+COFFEE+青山店" target="_blank" class="btn-action-pill" onclick="event.stopPropagation()">🗺️ Google 地圖</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -2329,7 +2536,7 @@
               <div class="venue-japanese-name">✨ 女友專屬神秘行程 (Girlfriend's Secret Plan)</div>
               <div class="venue-chinese-subtitle">女友親自規劃 ‧ 浪漫保密 ‧ 敬請期待！</div>
               <div class="card-from-leg-pill" style="background:#fdf2f8; color:#9d174d; border-color:#fbcfe8;">
-                ✨ 上一站：PHILOCOFFEA (表参道) ➔ 前往神秘地點 (跟著女友走就對了！)
+                ✨ 上一站：PHILOCOFFEA 或 GRANNY SMITH (表参道・青山) ➔ 前往神秘地點 (跟著女友走就對了！)
               </div>
               <p class="venue-details">
                 今晚的精華時光徹底交由另一半親自秘密規劃！告別死板的既定清單，把主導權完全交給最愛的她——可能是她私藏已久的夢幻選品店、浪漫夜景散策、隱藏版甜點小酌，或是專屬於兩人的秘密打卡點。男生請徹底放鬆，牽好她的手，帶著期待的心情迎接未知驚喜！❤️
@@ -2562,7 +2769,7 @@
         id: 'disneysea',
         day: 3,
         title: "東京ディズニーシー (Tokyo DisneySea)",
-        sub: "夢幻泉鄉 & 威尼斯貢多拉",
+        sub: "刺激四大天王 & 夢幻泉鄉",
         time: "9/27 09:00",
         lat: 35.6267,
         lng: 139.8851,
@@ -2586,6 +2793,24 @@
           [35.6267, 139.8851]  // Current Stop: 東京ディズニーシー 入口
         ]
       },
+      'tower-of-terror': {
+        id: 'tower-of-terror',
+        day: 3,
+        title: "驚魂古塔 (Tower of Terror)",
+        sub: "38米自由落體 ‧ 東京灣黃昏夜景",
+        time: "9/27 17:45",
+        lat: 35.6241,
+        lng: 139.8882,
+        color: "#8b5cf6",
+        lastStopName: "東京ディズニーシー (地中海港灣/園區遊玩)",
+        vehicle: "⚡",
+        routeCoords: [
+          [35.6267, 139.8851], // Last Stop: 地中海港灣/入口
+          [35.6256, 139.8863], // Broadway 街角
+          [35.6248, 139.8875], // Waterfront Park
+          [35.6241, 139.8882]  // Current Stop: Hotel Hightower (Tower of Terror)
+        ]
+      },
       'ss-columbia': {
         id: 'ss-columbia',
         day: 3,
@@ -2595,13 +2820,12 @@
         lat: 35.6238,
         lng: 139.8860,
         color: "#2f80ed",
-        lastStopName: "東京ディズニーシー (地中海港灣/夢幻泉鄉)",
+        lastStopName: "驚魂古塔 (Tower of Terror)",
         vehicle: "🚶",
         routeCoords: [
-          [35.6267, 139.8851], // Last Stop: DisneySea Main
-          [35.6255, 139.8855], // Harbor Promenade
-          [35.6245, 139.8858], // Pier Boardwalk
-          [35.6238, 139.8860]  // Current Stop: S.S. Columbia Dining Room
+          [35.6241, 139.8882], // Last Stop: Tower of Terror (高塔飯店)
+          [35.6240, 139.8870], // Waterfront Pier Plaza
+          [35.6238, 139.8860]  // Current Stop: S.S. Columbia Dining Room (3F B-Deck)
         ]
       },
       'sakurai': {
@@ -2719,7 +2943,7 @@
         time: "9/29 16:45",
         lat: 35.66614,
         lng: 139.71350,
-        color: "#f59e0b",
+        color: "#d97706",
         lastStopName: "ウルフギャング・ステーキハウス (青山)",
         vehicle: "☕",
         yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E5%A4%96%E8%8B%91%E5%89%8D&to=%E8%A1%A8%E5%8F%82%E9%81%93",
@@ -2728,6 +2952,26 @@
           [35.6685, 139.7160], // 青山通り步道
           [35.6672, 139.7145], // 北青山3丁目街角
           [35.66614, 139.71350] // Current Stop: GREEN TERRACE 表参道 B1F (PHILOCOFFEA)
+        ]
+      },
+      'granny-smith': {
+        id: 'granny-smith',
+        day: 5,
+        title: "GRANNY SMITH 青山店",
+        sub: "溫熱手工蘋果派 ‧ 香草冰淇淋 ‧ 骨董通",
+        time: "9/29 16:45",
+        lat: 35.6644,
+        lng: 139.7153,
+        color: "#e11d48",
+        lastStopName: "ウルフギャング・ステーキハウス (青山)",
+        vehicle: "🚶",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E5%A4%96%E8%8B%91%E5%89%8D&to=%E8%A1%A8%E5%8F%82%E9%81%93",
+        routeCoords: [
+          [35.6698, 139.7180], // Last Stop: Wolfgang's Aoyama (外苑前)
+          [35.6685, 139.7160], // 青山通り步道
+          [35.6665, 139.7142], // 南青山五丁目交差点
+          [35.6652, 139.7148], // 骨董通り (Kotto-dori)
+          [35.6644, 139.7153]  // Current Stop: GRANNY SMITH 青山店 (南青山5-8-9)
         ]
       },
       'secret-girlfriend': {
@@ -2739,11 +2983,11 @@
         lat: 35.6610,
         lng: 139.7040,
         color: "#ec4899",
-        lastStopName: "PHILOCOFFEA 表参道店",
+        lastStopName: "PHILOCOFFEA / GRANNY SMITH (表参道・青山)",
         vehicle: "🎁",
         yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E8%A1%A8%E5%8F%82%E9%81%93&to=%E6%B8%8B%E8%B0%B7",
         routeCoords: [
-          [35.66614, 139.71350], // Last Stop: PHILOCOFFEA 表参道店
+          [35.66614, 139.71350], // Last Stop: 表参道・青山 (可依所選方案自動切換起點)
           [35.6652, 139.7123],   // 表参道駅 (東京メトロ銀座線/千代田線)
           [35.6635, 139.7085],   // 神宮前 / 貓街浪漫步道
           [35.6610, 139.7040]    // Current Stop: 女友專屬神秘地點 🤫
@@ -2819,11 +3063,15 @@
     let animFrameId = null;
     let currentLegId = null;
     let currentNightcapChoice = 'sg';
+    let currentDay5CafeChoice = 'philo';
 
     function buildPin(color, dayNum, spotId) {
       let iconContent = `D${dayNum}`;
       if (spotId === 'sg-club') iconContent = '🍸';
       else if (spotId === 'watering-hole') iconContent = '🍺';
+      else if (spotId === 'philocoffea') iconContent = '☕';
+      else if (spotId === 'granny-smith') iconContent = '🥧';
+      else if (spotId === 'tower-of-terror') iconContent = '🏨';
       return L.divIcon({
         className: 'pin-holder',
         html: `<div class="map-pin-badge" id="pin-${spotId}" style="background-color: ${color};">
@@ -2871,6 +3119,58 @@
 
       if (updateMap) {
         const targetLegId = isSg ? 'sg-club' : 'watering-hole';
+        selectStopLeg(targetLegId, false);
+      }
+    }
+
+    function switchDay5CafePlan(choice, event, updateMap = true) {
+      if (event) event.stopPropagation();
+      currentDay5CafeChoice = choice;
+
+      const isPhilo = choice === 'philo';
+      const tabPhilo = document.getElementById('btn-plan-philo');
+      const tabGranny = document.getElementById('btn-plan-granny');
+      if (tabPhilo && tabGranny) {
+        tabPhilo.classList.toggle('active', isPhilo);
+        tabGranny.classList.toggle('active', !isPhilo);
+      }
+
+      const colPhilo = document.getElementById('col-summary-philo');
+      const colGranny = document.getElementById('col-summary-granny');
+      if (colPhilo && colGranny) {
+        colPhilo.classList.toggle('active-col', isPhilo);
+        colGranny.classList.toggle('active-col', !isPhilo);
+      }
+
+      const detailPhilo = document.getElementById('cafe-detail-philo');
+      const detailGranny = document.getElementById('cafe-detail-granny');
+      if (detailPhilo && detailGranny) {
+        detailPhilo.style.display = isPhilo ? 'block' : 'none';
+        detailGranny.style.display = isPhilo ? 'none' : 'block';
+      }
+
+      const badge = document.getElementById('current-cafe-plan-badge');
+      if (badge) {
+        badge.textContent = isPhilo ? '方案 A：PHILOCOFFEA' : '方案 B：GRANNY SMITH';
+        badge.style.background = isPhilo ? '#fef3c7' : '#ffe4e6';
+        badge.style.color = isPhilo ? '#b45309' : '#be123c';
+        badge.style.borderColor = isPhilo ? '#fde68a' : '#fecdd3';
+      }
+
+      // Update secret girlfriend starting coords & last stop name dynamically
+      if (legDefinitions['secret-girlfriend']) {
+        legDefinitions['secret-girlfriend'].lastStopName = isPhilo ? 'PHILOCOFFEA 表参道店' : 'GRANNY SMITH 青山店';
+        const startCoord = isPhilo ? [35.66614, 139.71350] : [35.6644, 139.7153];
+        legDefinitions['secret-girlfriend'].routeCoords = [
+          startCoord,
+          [35.6652, 139.7123],
+          [35.6635, 139.7085],
+          [35.6610, 139.7040]
+        ];
+      }
+
+      if (updateMap) {
+        const targetLegId = isPhilo ? 'philocoffea' : 'granny-smith';
         selectStopLeg(targetLegId, false);
       }
     }
@@ -2993,6 +3293,12 @@
       } else if (spotId === 'watering-hole') {
         targetCardId = 'day2-nightcap';
         switchNightcapPlan('wh', null, false);
+      } else if (spotId === 'philocoffea') {
+        targetCardId = 'day5-cafe';
+        switchDay5CafePlan('philo', null, false);
+      } else if (spotId === 'granny-smith') {
+        targetCardId = 'day5-cafe';
+        switchDay5CafePlan('granny', null, false);
       }
       const cardEl = document.getElementById('card-' + targetCardId);
       const leg = legDefinitions[spotId];
@@ -3093,6 +3399,12 @@
       } else if (spotId === 'watering-hole') {
         targetCardId = 'day2-nightcap';
         switchNightcapPlan('wh', null, false);
+      } else if (spotId === 'philocoffea') {
+        targetCardId = 'day5-cafe';
+        switchDay5CafePlan('philo', null, false);
+      } else if (spotId === 'granny-smith') {
+        targetCardId = 'day5-cafe';
+        switchDay5CafePlan('granny', null, false);
       }
       const cardEl = document.getElementById('card-' + targetCardId);
       const parentBlock = document.getElementById('block-day-' + leg.day);
@@ -3374,19 +3686,27 @@ LOCATION:The SG Club (渋谷区神南1-7-8) / Watering Hole (渋谷区千駄ヶ�
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:東京ディズニーシー (Tokyo DisneySea)
+SUMMARY:東京ディズニーシー (Tokyo DisneySea) 刺激設施與夢幻奇航
 DTSTART;TZID=Asia/Tokyo:20260927T090000
-DTEND;TZID=Asia/Tokyo:20260927T210000
-DESCRIPTION:09:00 開園入園，夢幻泉鄉 (Fantasy Springs)、威尼斯貢多拉、翱翔夢幻奇航
-LOCATION:東京ディズニーシー
+DTEND;TZID=Asia/Tokyo:20260927T174500
+DESCRIPTION:09:00 入園搶購夢幻泉鄉/翱翔 DPA，開園第一波直衝地心探險之旅(75km/h)，接續印第安納瓊斯、忿怒雙神360度翻轉雲霄飛車與夢幻泉鄉。
+LOCATION:東京ディズニーシー (Tokyo DisneySea)
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:晚餐：S.S.コロンビア・ダイニングルーム
+SUMMARY:刺激體驗：驚魂古塔 Tower of Terror (美國海濱)
+DTSTART;TZID=Asia/Tokyo:20260927T174500
+DTEND;TZID=Asia/Tokyo:20260927T190000
+DESCRIPTION:38米無重力連續垂直自由落體，頂樓大門打開時俯瞰東京灣黃昏夜景！注意固定髮箍與包包，準備好拍照搞怪表情。玩完步行2分直達 S.S. Columbia 晚餐。
+LOCATION:Tower of Terror, Tokyo DisneySea (美國海濱)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:晚餐：S.S.コロンビア・ダイニングルーム (奢華客輪大餐廳)
 DTSTART;TZID=Asia/Tokyo:20260927T192000
-DTEND;TZID=Asia/Tokyo:20260927T202000
-DESCRIPTION:迪士尼海洋 美國海濱 豪華蒸氣巨輪 B-Deck 大餐廳牛排晚宴 (已預約優先席 19:20)
-LOCATION:S.S.コロンビア・ダイニングルーム
+DTEND;TZID=Asia/Tokyo:20260927T203000
+DESCRIPTION:迪士尼海洋 美國海濱 豪華蒸氣巨輪 B-Deck 大餐廳牛排晚宴 (已預約優先席 19:20)。餐後20:30接續欣賞水上煙火大秀。
+LOCATION:S.S. Columbia Dining Room, Tokyo DisneySea
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
@@ -3406,11 +3726,11 @@ LOCATION:ウルフギャング・ステーキハウス シグニチャー 青山
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:咖啡：PHILOCOFFEA 表参道店 (世界沖煮冠軍手沖)
+SUMMARY:午後時光：PHILOCOFFEA (世界冠軍手沖) 或 GRANNY SMITH 青山店 (手工蘋果派) [雙方案任選]
 DTSTART;TZID=Asia/Tokyo:20260929T164500
 DTEND;TZID=Asia/Tokyo:20260929T180000
-DESCRIPTION:世界沖煮大賽冠軍粕谷哲旗艦店，GREEN TERRACE表参道 B1F，4:6 Method 頂級手沖咖啡與下午茶
-LOCATION:PHILOCOFFEA 表参道店 (東京都港区北青山3-8-15 B1F)
+DESCRIPTION:Wolfgang's 牛排午餐後的浪漫午後：【方案A】2016世界沖煮冠軍粕谷哲旗艦店 PHILOCOFFEA（4:6 Method 精品手沖咖啡極致解膩）或【方案B】南青山骨董通 GRANNY SMITH（溫熱手工美式蘋果派佐香草冰淇淋）。
+LOCATION:PHILOCOFFEA (東京都港区北青山3-8-15 B1F) / GRANNY SMITH 青山店 (東京都港区南青山5-8-9)
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
