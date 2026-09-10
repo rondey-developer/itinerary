@@ -5,7 +5,7 @@ html_content = '''<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>東京 & 草津溫泉 浪漫雙人之旅 | 區間導航地圖</title>
+  <title>東京 & 草津溫泉 浪漫雙人遊 | 區間導航地圖</title>
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1520,22 +1520,22 @@ html_content = '''<!DOCTYPE html>
       <span style="font-size:1.2rem;">🌸</span>
       <div>
         <h1 class="brand-title">
-          <span class="brand-title-full">東京 · 草津 ｜ 侘寂雙人行旅</span>
+          <span class="brand-title-full">東京 · 草津 ｜ 侘寂雙人浪漫遊</span>
           <span class="brand-title-mobile">東京 · 草津</span>
         </h1>
       </div>
-      <span class="brand-pill">9/25 – 9/29 · 5天4夜</span>
+      <span class="brand-pill">9/25 – 9/29 · 5日4夜</span>
     </div>
 
     <div class="nav-buttons">
-      <button class="btn-nav-action" onclick="showAllVenuesView()" title="查看全程所有景點">
+      <button class="btn-nav-action" onclick="showAllVenuesView()" title="睇晒全程所有景點">
         <span>🗺️</span><span class="nav-btn-text-full"> 全程視角</span><span class="nav-btn-text-short"> 全景</span>
       </button>
       <button class="btn-nav-action" onclick="downloadCalendarFile()" title="下載日曆檔案 (.ics)">
-        <span>📅</span><span class="nav-btn-text-full"> 加入日曆 (.ics)</span><span class="nav-btn-text-short"> 日曆</span>
+        <span>📅</span><span class="nav-btn-text-full"> 加落日曆 (.ics)</span><span class="nav-btn-text-short"> 日曆</span>
       </button>
       <button class="btn-nav-action btn-nav-primary" onclick="copyShareURL()" title="複製分享連結">
-        <span>🔗</span><span class="nav-btn-text-full"> 分享給女朋友</span><span class="nav-btn-text-short"> 分享</span>
+        <span>🔗</span><span class="nav-btn-text-full"> Share 畀女朋友</span><span class="nav-btn-text-short"> 分享</span>
       </button>
     </div>
   </header>
@@ -1577,7 +1577,7 @@ html_content = '''<!DOCTYPE html>
           <span>9/28 (一) 草津溫泉</span>
         </button>
         <button class="day-selector-btn" onclick="selectDayFromMap(5, this)">
-          <span>9/29 (二) 牛排 & 夜景</span>
+          <span>9/29 (二) 牛扒 & 夜景</span>
         </button>
       </div>
 
@@ -1596,8 +1596,8 @@ html_content = '''<!DOCTYPE html>
       <div class="leg-status-banner" id="leg-status-banner">
         <div class="live-pulse-beacon"></div>
         <div class="leg-status-info">
-          <div class="leg-route-title" id="leg-title-display">點擊任一景點：僅顯示從上一站抵達此處的路線</div>
-          <div class="leg-sub-text" id="leg-subtitle-display">點選卡片查看即時區間交通動態 🚇</div>
+          <div class="leg-route-title" id="leg-title-display">撳任何景點：只會顯示由上一站嚟到呢度嘅路線</div>
+          <div class="leg-sub-text" id="leg-subtitle-display">撳卡片睇即時區間交通路線 🚇</div>
         </div>
         <div class="leg-banner-actions" style="display:flex; gap:5px; flex-shrink:0;">
           <a class="btn-replay-leg" id="btn-yahoo-banner" href="#" target="_blank" style="display:none; background:#f0f9ff; color:#0369a1; border-color:#bae6fd; text-decoration:none;">
@@ -1618,11 +1618,11 @@ html_content = '''<!DOCTYPE html>
       <div class="panel-header">
         <div class="panel-header-left">
           <h2><span>📋</span> 詳細行程路線</h2>
-          <p>點選任意景點，地圖僅顯示從上一站前來的專屬路線</p>
+          <p>撳任何景點，地圖只會顯示由上一站過嚟嘅專屬路線</p>
         </div>
         <div class="panel-quick-actions">
           <button class="btn-panel-action" onclick="expandAllDays()">全部展開</button>
-          <button class="btn-panel-action" onclick="collapseAllDays()">全部收合</button>
+          <button class="btn-panel-action" onclick="collapseAllDays()">全部收起</button>
           <button class="panel-toggle-btn" title="切換檢視寬度" onclick="togglePanelWidth()">⇋</button>
         </div>
       </div>
@@ -1635,12 +1635,12 @@ html_content = '''<!DOCTYPE html>
             <div class="day-title-wrap">
               <span class="day-badge-tag badge-d1">Day 1</span>
               <div class="day-title-text">
-                <h3>9月25日 (星期五) • 抵達與溫馨晚餐</h3>
-                <span>手打漢堡排 ‧ 放鬆安頓</span>
+                <h3>9月25日 (星期五) • 抵達與溫馨晚飯</h3>
+                <span>手打漢堡扒 ‧ 放鬆安頓</span>
               </div>
             </div>
             <div class="day-accordion-control">
-              <span class="accordion-chevron-text">收合</span>
+              <span class="accordion-chevron-text">收起</span>
               <span class="accordion-chevron-arrow">▼</span>
             </div>
           </div>
@@ -1650,16 +1650,16 @@ html_content = '''<!DOCTYPE html>
             <div class="venue-card" id="card-shanes-burg" onclick="selectStopLeg('shanes-burg')">
               <div class="card-top-row">
                 <span class="card-time-pill">⏰ 19:00 (晚上 7:00)</span>
-                <span class="card-status-pill pill-booking">✓ 已預約晚餐</span>
+                <span class="card-status-pill pill-booking">✓ 已預約晚飯</span>
               </div>
               <div class="venue-japanese-name">🥩 シェーンズバーグ 新百合ヶ丘店</div>
-              <div class="venue-chinese-subtitle">Shane's Burg • 新百合之丘 Elmi Road 5F 美式漢堡排專門店</div>
-              <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">🚆 今日起點：百合ヶ丘駅 ➔ 小田急小田原線直達新百合ヶ丘駅 (1站2分，南口直通商場 5F / 徒步約12分)</div>
+              <div class="venue-chinese-subtitle">Shane's Burg • 新百合之丘 Elmi Road 5F 美式漢堡扒專門店</div>
+              <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">🚆 今日起點：百合ヶ丘駅 ➔ 小田急小田原線直達新百合ヶ丘駅 (1個站2分鐘，南口直通商場 5F / 行過去約12分鐘)</div>
               <p class="venue-details">
-                每日新鮮現打手作特級牛肉漢堡排，經炭火高溫封烤，肉汁飽滿。在美式木質溫暖氛圍中放鬆用餐，為美好旅程揭開序幕！
+                每日新鮮即打手作特級牛肉漢堡扒，經炭火高溫封烤，肉汁超爆滿！喺美式木質溫暖氛圍之中慢慢放鬆食飯，為今次甜蜜旅程拉開序幕！
               </p>
               <div class="venue-highlight-note">
-                <strong>💡 推薦點餐：</strong>經典多蜜醬（デミグラス）或日式蒜蓉洋蔥醬漢堡排，加融化起司；配酥脆薯塊與生啤酒/Highball。<br>
+                <strong>💡 推薦點餐：</strong>經典多蜜醬（デミグラス）或日式蒜蓉洋蔥醬漢堡扒，加融化芝士；配香脆薯角同生啤/Highball。<br>
                 <strong>💰 人均預算：</strong>約 ¥1,500 – ¥2,500。
               </div>
               <div class="card-footer-row">
@@ -1682,11 +1682,11 @@ html_content = '''<!DOCTYPE html>
               <span class="day-badge-tag badge-d2">Day 2</span>
               <div class="day-title-text">
                 <h3>9月26日 (星期六) • 壽司之神、鐵塔、高空酒吧與深夜微醺</h3>
-                <span>六本木板前 ‧ 浪漫鐵塔 ‧ 50佳酒吧 ‧ 無添蔵壽司 ‧ 續攤調酒/精釀</span>
+                <span>六本木板前 ‧ 浪漫鐵塔 ‧ 50佳酒吧 ‧ 無添蔵壽司 ‧ 飲多杯調酒/Craft Beer</span>
               </div>
             </div>
             <div class="day-accordion-control">
-              <span class="accordion-chevron-text">收合</span>
+              <span class="accordion-chevron-text">收起</span>
               <span class="accordion-chevron-arrow">▼</span>
             </div>
           </div>
@@ -1696,7 +1696,7 @@ html_content = '''<!DOCTYPE html>
             <div class="transit-guide-box">
               <div class="transit-guide-title">
                 <span>🚇 Day 2 東京地鐵高效率巡航（Yahoo! 乗換案内）</span>
-                <span style="color:#059669;">全日地下鐵 • 零塞車 • 零計程車</span>
+                <span style="color:#059669;">全日搭地鐵 • 零塞車 • 唔使搭的士</span>
               </div>
 
               <div class="transit-step-item">
@@ -1706,8 +1706,8 @@ html_content = '''<!DOCTYPE html>
                   <div class="step-station-name">百合ヶ丘 ➔ 乃木坂 [C05] (六本木之丘)</div>
                   <div class="step-subline">
                     <span class="subline-badge">小田急線・千代田線直通</span>
-                    <span>約42分 • ¥429</span>
-                    <span>5號出口徒步6分至次郎壽司</span>
+                    <span>約42分鐘 • ¥429</span>
+                    <span>5號出口行6分鐘就到次郎壽司</span>
                   </div>
                 </div>
               </div>
@@ -1719,8 +1719,8 @@ html_content = '''<!DOCTYPE html>
                   <div class="step-station-name">六本木 [E23] ➔ 赤羽橋 [E21] (東京鐵塔)</div>
                   <div class="step-subline">
                     <span class="subline-badge">都営大江戸線 (大門・両国方面)</span>
-                    <span>2站 3分 • ¥178</span>
-                    <span>中之橋口出站徒步5分直達鐵塔</span>
+                    <span>2個站 3分鐘 • ¥178</span>
+                    <span>中之橋口出閘行5分鐘直達鐵塔</span>
                   </div>
                 </div>
               </div>
@@ -1732,8 +1732,8 @@ html_content = '''<!DOCTYPE html>
                   <div class="step-station-name">御成門 [I06] ➔ 大手町 [I09] (四季酒店 VIRTÙ)</div>
                   <div class="step-subline">
                     <span class="subline-badge">都営三田線 (西高島平行)</span>
-                    <span>3站 6分 • ¥178</span>
-                    <span>C2b出口地下直通四季酒店39F</span>
+                    <span>3個站 6分鐘 • ¥178</span>
+                    <span>C2b出口地下直通四季酒店 39F</span>
                   </div>
                 </div>
               </div>
@@ -1745,8 +1745,8 @@ html_content = '''<!DOCTYPE html>
                   <div class="step-station-name">大手町 [M18] ➔ 新宿三丁目 [M09] (無添蔵壽司)</div>
                   <div class="step-subline">
                     <span class="subline-badge">東京Metro丸ノ内線 (荻窪行)</span>
-                    <span>9站 19分 • ¥209</span>
-                    <strong style="color:#10b981;">A7/B2出口直通高野大樓6F！🍣</strong>
+                    <span>9個站 19分鐘 • ¥209</span>
+                    <strong style="color:#10b981;">A7/B2 出口直通高野大廈 6F！🍣</strong>
                   </div>
                 </div>
               </div>
@@ -1755,14 +1755,14 @@ html_content = '''<!DOCTYPE html>
                 <div class="step-time-box">21:45</div>
                 <div class="step-marker-dot end"></div>
                 <div class="step-desc-wrap">
-                  <div class="step-station-name">無添蔵 ➔ 續攤微醺（雙方案自由選）</div>
+                  <div class="step-station-name">無添蔵 ➔ 飲多杯微醺下半場（兩個方案任你揀）</div>
                   <div class="step-subline">
                     <span class="subline-badge" style="background:#fef3c7; color:#92400e;">🍸 方案 A (The SG Club)</span>
-                    <span>新宿三丁目 [F13] ➔ 渋谷 [F16] (副都心線 2站5分 ¥178 徒步7分)</span>
+                    <span>新宿三丁目 [F13] ➔ 渋谷 [F16] (副都心線 2個站5分鐘 ¥178 行7分鐘)</span>
                   </div>
                   <div class="step-subline" style="margin-top:2px;">
                     <span class="subline-badge" style="background:#d1fae5; color:#065f46;">🍺 方案 B (Watering Hole)</span>
-                    <span>出高野大樓沿明治通り往南漫步約 8分直達 (代々木駅東口旁)</span>
+                    <span>出高野大廈沿明治通り向南行約 8分鐘直達 (代々木駅東口隔離)</span>
                   </div>
                 </div>
               </div>
@@ -1772,16 +1772,16 @@ html_content = '''<!DOCTYPE html>
             <div class="venue-card" id="card-jiro" onclick="selectStopLeg('jiro')">
               <div class="card-top-row">
                 <span class="card-time-pill">⏰ 13:00 (下午 1:00)</span>
-                <span class="card-status-pill pill-booking">✓ 已預約板前席</span>
+                <span class="card-status-pill pill-booking">✓ 已預約板前位</span>
               </div>
               <div class="venue-japanese-name">🍣 すきやばし 次郎 六本木ヒルズ店</div>
               <div class="venue-chinese-subtitle">Sukiyabashi Jiro • 六本木之丘 櫸坂通 3F 江戶前壽司</div>
-              <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">🚆 今日起點：百合ヶ丘駅 ➔ 小田急線・千代田線直達乃木坂駅 (車程約42分，5號出口漫步6分至六本木之丘)</div>
+              <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">🚆 今日起點：百合ヶ丘駅 ➔ 小田急線・千代田線直達乃木坂駅 (車程約42分鐘，5號出口行6分鐘到六本木之丘)</div>
               <p class="venue-details">
-                世界傳奇「壽司之神」小野二郎之子（小野隆大師）親自握製。極致純粹的江戶前板前握壽司，米飯溫度精確，魚生刀工絕倫，是一生難忘的頂級味蕾盛宴。
+                世界傳奇「壽司之神」小野二郎嘅公子（小野隆大師）親自手握。極致純粹嘅江戶前板前握壽司，醋飯溫度精準，刺身刀工出神入化，絕對係一生難忘嘅頂級味蕾饗宴！
               </p>
               <div class="venue-highlight-note">
-                <strong>💡 禮儀小貼士：</strong>師傅刷好醬汁握好送上後，建議在數秒內以手或筷直接享用最佳溫度；店內禁止噴過濃香水。
+                <strong>💡 禮儀小貼士：</strong>師傅搽好醬油握好擺喺面前之後，建議幾秒之內直接用手或者筷子放入口品嚐最佳溫度；另外店內記得唔好噴太濃嘅香水。
               </div>
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 六本木ヒルズ けやき坂通り 3F</span>
@@ -1802,13 +1802,13 @@ html_content = '''<!DOCTYPE html>
               <div class="venue-japanese-name">🗼 東京タワー (Tokyo Tower)</div>
               <div class="venue-chinese-subtitle">Main Deck 150m 展望台 ‧ 透明玻璃步道</div>
               <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">
-                🚇 上一站：すきやばし 次郎 ➔ 都営大江戸線直達赤羽橋駅 (六本木➔赤羽橋 2站3分 ¥178，中之橋口徒步5分)
+                🚇 上一站：すきやばし 次郎 ➔ 都営大江戸線直達赤羽橋駅 (六本木➔赤羽橋 2個站3分鐘 ¥178，中之橋口行5分鐘)
               </div>
               <p class="venue-details">
-                從六本木站搭乘都営大江戸線僅 2 站（約3分鐘）直達赤羽橋站，自中之橋口出站漫步 5 分鐘即可仰望壯麗鐵塔！登上 150 米主展望台俯瞰東京全景與台場海灣，走在驚險的透明玻璃地板合影，並參拜東京最高的戀愛神社「タワー大神宮」。
+                由六本木站搭都営大江戸線只係 2 個站（約3分鐘）直達赤羽橋站，由中之橋口出閘行 5 分鐘就已經可以抬頭仰望壯麗鐵塔！登上 150 米主展望台俯瞰成個東京全景同台場海灣，踩上刺激嘅透明玻璃地板影相打卡，仲可以一齊參拜全東京最高嘅戀愛神社「タワー大神宮」❤️
               </p>
               <div class="venue-highlight-note">
-                <strong>🚇 Yahoo! 乘換指引：</strong>六本木駅 (E23) 搭乘都営大江戸線 (大門・両国方面) ➔ 赤羽橋駅 (E21)，車程 3 分鐘，票價 ¥178。出站抬頭即是東京鐵塔，免除地面塞車與計程車費用！
+                <strong>🚇 Yahoo! 乘換指引：</strong>六本木駅 (E23) 搭都営大江戸線 (大門・両国方面) ➔ 赤羽橋駅 (E21)，車程 3 分鐘，車費 ¥178。一出閘抬頭就見到東京鐵塔，完全唔驚地面塞車，又慳返筆的士錢！
               </div>
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 港區芝公園 4-2-8</span>
@@ -1824,19 +1824,19 @@ html_content = '''<!DOCTYPE html>
             <div class="venue-card" id="card-virtu" onclick="selectStopLeg('virtu')">
               <div class="card-top-row">
                 <span class="card-time-pill">⏰ 17:30 – 19:15</span>
-                <span class="card-status-pill pill-sightseeing">亞洲50最佳酒吧</span>
+                <span class="card-status-pill pill-sightseeing">亞洲50佳酒吧</span>
               </div>
               <div class="venue-japanese-name">🍸 VIRTÙ (フォーシーズンズホテル東京大手町 39F)</div>
               <div class="venue-chinese-subtitle">Four Seasons Hotel Tokyo at Otemachi • 法日融合巴黎沙龍風</div>
               <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">
-                🚇 上一站：東京タワー ➔ 都営三田線直達大手町 (御成門駅➔大手町駅僅3站6分 ¥178，C2b出口直通四季酒店)
+                🚇 上一站：東京タワー ➔ 都営三田線直達大手町 (御成門駅➔大手町駅只係3個站6分鐘 ¥178，C2b出口直通四季酒店)
               </div>
               <p class="venue-details">
-                從東京鐵塔穿過芝公園林蔭漫步約 6 分鐘抵達御成門站，搭乘都営三田線僅 3 站（6分鐘）直達大手町！地下道直結 Otemachi One 與東京大手町四季酒店 39 樓。榮登「亞洲50佳酒吧」！挑高雙層落地窗俯瞰皇居御苑與新宿天際線晚霞，品味獨創調酒。
+                由東京鐵塔穿過芝公園林蔭行大約 6 分鐘到御成門站，搭都営三田線只係 3 個站（6分鐘）直達大手町！地下通道直駁 Otemachi One 同東京大手町四季酒店 39 樓。榮登「亞洲50佳酒吧」！挑高兩層超巨型落地玻璃俯瞰皇居御苑同新宿天際線嘅日落晚霞，嘆返杯極致法日特色調酒。
               </p>
               <div class="venue-highlight-note">
-                <strong>🚇 Yahoo! 乘換指引：</strong>御成門駅 (I06) 搭乘都営三田線 (西高島平行) ➔ 大手町駅 (I09)，車程 6 分鐘，票價 ¥178。C2b 出口直結酒店電梯廳，無縫優雅抵達。<br>
-                <strong>👔 服裝要求（Smart Casual）：</strong>男士請著長褲與有領襯衫、皮鞋（勿穿拖鞋、短褲）；女士建議典雅洋裝或精緻便服。
+                <strong>🚇 Yahoo! 乘換指引：</strong>御成門駅 (I06) 搭都営三田線 (西高島平方向) ➔ 大手町駅 (I09)，車程 6 分鐘，車費 ¥178。C2b 出口直駁酒店升降機大堂，無縫優雅抵達。<br>
+                <strong>👔 著衫要求（Smart Casual）：</strong>男仔請著長褲同有領恤衫、皮鞋（切忌著拖鞋、短褲）；女仔建議著優雅連身裙或者精緻斯文便服。
               </div>
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 大手町 1-2-1 酒店 39 樓</span>
@@ -1852,18 +1852,18 @@ html_content = '''<!DOCTYPE html>
             <div class="venue-card" id="card-kura-sushi" onclick="selectStopLeg('kura-sushi')">
               <div class="card-top-row">
                 <span class="card-time-pill">⏰ 20:00 (晚上 8:00)</span>
-                <span class="card-status-pill pill-booking">精緻和食與扭蛋晚餐</span>
+                <span class="card-status-pill pill-booking">精緻和食與扭蛋晚飯</span>
               </div>
               <div class="venue-japanese-name">🍣 くら寿司 無添蔵 新宿店 (Muten Kura Sushi)</div>
-              <div class="venue-chinese-subtitle">藏壽司頂級精緻和食品牌 ‧ 新宿高野大樓 6F (東口徒步1分)</div>
+              <div class="venue-chinese-subtitle">藏壽司頂級精緻和食品牌 ‧ 新宿高野大廈 6F (東口行1分鐘)</div>
               <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">
-                🚇 上一站：VIRTÙ (大手町) ➔ 東京Metro丸之內線直達新宿 (大手町駅➔新宿三丁目駅約19分 ¥209，A7/B2出口直通)
+                🚇 上一站：VIRTÙ (大手町) ➔ 東京Metro丸之內線直達新宿 (大手町駅➔新宿三丁目駅約19分鐘 ¥209，A7/B2出口直通)
               </div>
               <p class="venue-details">
-                為女友特別挑選藏壽司旗下的頂級高階品牌「無添蔵」！有別於一般迴轉壽司，店內裝潢高雅如隱世料亭，主打職人本格和食、嚴選特級生魚片、現炸天婦羅與特製高湯烏龍麵，同時保留情侶必玩、每吃 5 盤抽一次的「畢庫拉碰 (ビッくらポン)」扭蛋遊戲，精緻度與浪漫趣味兼具！
+                特登為女朋友精挑細選藏壽司旗下嘅頂級高階品牌「無添蔵」！同平時一般迴轉壽司好唔同，呢度裝修高雅到好似隱世日本料亭，主打職人本格和食、嚴選特級刺身、即叫即炸天婦羅同特製高湯烏冬，仲保留咗情侶必玩、每食 5 碟抽一次嘅「Bikkura-Pon (ビッくらポン)」扭蛋機，精緻好食又夠晒浪漫好玩！
               </p>
               <div class="venue-highlight-note">
-                <strong>💡 交通資訊（Yahoo! 乘換推薦）：</strong>東京地下鐵丸之內線「大手町駅」(M18) 直達「新宿三丁目駅」(M09，9站19分，¥209)，A7/B2 出口直通新宿高野大樓 6F，或由 JR 新宿駅東口徒步1分即達。<br>
+                <strong>💡 交通資訊（Yahoo! 乘換推薦）：</strong>東京地鐵丸之內線「大手町駅」(M18) 直達「新宿三丁目駅」(M09，9個站19分鐘，¥209)，A7/B2 出口直通新宿高野大廈 6F，或者由 JR 新宿駅東口行1分鐘即達。<br>
                 <strong>💰 人均預算：</strong>約 ¥2,000 – ¥3,500。<br>
                 <strong>📍 店鋪地址：</strong>東京都新宿区新宿3-26-11 新宿高野ビル6F (電話: 03-6457-7609)
               </div>
@@ -1881,14 +1881,14 @@ html_content = '''<!DOCTYPE html>
             <!-- Day 2 Nightcap Dual-Plan Choice: The SG Club vs Watering Hole -->
             <div class="venue-card nightcap-card" id="card-day2-nightcap" onclick="selectStopLeg(currentNightcapChoice === 'wh' ? 'watering-hole' : 'sg-club')">
               <div class="card-top-row">
-                <span class="card-time-pill">⏰ 21:45 – 23:15 (雙方案自由選)</span>
-                <span class="card-status-pill pill-sightseeing">🍸 微醺二續攤 ‧ 現場隨選</span>
+                <span class="card-time-pill">⏰ 21:45 – 23:15 (兩個方案任你揀)</span>
+                <span class="card-status-pill pill-sightseeing">🍸 微醺飲多杯 ‧ 現場任揀</span>
               </div>
               <div class="venue-japanese-name">
-                <span>🥂 晚餐後續攤微醺方案</span>
+                <span>🥂 食完晚飯去邊飲？微醺下半場方案</span>
                 <span class="plan-badge-pill" id="current-plan-badge">方案 A：The SG Club</span>
               </div>
-              <div class="venue-chinese-subtitle">享受完無添蔵握壽司與扭蛋後，為浪漫夜晚精緻收尾！兩種微醺氛圍任選：</div>
+              <div class="venue-chinese-subtitle">食完無添蔵握壽司玩完扭蛋之後，梗係要為浪漫夜晚畫上完美句號！兩種唔同微醺氣氛任你揀：</div>
 
               <!-- Selector Tab Bar -->
               <div class="nightcap-toggle-bar" onclick="event.stopPropagation()">
@@ -1900,7 +1900,7 @@ html_content = '''<!DOCTYPE html>
                 <button type="button" class="nightcap-tab-btn" id="btn-plan-wh" onclick="switchNightcapPlan('wh', event, true)">
                   <span class="tab-icon">🍺</span>
                   <span class="tab-title">方案 B：Watering Hole (代々木)</span>
-                  <span class="tab-badge">21款鮮打精釀生啤 ‧ 新宿南散策</span>
+                  <span class="tab-badge">21款即斟新鮮Craft Beer ‧ 新宿南散步</span>
                 </button>
               </div>
 
@@ -1914,11 +1914,11 @@ html_content = '''<!DOCTYPE html>
                       <div class="col-sub">渋谷・神南 ‧ 傳奇調酒師後藤振吾旗艦店</div>
                     </div>
                   </div>
-                  <div class="col-prop-row"><strong>風格：</strong>1860幕府武士紐約交流靈感，復古摩登沙龍</div>
+                  <div class="col-prop-row"><strong>風格：</strong>1860幕府武士去紐約交流靈感，復古摩登沙龍</div>
                   <div class="col-prop-row"><strong>特色：</strong>焙茶/抹茶浸泡調酒、和風威士忌特調</div>
-                  <div class="col-prop-row"><strong>交通：</strong>新宿三丁目 ➔ 副都心線直達渋谷 (5分)，漫步神南7分</div>
-                  <div class="col-prop-row"><strong>回程：</strong>渋谷搭JR山手線7分至新宿 ➔ 小田急直達百合ヶ丘</div>
-                  <div class="col-prop-row"><strong>預算：</strong>約 ¥2,500 – ¥4,500 / 人</div>
+                  <div class="col-prop-row"><strong>交通：</strong>新宿三丁目 ➔ 副都心線直達渋谷 (5分鐘)，行去神南7分鐘</div>
+                  <div class="col-prop-row"><strong>回程：</strong>渋谷搭JR山手線7分鐘到新宿 ➔ 小田急直達百合ヶ丘</div>
+                  <div class="col-prop-row"><strong>預算：</strong>約 ¥2,500 – ¥4,500 / 位</div>
                 </div>
 
                 <div class="compare-col col-wh" id="col-summary-wh" onclick="switchNightcapPlan('wh', event, true)">
@@ -1926,28 +1926,28 @@ html_content = '''<!DOCTYPE html>
                     <span class="col-emoji">🍺</span>
                     <div>
                       <div class="col-name">Watering Hole</div>
-                      <div class="col-sub">千駄ヶ谷/代々木 ‧ 東京精釀啤酒指標聖殿</div>
+                      <div class="col-sub">千駄ヶ谷/代々木 ‧ 東京Craft Beer指標聖殿</div>
                     </div>
                   </div>
-                  <div class="col-prop-row"><strong>風格：</strong>溫暖木質美式小酒吧，氣氛親切熱鬧</div>
-                  <div class="col-prop-row"><strong>特色：</strong>每日21款日本地酒/歐美精釀生啤、手作輕食</div>
-                  <div class="col-prop-row"><strong>交通：</strong>無添蔵出發往南漫步約8分 (或副都心線1站至北參道)</div>
-                  <div class="col-prop-row"><strong>回程：</strong>徒步3分至代々木駅 ➔ JR 1站至新宿 ➔ 小田急直達百合ヶ丘</div>
-                  <div class="col-prop-row"><strong>預算：</strong>約 ¥1,800 – ¥3,000 / 人</div>
+                  <div class="col-prop-row"><strong>風格：</strong>溫暖木質美式小酒吧，氣氛親切好熱鬧</div>
+                  <div class="col-prop-row"><strong>特色：</strong>每日21款日本地道/歐美Craft Beer生啤、手作佐酒小食</div>
+                  <div class="col-prop-row"><strong>交通：</strong>無添蔵出發向南行約8分鐘 (或副都心線1個站去北參道)</div>
+                  <div class="col-prop-row"><strong>回程：</strong>行3分鐘到代々木駅 ➔ JR 1個站到新宿 ➔ 小田急直達百合ヶ丘</div>
+                  <div class="col-prop-row"><strong>預算：</strong>約 ¥1,800 – ¥3,000 / 位</div>
                 </div>
               </div>
 
               <!-- Plan A: The SG Club Detailed Panel -->
               <div class="nightcap-detail-box" id="nightcap-detail-sg">
                 <div class="card-from-leg-pill" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">
-                  🚇 方案 A 交通：無添蔵 (新宿三丁目駅 F13) ➔ 東京Metro副都心線直達渋谷 (F16 2站5分 ¥178) ➔ 神南漫步7分
+                  🚇 方案 A 交通：無添蔵 (新宿三丁目駅 F13) ➔ 東京Metro副都心線直達渋谷 (F16 2個站5分鐘 ¥178) ➔ 行去神南7分鐘
                 </div>
                 <p class="venue-details">
-                  由世界頂級傳奇調酒大師後藤振吾 (Shingo Gokan) 主理的經典旗艦酒吧，連續多年穩坐「World's 50 Best Bars」世界前列！以 1860 年江戶幕府武士使節團遠赴紐約交流為歷史靈感，交融幕末東洋底蘊與紐約復古風情。1F「Guzzle」節奏明快輕鬆，B1F「Sip」奢華神祕鞋匠風格，極推烘焙茶、抹茶或是和風木桶熟成特調，與心愛之人在此小酌，浪漫至極。
+                  由世界頂級傳奇調酒大師後藤振吾 (Shingo Gokan) 主理嘅經典旗艦酒吧，連續多年高踞「World's 50 Best Bars」世界前列！以 1860 年江戶幕府武士使節團遠赴紐約交流為歷史靈感，完美融合幕末東洋底蘊與紐約復古風情。1F「Guzzle」氣氛輕鬆明快，B1F「Sip」就係奢華神祕嘅鞋匠復古風格，極力推薦試下烘焙茶、抹茶或者和風木桶熟成特調，同最愛嘅另一半喺度靜靜飲杯嘢傾偈，真係浪漫到暈！
                 </p>
                 <div class="venue-highlight-note">
-                  <strong>💡 營業時間與入座：</strong>週六營業至 02:00（L.O. 01:30），無須繁瑣預約，直接於 1F 詢問入座，若人多可現場登記候位。<br>
-                  <strong>🚇 Yahoo! 乘換指引：</strong>新宿三丁目駅 [F13] 搭乘副都心線直達渋谷駅 [F16]（5分 ¥178）。自 B1/宮下公園方向出口出站，沿神南坡道漫步 7 分抵達。<br>
+                  <strong>💡 營業時間與入座：</strong>星期六開到凌晨 02:00（L.O. 01:30），唔使預早 book 位咁麻煩，直接喺 1F 問位入座就得，如果人多亦可以現場登記等位。<br>
+                  <strong>🚇 Yahoo! 乘換指引：</strong>新宿三丁目駅 [F13] 搭副都心線直達渋谷駅 [F16]（5分鐘 ¥178）。由 B1/宮下公園方向出口出閘，沿住神南斜路行 7 分鐘就到。<br>
                   <strong>📍 地址：</strong>東京都渋谷区神南1-7-8 (03-6427-0204)
                 </div>
                 <div class="card-footer-row">
@@ -1964,18 +1964,18 @@ html_content = '''<!DOCTYPE html>
               <!-- Plan B: Watering Hole Detailed Panel -->
               <div class="nightcap-detail-box" id="nightcap-detail-wh" style="display: none;">
                 <div class="card-from-leg-pill" style="background:#d1fae5; color:#065f46; border-color:#a7f3d0;">
-                  🚶 方案 B 交通：無添蔵 (新宿高野大樓) ➔ 沿明治通り悠閒南下漫步約 8 分直達 (或搭副都心線1站至北參道)
+                  🚶 方案 B 交通：無添蔵 (新宿高野大廈) ➔ 沿住明治通り悠閒向南行大約 8 分鐘直達 (或搭副都心線1個站到北參道)
                 </div>
                 <p class="venue-details">
-                  東京精釀啤酒愛好者的朝聖殿堂！店主與首席侍酒師嚴選來自日本各地卓越微型酒廠（如志賀高原、箕面、京都Brewing）以及美歐名廠的 21 根鮮打生啤龍頭（21 Taps）。室內採溫暖質樸的木質調與手繪插畫黑板，氛圍熱鬧親切毫無拘束。點兩杯香氣馥郁的 Fresh Hazy IPA 或水果酸啤，在微涼的東京初秋夜晚暢聊，溫馨愜意！
+                  東京 Craft Beer 愛好者嘅朝聖殿堂！店主同首席品酒師嚴選嚟自日本各地優秀微型酒廠（例如志賀高原、箕面、京都Brewing）同埋歐美名廠嘅 21 條現斟生啤龍頭（21 Taps）。舖頭入面係溫暖質樸嘅木質調，配上手繪插畫黑板，氣氛熱鬧親切完全零拘束。叫兩杯香氣爆棚嘅 Fresh Hazy IPA 或者水果酸啤，喺東京初秋微涼嘅夜風下暢快傾偈，真係好 chill 好舒服！
                 </p>
                 <div class="venue-highlight-note">
-                  <strong>💡 營業時間與酒單特色：</strong>週六營業至 23:30（L.O. 22:30）。每日更換即時 Tap List，可提供小杯 (Small) 品飲試飲，兩人點不同口味互相品嚐超合適！<br>
-                  <strong>🚶 交通指引：</strong>無添蔵用餐結束後，出高野大樓沿明治通往南漫步約 650 公尺（約8分鐘），過代代木東口即達，夜風清爽免擠電車！<br>
+                  <strong>💡 營業時間與酒單特色：</strong>星期六開到夜晚 23:30（L.O. 22:30）。每日更換即時 Tap List，仲可以叫細杯 (Small) 試飲，兩個人叫唔同口味一齊 share 試就啱晒！<br>
+                  <strong>🚶 交通指引：</strong>食完無添蔵之後，出高野大廈沿住明治通り向南行大約 650 米（約8分鐘），過咗代代木東口就到，吹住秋風舒舒服服，唔使逼地鐵！<br>
                   <strong>📍 地址：</strong>東京都渋谷区千駄ヶ谷5-26-5 代々木シティホームズ 103 (03-6380-6115)
                 </div>
                 <div class="card-footer-row">
-                  <span class="venue-location-text">📍 渋谷区千駄ヶ谷 5-26-5 (代々木駅東口徒步3分)</span>
+                  <span class="venue-location-text">📍 渋谷区千駄ヶ谷 5-26-5 (代々木駅東口行3分鐘)</span>
                   <div class="venue-actions">
                     <button class="btn-action-pill" style="background:#d1fae5; color:#047857; border-color:#a7f3d0; font-weight:700;" onclick="jumpToMapFromCard('watering-hole', event)">🗺️ 路線</button>
                     <a href="https://transit.yahoo.co.jp/search/result?from=%E6%96%B0%E5%AE%BF%E4%B8%89%E4%B8%81%E7%9B%AE&to=%E4%BB%A3%E3%80%85%E6%9C%A8" target="_blank" class="btn-action-pill pill-yahoo" onclick="event.stopPropagation()">🚆 Yahoo! 乘換</a>
@@ -1995,11 +1995,11 @@ html_content = '''<!DOCTYPE html>
               <span class="day-badge-tag badge-d3">Day 3</span>
               <div class="day-title-text">
                 <h3>9月27日 (星期日) • 東京迪士尼海洋 ‧ 刺激冒險與奇幻日</h3>
-                <span>驚魂古塔 ‧ 刺激四大天王衝刺 ‧ 夢幻泉鄉 ‧ S.S.哥倫比亞號晚宴</span>
+                <span>驚魂古塔 ‧ 刺激四大天王衝刺 ‧ 魔雪奇緣夢幻泉鄉 ‧ S.S.哥倫比亞號晚宴</span>
               </div>
             </div>
             <div class="day-accordion-control">
-              <span class="accordion-chevron-text">收合</span>
+              <span class="accordion-chevron-text">收起</span>
               <span class="accordion-chevron-arrow">▼</span>
             </div>
           </div>
@@ -2014,17 +2014,17 @@ html_content = '''<!DOCTYPE html>
               <div class="venue-japanese-name">🏰 東京ディズニーシー (Tokyo DisneySea)</div>
               <div class="venue-chinese-subtitle">刺激四大天王衝刺 ‧ 夢幻泉鄉 (Fantasy Springs) ‧ 翱翔</div>
               <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">
-                🚆 今日起點：百合ヶ丘駅 (神奈川県) ➔ 小田急線・JR京葉線・單軌直達迪士尼海洋 (約75分，建議07:30出發，08:15前抵達排隊)
+                🚆 今日起點：百合ヶ丘駅 (神奈川県) ➔ 小田急線・JR京葉線・單軌直達迪士尼海洋 (約75分鐘，建議07:30出發，08:15前到達排隊)
               </div>
               <p class="venue-details">
-                公認全世界造景最浪漫精緻的迪士尼樂園！不僅有夢幻唯美的威尼斯貢多拉與全新「夢幻泉鄉」（冰雪奇緣、長髮公主、小飛俠），更有全亞洲最頂級的刺激設施群！開園即刻啟動高效率搶票與直衝策略，痛快暢玩各大尖叫設施！
+                公認全世界造景最浪漫精緻嘅迪士尼樂園！唔單只有夢幻唯美嘅威尼斯貢多拉船同全新「夢幻泉鄉」（魔雪奇緣 Frozen、魔髮奇緣 Tangled、小飛俠），仲有全亞洲最頂級嘅極限刺激設施群！開園一刻即刻啟動高效率搶 Fastpass (DPA) 同直衝策略，盡情爽玩各大尖叫設施！
               </p>
               <div class="venue-highlight-note">
-                <strong>🎢 刺激愛好者一日最佳通關節奏：</strong><br>
-                • <strong>09:00 刷進閘門瞬間（App 手速關鍵）：</strong>打開官方 App 優先搶購「夢幻泉鄉 DPA（冰雪奇緣或小飛俠）」+ 預約傍晚 17:45「驚魂古塔 DPA（¥1,500/人）」！<br>
-                • <strong>09:15 開園第一衝 (Rope Drop)：</strong>直奔神秘島免排隊爽刷 🌋【地心探險之旅】（園區速度之王 75 km/h，火山爆發破風暴衝俯衝）！<br>
-                • <strong>11:00 勇闖失落河三角洲：</strong>連刷 🐍【印第安納瓊斯 水晶骷髏頭魔宮】（巨石滾落越野逃脫）與 🔥【忿怒雙神】（園區唯一 360° 垂直大翻轉雲霄飛車）！<br>
-                • <strong>下午：</strong>悠閒體驗夢幻泉鄉打卡、威尼斯貢多拉遊船與達菲熊紀念品採購。
+                <strong>🎢 鍾意刺激必睇！一日最佳通關節奏：</strong><br>
+                • <strong>09:00 嘟入閘一刻（App 手速關鍵）：</strong>打開官方 App 優先搶購「夢幻泉鄉 DPA（魔雪奇緣或小飛俠）」+ 預約傍晚 17:45「驚魂古塔 DPA（¥1,500/位）」！<br>
+                • <strong>09:15 開園第一衝 (Rope Drop)：</strong>直奔神秘島免排隊爽玩 🌋【地心探險之旅】（全園速度之王 75 km/h，火山爆發破風暴衝俯衝勁有快感）！<br>
+                • <strong>11:00 勇闖失落河三角洲：</strong>連環玩 🐍【印第安納瓊斯 水晶骷髏頭魔宮】（巨石滾落越野逃生）同 🔥【忿怒雙神】（全園唯一 360° 垂直大翻轉過山車）！<br>
+                • <strong>下晝：</strong>悠閒體驗夢幻泉鄉打卡、威尼斯貢多拉遊船，同埋買 Duffy & Friends 紀念品。
               </div>
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 JR舞濱站 轉乘 迪士尼度假區線單軌電車</span>
@@ -2040,22 +2040,22 @@ html_content = '''<!DOCTYPE html>
             <div class="venue-card" id="card-tower-of-terror" onclick="selectStopLeg('tower-of-terror')">
               <div class="card-top-row">
                 <span class="card-time-pill">⏰ 17:45 – 18:45 (黃昏夜景場)</span>
-                <span class="card-status-pill pill-sightseeing" style="background:#f5f3ff; color:#6d28d9; border:1px solid #ddd6fe;">⚡ 刺激必玩 ‧ 負G力失重</span>
+                <span class="card-status-pill pill-sightseeing" style="background:#f5f3ff; color:#6d28d9; border:1px solid #ddd6fe;">⚡ 刺激必玩 ‧ 負G力無重感</span>
               </div>
               <div class="venue-japanese-name">🏨 タワー・オブ・テラー / 驚魂古塔 (Tower of Terror)</div>
-              <div class="venue-chinese-subtitle">紐約高塔飯店 ‧ 38米連續垂直自由落體 ‧ 頂樓眺望東京灣百萬夜景</div>
+              <div class="venue-chinese-subtitle">紐約高塔酒店 ‧ 38米連續垂直跳樓機 ‧ 頂樓俯瞰東京灣百萬夜景</div>
               <div class="card-from-leg-pill" style="background:#f5f3ff; color:#5b21b6; border-color:#ddd6fe;">
-                🚶 上一站：神秘島 / 夢幻泉鄉 ➔ 沿港灣漫步前往美國海濱百老匯大道 (徒步約7分)
+                🚶 上一站：神秘島 / 夢幻泉鄉 ➔ 沿住港灣慢慢行去美國海濱百老匯大道 (行約7分鐘)
               </div>
               <p class="venue-details">
-                迪士尼海洋公認失重爽度最高、尖叫不斷的傳奇室內自由落體設施！探訪 1912 年紐約市保存協會開放參觀的「高塔飯店」，親睹貪婪探險家高塔三世所掠奪的非洲詛咒偶像「希利奇烏湯杜 (Shiriki Utundu)」。電梯內神像雙眼冒出詭異綠光憑空消失後，電梯隨即失控極速攀升至 38 米頂樓！
+                迪士尼海洋公認離心力爽度最高、尖叫聲不斷嘅傳奇室內自由落體跳樓機！一齊探訪 1912 年紐約市保存協會開放參觀嘅「高塔酒店 (Hotel Hightower)」，親眼睇下貪婪探險家高塔三世掠奪返嚟嘅非洲詛咒神像「Shiriki Utundu」。升降機入面神像對眼突然閃出詭異綠光憑空消失，之後成部升降機即刻失控高速直飆上 38 米頂樓！
               </p>
               <div class="venue-highlight-note" style="border-left-color:#8b5cf6; background:#faf5ff;">
-                <strong>⚡ 驚魂古塔核心遊玩與拍照秘訣：</strong><br>
-                • <strong>黃昏夜景與高空俯衝：</strong>電梯升至最高點時，雙開落地窗瞬間猛烈敞開！黃昏傍晚時可將整座地中海港灣、哥倫比亞巨輪與東京灣百萬夜景盡收眼底——隨後立刻在夜色中筆直下墜，連續多次無預警垂直疾升暴降，極致負 G 力整個人飄離椅面！<br>
-                • <strong>拍照瞬間：</strong>頂樓大門打開時閃光燈一閃即為抓拍點，記得提前約好擺出搞怪或驚恐表情，下樓後可於螢幕查看照片編號！<br>
-                • <strong>防飄提醒：</strong>負 G 力極強，米奇/達菲髮箍、帽子、包包請務必摘下放入座位下方置物網袋。<br>
-                • <strong>完美銜接：</strong>古塔正對面即是 S.S. 哥倫比亞號，體驗完步行 2 分鐘（約150公尺）即可優雅登上 19:20 的郵輪豪華晚餐！
+                <strong>⚡ 驚魂古塔必玩同影相秘笈：</strong><br>
+                • <strong>黃昏夜景與高空衝刺：</strong>升降機衝到最高點嗰一秒，對開落地大窗突然猛烈打開！黃昏傍晚時分可以將成個地中海港灣、哥倫比亞巨輪同東京灣百萬夜景盡收眼底——跟住即刻喺夜色之中筆直向下急墮，連續多次無預警垂直上衝急降，超強負 G 力離心感令成個人離晒凳飄起！<br>
+                • <strong>影相瞬間：</strong>頂樓大門一開閃光燈一閃就係影相點，記得事前夾好擺定搞怪或者驚恐表情，落返去之後可以喺螢幕睇相片編號！<br>
+                • <strong>提防飛脫：</strong>離心力極之強勁，米奇/Duffy 髮箍、帽、手袋記得一定要除低放入座位下面個置物網袋入面。<br>
+                • <strong>完美接駁：</strong>古塔正正對面就係 S.S. 哥倫比亞號，玩完行 2 分鐘（約150米）就可以優雅登上 19:20 嘅郵輪豪華晚飯！
               </div>
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 美國海濱 高塔飯店 (Hotel Hightower)</span>
@@ -2071,18 +2071,18 @@ html_content = '''<!DOCTYPE html>
             <div class="venue-card" id="card-ss-columbia" onclick="selectStopLeg('ss-columbia')">
               <div class="card-top-row">
                 <span class="card-time-pill">⏰ 19:20 (晚上 7:20)</span>
-                <span class="card-status-pill pill-booking">✓ 已預約優先席</span>
+                <span class="card-status-pill pill-booking">✓ 已預約優先位</span>
               </div>
               <div class="venue-japanese-name">🛳️ S.S.コロンビア・ダイニングルーム</div>
               <div class="venue-chinese-subtitle">S.S. Columbia Dining Room • 20世紀奢華遠洋巨輪 B-Deck 大餐廳</div>
               <div class="card-from-leg-pill" style="background:#f5efe6; color:#784528; border-color:#e0d5c3;">
-                🚶 上一站：驚魂古塔 (美國海濱) ➔ 穿過海濱廣場步行2分鐘直達巨輪 (約150公尺)
+                🚶 上一站：驚魂古塔 (美國海濱) ➔ 穿過海濱廣場行2分鐘直達巨輪 (約150米)
               </div>
               <p class="venue-details">
-                登上停泊在美國海濱的宏偉蒸氣客輪。在剛經歷完驚魂古塔的尖叫心跳後，正好走進這座愛德華時代古典沙龍放鬆心情！在水晶吊燈、古典浮雕與純白桌巾環繞下，享用烤頂級牛肉與炙煎沙朗牛排套餐，沉浸在優雅的古典樂與紅酒香氣中。
+                登上停泊喺美國海濱嘅宏偉蒸氣客輪。啱啱玩完驚魂古塔尖叫到心跳加速之後，正好行入呢座愛德華時代古典沙龍慢慢放鬆心情！喺華麗水晶吊燈、古典浮雕同雪白檯布包圍之下，品嚐烤頂級牛肉同香煎西冷牛扒套餐，沉醉喺優雅古典樂同紅酒香氣之中。
               </p>
               <div class="venue-highlight-note">
-                <strong>🎆 晚餐後接續：</strong>20:30 在地中海港灣欣賞壓軸水上光雕煙火秀《堅信！～夢想之海～（Believe! Sea of Dreams）》。
+                <strong>🎆 食完晚飯去邊：</strong>20:30 喺地中海港灣欣賞壓軸水上光影煙花大匯演《堅信！～夢想之海～（Believe! Sea of Dreams）》。
               </div>
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 美國海濱 哥倫比亞號 3F 船艙</span>
@@ -2101,12 +2101,12 @@ html_content = '''<!DOCTYPE html>
             <div class="day-title-wrap">
               <span class="day-badge-tag badge-d4">Day 4</span>
               <div class="day-title-text">
-                <h3>9月28日 (星期一) • 草津溫泉祕境與櫻井旅館</h3>
-                <span>日本第一名湯 · 湯畑散策 · 湯揉攪湯秀 · 西之河原露天風呂</span>
+                <h3>9月28日 (星期一) • 草津溫泉秘境與櫻井旅館</h3>
+                <span>日本第一名湯 · 湯畑散步 · 湯揉攪湯表演 · 西之河原露天風呂</span>
               </div>
             </div>
             <div class="day-accordion-control">
-              <span class="accordion-chevron-text">收合</span>
+              <span class="accordion-chevron-text">收起</span>
               <span class="accordion-chevron-arrow">▼</span>
             </div>
           </div>
@@ -2139,7 +2139,7 @@ html_content = '''<!DOCTYPE html>
                   <div class="step-station-name">新宿 (Shinjuku) [10號到 → 3號發]</div>
                   <div class="step-subline">
                     <span class="subline-badge">JR 埼京線 (武藏浦和行・始發)</span>
-                    <span>12分鐘換乘</span>
+                    <span>12分鐘轉車</span>
                   </div>
                 </div>
               </div>
@@ -2163,7 +2163,7 @@ html_content = '''<!DOCTYPE html>
                 <div class="step-desc-wrap">
                   <div class="step-station-name">長野原草津口 (Naganoharakusatsuguchi)</div>
                   <div class="step-subline">
-                    <span>步行3分鐘至巴士站</span>
+                    <span>行3分鐘去巴士站</span>
                     <span class="subline-badge">JR巴士關東 (直通 草津溫泉行)</span>
                     <span>¥780</span>
                   </div>
@@ -2176,7 +2176,7 @@ html_content = '''<!DOCTYPE html>
                 <div class="step-desc-wrap">
                   <div class="step-station-name">草津温泉バスターミナル (草津溫泉)</div>
                   <div class="step-subline">
-                    <strong style="color:#10b981;">抵達日本三大名湯之首！✨</strong>
+                    <strong style="color:#10b981;">到達日本三大名湯之首！✨</strong>
                   </div>
                 </div>
               </div>
@@ -2194,11 +2194,11 @@ html_content = '''<!DOCTYPE html>
                 🚆 上一站：百合ヶ丘/新宿/赤羽 ➔ 特急草津四萬號 & 國道292號巴士直達櫻井
               </div>
               <p class="venue-details">
-                草津規模最大也最負盛名的溫泉旅館。擁有全長約30米的巨大天然溫泉大浴場與巨石露天風呂。入住後先挑選成對的日式花色浴衣，在大浴場好好洗滌疲憊，享受極致滑嫩的泉質。
+                草津規模最大、最負盛名嘅五星級溫泉旅館。擁有長達約30米嘅巨大天然溫泉大浴場同巨石露天風呂。Check-in 之後先揀一套情侶日式浴衣，喺大浴場舒舒服服浸返個靚溫泉，洗盡旅途疲勞，享受極致滑捋捋嘅頂級泉質！
               </p>
               <div class="venue-highlight-note">
-                <strong>🏮 旅館亮點：</strong>晚上 18:30 享用上州和牛壽喜燒豪華會席料理；晚上 20:15 於挑高大廳欣賞旅館著名的和太鼓擊鼓秀與傳統攪湯「湯揉（湯もみ）」舞姿！<br>
-                <strong>💰 貼心提醒：</strong>房內備有迎賓綠茶與溫泉點心，睡前可再次到露天風呂仰望無光害的群馬滿天星斗。
+                <strong>🏮 旅館精華：</strong>夜晚 18:30 品嚐上州和牛壽喜燒豪華會席料理；夜晚 20:15 喺挑高大堂欣賞旅館聞名嘅和太鼓擊鼓表演同傳統攪湯「湯揉（湯もみ）」舞蹈！<br>
+                <strong>💰 貼心小提示：</strong>房入面備有迎賓綠茶同溫泉和菓子，臨訓前可以再去多次露天風呂，一邊浸溫泉一邊抬頭望無光害嘅群馬滿天繁星✨
               </div>
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 群馬縣草津町 465-4</span>
@@ -2217,18 +2217,18 @@ html_content = '''<!DOCTYPE html>
                 <span class="card-status-pill pill-sightseeing">草津心臟地標</span>
               </div>
               <div class="venue-japanese-name">🏮 湯畑 (Yubatake) & 溫泉街散策</div>
-              <div class="venue-chinese-subtitle">翡翠沸騰泉水 · 湯煙亭足湯 · 溫泉布丁與現蒸饅頭</div>
+              <div class="venue-chinese-subtitle">翡翠沸騰泉水 · 湯煙亭足湯 · 溫泉布甸與新鮮熱辣溫泉饅頭</div>
               <div class="card-from-leg-pill" style="background:#f5efe6; color:#784528; border-color:#e0d5c3;">
-                👘 上一站：草津温泉 ホテル櫻井 ➔ 漫步至湯畑溫泉街中心 (約10分)
+                👘 上一站：草津温泉 ホテル櫻井 ➔ 慢慢行去湯畑溫泉街中心 (約10分鐘)
               </div>
               <p class="venue-details">
-                換上日式浴衣與木屐，搭接駁車或散步至湯畑。看著中央木槽奔流而下的翡翠綠高溫溫泉與裊裊白煙，坐在木質「湯煙亭」一同享受露天足湯，品嚐現蒸出爐熱呼呼的溫泉饅頭與名物布丁。
+                換上日式浴衣同木屐，搭穿梭巴士或者慢慢散步去湯畑。望住中央木槽奔流而下嘅翡翠綠高溫溫泉同裊裊白煙，坐喺木造「湯煙亭」一齊浸露天足湯，一路食新鮮熱辣出爐嘅溫泉饅頭同名物布甸。
               </p>
               <div class="venue-highlight-note">
-                <strong>🍮 必吃名物推薦：</strong><br>
-                · <strong>草津プリン (Kusatsu Pudding)</strong>：招牌「湯畑布丁」上層為如翡翠綠泉水般的果凍，下層為濃醇澤西牛乳布丁；還有現蒸溫泉布丁！<br>
-                · <strong>松むら饅頭 (Matsumura Manju)</strong>：昭和20年創業草津第一名饅頭，薄皮黑糖包裹綿密紅豆餡，熱騰騰香甜不膩。<br>
-                · <strong>本家ちぎら</strong>：熱情招待剛出爐溫泉饅頭與現泡熱茶。
+                <strong>🍮 必食名物推薦：</strong><br>
+                · <strong>草津プリン (Kusatsu Pudding)</strong>：招牌「湯畑布甸」頂層好似翡翠綠泉水咁晶瑩嘅啫喱，底層係香濃澤西牛奶布甸；仲有即蒸溫泉布甸！<br>
+                · <strong>松むら饅頭 (Matsumura Manju)</strong>：昭和20年創業草津第一名饅頭，薄皮黑糖包住綿密紅豆蓉，新鮮熱辣香甜唔漏。<br>
+                · <strong>本家ちぎら</strong>：店員勁熱情招待啱啱出爐嘅溫泉饅頭同現泡熱茶。
               </div>
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 草津町中心街區</span>
@@ -2246,16 +2246,16 @@ html_content = '''<!DOCTYPE html>
                 <span class="card-status-pill pill-onsen">百年江戶傳統</span>
               </div>
               <div class="venue-japanese-name">♨️ 熱乃湯 (Netsunoyu) · 湯もみと踊りショー</div>
-              <div class="venue-chinese-subtitle">木板攪湯秀 · 歌詠草津節民謠 · 有形民俗文化財</div>
+              <div class="venue-chinese-subtitle">木板攪湯表演 · 歌詠草津節民謠 · 有形民俗文化財</div>
               <div class="card-from-leg-pill" style="background:#f5efe6; color:#784528; border-color:#e0d5c3;">
-                👣 上一站：湯畑 (Yubatake) ➔ 湯畑池畔西側建築 (步行1分)
+                👣 上一站：湯畑 (Yubatake) ➔ 湯畑池畔西邊建築 (行1分鐘)
               </div>
               <p class="venue-details">
-                草津溫泉自古源泉高達50℃以上無法直接入浴，江戶時期便發展出不加一滴冷水、純以長木板攪動溫泉使其降溫並柔化水質的「湯もみ（湯揉）」技藝。現場伴隨節奏整齊的「草津節」歌聲與拍水聲，震撼又極具文化底蘊。
+                草津溫泉自古源泉高達 50℃ 以上，根本冇辦法直接浸入去，江戶時代就發展出唔加任何一滴凍水、純粹用長木板不斷攪動溫泉令泉水降溫兼令水質變得更順滑嘅「湯もみ（湯揉）」傳統技藝。現場伴隨住節奏整齊嘅「草津節」民謠歌聲同拍水浪聲，震撼得嚟又好有日本傳統文化底蘊！
               </p>
               <div class="venue-highlight-note">
-                <strong>🎟️ 觀賞資訊：</strong>門票大人 ¥700。每日下午場次為 15:30 / 16:00 / 16:30。建議 15:50 於門口排隊購票入場。<br>
-                <strong>📸 拍照重點：</strong>二樓看台能居高臨下拍攝木板激起漫天溫泉水花的精彩瞬間！
+                <strong>🎟️ 參觀資訊：</strong>門票成人 ¥700。每日下晝場次為 15:30 / 16:00 / 16:30。建議 15:50 喺門口排隊買飛入場。<br>
+                <strong>📸 影相重點：</strong>二樓看台可以居高臨下影到長木板激起漫天溫泉水花嘅精彩瞬間！
               </div>
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 草津町草津 414 (湯畑旁)</span>
@@ -2275,14 +2275,14 @@ html_content = '''<!DOCTYPE html>
               <div class="venue-japanese-name">🌲 西の河原公園 & 西の河原露天風呂</div>
               <div class="venue-chinese-subtitle">翡翠地熱溪流 · 石燈籠步道 · 日本最大500㎡大露天風呂</div>
               <div class="card-from-leg-pill" style="background:#f5efe6; color:#784528; border-color:#e0d5c3;">
-                🚶 上一站：熱乃湯 / 湯畑 ➔ 沿西之河原通林蔭漫步 (約10分)
+                🚶 上一站：熱乃湯 / 湯畑 ➔ 沿住西之河原通林蔭散步 (約10分鐘)
               </div>
               <p class="venue-details">
-                沿著古色古香的西之河原通往上游漫步，步道兩旁熱氣蒸騰、湧出翡翠綠色的天然溫泉溪流。沿途有結緣地藏菩薩、鳥居與足湯。步道盡頭坐落著日本屈指可數的「西之河原露天風呂」，男女池總計超過500平方公尺，被群山紅葉環抱，視野極其壯闊。
+                沿住古色古香嘅西之河原通向上游散步，步道兩邊熱氣騰騰、湧出翡翠綠色嘅天然溫泉溪流。沿途有結緣地藏菩薩、鳥居同足湯。行到步道盡頭就係全日本屈指可數嘅「西之河原露天風呂」，男女池加埋超過 500 平方米，被群山環抱，景觀超開揚壯麗！
               </p>
               <div class="venue-highlight-note">
-                <strong>💡 浪漫建議：</strong>黃昏時分步道兩側石燈籠點亮，如夢似幻；可一同在溪畔足湯小憩拍照。若想體驗森林大露天風呂，門票 ¥700，需自備毛巾或現場購買。<br>
-                <strong>🏮 夜間散策：</strong>回旅館享用完會席料理後，晚上 20:00 可再漫步回湯畑欣賞「夜の湯畑點燈（ライトアップ）」，紫金色光影映照熱氣，如入宮崎駿童話世界。
+                <strong>💡 浪漫建議：</strong>黃昏時分步道兩邊石燈籠漸次亮起，如夢似幻；可以一齊喺溪邊足湯坐低浸腳影相。如果想入去體驗森林大露天風呂，門票 ¥700，要自備毛巾或者現場買。<br>
+                <strong>🏮 夜晚散步：</strong>返旅館食完會席料理之後，夜晚 20:00 可以再行返出湯畑睇「夜の湯畑點燈（ライトアップ）」，紫金色夢幻燈光映照白煙熱氣，好似走入宮崎駿童話世界咁！
               </div>
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 草津町大字草津 521-3</span>
@@ -2301,12 +2301,12 @@ html_content = '''<!DOCTYPE html>
             <div class="day-title-wrap">
               <span class="day-badge-tag badge-d5">Day 5</span>
               <div class="day-title-text">
-                <h3>9月29日 (星期二) • 新幹線、牛排、冠軍咖啡與神秘之夜</h3>
-                <span>青山沃夫岡 ‧ 表参道冠軍手沖 ‧ 女友秘密企劃 ‧ 柏悅高空酒吧</span>
+                <h3>9月29日 (星期二) • 新幹線、牛扒、世界冠軍咖啡與神秘之夜</h3>
+                <span>青山 Wolfgang's ‧ 表参道冠軍手沖/蘋果批 ‧ 女朋友神秘企劃 ‧ 柏悅高空酒吧</span>
               </div>
             </div>
             <div class="day-accordion-control">
-              <span class="accordion-chevron-text">收合</span>
+              <span class="accordion-chevron-text">收起</span>
               <span class="accordion-chevron-arrow">▼</span>
             </div>
           </div>
@@ -2316,7 +2316,7 @@ html_content = '''<!DOCTYPE html>
             <div class="transit-guide-box">
               <div class="transit-guide-title">
                 <span>🚅 回程交通：草津溫泉 → 外苑前 (青山)（Yahoo! 乗換案内 最佳路線）</span>
-                <span style="color:#059669;">13:35 抵達 • 完美接駁 14:30 牛排！</span>
+                <span style="color:#059669;">13:35 到達 • 完美接駁 14:30 牛扒午飯！</span>
               </div>
 
               <div class="transit-step-item">
@@ -2385,7 +2385,7 @@ html_content = '''<!DOCTYPE html>
                 <div class="step-desc-wrap">
                   <div class="step-station-name">外苑前 (Gaienmae) [4a 出口]</div>
                   <div class="step-subline">
-                    <strong style="color:#10b981;">直通 THE ARGYLE AOYAMA 大樓！🥩</strong>
+                    <strong style="color:#10b981;">直通 THE ARGYLE AOYAMA 大廈！🥩</strong>
                   </div>
                 </div>
               </div>
@@ -2395,18 +2395,18 @@ html_content = '''<!DOCTYPE html>
             <div class="venue-card" id="card-wolfgang" onclick="selectStopLeg('wolfgang')">
               <div class="card-top-row">
                 <span class="card-time-pill">⏰ 14:30 準時抵達</span>
-                <span class="card-status-pill pill-booking">✓ 預約 14:30 午餐</span>
+                <span class="card-status-pill pill-booking">✓ 預約 14:30 午飯</span>
               </div>
               <div class="venue-japanese-name">🥩 ウルフギャング・ステーキハウス シグニチャー 青山店</div>
-              <div class="venue-chinese-subtitle">Wolfgang's Steakhouse Signature Aoyama • 頂級乾式熟成黑安格斯丁骨牛排</div>
+              <div class="venue-chinese-subtitle">Wolfgang's Steakhouse Signature Aoyama • 頂級乾式熟成黑安格斯 T-Bone 牛扒</div>
               <div class="card-from-leg-pill" style="background:#f5efe6; color:#784528; border-color:#e0d5c3;">
-                🚅 上一站：草津溫泉 (退房) ➔ 新幹線抵達外苑前站4a出口
+                🚅 上一站：草津溫泉 (Check-out) ➔ 新幹線返東京抵達外苑前站 4a 出口
               </div>
               <p class="venue-details">
-                美國頂級 USDA Prime 安格斯牛肉經 28 天乾式熟成，以 900 度高溫極速炙烤，上桌時瓷盤內濃香奶油滋滋作響！肉質外酥內嫩，奢華感十足。
+                美國頂級 USDA Prime 安格斯牛肉經 28 日乾式熟成，再用 900 度超高溫極速炙烤，上枱嗰陣熱辣辣瓷盤入面嘅香濃牛油仲滋滋作響！肉質外脆內嫩、肉汁爆棚，奢華感十足！
               </p>
               <div class="venue-highlight-note">
-                <strong>💡 推薦必點：</strong>招牌雙人丁骨大牛排（Steak for Two）、大西洋蟹肉餅（Jumbo Lump Crab Cake）、奶油菠菜、德式煎馬鈴薯、鮮奶油蘋果派。
+                <strong>💡 推薦必叫：</strong>招牌雙人 T-Bone 大牛扒（Steak for Two）、大西洋蟹肉餅（Jumbo Lump Crab Cake）、忌廉菠菜、德式煎薯仔、忌廉蘋果批。
               </div>
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 外苑前站 4a 出口直達 THE ARGYLE AOYAMA 1F/2F</span>
@@ -2422,14 +2422,14 @@ html_content = '''<!DOCTYPE html>
             <!-- Day 5 Afternoon Cafe Dual-Plan Choice: Philocoffea vs Granny Smith -->
             <div class="venue-card cafe-choice-card" id="card-day5-cafe" onclick="selectStopLeg(currentDay5CafeChoice === 'granny' ? 'granny-smith' : 'philocoffea')">
               <div class="card-top-row">
-                <span class="card-time-pill">⏰ 16:45 – 18:00 (雙方案自由選)</span>
-                <span class="card-status-pill pill-sightseeing">☕ 午後咖啡甜點 ‧ 現場隨選</span>
+                <span class="card-time-pill">⏰ 16:45 – 18:00 (兩個方案任你揀)</span>
+                <span class="card-status-pill pill-sightseeing">☕ 下晝咖啡甜品 ‧ 現場任揀</span>
               </div>
               <div class="venue-japanese-name">
-                <span>☕ 午後咖啡與甜點時光</span>
+                <span>☕ 下晝歎咖啡與甜品時光</span>
                 <span class="plan-badge-pill" id="current-cafe-plan-badge" style="background:#fef3c7; color:#b45309; border-color:#fde68a;">方案 A：PHILOCOFFEA</span>
               </div>
-              <div class="venue-chinese-subtitle">享用完頂級牛排後，漫步至表参道・青山街角！兩種風格午後時光任選：</div>
+              <div class="venue-chinese-subtitle">食完頂級牛扒之後，漫步去表参道・青山街角！兩種唔同風格嘅午後甜蜜時光任你揀：</div>
 
               <!-- Selector Tab Bar -->
               <div class="cafe-toggle-bar" onclick="event.stopPropagation()">
@@ -2441,7 +2441,7 @@ html_content = '''<!DOCTYPE html>
                 <button type="button" class="cafe-tab-btn" id="btn-plan-granny" onclick="switchDay5CafePlan('granny', event, true)">
                   <span class="tab-icon">🥧</span>
                   <span class="tab-title">方案 B：GRANNY SMITH (青山)</span>
-                  <span class="tab-badge">溫熱手作蘋果派 ‧ 香草冰淇淋 ‧ 骨董通</span>
+                  <span class="tab-badge">溫熱手作蘋果批 ‧ 雲呢拿雪糕 ‧ 骨董通</span>
                 </button>
               </div>
 
@@ -2456,10 +2456,10 @@ html_content = '''<!DOCTYPE html>
                     </div>
                   </div>
                   <div class="col-prop-row"><strong>風格：</strong>極簡純粹、採光天星、靜謐清水模庭園</div>
-                  <div class="col-prop-row"><strong>特色：</strong>粕谷哲「4:6 法」頂級單品豆、解膩首選</div>
-                  <div class="col-prop-row"><strong>搭配：</strong>手工巴斯克乳酪蛋糕、燕麥奶拿鐵</div>
-                  <div class="col-prop-row"><strong>交通：</strong>ウルフギャング漫步青山通約 8 分 (或銀座線1站)</div>
-                  <div class="col-prop-row"><strong>預算：</strong>約 ¥800 – ¥1,800 / 人</div>
+                  <div class="col-prop-row"><strong>特色：</strong>粕谷哲「4:6 法」頂級單品豆、消滯解膩首選</div>
+                  <div class="col-prop-row"><strong>搭配：</strong>手工巴斯克芝士蛋糕、燕麥奶 Latte</div>
+                  <div class="col-prop-row"><strong>交通：</strong>由 Wolfgang's 行青山通大約 8 分鐘 (或銀座線1個站)</div>
+                  <div class="col-prop-row"><strong>預算：</strong>約 ¥800 – ¥1,800 / 位</div>
                 </div>
 
                 <div class="compare-col col-granny" id="col-summary-granny" onclick="switchDay5CafePlan('granny', event, true)">
@@ -2467,28 +2467,28 @@ html_content = '''<!DOCTYPE html>
                     <span class="col-emoji">🥧</span>
                     <div>
                       <div class="col-name">GRANNY SMITH 青山店</div>
-                      <div class="col-sub">南青山・骨董通り ‧ 美式手作蘋果派傳奇</div>
+                      <div class="col-sub">南青山・骨董通り ‧ 美式手作蘋果批傳奇</div>
                     </div>
                   </div>
-                  <div class="col-prop-row"><strong>風格：</strong>溫馨鄉村木質暖調、甜美香氣、戀人約會感滿分</div>
-                  <div class="col-prop-row"><strong>特色：</strong>4大經典溫熱現烤蘋果派 + 一整球香草冰淇淋</div>
-                  <div class="col-prop-row"><strong>搭配：</strong>深焙手沖黑咖啡、有機紅茶、香醇拿鐵</div>
-                  <div class="col-prop-row"><strong>交通：</strong>ウルフギャング漫步南青山骨董通約 8-9 分</div>
-                  <div class="col-prop-row"><strong>預算：</strong>約 ¥1,000 – ¥1,800 / 人</div>
+                  <div class="col-prop-row"><strong>風格：</strong>溫馨美式鄉村暖調、甜美香氣、戀人約會感滿分</div>
+                  <div class="col-prop-row"><strong>特色：</strong>4大經典熱辣辣即焗蘋果批 + 一大球香濃雲呢拿雪糕</div>
+                  <div class="col-prop-row"><strong>搭配：</strong>深焙手沖黑咖啡、有機紅茶、香濃 Latte</div>
+                  <div class="col-prop-row"><strong>交通：</strong>由 Wolfgang's 行去南青山骨董通約 8-9 分鐘</div>
+                  <div class="col-prop-row"><strong>預算：</strong>約 ¥1,000 – ¥1,800 / 位</div>
                 </div>
               </div>
 
               <!-- Plan A: Philocoffea Detailed Panel -->
               <div class="cafe-detail-box" id="cafe-detail-philo">
                 <div class="card-from-leg-pill" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">
-                  🚶 方案 A 交通：ウルフギャング (青山) ➔ 沿青山通悠閒漫步至表参道 GREEN TERRACE (徒步約8分 / 銀座線1站1分 ¥178)
+                  🚶 方案 A 交通：ウルフギャング (青山) ➔ 沿住青山通悠閒行去表参道 GREEN TERRACE (行約8分鐘 / 銀座線搭1個站1分鐘 ¥178)
                 </div>
                 <p class="venue-details">
-                  享用完頂級牛排午餐後，漫步至 2016 年世界沖煮大賽（World Brewers Cup）冠軍粕谷哲的東京旗艦店 PHILOCOFFEA 表参道！座落於 GREEN TERRACE 表参道綠植露台的地下一樓，空間極簡純粹、採光靜謐。由頂尖咖啡師以傳奇「4:6 Method」手沖嚴選莊園單品豆，香氣層次分明；剛吃完大份量牛排時來上一杯，是最完美的清爽解膩救星！
+                  食完頂級牛扒午飯之後，行過去 2016 年世界咖啡沖煮大賽（World Brewers Cup）冠軍粕谷哲嘅東京旗艦店 PHILOCOFFEA 表参道！座落於 GREEN TERRACE 表参道綠植露台地庫 B1F，空間極簡純粹、採光寧靜舒適。由頂尖咖啡師以傳奇「4:6 Method」手沖嚴選莊園單品豆，香氣層次豐富分明；啱啱食完大份量牛扒飲返杯，絕對係最完美嘅消滯解膩救星！
                 </p>
                 <div class="venue-highlight-note">
-                  <strong>💡 推薦必點：</strong>粕谷哲冠軍「4:6 Method 特選單品手沖」（推薦哥倫比亞厭氧或藝妓豆）、特調冠軍拿鐵、手工巴斯克乳酪蛋糕。<br>
-                  <strong>📍 店鋪位置：</strong>東京都港区北青山3-8-15 GREEN TERRACE表参道 B1F（表参道駅 A1/B2 出口徒步約 2 分鐘，營業至 19:00）。
+                  <strong>💡 推薦必叫：</strong>粕谷哲冠軍「4:6 Method 特選單品手沖」（力推哥倫比亞厭氧或藝妓 Geisha 豆）、特調冠軍 Latte、手工巴斯克芝士蛋糕。<br>
+                  <strong>📍 店舖位置：</strong>東京都港区北青山3-8-15 GREEN TERRACE表参道 B1F（表参道駅 A1/B2 出口行約 2 分鐘，營業至 19:00）。
                 </div>
                 <div class="card-footer-row">
                   <span class="venue-location-text">📍 GREEN TERRACE 表参道 B1F</span>
@@ -2504,18 +2504,18 @@ html_content = '''<!DOCTYPE html>
               <!-- Plan B: Granny Smith Detailed Panel -->
               <div class="cafe-detail-box" id="cafe-detail-granny" style="display: none;">
                 <div class="card-from-leg-pill" style="background:#ffe4e6; color:#9f1239; border-color:#fecdd3;">
-                  🚶 方案 B 交通：ウルフギャング (青山) ➔ 沿青山通轉入南青山骨董通り悠閒漫步約 8-9 分直達 (或搭銀座線1站至表参道駅B1/B3出口徒步3分)
+                  🚶 方案 B 交通：ウルフギャング (青山) ➔ 沿住青山通轉入南青山骨董通り悠閒行約 8-9 分鐘直達 (或搭銀座線1個站去表参道駅 B1/B3 出口行3分鐘)
                 </div>
                 <p class="venue-details">
-                  全東京最具人氣的美式手作蘋果派傳奇名店！以「祖母在美式鄉村廚房烘焙的溫暖手作風味」為核心，店內飄散著濃郁肉桂與現烤蘋果香氣。招牌現烤溫熱蘋果派搭配一大球香醇香草冰淇淋，酥脆派皮與香甜微酸的蘋果果肉在口中冰熱融化，極度幸福浪漫！亦可外帶回飯店作為深夜甜蜜點心。
+                  全東京人氣最高嘅美式手作蘋果批傳奇名店！以「嫲嫲喺美式鄉村廚房烘焙嘅溫暖手作風味」為靈感，成間舖頭都飄散住香濃肉桂同即焗蘋果嘅甜香。招牌熱辣辣現烤蘋果批配埋一整球香滑雲呢拿雪糕，外層酥脆嘅批皮同香甜微酸嘅蘋果果肉喺口入面冰火交融融化，幸福感爆棚超浪漫！仲可以外賣返酒店做宵夜甜品。
                 </p>
                 <div class="venue-highlight-note" style="border-left-color:#e11d48; background:#fff1f2;">
-                  <strong>💡 4 款人氣蘋果派指南：</strong><br>
-                  • <strong>Dutch Crumble (荷蘭奶酥)：</strong>頂層鋪滿黑糖燕麥奶酥粒，隱含波本威士忌香氣，酥脆口感第一名！<br>
-                  • <strong>Classic Rum Raisin (經典藍姆葡萄)：</strong>蘭姆酒漬葡萄乾香氣醇厚，經典大人風味。<br>
-                  • <strong>French D'amandes (法式杏仁)：</strong>杏仁奶油餡綿密芬芳，與烤蘋果完美融合。<br>
-                  • <strong>England Special (英式卡士達)：</strong>滑順特製卡士達奶油，無肉桂、無酒精，不習慣肉桂者的最愛！<br>
-                  <strong>📍 店鋪位置：</strong>東京都港区南青山5-8-9 (表参道駅 B1/B3 出口徒步約 3 分鐘，營業至 20:00，內用低消一杯飲品)。
+                  <strong>💡 4 款人氣蘋果批指南：</strong><br>
+                  • <strong>Dutch Crumble (荷蘭脆金金)：</strong>頂層鋪滿黑糖燕麥脆粒，帶有淡淡波本威士忌香氣，酥脆口感排第一！<br>
+                  • <strong>Classic Rum Raisin (經典冧酒提子乾)：</strong>冧酒浸提子乾香氣濃郁，經典成熟大人風味。<br>
+                  • <strong>French D'amandes (法式杏仁)：</strong>杏仁忌廉餡綿密芳香，同焗蘋果肉完美融合。<br>
+                  • <strong>England Special (英式吉士)：</strong>滑順特製吉士忌廉，無肉桂、無酒精，唔食肉桂嘅朋友必選！<br>
+                  <strong>📍 店舖位置：</strong>東京都港区南青山5-8-9 (表参道駅 B1/B3 出口行約 3 分鐘，開到 20:00，堂食最低消費一人一杯嘢飲)。
                 </div>
                 <div class="card-footer-row">
                   <span class="venue-location-text">📍 東京都港区南青山 5-8-9 (骨董通り)</span>
@@ -2533,25 +2533,25 @@ html_content = '''<!DOCTYPE html>
             <div class="venue-card" id="card-secret-girlfriend" onclick="selectStopLeg('secret-girlfriend')">
               <div class="card-top-row">
                 <span class="card-time-pill">⏰ 18:30 – 21:00 (浪漫神秘時光)</span>
-                <span class="card-status-pill pill-booking" style="background:#fdf2f8; color:#be185d; border:1px solid #fbcfe8;">🤫 女友秘密企劃</span>
+                <span class="card-status-pill pill-booking" style="background:#fdf2f8; color:#be185d; border:1px solid #fbcfe8;">🤫 女朋友秘密企劃</span>
               </div>
-              <div class="venue-japanese-name">✨ 女友專屬神秘行程 (Girlfriend's Secret Plan)</div>
-              <div class="venue-chinese-subtitle">女友親自規劃 ‧ 浪漫保密 ‧ 敬請期待！</div>
+              <div class="venue-japanese-name">✨ 女朋友專屬神秘行程 (Girlfriend's Secret Plan)</div>
+              <div class="venue-chinese-subtitle">女朋友親自策劃 ‧ 浪漫保密 ‧ 敬請期待！</div>
               <div class="card-from-leg-pill" style="background:#fdf2f8; color:#9d174d; border-color:#fbcfe8;">
-                ✨ 上一站：PHILOCOFFEA 或 GRANNY SMITH (表参道・青山) ➔ 前往神秘地點 (跟著女友走就對了！)
+                ✨ 上一站：PHILOCOFFEA 或 GRANNY SMITH (表参道・青山) ➔ 出發去神秘地點 (跟住女朋友行就包冇錯！)
               </div>
               <p class="venue-details">
-                今晚的精華時光徹底交由另一半親自秘密規劃！告別死板的既定清單，把主導權完全交給最愛的她——可能是她私藏已久的夢幻選品店、浪漫夜景散策、隱藏版甜點小酌，或是專屬於兩人的秘密打卡點。男生請徹底放鬆，牽好她的手，帶著期待的心情迎接未知驚喜！❤️
+                今晚嘅精華時光完全交畀另一半親自秘密策劃！唔使跟住死板板嘅既定清單，將主導權全面交畀最愛嘅佢——可能係佢私藏咗好耐嘅夢幻 Select Shop、浪漫夜景散步、隱世甜品居酒屋，或者專屬於兩個人嘅秘密打卡位。男仔請徹底放鬆，拖實佢隻手，帶住期待嘅心情迎接未知嘅驚喜啦！❤️
               </p>
               <div class="venue-highlight-note" style="border-left-color:#ec4899; background:#fff7fa;">
-                <strong>🤫 TOP SECRET：</strong>此時段（約 18:30 – 21:00）為女友專屬主場，內容暫時保密！神秘行程結束後，21:30 將一同搭乘電車前往壓軸終點站：西新宿柏悅酒店 52F New York Bar 享受高空爵士酒吧夜景！
+                <strong>🤫 TOP SECRET：</strong>呢段時間（約 18:30 – 21:00）係女朋友專屬主場，內容暫時保密！神秘行程完結之後，21:30 會一齊搭車出發去壓軸終點站：西新宿柏悅酒店 52F New York Bar 享受高空爵士酒吧夜景！
               </div>
               <div class="card-footer-row">
-                <span class="venue-location-text">📍 女友心中的秘密地點 (東京)</span>
+                <span class="venue-location-text">📍 女朋友心中的秘密地點 (東京)</span>
                 <div class="venue-actions">
                   <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2; font-weight:700;" onclick="jumpToMapFromCard(\'secret-girlfriend\', event)">🗺️ 路線</button>
                   <a href="https://transit.yahoo.co.jp/search/result?from=%E8%A1%A8%E5%8F%82%E9%81%93&to=%E6%B8%8B%E8%B0%B7" target="_blank" class="btn-action-pill pill-yahoo" onclick="event.stopPropagation()">🚆 Yahoo! 乘換</a>
-                  <button class="btn-action-pill" style="background:#fdf2f8; color:#be185d; border-color:#fbcfe8;" onclick="showToast(\'🤫 女友說：這是最高機密！當天到現場就知道了 ❤️\'); event.stopPropagation();">🤫 查看秘密</button>
+                  <button class="btn-action-pill" style="background:#fdf2f8; color:#be185d; border-color:#fbcfe8;" onclick="showToast(\'🤫 女朋友話：呢個係最高機密！嗰日去到現場就知㗎喇 ❤️\'); event.stopPropagation();">🤫 查看秘密</button>
                 </div>
               </div>
             </div>
@@ -2565,14 +2565,14 @@ html_content = '''<!DOCTYPE html>
               <div class="venue-japanese-name">🎷 ニューヨーク バー / New York Bar (パーク ハイアット 東京 52F)</div>
               <div class="venue-chinese-subtitle">Park Hyatt Tokyo 52F • 《愛情，不用翻譯》傳奇爵士高空酒吧</div>
               <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">
-                🚆 上一站：女友專屬神秘行程 ➔ JR山手線直達新宿 (澀谷/原宿➔新宿僅7分 ¥178，南口地下通道漫步至柏悅酒店)
+                🚆 上一站：女朋友專屬神秘行程 ➔ JR山手線直達新宿 (澀谷/原宿➔新宿只係7分鐘 ¥178，南口地下通道行去柏悅酒店)
               </div>
               <p class="venue-details">
-                結束了女友精心安排的神秘驚喜後，搭乘 JR 山手線直達新宿，由南口漫步西新宿摩天大樓地下大道抵達新宿公園塔。歷經全面重金改裝，於2025年底奢華重開！坐落於西新宿柏悅酒店頂層 52 樓，四面頂級落地窗倒映著無限延伸的東京璀璨燈海。現場國際爵士樂隊演奏，舉起馬丁尼對飲，為這趟旅程畫下最完美的句點。
+                嘆完女朋友精心安排嘅神秘驚喜之後，搭 JR 山手線直達新宿，由南口沿住西新宿摩天大樓地下通道行去新宿公園塔。經歷咗全面重金裝修，喺 2025 年底以全新面貌奢華重開！坐落於西新宿柏悅酒店頂層 52 樓，四面超巨型落地玻璃倒映住一望無際嘅東京璀璨夜景。現場有國際級 Jazz Band 現場演奏，舉起 Martini 乾杯，為呢趟旅程畫下最完美嘅句號。
               </p>
               <div class="venue-highlight-note">
-                <strong>🚆 Yahoo! 乘換指引：</strong>渋谷/原宿駅搭乘 JR 山手線外環 (新宿・池袋方面) ➔ 新宿駅 (約7分，¥178)。南口/甲州街道出站沿林蔭地下連通道漫步至新宿公園塔52樓，亦可於新宿西口搭乘新宿WE巴士直達，或由代々木轉乘都営大江戸線至都庁前駅A4出口徒步6分。<br>
-                <strong>👔 服裝提醒：</strong>請著 Smart Casual（男士請勿穿著拖鞋或無領背心）。
+                <strong>🚆 Yahoo! 乘換指引：</strong>渋谷/原宿駅搭 JR 山手線外環 (新宿・池袋方向) ➔ 新宿駅 (約7分鐘，¥178)。南口/甲州街道出閘沿住林蔭地下連通道行去新宿公園塔 52 樓，亦可以喺新宿西口搭新宿 WE 巴士直達，或者由代代木轉搭都営大江戸線去到都廳前站 A4 出口行 6 分鐘。<br>
+                <strong>👔 著衫提點：</strong>請著 Smart Casual（男仔切忌著拖鞋或者無領背心）。
               </div>
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 新宿區西新宿 3-7-1-2 新宿公園塔 52 樓</span>
@@ -2608,7 +2608,7 @@ html_content = '''<!DOCTYPE html>
         id: 'shanes-burg',
         day: 1,
         title: "シェーンズバーグ 新百合ヶ丘店",
-        sub: "Shane's Burg (炭火漢堡排)",
+        sub: "Shane's Burg (炭火漢堡扒)",
         time: "9/25 19:00",
         lat: 35.6033,
         lng: 139.5080,
@@ -2628,7 +2628,7 @@ html_content = '''<!DOCTYPE html>
         id: 'jiro',
         day: 2,
         title: "すきやばし 次郎 六本木ヒルズ店",
-        sub: "Sukiyabashi Jiro (壽司之神板前)",
+        sub: "Sukiyabashi Jiro (壽司之神板前位)",
         time: "9/26 13:00",
         lat: 35.6586978,
         lng: 139.7291446,
@@ -2679,7 +2679,7 @@ html_content = '''<!DOCTYPE html>
         id: 'virtu',
         day: 2,
         title: "VIRTÙ (フォーシーズンズ大手町 39F)",
-        sub: "亞洲50最佳酒吧",
+        sub: "亞洲50佳酒吧",
         time: "9/26 17:30",
         lat: 35.6872,
         lng: 139.7645,
@@ -2751,7 +2751,7 @@ html_content = '''<!DOCTYPE html>
         id: 'watering-hole',
         day: 2,
         title: "Watering Hole (代々木/千駄ヶ谷)",
-        sub: "21款頂級精釀生啤酒聖殿 ‧ 新宿南口散策",
+        sub: "21款鮮斟Craft Beer聖殿 ‧ 新宿南口散步",
         time: "9/26 21:45",
         lat: 35.6845,
         lng: 139.7042,
@@ -2771,7 +2771,7 @@ html_content = '''<!DOCTYPE html>
         id: 'disneysea',
         day: 3,
         title: "東京ディズニーシー (Tokyo DisneySea)",
-        sub: "刺激四大天王 & 夢幻泉鄉",
+        sub: "刺激四大天王 & 魔雪奇緣夢幻泉鄉",
         time: "9/27 09:00",
         lat: 35.6267,
         lng: 139.8851,
@@ -2799,7 +2799,7 @@ html_content = '''<!DOCTYPE html>
         id: 'tower-of-terror',
         day: 3,
         title: "驚魂古塔 (Tower of Terror)",
-        sub: "38米自由落體 ‧ 東京灣黃昏夜景",
+        sub: "38米垂直跳樓機 ‧ 東京灣黃昏夜景",
         time: "9/27 17:45",
         lat: 35.6241,
         lng: 139.8882,
@@ -2817,7 +2817,7 @@ html_content = '''<!DOCTYPE html>
         id: 'ss-columbia',
         day: 3,
         title: "S.S.コロンビア・ダイニングルーム",
-        sub: "豪華客輪古典晚餐",
+        sub: "豪華客輪古典晚飯",
         time: "9/27 19:20",
         lat: 35.6238,
         lng: 139.8860,
@@ -2863,7 +2863,7 @@ html_content = '''<!DOCTYPE html>
         id: 'yubatake',
         day: 4,
         title: "湯畑 (Yubatake) & 溫泉街散策",
-        sub: "翡翠滾沸泉源 · 湯煙亭足湯 · 溫泉布丁與現蒸饅頭",
+        sub: "翡翠滾沸泉源 · 湯煙亭足湯 · 溫泉布甸與熱辣辣饅頭",
         time: "9/28 15:30",
         lat: 36.6208,
         lng: 138.5960,
@@ -2881,7 +2881,7 @@ html_content = '''<!DOCTYPE html>
         id: 'netsunoyu',
         day: 4,
         title: "熱乃湯 (Netsunoyu) · 湯もみと踊りショー",
-        sub: "草津百年傳統攪湯秀 · 歌詠草津節民謠 (已登錄有形民俗文化財)",
+        sub: "草津百年傳統攪湯表演 · 歌詠草津節民謠 (有形民俗文化財)",
         time: "9/28 16:00",
         lat: 36.6206,
         lng: 138.5957,
@@ -2916,7 +2916,7 @@ html_content = '''<!DOCTYPE html>
         id: 'wolfgang',
         day: 5,
         title: "ウルフギャング・ステーキハウス シグニチャー 青山店",
-        sub: "Wolfgang's 乾式熟成牛排",
+        sub: "Wolfgang's 乾式熟成牛扒",
         time: "9/29 14:30",
         lat: 35.6698,
         lng: 139.7180,
@@ -2960,7 +2960,7 @@ html_content = '''<!DOCTYPE html>
         id: 'granny-smith',
         day: 5,
         title: "GRANNY SMITH 青山店",
-        sub: "溫熱手工蘋果派 ‧ 香草冰淇淋 ‧ 骨董通",
+        sub: "熱辣辣手作蘋果批 ‧ 雲呢拿雪糕 ‧ 骨董通",
         time: "9/29 16:45",
         lat: 35.6644,
         lng: 139.7153,
@@ -2979,8 +2979,8 @@ html_content = '''<!DOCTYPE html>
       'secret-girlfriend': {
         id: 'secret-girlfriend',
         day: 5,
-        title: "✨ 女友專屬神秘行程 (Girlfriend's Secret Plan)",
-        sub: "女友親自神秘策劃 ‧ 浪漫保密 ‧ 敬請期待！",
+        title: "✨ 女朋友專屬神秘行程 (Girlfriend's Secret Plan)",
+        sub: "女朋友親自秘密策劃 ‧ 浪漫保密 ‧ 敬請期待！",
         time: "9/29 18:30",
         lat: 35.6610,
         lng: 139.7040,
@@ -2989,10 +2989,10 @@ html_content = '''<!DOCTYPE html>
         vehicle: "🎁",
         yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E8%A1%A8%E5%8F%82%E9%81%93&to=%E6%B8%8B%E8%B0%B7",
         routeCoords: [
-          [35.66614, 139.71350], // Last Stop: 表参道・青山 (可依所選方案自動切換起點)
+          [35.66614, 139.71350], // Last Stop: 表参道・青山 (可跟據所揀方案自動切換起點)
           [35.6652, 139.7123],   // 表参道駅 (東京メトロ銀座線/千代田線)
-          [35.6635, 139.7085],   // 神宮前 / 貓街浪漫步道
-          [35.6610, 139.7040]    // Current Stop: 女友專屬神秘地點 🤫
+          [35.6635, 139.7085],   // 神宮前 / 貓街浪漫散步路
+          [35.6610, 139.7040]    // Current Stop: 女朋友專屬神秘地點 🤫
         ]
       },
       'new-york-bar': {
@@ -3004,11 +3004,11 @@ html_content = '''<!DOCTYPE html>
         lat: 35.6856,
         lng: 139.6910,
         color: "#f59e0b",
-        lastStopName: "✨ 女友專屬神秘行程",
+        lastStopName: "✨ 女朋友專屬神秘行程",
         vehicle: "🚆",
         yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E6%B8%8B%E8%B0%B7&to=%E6%96%B0%E5%AE%BF",
         routeCoords: [
-          [35.6610, 139.7040], // Last Stop: 女友專屬神秘行程
+          [35.6610, 139.7040], // Last Stop: 女朋友專屬神秘行程
           [35.6585, 139.7013], // JR 渋谷駅 (JR山手線外回り月台)
           [35.6702, 139.7027], // 原宿駅 (JR山手線)
           [35.6830, 139.7020], // 代々木駅 (JR山手線)
@@ -3194,7 +3194,7 @@ html_content = '''<!DOCTYPE html>
         <div class="popup-title">百合ヶ丘駅 (Yurigaoka Station)</div>
         <div class="popup-sub">神奈川県川崎市麻生区 ‧ 小田急小田原線</div>
         <div style="font-size:0.75rem; color:#0369a1; font-weight:700; margin-top:4px;">
-          🚉 第1、2、3、4天每日均由此出發！
+          🚉 第1、2、3、4日每日都由呢度出發！
         </div>
       </div>
     `);
@@ -3309,7 +3309,7 @@ html_content = '''<!DOCTYPE html>
         if (parentBlock && parentBlock.classList.contains('collapsed')) {
           parentBlock.classList.remove('collapsed');
           const txt = parentBlock.querySelector('.accordion-chevron-text');
-          if (txt) txt.textContent = '收合';
+          if (txt) txt.textContent = '收起';
         }
       }
       if (cardEl) {
@@ -3378,7 +3378,7 @@ html_content = '''<!DOCTYPE html>
         <span style="color:#a12b48; margin: 0 4px;">➔</span> 
         <span style="color:#0f172a; font-weight:900;">${leg.title}</span>
       `;
-      document.getElementById('leg-subtitle-display').textContent = `大眾運輸直達路線 (${leg.vehicle || '🚇'}) ‧ Yahoo! 乘換案内推薦`;
+      document.getElementById('leg-subtitle-display').textContent = `公共交通直達路線 (${leg.vehicle || '🚇'}) ‧ Yahoo! 乘換案内推薦`;
       document.getElementById('btn-replay-leg').style.display = 'inline-flex';
       const btnViewCard = document.getElementById('btn-view-card-banner');
       if (btnViewCard) btnViewCard.style.display = 'inline-flex';
@@ -3413,7 +3413,7 @@ html_content = '''<!DOCTYPE html>
       if (parentBlock && parentBlock.classList.contains('collapsed')) {
         parentBlock.classList.remove('collapsed');
         const txt = parentBlock.querySelector('.accordion-chevron-text');
-        if (txt) txt.textContent = '收合';
+        if (txt) txt.textContent = '收起';
       }
       if (cardEl) {
         cardEl.classList.add('active-selected-card');
@@ -3486,8 +3486,8 @@ html_content = '''<!DOCTYPE html>
       const group = new L.featureGroup(allMarkers);
       map.fitBounds(group.getBounds().pad(0.12));
 
-      document.getElementById('leg-title-display').textContent = '點擊任一景點：僅顯示從上一站抵達此處的路線';
-      document.getElementById('leg-subtitle-display').textContent = '點選卡片查看即時區間交通動態 🚇';
+      document.getElementById('leg-title-display').textContent = '撳任何景點：只會顯示由上一站嚟到呢度嘅路線';
+      document.getElementById('leg-subtitle-display').textContent = '撳卡片睇即時區間交通路線 🚇';
       document.getElementById('btn-replay-leg').style.display = 'none';
       const btnViewCard = document.getElementById('btn-view-card-banner');
       if (btnViewCard) btnViewCard.style.display = 'none';
@@ -3543,7 +3543,7 @@ html_content = '''<!DOCTYPE html>
       if (targetBlock) {
         targetBlock.classList.remove('collapsed');
         const txt = targetBlock.querySelector('.accordion-chevron-text');
-        if (txt) txt.textContent = '收合';
+        if (txt) txt.textContent = '收起';
         targetBlock.classList.add('active-day-block');
         scrollToElementInPanel(targetBlock);
       }
@@ -3561,9 +3561,9 @@ html_content = '''<!DOCTYPE html>
 
       // Update banner to guide the user
       document.getElementById('leg-title-display').innerHTML = `
-        <span style="color:#0f172a; font-weight:800;">📅 第 ${day} 天景點已展開</span>
+        <span style="color:#0f172a; font-weight:800;">📅 第 ${day} 日景點已展開</span>
       `;
-      document.getElementById('leg-subtitle-display').textContent = '請點選地圖圖釘或行程卡片，即刻繪製從「上一站」直達此處的專屬路線 🚇';
+      document.getElementById('leg-subtitle-display').textContent = '請撳地圖圖釘或者行程卡片，即刻畫出由「上一站」直達呢度嘅專屬路線 🚇';
       document.getElementById('btn-replay-leg').style.display = 'none';
       const btnViewCard = document.getElementById('btn-view-card-banner');
       if (btnViewCard) btnViewCard.style.display = 'none';
@@ -3581,7 +3581,7 @@ html_content = '''<!DOCTYPE html>
       if (isCollapsed) {
         block.classList.remove('collapsed');
         const txt = block.querySelector('.accordion-chevron-text');
-        if (txt) txt.textContent = '收合';
+        if (txt) txt.textContent = '收起';
         selectDayFromMap(dayNum, findDayButton(dayNum));
       } else {
         block.classList.add('collapsed');
@@ -3594,9 +3594,9 @@ html_content = '''<!DOCTYPE html>
       document.querySelectorAll('.day-block').forEach(b => {
         b.classList.remove('collapsed');
         const txt = b.querySelector('.accordion-chevron-text');
-        if (txt) txt.textContent = '收合';
+        if (txt) txt.textContent = '收起';
       });
-      showToast('✓ 已展開所有日期的詳細行程');
+      showToast('✓ 已展開所有日子嘅詳細行程');
     }
 
     function collapseAllDays() {
@@ -3605,7 +3605,7 @@ html_content = '''<!DOCTYPE html>
         const txt = b.querySelector('.accordion-chevron-text');
         if (txt) txt.textContent = '展開';
       });
-      showToast('✓ 已收合所有日期的詳細行程');
+      showToast('✓ 已收起所有日子嘅詳細行程');
     }
 
     function findDayButton(dayNum) {
@@ -3624,7 +3624,7 @@ html_content = '''<!DOCTYPE html>
 
     function copyShareURL() {
       navigator.clipboard.writeText(window.location.href);
-      showToast('✓ 已複製分享連結！快傳給她看吧 ❤️');
+      showToast('✓ 已複製分享連結！快啲 Send 畀佢睇啦 ❤️');
     }
 
     function showToast(msg) {
@@ -3642,18 +3642,18 @@ PRODID:-//Couple Japan Romance Trip//ZH
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
-SUMMARY:晚餐：シェーンズバーグ 新百合ヶ丘店
+SUMMARY:晚飯：シェーンズバーグ 新百合ヶ丘店
 DTSTART;TZID=Asia/Tokyo:20260925T190000
 DTEND;TZID=Asia/Tokyo:20260925T210000
-DESCRIPTION:抵達東京溫馨開場晚餐，新百合之丘 Elmi Road 5F 手打漢堡排
+DESCRIPTION:抵達東京溫馨開場晚飯，新百合之丘 Elmi Road 5F 手打漢堡扒
 LOCATION:シェーンズバーグ 新百合ヶ丘店
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:午餐：すきやばし 次郎 六本木ヒルズ店 (板前壽司)
+SUMMARY:午飯：すきやばし 次郎 六本木ヒルズ店 (板前壽司)
 DTSTART;TZID=Asia/Tokyo:20260926T130000
 DTEND;TZID=Asia/Tokyo:20260926T143000
-DESCRIPTION:六本木之丘 櫸坂通 3F，小野隆主理江戶前板前握壽司
+DESCRIPTION:六本木之丘 櫸坂通 3F，小野隆大師親手握製江戶前板前壽司
 LOCATION:すきやばし 次郎 六本木ヒルズ店
 STATUS:CONFIRMED
 END:VEVENT
@@ -3661,37 +3661,37 @@ BEGIN:VEVENT
 SUMMARY:觀光：東京タワー (Tokyo Tower)
 DTSTART;TZID=Asia/Tokyo:20260926T153000
 DTEND;TZID=Asia/Tokyo:20260926T170000
-DESCRIPTION:東京鐵塔 150m 主展望台，透明玻璃天窗步道與塔大神宮
+DESCRIPTION:東京鐵塔 150m 主展望台，透明玻璃步道同塔大神宮參拜
 LOCATION:東京タワー
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:調酒：VIRTÙ (フォーシーズンズホテル東京大手町 39F)
+SUMMARY:特色調酒：VIRTÙ (フォーシーズンズホテル東京大手町 39F)
 DTSTART;TZID=Asia/Tokyo:20260926T173000
 DTEND;TZID=Asia/Tokyo:20260926T191500
-DESCRIPTION:亞洲50最佳酒吧，39層高空俯瞰皇居御苑日落夕陽與法日調酒 (請著 Smart Casual)
+DESCRIPTION:亞洲50佳酒吧，39樓高空俯瞰皇居御苑日落晚霞同法日特色調酒 (請著 Smart Casual)
 LOCATION:VIRTÙ, Four Seasons Hotel Tokyo at Otemachi
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:晚餐：くら寿司 無添蔵 新宿店 (精緻和食與扭蛋迴轉壽司)
+SUMMARY:晚飯：くら寿司 無添蔵 新宿店 (精緻和食與扭蛋迴轉壽司)
 DTSTART;TZID=Asia/Tokyo:20260926T200000
 DTEND;TZID=Asia/Tokyo:20260926T213000
-DESCRIPTION:藏壽司旗下頂級精緻品牌「無添蔵」，新宿高野大樓 6F，職人手作生魚片與本格天婦羅、精選壽司
+DESCRIPTION:藏壽司旗下頂級精緻品牌「無添蔵」，新宿高野大廈 6F，職人刺身、本格天婦羅同特選壽司
 LOCATION:無添蔵 新宿店 (東京都新宿区新宿3-26-11 新宿高野ビル6F)
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:微醺二續攤：The SG Club (渋谷) 或 Watering Hole (代々木) [雙方案任選]
+SUMMARY:微醺飲多杯下半場：The SG Club (渋谷) 或 Watering Hole (代々木) [兩個方案任揀]
 DTSTART;TZID=Asia/Tokyo:20260926T214500
 DTEND;TZID=Asia/Tokyo:20260926T231500
-DESCRIPTION:藏壽司無添蔵晚餐後的浪漫續攤：【方案A】世界50大酒吧 The SG Club（後藤振吾和風調酒）或【方案B】21款精釀生啤 Watering Hole。結束後均可於新宿/代代木搭乘小田急線直達百合之丘。
+DESCRIPTION:藏壽司無添蔵晚飯後嘅浪漫下半場：【方案A】世界50大酒吧 The SG Club（後藤振吾和風調酒）或【方案B】21款鮮斟Craft Beer生啤 Watering Hole。飲完都可以喺新宿/代々木搭小田急線直達百合之丘。
 LOCATION:The SG Club (渋谷区神南1-7-8) / Watering Hole (渋谷区千駄ヶ谷5-26-5)
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:東京ディズニーシー (Tokyo DisneySea) 刺激設施與夢幻奇航
+SUMMARY:東京ディズニーシー (Tokyo DisneySea) 刺激設施與夢幻泉鄉
 DTSTART;TZID=Asia/Tokyo:20260927T090000
 DTEND;TZID=Asia/Tokyo:20260927T174500
-DESCRIPTION:09:00 入園搶購夢幻泉鄉/翱翔 DPA，開園第一波直衝地心探險之旅(75km/h)，接續印第安納瓊斯、忿怒雙神360度翻轉雲霄飛車與夢幻泉鄉。
+DESCRIPTION:09:00 入園搶購夢幻泉鄉/翱翔 DPA，開園第一波直衝地心探險之旅(75km/h)，連環玩印第安納瓊斯、忿怒雙神360度翻轉過山車同夢幻泉鄉。
 LOCATION:東京ディズニーシー (Tokyo DisneySea)
 STATUS:CONFIRMED
 END:VEVENT
@@ -3699,15 +3699,15 @@ BEGIN:VEVENT
 SUMMARY:刺激體驗：驚魂古塔 Tower of Terror (美國海濱)
 DTSTART;TZID=Asia/Tokyo:20260927T174500
 DTEND;TZID=Asia/Tokyo:20260927T190000
-DESCRIPTION:38米無重力連續垂直自由落體，頂樓大門打開時俯瞰東京灣黃昏夜景！注意固定髮箍與包包，準備好拍照搞怪表情。玩完步行2分直達 S.S. Columbia 晚餐。
+DESCRIPTION:38米無重力連續垂直自由落體跳樓機，頂樓落地大窗打開嗰一秒俯瞰東京灣黃昏夜景！提防飛脫除低髮箍同手袋，準備好影相搞怪表情。玩完行2分鐘直達 S.S. Columbia 晚餐。
 LOCATION:Tower of Terror, Tokyo DisneySea (美國海濱)
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:晚餐：S.S.コロンビア・ダイニングルーム (奢華客輪大餐廳)
+SUMMARY:晚飯：S.S.コロンビア・ダイニングルーム (奢華客輪大餐廳)
 DTSTART;TZID=Asia/Tokyo:20260927T192000
 DTEND;TZID=Asia/Tokyo:20260927T203000
-DESCRIPTION:迪士尼海洋 美國海濱 豪華蒸氣巨輪 B-Deck 大餐廳牛排晚宴 (已預約優先席 19:20)。餐後20:30接續欣賞水上煙火大秀。
+DESCRIPTION:迪士尼海洋 美國海濱 豪華蒸氣巨輪 B-Deck 大餐廳牛扒晚宴 (已預約優先席 19:20)。食完20:30接住欣賞水上煙花大匯演。
 LOCATION:S.S. Columbia Dining Room, Tokyo DisneySea
 STATUS:CONFIRMED
 END:VEVENT
@@ -3715,39 +3715,39 @@ BEGIN:VEVENT
 SUMMARY:草津溫泉之旅：草津温泉 ホテル櫻井
 DTSTART;TZID=Asia/Tokyo:20260928T085500
 DTEND;TZID=Asia/Tokyo:20260928T220000
-DESCRIPTION:08:55 百合之丘出發搭乘特急草津四萬號，入住草津溫泉ホテル櫻井，湯畑浴衣漫步與足湯
+DESCRIPTION:08:55 百合之丘出發搭特急草津四萬號，入住草津溫泉ホテル櫻井，湯畑著浴衣散步同浸足湯
 LOCATION:草津温泉 ホテル櫻井
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:午餐：ウルフギャング・ステーキハウス シグニチャー 青山店
+SUMMARY:午飯：ウルフギャング・ステーキハウス シグニチャー 青山店
 DTSTART;TZID=Asia/Tokyo:20260929T143000
 DTEND;TZID=Asia/Tokyo:20260929T163000
-DESCRIPTION:青山 THE ARGYLE AOYAMA，28天乾式熟成 USDA Prime 丁骨牛排 (14:30 準時抵達)
+DESCRIPTION:青山 THE ARGYLE AOYAMA，28日乾式熟成 USDA Prime T-Bone 牛扒 (14:30 準時到達)
 LOCATION:ウルフギャング・ステーキハウス シグニチャー 青山店
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:午後時光：PHILOCOFFEA (世界冠軍手沖) 或 GRANNY SMITH 青山店 (手工蘋果派) [雙方案任選]
+SUMMARY:下晝時光：PHILOCOFFEA (世界冠軍手沖) 或 GRANNY SMITH 青山店 (手工蘋果批) [兩個方案任揀]
 DTSTART;TZID=Asia/Tokyo:20260929T164500
 DTEND;TZID=Asia/Tokyo:20260929T180000
-DESCRIPTION:Wolfgang's 牛排午餐後的浪漫午後：【方案A】2016世界沖煮冠軍粕谷哲旗艦店 PHILOCOFFEA（4:6 Method 精品手沖咖啡極致解膩）或【方案B】南青山骨董通 GRANNY SMITH（溫熱手工美式蘋果派佐香草冰淇淋）。
+DESCRIPTION:Wolfgang's 牛扒午餐後嘅浪漫午後：【方案A】2016世界沖煮冠軍粕谷哲旗艦店 PHILOCOFFEA（4:6 Method 精品手沖咖啡極致消滯）或【方案B】南青山骨董通 GRANNY SMITH（熱辣辣手作美式蘋果批配雲呢拿雪糕）。
 LOCATION:PHILOCOFFEA (東京都港区北青山3-8-15 B1F) / GRANNY SMITH 青山店 (東京都港区南青山5-8-9)
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:✨ 女友專屬神秘行程 (Girlfriend's Secret Surprise)
+SUMMARY:✨ 女朋友專屬神秘行程 (Girlfriend's Secret Surprise)
 DTSTART;TZID=Asia/Tokyo:20260929T183000
 DTEND;TZID=Asia/Tokyo:20260929T210000
-DESCRIPTION:由女友親自秘密策劃的專屬驚喜行程！敬請期待 ❤️
-LOCATION:東京 (女友神秘地點 🤫)
+DESCRIPTION:由女朋友親自秘密策劃嘅專屬驚喜行程！敬請期待 ❤️
+LOCATION:東京 (女朋友神秘地點 🤫)
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:酒吧：ニューヨーク バー (パーク ハイアット 東京 52F)
+SUMMARY:高空酒吧：ニューヨーク バー (パーク ハイアット 東京 52F)
 DTSTART;TZID=Asia/Tokyo:20260929T213000
 DTEND;TZID=Asia/Tokyo:20260929T233000
-DESCRIPTION:《愛情，不用翻譯》傳奇高空酒吧奢華回歸，現場爵士樂團與52層新宿絕景 (請著 Smart Casual)
+DESCRIPTION:《迷失東京》傳奇高空酒吧奢華回歸，現場爵士樂團 Jazz Band 與52樓新宿璀璨夜景 (請著 Smart Casual)
 LOCATION:New York Bar, Park Hyatt Tokyo 52F
 END:VEVENT
 END:VCALENDAR`;
@@ -3760,7 +3760,7 @@ END:VCALENDAR`;
       link.click();
       document.body.removeChild(link);
 
-      showToast('✓ 行程已下載！點擊檔案即可一鍵加入手機日曆 📅');
+      showToast('✓ 行程已下載！撳個檔案就可以一鍵加落手機日曆 📅');
     }
 
     // Initialize responsive view state
