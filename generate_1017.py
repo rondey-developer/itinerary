@@ -1449,7 +1449,7 @@ html_content = '''<!DOCTYPE html>
       <div class="panel-header">
         <div class="panel-header-left">
           <h2>📅 行程詳情與交通導航</h2>
-          <p>4日3夜秋日之旅 ‧ 實時鐵路/巴士區間 ‧ 點擊卡片睇路綫</p>
+          <p>4日3夜秋日之旅 ‧ 全程純鐵路與的士直達（零巴士） ‧ 點擊卡片睇路綫</p>
         </div>
         <div class="panel-quick-actions">
           <button class="btn-panel-action" onclick="expandAllDays()">全部展開</button>
@@ -1467,7 +1467,7 @@ html_content = '''<!DOCTYPE html>
               <span class="day-badge-tag badge-d1">Day 1</span>
               <div class="day-title-text">
                 <h3>10/17 (六) · 平和島溫泉 ‧ 羽田接機會合 ‧ 咖啡大展 ‧ 法國鐵人正餐</h3>
-                <span>平和島早朝巴士(04:40) ✕ UO624抵達(05:00) ➔ 百合ヶ丘整頓 ➔ SCAJ 2026咖啡展 ➔ La Rochelle 山王頂級法餐</span>
+                <span>平和島早朝的士直達(04:40) ✕ UO624抵達(05:00) ➔ 百合ヶ丘整頓 ➔ SCAJ 2026咖啡展 ➔ La Rochelle 山王頂級法餐</span>
               </div>
             </div>
             <div class="day-accordion-control">
@@ -1511,20 +1511,20 @@ html_content = '''<!DOCTYPE html>
               <!-- Detail His Side -->
               <div id="side-detail-his">
                 <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">
-                  🚌 男方動線：天然温泉 平和島 (BIGFUN平和島2F) ➔ 搭乘 04:15 早朝送迎專車 ➔ 04:40 直達羽田機場第3航廈
+                  🚕 男方動線：天然温泉 平和島 (BIGFUN平和島2F) ➔ 的士直達 (Taxi 約 12 分鐘) ➔ 04:40 直達羽田機場第3航廈
                 </div>
                 <p class="venue-details">
-                  男方前晚入住鄰近羽田嘅著名溫泉「天然温泉 平和島」（享受深度地下2000米天然食鹽泉、高溫桑拿與放鬆躺椅睡覺充電）。清晨搭乘 04:15 的羽田機場專屬早朝送迎巴士，04:40 準時直達羽田第3航廈。喺入境大堂買定熱咖啡，精神奕奕準備守候女友入境接機！
+                  男方前晚入住鄰近羽田嘅著名溫泉「天然温泉 平和島」（享受深度地下2000米天然食鹽泉、高溫桑拿與放鬆躺椅睡覺充電）。清晨 04:25 乘搭的士（Taxi 車程僅約 12 分鐘，車費約 ¥2,500）直達羽田第3航廈，準時 04:40 抵達。喺入境大堂買定熱咖啡，精神奕奕準備守候女友入境接機！
                 </p>
                 <div class="venue-highlight-note">
                   <strong>♨️ 天然温泉 平和島資訊：</strong>東京都大田区平和島1-1-1（BIGFUN平和島 2F）‧ 官網：<a href="https://www.heiwajima-onsen.jp/" target="_blank" style="color:#985635; text-decoration:underline;">heiwajima-onsen.jp</a><br>
-                  <strong>🚌 早朝巴士班次：</strong>平和島 04:15 出發 ➔ 04:40 抵達羽田機場第3航廈（國際線），直達航廈門口！
+                  <strong>🚕 直達交通：</strong>平和島門口直接搭乘的士直上高速，12 分鐘直達羽田 T3 國際線航廈門口，避開等巴士，準時 04:40 到達！
                 </div>
                 <div class="card-footer-row">
-                  <span class="venue-location-text">📍 天然温泉 平和島 ➔ 羽田第3航廈</span>
+                  <span class="venue-location-text">📍 天然温泉 平和島 ➔ 的士直達羽田第3航廈</span>
                   <div class="venue-actions">
                     <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('heiwajima-onsen', event)">🗺️ 路線</button>
-                    <a href="https://www.heiwajima-onsen.jp/bus/" target="_blank" class="btn-action-pill">🚌 平和島巴士</a>
+                    <a href="https://www.heiwajima-onsen.jp/" target="_blank" class="btn-action-pill">♨️ 平和島溫泉</a>
                     <a href="https://maps.google.com/?q=Natural+Hot+Spring+Heiwajima" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
                   </div>
                 </div>
@@ -1559,13 +1559,13 @@ html_content = '''<!DOCTYPE html>
                       <span>🙋‍♂️</span> 男朋友視角 (His Side)
                     </div>
                     <div class="twoside-timeline-item">
-                      <strong>前晚 – 03:40：</strong>天然温泉 平和島 浸天然食鹽溫泉、深層放鬆睡眠。
+                      <strong>前晚 – 03:50：</strong>天然温泉 平和島 浸天然食鹽溫泉、深層放鬆睡眠。
                     </div>
                     <div class="twoside-timeline-item">
-                      <strong>03:50 – 04:10：</strong>更衣整頓、大堂退房準備上車。
+                      <strong>04:00 – 04:20：</strong>更衣整頓、大堂退房準備出發。
                     </div>
                     <div class="twoside-timeline-item">
-                      <strong>04:15 – 04:40：</strong>乘搭平和島專屬早朝送迎巴士直奔羽田機場。
+                      <strong>04:25 – 04:40：</strong>乘搭的士 (Taxi) 直奔羽田機場，車程僅 12 分鐘。
                     </div>
                     <div class="twoside-timeline-item">
                       <strong>04:40 – 05:00：</strong>準時 04:40 抵達羽田 T3，買定熱咖啡於入境大堂守候！
@@ -1604,7 +1604,7 @@ html_content = '''<!DOCTYPE html>
               <div class="venue-japanese-name">🏠 百合ヶ丘ベース (Yurigaoka Base Camp)</div>
               <div class="venue-chinese-subtitle">神奈川縣川崎市麻生區 ‧ 小田急小田原線 ‧ 放下行李與梳洗充電</div>
               <div class="card-from-leg-pill" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">
-                🚆 羽田機場 ➔ 新百合ヶ丘 / 百合ヶ丘駅 (約60分鐘) ➔ 步行回住處放行李
+                🚆 羽田機場 ➔ 京急空港線直達品川 (15分) ➔ 轉 JR 山手線至新宿 ➔ 小田急快速急行直達百合ヶ丘 (全程純電車，零巴士免塞車)
               </div>
               <p class="venue-details">
                 返到熟悉溫暖嘅百合ヶ丘！兩個人可以換返套靚靚秋日服裝、化妝整頭，沖個醒神熱水涼補眠一陣。換上輕鬆輕便隨身袋，準備前往有明東京 Big Sight 參觀一年一度嘅世界精品咖啡盛會！
@@ -1713,7 +1713,7 @@ html_content = '''<!DOCTYPE html>
               <span class="day-badge-tag badge-d2">Day 2</span>
               <div class="day-title-text">
                 <h3>10/18 (日) · 湘南葉山 ‧ 海邊私人桑拿露天風呂別墅</h3>
-                <span>百合ヶ丘 ➔ JR橫須賀線往逗子 ➔ STELLA STORIA HAYAMA 入住 ‧ 私人芬蘭桑拿 ‧ 海邊日落散策</span>
+                <span>百合ヶ丘 ➔ JR橫須賀線往逗子 ➔ 的士直達 STELLA STORIA HAYAMA ‧ 私人芬蘭桑拿 ‧ 海邊日落散策</span>
               </div>
             </div>
             <div class="day-accordion-control">
@@ -1733,16 +1733,16 @@ html_content = '''<!DOCTYPE html>
               <div class="venue-japanese-name">🌿 百合ヶ丘出発 ➔ 湘南逗子·葉山へ</div>
               <div class="venue-chinese-subtitle">收拾精緻行裝 ‧ 沿相模灣鐵道南下 ‧ 避開人潮</div>
               <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">
-                🚆 百合ヶ丘 ➔ 町田轉 JR 橫濱線至橫濱 ➔ 轉 JR 橫須賀線直達逗子駅 (約65分鐘) ➔ 轉京急巴士7分鐘抵達清浄寺
+                🚆 百合ヶ丘 ➔ 町田轉 JR 橫濱線至橫濱 ➔ 轉 JR 橫須賀線直達逗子駅 (約65分鐘) ➔ 東口搭乘的士 (Taxi) 7分鐘直達別墅門口
               </div>
               <p class="venue-details">
                 瞓到自然醒，喺百合ヶ丘嘆杯新鮮咖啡同輕食。帶上一晚去葉山別墅嘅輕便行李，出發前往日本皇室最喜愛嘅避暑度納期勝地——神奈川葉山（Hayama）！沿途眺望湘南海岸線，心情瞬間切換成悠閒度假節奏。
               </p>
               <div class="venue-highlight-note">
-                <strong>💡 交通提示：</strong>喺 JR 逗子站東口3號巴士站，搭乘京濱急行巴士（葉山方向）約7-10分鐘，喺「清浄寺（しょうじょうじ）」巴士站落車，步行1-2分鐘即直達別墅大門！
+                <strong>🚕 直達的士安排：</strong>喺 JR 逗子站東口的士站直接上車，車程約 7 分鐘（車費約 ¥1,500），免搬行李直接送達別墅門口，全程避開巴士擠逼，最舒適快捷！
               </div>
               <div class="card-footer-row">
-                <span class="venue-location-text">📍 JR 逗子駅 ➔ 京急巴士「清浄寺」站</span>
+                <span class="venue-location-text">📍 JR 逗子駅 ➔ 的士 7 分鐘直達 STELLA STORIA</span>
                 <div class="venue-actions">
                   <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('hayama-depart', event)">🗺️ 路線</button>
                   <a href="https://transit.yahoo.co.jp/search/result?from=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98&to=%E9%80%97%E5%AD%90" target="_blank" class="btn-action-pill pill-yahoo">🚆 Yahoo! 乘換</a>
@@ -1760,7 +1760,7 @@ html_content = '''<!DOCTYPE html>
               <div class="venue-japanese-name">🌊 STELLA STORIA HAYAMA (ステラストーリア葉山)</div>
               <div class="venue-chinese-subtitle">Seaside House with Private Sauna & Open-Air Bath ‧ 海景私人芬蘭桑拿與露天風呂別墅</div>
               <div class="card-from-leg-pill" style="background:#ccfbf1; color:#0f766e; border-color:#99f6e4;">
-                🏡 清浄寺巴士站下車步行 1 分鐘 ‧ 神奈川縣三浦郡葉山町堀内255-7 ‧ 獨棟私人海濱秘境
+                🏡 JR 逗子駅東口搭乘的士 7 分鐘直達門口 ‧ 神奈川縣三浦郡葉山町堀内255-7 ‧ 獨棟私人海濱秘境
               </div>
               <p class="venue-details">
                 今趟旅程最重頭戲嘅奢華住宿！座落於葉山堀內海岸第一排，整棟 Villa 專屬兩個人私人包棟。室內特設正宗木質芬蘭桑拿房（Finnish Sauna）與戶外露天深浸 Jacuzzi 風呂。推開落地玻璃大窗，相模灣無敵海景與日落晚霞盡收眼底。
@@ -1868,8 +1868,8 @@ html_content = '''<!DOCTYPE html>
             <div class="day-title-wrap">
               <span class="day-badge-tag badge-d3">Day 3</span>
               <div class="day-title-text">
-                <h3>10/19 (一) · 逗子遊艇會婚禮 ‧ 新宿頂級和牛壽司盛宴</h3>
-                <span>Stella Storia ➔ 的士直達逗子 Marina 遊艇會婚禮 (12:00) ➔ 新宿 かきだ鮨 (19:00 本鮪壽司無限追加)</span>
+                <h3>10/19 (一) · 逗子遊艇會婚禮 ‧ 新宿頂級壽司盛宴 ‧ 亞洲50大高空酒吧 VIRTÙ</h3>
+                <span>Stella Storia ➔ 的士直達逗子 Marina 婚禮 (12:00) ➔ 新宿 かきだ鮨 (19:00 本鮪無限追加) ➔ 四季酒店 39F VIRTÙ (21:30)</span>
               </div>
             </div>
             <div class="day-accordion-control">
@@ -1939,7 +1939,7 @@ html_content = '''<!DOCTYPE html>
             <!-- Stop 3: Dinner at Kakida Sushi Shinjuku -->
             <div class="venue-card" id="card-kakida-sushi" onclick="selectStopLeg('kakida-sushi')">
               <div class="card-top-row">
-                <span class="card-time-pill">⏰ 19:00 (晚上 7:00 預約確立)</span>
+                <span class="card-time-pill">⏰ 19:00 – 21:00 (晚上 7:00 預約確立)</span>
                 <span class="card-status-pill pill-booking">✓ Tabelog 預約席</span>
               </div>
               <div class="venue-japanese-name">🍣 かきだ鮨 新宿総本店 (The Tokyo コース ‧ 鮨おかわり無料)</div>
@@ -1959,30 +1959,60 @@ html_content = '''<!DOCTYPE html>
                 <span class="venue-location-text">📍 東京都渋谷区代々木2-2-1 小田急ホテルセンチュリーサザンタワー 19F</span>
                 <div class="venue-actions">
                   <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('kakida-sushi', event)">🗺️ 路線</button>
-                  <a href="https://transit.yahoo.co.jp/search/result?from=%E6%96%B0%E5%AE%BF&to=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98" target="_blank" class="btn-action-pill pill-yahoo">🚆 Yahoo! 乘換</a>
+                  <a href="https://transit.yahoo.co.jp/search/result?from=%E6%96%B0%E5%AE%BF&to=%E5%A4%A7%E6%89%8B%E7%94%BA" target="_blank" class="btn-action-pill pill-yahoo">🚆 Yahoo! 往大手町</a>
                   <a href="https://maps.google.com/?q=Hotel+Century+Southern+Tower+Tokyo" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
                 </div>
               </div>
             </div>
 
-            <!-- Stop 4: Return to Yurigaoka -->
-            <div class="venue-card" id="card-day3-night" onclick="selectStopLeg('day3-night')">
+            <!-- Stop 4: Late-Night Cocktails at VIRTÙ Tokyo -->
+            <div class="venue-card" id="card-virtu-bar" onclick="selectStopLeg('virtu-bar')">
               <div class="card-top-row">
-                <span class="card-time-pill">⏰ 21:30 – 22:15 (舒服返家)</span>
-                <span class="card-status-pill pill-sightseeing">🚆 小田急快速急行直達</span>
+                <span class="card-time-pill">⏰ 21:30 – 23:00 (微醺高空夜景)</span>
+                <span class="card-status-pill pill-booking" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">🍸 Asia's 50 Best Bars</span>
               </div>
-              <div class="venue-japanese-name">🌙 新宿 ➔ 百合ヶ丘駅 (帰着休息)</div>
-              <div class="venue-chinese-subtitle">新宿小田急線總站 ➔ 快速急行 20 分鐘直抵新百合/百合ヶ丘</div>
-              <div class="card-from-leg-pill" style="background:#f1f5f9; color:#475569; border-color:#e2e8f0;">
-                🚆 新宿駅小田急月台 ➔ 快速急行乘車 ➔ 新百合ヶ丘 ➔ 百合ヶ丘 (全程約 22 分鐘)
+              <div class="venue-japanese-name">🍸 VIRTÙ (フォーシーズンズホテル東京大手町 39F)</div>
+              <div class="venue-chinese-subtitle">東京都千代田区大手町1-2-1 ‧ 榮獲 Asia's 50 Best Bars ‧ 39樓法式日式當代調酒與皇居高空絕景</div>
+              <div class="card-from-leg-pill" style="background:#fee2e2; color:#991b1b; border-color:#fecaca;">
+                🚇 東京 Metro 丸之內線 (新宿 ➔ 大手町 17分直達免轉車) 或 的士 (Taxi 15分) ➔ 直達四季酒店 39F
               </div>
               <p class="venue-details">
-                食完無比滿足嘅壽司與和牛，由小田急南塔行過隔籬就係新宿小田急月台。搭乘快速急行，20分鐘就飛奔返到百合ヶ丘。摸住飽飽嘅肚仔，幸福滿足咁迎接最後一日！
+                食完かきだ鮨嘅豐盛壽司與高森和牛，隨即展開極致浪漫嘅高空微醺之夜！由新宿搭乘丸之內線或的士直達「Four Seasons Hotel Tokyo at Otemachi」39 樓旗艦酒吧 VIRTÙ。將法國古典調香哲學融入日式頂級蒸餾工藝，俯瞰璀璨嘅皇居森林與東京繁華夜景，為甜蜜浪漫嘅 Day 3 劃上完美醉人句號！
+              </p>
+              <div class="venue-highlight-note">
+                <strong>🍸 頂級調酒推薦：</strong>招牌七寶蒸餾特調（結合干邑白蘭地、日本柚子與和三盆糖）、當季秋日水果香檳雞尾酒。<br>
+                <strong>👔 Dress Code：</strong>Smart Casual（時尚休閒，避免拖鞋/運動背心）。<br>
+                <strong>📍 交通與位置：</strong>大手町駅地下連通道（C14/E2出口直達四季酒店），電梯直達 39 樓。
+              </div>
+              <div class="card-footer-row">
+                <span class="venue-location-text">📍 東京都千代田区大手町1-2-1 フォーシーズンズホテル東京大手町 39F</span>
+                <div class="venue-actions">
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('virtu-bar', event)">🗺️ 路線</button>
+                  <a href="https://www.fourseasons.com/tokyoatotemachi/dining/lounges/virtu/" target="_blank" class="btn-action-pill">🍸 官網介紹</a>
+                  <a href="https://maps.google.com/?q=VIRTU+Four+Seasons+Hotel+Tokyo+at+Otemachi" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stop 5: Return to Yurigaoka -->
+            <div class="venue-card" id="card-day3-night" onclick="selectStopLeg('day3-night')">
+              <div class="card-top-row">
+                <span class="card-time-pill">⏰ 23:00 – 23:55 (微醺返家)</span>
+                <span class="card-status-pill pill-sightseeing">🚆 千代田線直通小田急 / 快速急行</span>
+              </div>
+              <div class="venue-japanese-name">🌙 大手町 VIRTÙ ➔ 百合ヶ丘駅 (帰着休息)</div>
+              <div class="venue-chinese-subtitle">大手町駅 ➔ 東京 Metro 千代田線直通小田急線 / 或丸之內線經新宿 ➔ 舒適直抵百合ヶ丘</div>
+              <div class="card-from-leg-pill" style="background:#f1f5f9; color:#475569; border-color:#e2e8f0;">
+                🚆 大手町駅 (E2直通四季酒店) ➔ 千代田線至代代木上原 ➔ 小田急快速急行直達百合ヶ丘 (全程純鐵路約 45 分鐘)
+              </div>
+              <p class="venue-details">
+                帶著微醺幸福嘅醉意，四季酒店地下通道直駁大手町駅。搭乘千代田線列車直通代代木上原，無縫轉乘小田急快速急行直奔百合ヶ丘。一路上牽著手回味全日嘅海邊婚禮感動、壽司滿足與高空夜景，超完美嘅一天！
               </p>
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 神奈川県川崎市麻生区百合丘</span>
                 <div class="venue-actions">
                   <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('day3-night', event)">🗺️ 路線</button>
+                  <a href="https://transit.yahoo.co.jp/search/result?from=%E5%A4%A7%E6%89%8B%E7%94%BA&to=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98" target="_blank" class="btn-action-pill pill-yahoo">🚆 Yahoo! 乘換</a>
                   <a href="https://maps.google.com/?q=Yurigaoka+Station" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
                 </div>
               </div>
@@ -2143,7 +2173,7 @@ html_content = '''<!DOCTYPE html>
         <button class="day-selector-btn active" id="map-day-all" onclick="showAllVenuesView()">全部景點</button>
         <button class="day-selector-btn" id="map-day-1" onclick="selectDayFromMap(1, this)">D1 平和島·羽田·SCAJ·鐵人</button>
         <button class="day-selector-btn" id="map-day-2" onclick="selectDayFromMap(2, this)">D2 湘南葉山Villa</button>
-        <button class="day-selector-btn" id="map-day-3" onclick="selectDayFromMap(3, this)">D3 逗子婚禮·壽司</button>
+        <button class="day-selector-btn" id="map-day-3" onclick="selectDayFromMap(3, this)">D3 逗子婚禮·壽司·VIRTÙ</button>
         <button class="day-selector-btn" id="map-day-4" onclick="selectDayFromMap(4, this)">D4 鶴川超市·成田</button>
       </div>
 
@@ -2186,14 +2216,14 @@ html_content = '''<!DOCTYPE html>
         id: 'heiwajima-onsen',
         day: 1,
         title: "天然温泉 平和島 ➔ 羽田空港 (04:40抵達)",
-        sub: "男方視角：宿·天然温泉 平和島 ➔ 早朝巴士前往羽田接機",
+        sub: "男方視角：宿·天然温泉 平和島 ➔ 的士 12 分鐘直達羽田接機",
         time: "10/17 04:40",
         lat: 35.5846,
         lng: 139.7408,
         color: "#0284c7",
         lastStopName: "天然温泉 平和島 (BIGFUN平和島 2F)",
-        vehicle: "🚌",
-        yahooUrl: "https://www.heiwajima-onsen.jp/bus/",
+        vehicle: "🚕",
+        yahooUrl: "https://www.heiwajima-onsen.jp/",
         routeCoords: [
           [35.5846, 139.7408], // 天然温泉 平和島
           [35.5780, 139.7420], // 平和島出口 (環七通り)
@@ -2346,27 +2376,27 @@ html_content = '''<!DOCTYPE html>
           [35.4010, 139.5330], // 戸塚駅
           [35.3530, 139.5315], // 大船駅
           [35.3190, 139.5505], // 鎌倉駅
-          [35.2975, 139.5805]  // 逗子駅 (東口巴士站)
+          [35.2975, 139.5805]  // 逗子駅 (東口 Taxi 的士站)
         ]
       },
       'stella-storia': {
         id: 'stella-storia',
         day: 2,
         title: "STELLA STORIA HAYAMA (ステラストーリア葉山)",
-        sub: "逗子駅 ➔ 京急巴士7分「清浄寺」➔ 海邊芬蘭桑拿別墅",
+        sub: "逗子駅 ➔ 的士 7 分鐘直達 ➔ 海邊芬蘭桑拿別墅",
         time: "10/18 15:00",
         lat: 35.2819,
         lng: 139.5710,
         color: "#2d6a82",
-        lastStopName: "逗子駅 (東口バスターミナル)",
-        vehicle: "🚌",
-        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E9%80%97%E5%AD%90&to=%E6%B8%85%E6%B5%84%E5%AF%BA",
+        lastStopName: "逗子駅 (東口 Taxi 的士站)",
+        vehicle: "🚕",
+        yahooUrl: "https://maps.google.com/?q=Kanagawa+Hayama+Horiuchi+255-7",
         routeCoords: [
-          [35.2975, 139.5805], // 逗子駅東口
+          [35.2975, 139.5805], // 逗子駅 (東口 Taxi 的士站)
           [35.2920, 139.5780], // 新逗子·京急逗子葉山
           [35.2890, 139.5760], // 渚橋 (逗子海岸)
           [35.2845, 139.5732], // 鐙摺港入口
-          [35.2819, 139.5710]  // 清浄寺バス停 ‧ STELLA STORIA HAYAMA
+          [35.2819, 139.5710]  // STELLA STORIA HAYAMA (門口直達)
         ]
       },
       'hayama-seafood': {
@@ -2468,22 +2498,54 @@ html_content = '''<!DOCTYPE html>
           [35.6863, 139.7005]  // 新宿サザンタワー 19F かきだ鮨 新宿総本店
         ]
       },
+      'virtu-bar': {
+        id: 'virtu-bar',
+        day: 3,
+        title: "VIRTÙ (Four Seasons Otemachi 39F)",
+        sub: "新宿 かきだ鮨 ➔ 地鐵丸之內線/的士 ➔ 亞洲50大高空酒吧",
+        time: "10/19 21:30",
+        lat: 35.6881,
+        lng: 139.7635,
+        color: "#9e2a4b",
+        lastStopName: "かきだ鮨 新宿総本店",
+        vehicle: "🚇",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E6%96%B0%E5%AE%BF&to=%E5%A4%A7%E6%89%8B%E7%94%BA",
+        routeCoords: [
+          [35.6863, 139.7005], // 新宿かきだ鮨
+          [35.6905, 139.7000], // 新宿駅 (丸ノ内線)
+          [35.6920, 139.7080], // 新宿三丁目
+          [35.6930, 139.7210], // 四谷三丁目
+          [35.6860, 139.7310], // 四ツ谷
+          [35.6795, 139.7435], // 赤坂見附
+          [35.6740, 139.7500], // 国会議事堂前
+          [35.6710, 139.7530], // 霞ケ関
+          [35.6720, 139.7600], // 銀座
+          [35.6815, 139.7670], // 東京駅
+          [35.6881, 139.7635]  // 大手町駅 ‧ フォーシーズンズホテル東京大手町 39F VIRTÙ
+        ]
+      },
       'day3-night': {
         id: 'day3-night',
         day: 3,
         title: "百合ヶ丘駅 (帰着休息)",
-        sub: "新宿 ➔ 小田急快速急行 ➔ 百合ヶ丘",
-        time: "10/19 21:30",
+        sub: "大手町 VIRTÙ ➔ 千代田線直通小田急 ➔ 百合ヶ丘",
+        time: "10/19 23:00",
         lat: 35.6092,
         lng: 139.5173,
         color: "#9e2a4b",
-        lastStopName: "かきだ鮨 新宿総本店",
+        lastStopName: "VIRTÙ (フォーシーズンズ大手町)",
         vehicle: "🚆",
-        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E6%96%B0%E5%AE%BF&to=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E5%A4%A7%E6%89%8B%E7%94%BA&to=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98",
         routeCoords: [
-          [35.6863, 139.7005], // かきだ鮨 (新宿南口)
-          [35.6896, 139.7006], // 新宿駅小田急月台
-          [35.6690, 139.6795], // 代々木上原駅
+          [35.6881, 139.7635], // VIRTÙ 大手町駅 (千代田線)
+          [35.6850, 139.7580], // 二重橋前
+          [35.6780, 139.7560], // 日比谷
+          [35.6710, 139.7530], // 霞ケ関
+          [35.6660, 139.7380], // 赤坂
+          [35.6625, 139.7225], // 乃木坂
+          [35.6650, 139.7120], // 表参道
+          [35.6700, 139.7025], // 明治神宮前
+          [35.6690, 139.6795], // 代々木上原駅 (小田急線直通)
           [35.6615, 139.6670], // 下北沢駅
           [35.6200, 139.5700], // 登戸駅
           [35.6038, 139.5085], // 新百合ヶ丘駅
@@ -2630,6 +2692,7 @@ html_content = '''<!DOCTYPE html>
       else if (spotId.includes('stella') || spotId.includes('hayama')) iconContent = '🌊';
       else if (spotId.includes('wedding')) iconContent = '💍';
       else if (spotId.includes('sushi')) iconContent = '🍣';
+      else if (spotId.includes('virtu')) iconContent = '🍸';
       else if (spotId.includes('rochelle')) iconContent = '🍽️';
       else if (spotId.includes('scaj')) iconContent = '☕';
       else if (spotId.includes('gyomu')) iconContent = '🛒';
@@ -3189,10 +3252,10 @@ PRODID:-//Tokyo Hayama Romantic Trip//ZH
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
-SUMMARY:男方：天然温泉 平和島 早朝送迎專車前往羽田
-DTSTART;TZID=Asia/Tokyo:20261017T041500
+SUMMARY:男方：天然温泉 平和島 的士直達羽田機場
+DTSTART;TZID=Asia/Tokyo:20261017T042500
 DTEND;TZID=Asia/Tokyo:20261017T044000
-DESCRIPTION:天然温泉 平和島搭乘 04:15 早朝送迎巴士，04:40 抵達羽田機場第3航廈，精神飽滿守候接機
+DESCRIPTION:天然温泉 平和島乘搭的士 12 分鐘直達，04:40 抵達羽田機場第3航廈，精神飽滿守候接機
 LOCATION:天然温泉 平和島 (東京都大田区平和島1-1-1)
 STATUS:CONFIRMED
 END:VEVENT
@@ -3258,6 +3321,14 @@ DTSTART;TZID=Asia/Tokyo:20261019T190000
 DTEND;TZID=Asia/Tokyo:20261019T210000
 DESCRIPTION:小田急世紀南塔 19F，Tabelog 預約 19:00。全條本鮪一本買、產地直送壽司免費無限次任追加、高森和牛壽喜燒！
 LOCATION:かきだ鮨 新宿総本店 (東京都渋谷区代々木2-2-1 小田急ホテルセンチュリーサザンタワー 19F)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:微醺高空：VIRTÙ (Four Seasons Otemachi 39F 亞洲50大酒吧)
+DTSTART;TZID=Asia/Tokyo:20261019T213000
+DTEND;TZID=Asia/Tokyo:20261019T230000
+DESCRIPTION:四季酒店 39 樓旗艦酒吧 VIRTÙ，俯瞰皇居與東京高空璀璨夜景，享受當代法日調酒與微醺時光 (Smart Casual)
+LOCATION:VIRTÙ (東京都千代田区大手町1-2-1 フォーシーズンズホテル東京大手町 39F)
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT

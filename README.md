@@ -9,10 +9,11 @@
 ### 1. 🍁 [東京 · 葉山 · 逗子 4日3夜 秋日雙人浪漫遊 (2026/10/17 – 10/20)](file:///Users/rondey/Personal/itinerary/itinerary_1017.html)
 * **生成腳本**：[`generate_1017.py`](file:///Users/rondey/Personal/itinerary/generate_1017.py)
 * **HTML 檔案**：[`itinerary_1017.html`](file:///Users/rondey/Personal/itinerary/itinerary_1017.html)
+* **交通原則**：**全程純鐵路（電車/地鐵）與的士直達，嚴格零巴士（免塞車、免搬行李）**。
 * **核心重點**：
-  * **Day 1 (10/17 六)**：【雙人平行視角】男方宿 [天然温泉 平和島](https://www.heiwajima-onsen.jp/) 乘 04:15 早朝送迎專車 04:40 抵達羽田接機 ✕ 女方乘香港快運 UO624 05:00 抵達羽田 T3 ➔ 入境大堂甜蜜會合 ➔ 百合ヶ丘整頓 ➔ SCAJ 2026 世界精品咖啡大展（東京 Big Sight） ➔ 「料理之鐵人」坂井宏行頂級法式正餐 [La Rochelle 山王](https://www.la-rochelle.co.jp/sp/) (19:00 已預約) ➔ 返回百合ヶ丘。
-  * **Day 2 (10/18 日)**：百合ヶ丘出發南下湘南 ➔ 入住海景包棟私人桑拿露天風呂別墅 [STELLA STORIA HAYAMA](https://maps.google.com/?q=Kanagawa+Hayama+Horiuchi+255-7) ➔ 私人芬蘭木質 Sauna & 露天 Jacuzzi 風呂 ➔ 晚間雙方案選擇（方案A：鐙摺港地道海鮮刺身割烹 vs 方案B：旭屋和牛便當 + Villa 星空露天溫泉酒會）。
-  * **Day 3 (10/19 一)**：葉山晨起咖啡 ➔ 的士直達 [リビエラ逗子マリーナ (Riviera Zushi Marina 会員制ヨットハーバー)](https://maps.google.com/?q=Riviera+Zushi+Marina) 參加好友海景婚禮（12:00 Ceremony ‧ 12:40 Luncheon） ➔ 湘南新宿線直出新宿 ➔ [かきだ鮨 新宿総本店](https://tabelog.com/tokyo/A1304/A130401/13286035/party/232871093)（小田急世紀南塔 19F，The Tokyo コース，全條本鮪一本買、壽司無限任追加、高森和牛壽喜燒） ➔ 返回百合ヶ丘。
+  * **Day 1 (10/17 六)**：【雙人平行視角】男方宿 [天然温泉 平和島](https://www.heiwajima-onsen.jp/) 清晨乘的士 (Taxi 12分鐘直達) 04:40 抵達羽田接機 ✕ 女方乘香港快運 UO624 05:00 抵達羽田 T3 ➔ 入境大堂甜蜜會合 ➔ 京急/小田急純鐵路直達百合ヶ丘整頓 ➔ SCAJ 2026 世界精品咖啡大展（東京 Big Sight） ➔ 「料理之鐵人」坂井宏行頂級法式正餐 [La Rochelle 山王](https://www.la-rochelle.co.jp/sp/) (19:00 已預約) ➔ 返回百合ヶ丘。
+  * **Day 2 (10/18 日)**：百合ヶ丘出發南下湘南 ➔ JR 橫須賀線直達逗子站 ➔ 東口搭乘的士 (7分鐘直達門口) 入住海景包棟私人桑拿露天風呂別墅 [STELLA STORIA HAYAMA](https://maps.google.com/?q=Kanagawa+Hayama+Horiuchi+255-7) ➔ 私人芬蘭木質 Sauna & 露天 Jacuzzi 風呂 ➔ 晚間雙方案選擇（方案A：鐙摺港地道海鮮刺身割烹 vs 方案B：旭屋和牛便當 + Villa 星空露天溫泉酒會）。
+  * **Day 3 (10/19 一)**：葉山晨起咖啡 ➔ 的士沿海直達 [リビエラ逗子マリーナ (Riviera Zushi Marina 会員制ヨットハーバー)](https://maps.google.com/?q=Riviera+Zushi+Marina) 參加好友海景婚禮（12:00 Ceremony ‧ 12:40 Luncheon） ➔ 湘南新宿線直出新宿 ➔ [かきだ鮨 新宿総本店](https://tabelog.com/tokyo/A1304/A130401/13286035/party/232871093)（小田急世紀南塔 19F，The Tokyo コース，全條本鮪一本買、壽司無限任追加、高森和牛壽喜燒） ➔ 東京 Metro 丸之內線/的士直達皇居旁 [VIRTÙ (Four Seasons Hotel Tokyo at Otemachi 39F)](https://www.fourseasons.com/tokyoatotemachi/dining/lounges/virtu/) 享受 Asia's 50 Best Bars 高空法日當代微醺夜景 ➔ 千代田線直通小田急返回百合ヶ丘。
   * **Day 4 (10/20 二)**：百合ヶ丘出發 ➔ 重遊女朋友青春珍貴記憶：[業務スーパー 鶴川店](https://maps.google.com/?q=Gyomu+Super+Tsurukawa)（採購日本零食與調味料） ➔ 返回百合ヶ丘打包行李 ➔ 日暮里轉乘京成特急 Skyliner 41分鐘超速直達 ➔ 成田國際機場 T3 搭乘 Jetstar GK27 (20:10 起飛) 飛返香港。
 
 ---
@@ -26,7 +27,7 @@
 
 ## 🌟 互動技術亮點
 1. **OpenFreeMap 高清向量圖資**：採用 MapLibre GL 向量地圖，內置 Positron (文青灰) / Bright (清新綠) / Liberty (標準) 三種質感風格一鍵切換。
-2. **動態區間動畫與高亮**：點擊卡片自動平移縮放地圖、繪製精準鐵路/巴士軌跡線，並以脈衝動畫模擬列車/車輛即時行駛進度。
+2. **動態區間動畫與高亮**：點擊卡片自動平移縮放地圖、繪製精準鐵路/的士軌跡線，並以脈衝動畫模擬列車/的士即時行駛進度。
 3. **雙重晚間方案即時切換**：卡片內建互動式 Toggle 切換器，自動切換景點詳細資訊與地圖路綫。
 4. **手機全自適應三重視角**：地圖模式 (Map)、行程模式 (List)、分割模式 (Split) 一鍵切換，配合 iPhone safe-area 圓角避障。
 5. **一鍵導出日曆**：動態生成標準 iCalendar (`.ics`) 檔案，一鍵加入 Apple Calendar 或 Google Calendar。
