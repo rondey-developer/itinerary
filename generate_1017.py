@@ -1712,8 +1712,8 @@ html_content = '''<!DOCTYPE html>
             <div class="day-title-wrap">
               <span class="day-badge-tag badge-d2">Day 2</span>
               <div class="day-title-text">
-                <h3>10/18 (日) · 湘南葉山 ‧ 逗子名店食材採購 ‧ 海邊別墅私廚料理 ‧ 桑拿星空風呂</h3>
-                <span>百合ヶ丘 ➔ JR橫須賀線逗子駅 ➔ スズキヤ 頂級食材採購 ➔ 的士直達 (15:00 Check-in) ➔ 露天風呂 ‧ 雙人海景私廚</span>
+                <h3>10/18 (日) · 湘南逗子海岸漫步 ‧ 頂級食材採購 ‧ 葉山別墅私廚 ‧ 桑拿星空夜</h3>
+                <span>百合ヶ丘 ➔ 逗子駅 (10:00抵達 ‧ 寄放行李) ➔ 逗子海岸 & なぎさ橋珈琲 ➔ つく志海鮮午膳 ➔ スズキヤ採購 ➔ 的士直達 (15:00 Check-in) ➔ 雙人私廚</span>
               </div>
             </div>
             <div class="day-accordion-control">
@@ -1724,22 +1724,22 @@ html_content = '''<!DOCTYPE html>
 
           <div class="day-block-body">
 
-            <!-- Stop 1: Morning Coffee & Departure to Zushi -->
+            <!-- Stop 1: Morning Train to Zushi -->
             <div class="venue-card" id="card-hayama-depart" onclick="selectStopLeg('hayama-depart')">
               <div class="card-top-row">
-                <span class="card-time-pill">⏰ 12:30 – 14:00 (悠閒鐵道南下)</span>
-                <span class="card-status-pill pill-sightseeing">☕ 慢活啟程</span>
+                <span class="card-time-pill">⏰ 08:50 – 10:00 (晨光啟程 ‧ 直達湘南)</span>
+                <span class="card-status-pill pill-sightseeing">🚆 10:00 準時抵達逗子</span>
               </div>
               <div class="venue-japanese-name">🌿 百合ヶ丘出発 ➔ 湘南逗子駅へ</div>
-              <div class="venue-chinese-subtitle">收拾一晚輕便行裝 ‧ 沿相模灣鐵道直奔湘南海岸</div>
+              <div class="venue-chinese-subtitle">收拾一晚輕便行裝 ‧ 純鐵路南下相模灣 ‧ 10:00 抵達逗子站寄放行李</div>
               <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">
-                🚆 百合ヶ丘 ➔ 町田轉 JR 橫濱線至橫濱 ➔ 轉 JR 橫須賀線直達逗子駅 (約65分鐘) ➔ 東口出閘
+                🚆 百合ヶ丘 ➔ 町田轉 JR 橫濱線至橫濱 ➔ 轉 JR 橫須賀線直達逗子駅 (約65分鐘) ➔ 10:00 準時抵達
               </div>
               <p class="venue-details">
-                瞓到自然醒，喺百合ヶ丘嘆杯新鮮咖啡同輕食。帶上一晚去葉山別墅嘅輕便行李，出發前往日本皇室最喜愛嘅避暑勝地——神奈川葉山（Hayama）！搭乘純鐵路舒適抵達逗子站，準備前往站前精品超市大採購！
+                晨光熹微，兩個人帶上一晚去葉山別墅嘅輕便行李，搭乘純鐵路南下湘南海岸！準時早上 10:00 抵達逗子站。出閘後先將隨身行李放入車站東口嘅 Coin Locker 寄物櫃，兩手空空、無拘無束展開逗子海濱慢活漫遊！
               </p>
               <div class="venue-highlight-note">
-                <strong>💡 銜接貼士：</strong>抵達 JR 逗子站東口後，步行 50 秒即達老牌高級超市「スズキヤ (SUZUKIYA)」，買完食材正門對面即是的士站！
+                <strong>🛅 行李寄放攻略：</strong>JR 逗子站東口閘內與閘外均設有電子感應 Coin Locker，可直接用 Suica / Pasmo 寄存過夜行李，輕鬆出遊零負擔！
               </div>
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 神奈川県逗子市 逗子駅東口</span>
@@ -1751,7 +1751,36 @@ html_content = '''<!DOCTYPE html>
               </div>
             </div>
 
-            <!-- Stop 2: Grocery Shopping at Zushi Supermarket -->
+            <!-- Stop 2: Morning Coastal Stroll & Seaside Cafe & Lunch -->
+            <div class="venue-card" id="card-zushi-stroll" onclick="selectStopLeg('zushi-stroll')">
+              <div class="card-top-row">
+                <span class="card-time-pill">⏰ 10:15 – 13:45 (海濱慢活 ‧ 露台咖啡 ‧ 地魚午膳)</span>
+                <span class="card-status-pill pill-sightseeing" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">🏖️ 逗子海岸慢活巡禮</span>
+              </div>
+              <div class="venue-japanese-name">🏖️ 逗子海岸散策 ‧ なぎさ橋珈琲 ‧ 老舗 つく志午膳</div>
+              <div class="venue-chinese-subtitle">逗子銀座老街 ➔ 逗子海岸無敵海景 ➔ なぎさ橋木棧海景露台晨啡 ➔ 73年老店相模灣現撈刺身定食</div>
+              <div class="card-from-leg-pill" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">
+                🚶 逗子站東口 ➔ 逗子銀座步行12分鐘 ➔ 逗子海岸沙灘 ➔ なぎさ橋珈琲 ➔ 步行回站前「つく志」午膳
+              </div>
+              <p class="venue-details">
+                採購前嘅 4 小時湘南海濱慢活時光！由逗子站前穿過充滿地道風情嘅逗子銀座老街，漫步至金黃細沙嘅逗子海岸。踏在沙灘邊感受陣陣秋日清爽海風，遠眺相模灣海面帆船與遠處富士山日出後嘅剪影。
+              </p>
+              <div class="venue-highlight-note">
+                <strong>☕ 【晨光海景咖啡】なぎさ橋珈琲 逗子店：</strong>坐落於逗子海岸南端渚橋旁（逗子市新宿4-7-1，步行或的士4分鐘）。特設超寬闊嘅無遮蔽戶外木棧露台，正對一整片蔚藍海灣與海浪聲，點杯招牌手沖冰咖啡或法式多士，極度寫意放鬆！<br>
+                <strong>🐟 【海鮮午膳推薦】つく志（Tsukushi）：</strong>逗子 1951 年創立嘅 73 年傳奇海鮮名店（逗子站步行2分鐘，スズキヤ隔籬）。週日 11:00 起營業，當地居民極力推崇嘅「相模灣當日現撈刺身定食」、酥炸極鮮竹莢魚（アジフライ）與醬煮金目鯛，鮮味無敵！<br>
+                <strong>💡 靈活快閃備選：</strong>若當日想去古都老街，逗子搭 JR 橫須賀線<strong>只需 1 個站 4 分鐘</strong>即可直達【鎌倉站】，漫步小町通品嚐小食與參拜鶴岡八幡宮，下午 13:45 搭 4 分鐘火車回逗子站採購！
+              </div>
+              <div class="card-footer-row">
+                <span class="venue-location-text">📍 神奈川県逗子市 逗子海岸 ＆ なぎさ橋珈琲</span>
+                <div class="venue-actions">
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('zushi-stroll', event)">🗺️ 路線</button>
+                  <a href="https://maps.google.com/?q=Nagisabashi+Coffee+Zushi" target="_blank" class="btn-action-pill">☕ なぎさ橋珈琲</a>
+                  <a href="https://maps.google.com/?q=Tsukushi+Zushi" target="_blank" class="btn-action-pill">🐟 つく志 地圖</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stop 3: Grocery Shopping at Zushi Supermarket -->
             <div class="venue-card" id="card-zushi-supermarket" onclick="selectStopLeg('zushi-supermarket')">
               <div class="card-top-row">
                 <span class="card-time-pill">⏰ 14:05 – 14:50 (站前頂級食材採購)</span>
@@ -2205,7 +2234,7 @@ html_content = '''<!DOCTYPE html>
       <div class="map-overlay-controls">
         <button class="day-selector-btn active" id="map-day-all" onclick="showAllVenuesView()">全部景點</button>
         <button class="day-selector-btn" id="map-day-1" onclick="selectDayFromMap(1, this)">D1 平和島·羽田·SCAJ·鐵人</button>
-        <button class="day-selector-btn" id="map-day-2" onclick="selectDayFromMap(2, this)">D2 逗子超市·葉山Villa私廚</button>
+        <button class="day-selector-btn" id="map-day-2" onclick="selectDayFromMap(2, this)">D2 逗子海岸·超市·葉山私廚</button>
         <button class="day-selector-btn" id="map-day-3" onclick="selectDayFromMap(3, this)">D3 逗子婚禮·壽司·VIRTÙ</button>
         <button class="day-selector-btn" id="map-day-4" onclick="selectDayFromMap(4, this)">D4 鶴川超市·成田</button>
       </div>
@@ -2391,9 +2420,9 @@ html_content = '''<!DOCTYPE html>
       'hayama-depart': {
         id: 'hayama-depart',
         day: 2,
-        title: "百合ヶ丘出発 ➔ 逗子駅 (湘南葉山方面)",
-        sub: "百合ヶ丘 ➔ 町田·橫濱 ➔ JR橫須賀線逗子駅",
-        time: "10/18 11:00",
+        title: "百合ヶ丘出発 ➔ 逗子駅 (10:00抵達 ‧ 寄放行李)",
+        sub: "百合ヶ丘 ➔ 町田·橫濱 ➔ JR橫須賀線直達逗子駅 (10:00抵達)",
+        time: "10/18 10:00",
         lat: 35.2975,
         lng: 139.5805,
         color: "#2d6a82",
@@ -2409,7 +2438,28 @@ html_content = '''<!DOCTYPE html>
           [35.4010, 139.5330], // 戸塚駅
           [35.3530, 139.5315], // 大船駅
           [35.3190, 139.5505], // 鎌倉駅
-          [35.2975, 139.5805]  // 逗子駅 (東口 Taxi 的士站)
+          [35.2975, 139.5805]  // 逗子駅 (東口 Coin Locker 寄物櫃)
+        ]
+      },
+      'zushi-stroll': {
+        id: 'zushi-stroll',
+        day: 2,
+        title: "逗子海岸 ＆ なぎさ橋珈琲 ‧ つく志地魚午膳",
+        sub: "逗子站 ➔ 逗子銀座 ➔ 逗子海岸沙灘 ➔ なぎさ橋海景露台 ➔ 73年老店つく志午膳",
+        time: "10/18 10:15",
+        lat: 35.2890,
+        lng: 139.5760,
+        color: "#2d6a82",
+        lastStopName: "JR 逗子駅 (東口 Coin Locker)",
+        vehicle: "☕",
+        yahooUrl: "https://maps.google.com/?q=Nagisabashi+Coffee+Zushi",
+        routeCoords: [
+          [35.2975, 139.5805], // 逗子駅東口 (寄放行李)
+          [35.2940, 139.5790], // 逗子銀座商店街
+          [35.2920, 139.5740], // 逗子海岸中央沙灘
+          [35.2890, 139.5760], // なぎさ橋珈琲 (海景露台)
+          [35.2965, 139.5800], // つく志 (老字號地魚海鮮午膳)
+          [35.2975, 139.5805]  // 返回逗子站東口
         ]
       },
       'zushi-supermarket': {
@@ -2720,6 +2770,7 @@ html_content = '''<!DOCTYPE html>
       let iconContent = `D${dayNum}`;
       if (spotId.includes('heiwajima') || spotId.includes('onsen')) iconContent = '♨️';
       else if (spotId.includes('flight') || spotId.includes('arrival')) iconContent = '✈️';
+      else if (spotId.includes('stroll') || spotId.includes('nagisa')) iconContent = '🏖️';
       else if (spotId.includes('stella')) iconContent = '🌊';
       else if (spotId.includes('supermarket') || spotId.includes('suzukiya')) iconContent = '🛒';
       else if (spotId.includes('cooking')) iconContent = '🍽️';
@@ -3314,6 +3365,14 @@ DTSTART;TZID=Asia/Tokyo:20261017T190000
 DTEND;TZID=Asia/Tokyo:20261017T213000
 DESCRIPTION:千代田區永田町東急 Capitol Tower 1F，料理之鐵人坂井宏行頂級法式晚餐，19:00 已預約，請著 Smart Casual
 LOCATION:ラ・ロシェル山王 (東京都千代田区永田町2-10-3 東急キャピトルタワー1F)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:漫步午膳：逗子海岸散策 ＆ なぎさ橋珈琲海景露台 ＆ つく志海鮮
+DTSTART;TZID=Asia/Tokyo:20261018T101500
+DTEND;TZID=Asia/Tokyo:20261018T134500
+DESCRIPTION:逗子站寄放行李，漫步逗子海岸沙灘，於なぎさ橋珈琲海景木棧露台享受海風晨啡，隨後品嚐73年老字號つく志現撈相模灣地魚刺身定食
+LOCATION:逗子海岸 ＆ なぎさ橋珈琲 (神奈川県逗子市新宿4-7-1)
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
