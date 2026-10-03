@@ -1,4 +1,32 @@
-# 🌸 東京 & 草津溫泉 5日4夜 浪漫雙人遊 (2026/09/25 – 09/29)
+# 🇯🇵 日本雙人浪漫旅行行程導航 (Couple Trip Itineraries)
 
-## 🗺️ 項目特色
-- **OpenFreeMap 高清向量圖資**：採用 MapLibre GL 向量地圖，內置 Liberty / Bright / Positron 三種質感風格一鍵切換。
+本項目專為情侶自由行打造，具備互動式鐵道與公路路線導航、即時動態車輛軌跡、OpenFreeMap 高清向量圖資，以及香港粵語在地化實用搭車與預約備忘。
+
+---
+
+## 🗺️ 行程列表 (Available Itineraries)
+
+### 1. 🍁 [東京 · 葉山 · 逗子 4日3夜 秋日雙人浪漫遊 (2026/10/17 – 10/20)](file:///Users/rondey/Personal/itinerary/itinerary_1017.html)
+* **生成腳本**：[`generate_1017.py`](file:///Users/rondey/Personal/itinerary/generate_1017.py)
+* **HTML 檔案**：[`itinerary_1017.html`](file:///Users/rondey/Personal/itinerary/itinerary_1017.html)
+* **核心重點**：
+  * **Day 1 (10/17 六)**：香港快運 UO624 抵達羽田 ➔ 百合ヶ丘整頓 ➔ SCAJ 2026 世界精品咖啡大展（東京 Big Sight） ➔ 「料理之鐵人」坂井宏行頂級法式正餐 [La Rochelle 山王](https://www.la-rochelle.co.jp/sp/) (19:00 已預約) ➔ 返回百合ヶ丘。
+  * **Day 2 (10/18 日)**：百合ヶ丘出發南下湘南 ➔ 入住海景包棟私人桑拿露天風呂別墅 [STELLA STORIA HAYAMA](https://maps.google.com/?q=Kanagawa+Hayama+Horiuchi+255-7) ➔ 私人芬蘭木質 Sauna & 露天 Jacuzzi 風呂 ➔ 晚間雙方案選擇（方案A：鐙摺港地道海鮮刺身割烹 vs 方案B：旭屋和牛便當 + Villa 星空露天溫泉酒會）。
+  * **Day 3 (10/19 一)**：葉山晨起咖啡 ➔ 的士直達 [リビエラ逗子マリーナ (Riviera Zushi Marina 会員制ヨットハーバー)](https://maps.google.com/?q=Riviera+Zushi+Marina) 參加好友海景婚禮（12:00 Ceremony ‧ 12:40 Luncheon） ➔ 湘南新宿線直出新宿 ➔ [かきだ鮨 新宿総本店](https://tabelog.com/tokyo/A1304/A130401/13286035/party/232871093)（小田急世紀南塔 19F，The Tokyo コース，全條本鮪一本買、壽司無限任追加、高森和牛壽喜燒） ➔ 返回百合ヶ丘。
+  * **Day 4 (10/20 二)**：百合ヶ丘出發 ➔ 重遊女朋友青春珍貴記憶：[業務スーパー 鶴川店](https://maps.google.com/?q=Gyomu+Super+Tsurukawa)（採購日本零食與調味料） ➔ 返回百合ヶ丘打包行李 ➔ 日暮里轉乘京成特急 Skyliner 41分鐘超速直達 ➔ 成田國際機場 T3 搭乘 Jetstar GK27 (20:10 起飛) 飛返香港。
+
+---
+
+### 2. 🌸 [東京 & 草津溫泉 5日4夜 浪漫雙人遊 (2026/09/25 – 09/29)](file:///Users/rondey/Personal/itinerary/index.html)
+* **生成腳本**：[`generate_leg_main.py`](file:///Users/rondey/Personal/itinerary/generate_leg_main.py)
+* **HTML 檔案**：[`index.html`](file:///Users/rondey/Personal/itinerary/index.html)
+* **核心重點**：百合ヶ丘、Shane's Burg 漢堡扒、六本木次郎壽司、東京鐵塔、亞洲50大 VIRTÙ、迪士尼海洋、特急草津四萬號、草津溫泉湯畑、奈良屋懷石料理、表參道咖啡雙重選擇。
+
+---
+
+## 🌟 互動技術亮點
+1. **OpenFreeMap 高清向量圖資**：採用 MapLibre GL 向量地圖，內置 Positron (文青灰) / Bright (清新綠) / Liberty (標準) 三種質感風格一鍵切換。
+2. **動態區間動畫與高亮**：點擊卡片自動平移縮放地圖、繪製精準鐵路/巴士軌跡線，並以脈衝動畫模擬列車/車輛即時行駛進度。
+3. **雙重晚間方案即時切換**：卡片內建互動式 Toggle 切換器，自動切換景點詳細資訊與地圖路綫。
+4. **手機全自適應三重視角**：地圖模式 (Map)、行程模式 (List)、分割模式 (Split) 一鍵切換，配合 iPhone safe-area 圓角避障。
+5. **一鍵導出日曆**：動態生成標準 iCalendar (`.ics`) 檔案，一鍵加入 Apple Calendar 或 Google Calendar。

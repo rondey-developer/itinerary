@@ -1,0 +1,3008 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>東京 · 葉山 · 逗子 4日3夜 秋日雙人浪漫遊 | 區間導航地圖</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@600;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+  <!-- MapLibre GL CSS (for OpenFreeMap https://openfreemap.org/) -->
+  <link href="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css" rel="stylesheet" crossorigin=""/>
+  
+  <style>
+    /*
+     * Design: Refined Japanese Modern Editorial + Tokyo & Shonan Transit Clarity
+     * Aesthetic: Japandi (Wabi-Sabi Washi & Scandinavian Hinoki Cedar)
+     */
+    :root {
+      --primary: #985635; /* Hinoki Cedar / Warm Terracotta */
+      --primary-hover: #7e4428;
+      --primary-subtle: rgba(152, 86, 53, 0.08);
+      --primary-glow: rgba(152, 86, 53, 0.20);
+      
+      --sumi-ink: #22201d; /* Deep Calligraphy Charcoal Ink */
+      
+      --bg-page: #f7f5f0; /* Unbleached Handcrafted Washi / Ecru Linen */
+      --bg-surface: #ffffff;
+      --bg-surface-warm: #fcfbf9;
+      --bg-subtle: #efece4; /* Muted Wood / Stone */
+      --bg-subtle-hover: #e5e1d6;
+      
+      --border-subtle: rgba(34, 32, 29, 0.08);
+      --border-medium: rgba(34, 32, 29, 0.15);
+      --border-wood: #dfd8cc;
+      --border-focus: rgba(152, 86, 53, 0.38);
+      --border-color: #e5e0d8;
+      
+      --text-main: #22201d; /* Sumi Ink */
+      --text-secondary: #56524b; /* Cedar Bark Gray */
+      --text-muted: #8a857c; /* River Pebble Gray */
+      
+      --shadow-xs: 0 1px 2px rgba(34, 32, 29, 0.03);
+      --shadow-sm: 0 2px 6px -1px rgba(34, 32, 29, 0.04), 0 1px 3px rgba(34, 32, 29, 0.02);
+      --shadow-md: 0 6px 20px -3px rgba(34, 32, 29, 0.06), 0 2px 6px -1px rgba(34, 32, 29, 0.03);
+      --shadow-lg: 0 14px 34px -4px rgba(34, 32, 29, 0.09), 0 4px 12px -2px rgba(34, 32, 29, 0.03);
+      
+      --radius-sm: 8px;
+      --radius-card: 14px;
+      --radius-pill: 9999px;
+      
+      --font-serif: -apple-system, BlinkMacSystemFont, "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif TC", "Shippori Mincho", serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans TC", sans-serif;
+      --font-display: -apple-system, BlinkMacSystemFont, "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif TC", serif;
+      --font-mono: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      height: 100vh;
+      height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Navigation */
+    .top-navbar {
+      height: 54px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 18px;
+      z-index: 1000;
+      flex-shrink: 0;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.015em;
+      white-space: nowrap;
+    }
+    .brand-title-mobile { display: none; }
+    .brand-title-full { display: inline; }
+
+    .brand-pill {
+      font-size: 0.72rem;
+      background: var(--primary-subtle);
+      color: var(--primary);
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+      font-weight: 700;
+      border: 1px solid rgba(152, 86, 53, 0.15);
+      font-family: var(--font-mono);
+      letter-spacing: 0.02em;
+    }
+
+    .nav-buttons {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-nav-action {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 6px 13px;
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: var(--shadow-xs);
+    }
+    .btn-nav-action:hover {
+      background: var(--bg-subtle);
+      color: var(--primary);
+      border-color: var(--border-medium);
+      transform: translateY(-1px);
+    }
+    .btn-nav-action.btn-nav-primary {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 2px 8px var(--primary-glow);
+    }
+    .btn-nav-action.btn-nav-primary:hover {
+      background: var(--primary-hover);
+    }
+
+    /* Mobile Segmented Bar (hidden on desktop) */
+    .mobile-segmented-bar {
+      display: none;
+    }
+
+    /* Main Viewport Split */
+    .app-viewport {
+      display: flex;
+      flex: 1;
+      height: calc(100vh - 54px);
+      height: calc(100dvh - 54px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .itinerary-panel {
+      width: 490px;
+      flex-shrink: 0;
+      background: var(--bg-page);
+      border-right: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      min-height: 0;
+      z-index: 10;
+      box-shadow: 2px 0 16px rgba(0, 0, 0, 0.03);
+      transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .itinerary-panel.panel-wide {
+      width: 600px;
+    }
+
+    .map-container-wrap {
+      flex: 1;
+      height: 100%;
+      position: relative;
+      background: #e8e6df;
+    }
+
+    #trip-map {
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    /* Drawer Header */
+    .panel-header {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border-subtle);
+      background: #fdfcf9;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .panel-header-left h2 {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .panel-header-left p {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .panel-quick-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-panel-action {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .btn-panel-action:hover {
+      background: var(--bg-subtle);
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .panel-toggle-btn {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid var(--border-color);
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.2s ease;
+      font-weight: 700;
+    }
+    .panel-toggle-btn:hover {
+      background: var(--bg-subtle);
+      color: var(--text-main);
+    }
+
+    .panel-scroll-area {
+      flex: 1 1 0;
+      height: 100%;
+      min-height: 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 16px;
+      display: block;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-y: contain;
+    }
+
+    .panel-scroll-area::-webkit-scrollbar {
+      width: 6px;
+    }
+    .panel-scroll-area::-webkit-scrollbar-track {
+      background: #f1ede6;
+      border-radius: 4px;
+    }
+    .panel-scroll-area::-webkit-scrollbar-thumb {
+      background: #c8bfb0;
+      border-radius: 4px;
+    }
+    .panel-scroll-area::-webkit-scrollbar-thumb:hover {
+      background: var(--primary);
+    }
+
+    /* OpenFreeMap Vector Theme Switcher */
+    .ofm-switcher-control {
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      z-index: 500;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-medium);
+      padding: 4px;
+      border-radius: var(--radius-pill);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .ofm-switcher-btn {
+      background: transparent;
+      border: none;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      padding: 5px 11px;
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .ofm-switcher-btn:hover {
+      color: var(--text-main);
+      background: rgba(0,0,0,0.04);
+    }
+    .ofm-switcher-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 1px 4px rgba(152, 86, 53, 0.35);
+    }
+
+    /* Map Overlay Floating Day Pills */
+    .map-overlay-controls {
+      position: absolute;
+      top: 18px;
+      left: 20px;
+      z-index: 500;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-medium);
+      padding: 5px 8px;
+      border-radius: var(--radius-pill);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      overflow-x: auto;
+      max-width: calc(100% - 240px);
+    }
+
+    .day-selector-btn {
+      border: none;
+      background: transparent;
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+    .day-selector-btn:hover {
+      background: rgba(0,0,0,0.05);
+      color: var(--text-main);
+    }
+    .day-selector-btn.active {
+      background: var(--sumi-ink);
+      color: #ffffff;
+    }
+
+    /* Floating Leg Route Banner */
+    .leg-status-banner {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      max-width: 580px;
+      margin: 0 auto;
+      z-index: 500;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-medium);
+      border-radius: 14px;
+      box-shadow: var(--shadow-lg);
+      padding: 10px 14px;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      animation: bannerSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes bannerSlideUp {
+      from { transform: translateY(12px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .leg-status-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+    .leg-route-title {
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .leg-sub-text {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .leg-banner-actions {
+      display: flex;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .btn-replay-leg {
+      background: #ffffff;
+      border: 1px solid var(--border-medium);
+      color: var(--text-main);
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 5px 10px;
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.15s ease;
+    }
+    .btn-replay-leg:hover {
+      background: var(--bg-subtle);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Day Accordion Block */
+    .day-block {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-card);
+      margin-bottom: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-xs);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .day-block.active-day-block {
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 1px var(--primary-subtle), var(--shadow-sm);
+    }
+
+    .day-block-header {
+      padding: 14px 18px;
+      background: #fdfcf9;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.15s ease;
+    }
+    .day-block-header:hover {
+      background: #f5efe4;
+    }
+
+    .day-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .day-badge-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      color: #fff;
+      font-family: var(--font-mono);
+    }
+
+    .badge-d1 { background: #b85d19; } /* Coffee Amber / Terracotta */
+    .badge-d2 { background: #2d6a82; } /* Shonan Deep Ocean Blue */
+    .badge-d3 { background: #9e2a4b; } /* Champagne Rose / Tokyo Fine Dining */
+    .badge-d4 { background: #3d7a5a; } /* Memory Pine / Departure Forest Green */
+
+    .day-title-text h3 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .day-title-text span {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+
+    .day-accordion-control {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .accordion-chevron-arrow {
+      font-size: 0.85rem;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* COLLAPSED STATE */
+    .day-block.collapsed .day-block-header {
+      border-bottom: none;
+      background: #fdfcfb;
+    }
+
+    .day-block.collapsed .accordion-chevron-arrow {
+      transform: rotate(-90deg);
+    }
+
+    .day-block.collapsed .day-block-body {
+      display: none !important;
+    }
+
+    .day-block-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      background: #ffffff;
+      animation: fadeIn 0.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Venue Card */
+    .venue-card {
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-surface);
+      border-radius: var(--radius-card);
+      padding: 15px 17px;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      box-shadow: var(--shadow-xs);
+    }
+
+    .venue-card:hover {
+      border-color: rgba(152, 86, 53, 0.35);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .venue-card.active-selected-card {
+      border-color: var(--primary);
+      border-left: 4px solid var(--primary);
+      background: #fffdfb;
+      box-shadow: 0 4px 20px -2px rgba(152, 86, 53, 0.16);
+    }
+
+    .card-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .card-time-pill {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: var(--primary-subtle);
+      border: 1px solid rgba(152, 86, 53, 0.15);
+      padding: 2px 8px;
+      border-radius: var(--radius-pill);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-family: var(--font-mono);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .card-status-pill {
+      font-size: 0.70rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: var(--radius-pill);
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .pill-booking {
+      background: rgba(46, 82, 65, 0.08);
+      color: #234736;
+      border: 1px solid rgba(46, 82, 65, 0.20);
+    }
+
+    .pill-sightseeing {
+      background: rgba(30, 64, 175, 0.08);
+      color: #1e40af;
+      border: 1px solid rgba(30, 64, 175, 0.20);
+    }
+
+    .pill-memory {
+      background: rgba(147, 51, 234, 0.08);
+      color: #7e22ce;
+      border: 1px solid rgba(147, 51, 234, 0.20);
+    }
+
+    .venue-japanese-name {
+      font-family: var(--font-serif);
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.35;
+      margin-bottom: 3px;
+    }
+
+    .venue-chinese-subtitle {
+      font-size: 0.80rem;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .card-from-leg-pill {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 9px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      line-height: 1.4;
+      border: 1px solid transparent;
+    }
+
+    .venue-details {
+      font-size: 0.81rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin-bottom: 10px;
+    }
+
+    .venue-highlight-note {
+      background: var(--bg-surface-warm);
+      border-left: 3px solid var(--primary);
+      padding: 8px 11px;
+      border-radius: 0 6px 6px 0;
+      font-size: 0.76rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .card-footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 9px;
+      margin-top: 4px;
+    }
+
+    .venue-location-text {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      max-width: 58%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .venue-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-action-pill {
+      font-size: 0.72rem;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      border: 1px solid var(--border-medium);
+      background: #ffffff;
+      color: var(--text-secondary);
+      transition: all 0.15s ease;
+      font-weight: 700;
+    }
+    .btn-action-pill:hover {
+      background: var(--bg-subtle);
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+    .btn-action-pill.pill-yahoo {
+      color: #0369a1;
+      border-color: #bae6fd;
+      background: #f0f9ff;
+    }
+    .btn-action-pill.pill-yahoo:hover {
+      background: #e0f2fe;
+      border-color: #7dd3fc;
+      color: #0284c7;
+    }
+
+    /* Transit Guide Box */
+    .transit-guide-box {
+      background: var(--bg-surface-warm);
+      border: 1px solid var(--border-wood);
+      border-radius: 10px;
+      padding: 14px;
+      margin: 10px 0;
+    }
+
+    .transit-guide-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 4px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--sumi-ink);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border-wood);
+    }
+
+    .transit-step-item {
+      display: flex;
+      gap: 12px;
+      position: relative;
+      padding-bottom: 14px;
+    }
+    .transit-step-item:last-child { padding-bottom: 0; }
+
+    .transit-step-item::after {
+      content: "";
+      position: absolute;
+      left: 17px;
+      top: 22px;
+      bottom: -4px;
+      width: 2px;
+      background: #cbd5e1;
+    }
+    .transit-step-item:last-child::after { display: none; }
+
+    .step-time-box {
+      font-family: var(--font-mono);
+      font-size: 0.80rem;
+      font-weight: 800;
+      color: var(--text-main);
+      width: 44px;
+      text-align: right;
+    }
+
+    .step-marker-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #3b82f6;
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 2px #3b82f6;
+      margin-top: 4px;
+      z-index: 1;
+      flex-shrink: 0;
+    }
+    .step-marker-dot.start { background: #10b981; box-shadow: 0 0 0 2px #10b981; }
+    .step-marker-dot.end { background: #ef4444; box-shadow: 0 0 0 2px #ef4444; }
+
+    .step-desc-wrap { flex: 1; }
+    .step-station-name { font-weight: 800; font-size: 0.88rem; color: var(--sumi-ink); }
+    .step-subline {
+      font-size: 0.76rem;
+      color: #64748b;
+      margin-top: 2px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .subline-badge {
+      background: #e2e8f0;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      color: #334155;
+      font-weight: 700;
+    }
+
+    /* Dual-Plan Selector for Day 2 Evening in Hayama */
+    .dualplan-card {
+      border: 1.5px solid #cbd5e1;
+      position: relative;
+    }
+    .dualplan-toggle-bar {
+      display: flex;
+      gap: 8px;
+      margin: 12px 0 14px 0;
+      background: #f1f5f9;
+      padding: 6px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+    }
+    .dualplan-tab-btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 6px;
+      border-radius: 9px;
+      border: 1.5px solid transparent;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      text-align: center;
+      gap: 2px;
+    }
+    .dualplan-tab-btn .tab-icon {
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+    .dualplan-tab-btn .tab-title {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #475569;
+    }
+    .dualplan-tab-btn .tab-badge {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: #64748b;
+    }
+    .dualplan-tab-btn.active#btn-plan-seafood {
+      background: #ffffff;
+      border-color: #0284c7;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.18);
+    }
+    .dualplan-tab-btn.active#btn-plan-seafood .tab-title {
+      color: #0369a1;
+    }
+    .dualplan-tab-btn.active#btn-plan-seafood .tab-badge {
+      color: #0284c7;
+      font-weight: 700;
+    }
+    .dualplan-tab-btn.active#btn-plan-villa {
+      background: #ffffff;
+      border-color: #b45309;
+      box-shadow: 0 2px 8px rgba(180, 83, 9, 0.18);
+    }
+    .dualplan-tab-btn.active#btn-plan-villa .tab-title {
+      color: #92400e;
+    }
+    .dualplan-tab-btn.active#btn-plan-villa .tab-badge {
+      color: #b45309;
+      font-weight: 700;
+    }
+
+    .dualplan-compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    @media (max-width: 600px) {
+      .dualplan-compare-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .compare-col {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 0.76rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .compare-col:hover {
+      border-color: #94a3b8;
+    }
+    .compare-col.active-col.col-seafood {
+      border: 2px solid #0284c7;
+      background: #f0f9ff;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.12);
+    }
+    .compare-col.active-col.col-villa {
+      border: 2px solid #b45309;
+      background: #fffbeb;
+      box-shadow: 0 2px 8px rgba(180, 83, 9, 0.12);
+    }
+    .compare-col-header {
+      font-weight: 800;
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .compare-col-feature {
+      color: #64748b;
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+
+    /* Map Elements */
+    .map-pin-badge {
+      width: 34px;
+      height: 34px;
+      border-radius: 50% 50% 50% 0;
+      transform: rotate(-45deg);
+      border: 2.5px solid #ffffff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .map-pin-badge.highlight-active {
+      transform: rotate(-45deg) scale(1.18);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+      border-color: #ffff00;
+    }
+    .map-pin-badge span {
+      transform: rotate(45deg);
+      color: #ffffff;
+      font-weight: 900;
+      font-size: 11px;
+      line-height: 1;
+      font-family: var(--font-mono);
+    }
+
+    .origin-badge-icon {
+      background: #10b981;
+      border: 2px solid #ffffff;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+      font-size: 11px;
+      color: #ffffff;
+      font-weight: 800;
+    }
+
+    .vehicle-marker-pulse {
+      background: #ffffff;
+      border: 2.5px solid var(--primary);
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      box-shadow: 0 4px 14px rgba(152, 86, 53, 0.45);
+      animation: vehiclePulse 1s infinite alternate;
+    }
+
+    @keyframes vehiclePulse {
+      from { transform: scale(1); }
+      to { transform: scale(1.14); }
+    }
+
+    .popup-inner {
+      font-family: var(--font-sans);
+      padding: 4px;
+      max-width: 240px;
+    }
+    .popup-time-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: #ffffff;
+      padding: 1px 6px;
+      border-radius: 4px;
+      margin-bottom: 4px;
+      font-family: var(--font-mono);
+    }
+    .popup-title { font-weight: 800; font-size: 0.92rem; color: #1e293b; margin-bottom: 2px; }
+    .popup-sub { font-size: 0.74rem; color: #64748b; margin-bottom: 6px; }
+    .popup-desc { font-size: 0.78rem; color: #475569; line-height: 1.45; margin-bottom: 10px; }
+    .popup-button-row { display: flex; flex-wrap: wrap; gap: 5px; }
+    .popup-btn {
+      flex: 1 1 calc(50% - 5px);
+      min-width: 70px;
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 5px 6px;
+      border-radius: 6px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn-detail { background: var(--primary); color: #fff; }
+    .btn-gmaps { background: var(--bg-subtle); color: var(--text-main); border: 1px solid var(--border-color); }
+
+    /* Mobile Responsive */
+    @media (max-width: 960px) {
+      .top-navbar {
+        height: calc(48px + env(safe-area-inset-top, 0px));
+        padding: env(safe-area-inset-top, 0px) 10px 0 10px;
+        overflow: hidden;
+      }
+      .brand-group {
+        gap: 6px;
+        min-width: 0;
+      }
+      .brand-title-full { display: none; }
+      .brand-title-mobile {
+        display: inline;
+        font-size: 0.90rem;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+      .brand-pill {
+        display: none;
+      }
+      .nav-buttons {
+        gap: 4px;
+        flex-shrink: 0;
+      }
+      .btn-nav-action {
+        padding: 4px 7px;
+        font-size: 0.70rem;
+        border-radius: 16px;
+        flex-shrink: 0;
+        gap: 3px;
+      }
+      .btn-nav-action .nav-btn-text-full { display: none; }
+      .btn-nav-action .nav-btn-text-short { display: inline; }
+
+      /* Mobile Segmented Bar */
+      .mobile-segmented-bar {
+        display: flex;
+        background: #ffffff;
+        border-bottom: 1px solid var(--border-color);
+        padding: 5px 8px;
+        gap: 6px;
+        z-index: 999;
+        flex-shrink: 0;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .mobile-tab-btn {
+        flex: 1 1 0;
+        min-width: 0;
+        padding: 6px 4px;
+        border-radius: 20px;
+        border: 1px solid #e2ded5;
+        background: #fdfbf7;
+        font-size: 0.76rem;
+        font-weight: 700;
+        color: var(--text-muted);
+        cursor: pointer;
+        text-align: center;
+        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        white-space: nowrap;
+      }
+      .mobile-tab-btn.active {
+        background: var(--primary);
+        color: #ffffff;
+        border-color: var(--primary);
+        box-shadow: 0 2px 8px rgba(152, 86, 53, 0.25);
+      }
+
+      /* Viewport Modes */
+      .app-viewport {
+        flex-direction: column;
+        height: calc(100% - 48px - 42px - env(safe-area-inset-top, 0px));
+        overflow: hidden;
+        max-width: 100vw;
+      }
+      .app-viewport.view-mode-map .itinerary-panel {
+        display: none !important;
+      }
+      .app-viewport.view-mode-map .map-container-wrap {
+        display: block !important;
+        height: 100% !important;
+        width: 100% !important;
+      }
+      .app-viewport.view-mode-list .map-container-wrap {
+        display: none !important;
+      }
+      .app-viewport.view-mode-list .itinerary-panel {
+        display: flex !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-height: 100% !important;
+        border-right: none;
+      }
+      .app-viewport.view-mode-split .map-container-wrap {
+        display: block !important;
+        height: 45% !important;
+        width: 100% !important;
+      }
+      .app-viewport.view-mode-split .itinerary-panel {
+        display: flex !important;
+        width: 100% !important;
+        height: 55% !important;
+        max-height: 55% !important;
+        border-right: none;
+        border-top: 1px solid var(--border-color);
+      }
+
+      .card-footer-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+      .venue-location-text {
+        width: 100%;
+        white-space: normal;
+        word-break: break-word;
+        font-size: 0.74rem;
+        line-height: 1.35;
+      }
+      .venue-actions {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        justify-content: flex-start;
+      }
+      .btn-action-pill {
+        padding: 4px 10px;
+        font-size: 0.72rem;
+      }
+
+      .panel-header {
+        padding: 10px 14px;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .panel-header-left h2 { font-size: 0.95rem; }
+      .panel-header-left p { display: none; }
+      .panel-toggle-btn { display: none !important; }
+      .panel-quick-actions {
+        display: flex;
+        gap: 6px;
+        flex-shrink: 0;
+      }
+      .btn-panel-action { padding: 4px 9px; font-size: 0.72rem; }
+      .panel-scroll-area {
+        padding-bottom: calc(30px + env(safe-area-inset-bottom, 0px));
+      }
+
+      .map-overlay-controls {
+        top: 8px;
+        left: 8px;
+        right: 8px;
+        max-width: calc(100% - 16px);
+        padding: 4px 6px;
+        gap: 4px;
+        border-radius: 30px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .day-selector-btn {
+        flex-shrink: 0;
+        padding: 5px 9px;
+        font-size: 0.72rem;
+        border-radius: 20px;
+      }
+
+      .leg-status-banner {
+        bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+        left: 8px;
+        right: 8px;
+        max-width: calc(100% - 16px);
+        padding: 8px 10px;
+        gap: 6px;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+        flex-wrap: wrap;
+      }
+      .leg-status-info {
+        flex: 1 1 180px;
+        min-width: 0;
+      }
+      .leg-route-title {
+        font-size: 0.76rem;
+        line-height: 1.3;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .leg-sub-text {
+        font-size: 0.68rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .leg-banner-actions {
+        display: flex;
+        gap: 5px;
+        flex-shrink: 0;
+        margin-left: auto;
+      }
+      .btn-replay-leg {
+        padding: 4px 8px;
+        font-size: 0.70rem;
+      }
+
+      .leaflet-control-zoom { display: none !important; }
+      .leaflet-control-attribution {
+        font-size: 8px !important;
+        background: rgba(255, 255, 255, 0.75) !important;
+        max-width: 130px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+
+    @media (min-width: 961px) {
+      .btn-nav-action .nav-btn-text-short { display: none; }
+      .btn-nav-action .nav-btn-text-full { display: inline; }
+    }
+
+    .toast-pill {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1e293b;
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 50px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      font-size: 0.84rem;
+      font-weight: 700;
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      gap: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <header class="top-navbar">
+    <div class="brand-group">
+      <span style="font-size:1.2rem;">🍁</span>
+      <div>
+        <h1 class="brand-title">
+          <span class="brand-title-full">東京 · 葉山 · 逗子 ｜ 秋日雙人浪漫遊</span>
+          <span class="brand-title-mobile">東京 · 葉山 · 逗子</span>
+        </h1>
+      </div>
+      <span class="brand-pill">10/17 – 10/20 · 4日3夜</span>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="./index.html" class="btn-nav-action" style="text-decoration:none; background:#fdf2f8; color:#9d174d; border-color:#fce7f3;" title="切換至 9/25 東京草津溫泉行程">
+        <span>🌸</span><span class="nav-btn-text-full"> 9/25 草津溫泉</span><span class="nav-btn-text-short"> 9/25</span>
+      </a>
+      <button class="btn-nav-action" onclick="showAllVenuesView()" title="睇晒全程所有景點">
+        <span>🗺️</span><span class="nav-btn-text-full"> 全程視角</span><span class="nav-btn-text-short"> 全景</span>
+      </button>
+      <button class="btn-nav-action" onclick="downloadCalendarFile()" title="下載日曆檔案 (.ics)">
+        <span>📅</span><span class="nav-btn-text-full"> 加落日曆 (.ics)</span><span class="nav-btn-text-short"> 日曆</span>
+      </button>
+      <button class="btn-nav-action btn-nav-primary" onclick="copyShareURL()" title="複製分享連結">
+        <span>🔗</span><span class="nav-btn-text-full"> Share 畀女朋友</span><span class="nav-btn-text-short"> 分享</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Segmented View Switcher -->
+  <nav class="mobile-segmented-bar" aria-label="檢視模式切換">
+    <button class="mobile-tab-btn active" id="tab-map" onclick="setMobileView('map')">
+      <span>🗺️ 地圖</span>
+    </button>
+    <button class="mobile-tab-btn" id="tab-list" onclick="setMobileView('list')">
+      <span>📋 行程</span>
+    </button>
+    <button class="mobile-tab-btn" id="tab-split" onclick="setMobileView('split')">
+      <span>◫ 分割</span>
+    </button>
+  </nav>
+
+  <!-- Main Viewport -->
+  <div class="app-viewport view-mode-map">
+
+    <!-- Left Itinerary Panel -->
+    <aside class="itinerary-panel" id="itinerary-panel">
+      <div class="panel-header">
+        <div class="panel-header-left">
+          <h2>📅 行程詳情與交通導航</h2>
+          <p>4日3夜秋日之旅 ‧ 實時鐵路/巴士區間 ‧ 點擊卡片睇路綫</p>
+        </div>
+        <div class="panel-quick-actions">
+          <button class="btn-panel-action" onclick="expandAllDays()">全部展開</button>
+          <button class="btn-panel-action" onclick="collapseAllDays()">全部收起</button>
+          <button class="panel-toggle-btn" onclick="togglePanelWidth()" title="調整面版闊度">⇹</button>
+        </div>
+      </div>
+
+      <div class="panel-scroll-area" id="panel-scroll">
+
+        <!-- ==================== DAY 1 ==================== -->
+        <div class="day-block" id="block-day-1">
+          <div class="day-block-header" onclick="toggleDayAccordion(1, event)">
+            <div class="day-title-wrap">
+              <span class="day-badge-tag badge-d1">Day 1</span>
+              <div class="day-title-text">
+                <h3>10/17 (六) · 東京羽田抵達 ‧ 咖啡大展 ‧ 法國鐵人料理</h3>
+                <span>UO624抵達 ➔ 百合ヶ丘整頓 ➔ SCAJ 2026咖啡展 ➔ La Rochelle 山王頂級法餐</span>
+              </div>
+            </div>
+            <div class="day-accordion-control">
+              <span class="accordion-chevron-text">收起</span>
+              <span class="accordion-chevron-arrow">▼</span>
+            </div>
+          </div>
+
+          <div class="day-block-body">
+
+            <!-- Stop 1: UO624 Arrival & Haneda Airport -->
+            <div class="venue-card" id="card-haneda-arrival" onclick="selectStopLeg('haneda-arrival')">
+              <div class="card-top-row">
+                <span class="card-time-pill">⏰ 05:00 (清晨抵達)</span>
+                <span class="card-status-pill pill-sightseeing">✈️ 香港快運 UO624</span>
+              </div>
+              <div class="venue-japanese-name">✈️ 羽田空港 第3ターミナル (Haneda Airport T3)</div>
+              <div class="venue-chinese-subtitle">東京羽田國際機場 ‧ 女朋友清晨抵達東京 ‧ 浪漫接機</div>
+              <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">
+                🛫 香港起飛 (23:35) ➔ 羽田入境大堂清晨約 05:00 順利步出 ➔ 展開秋日4日浪漫假期
+              </div>
+              <p class="venue-details">
+                女朋友乘搭香港快運 UO624 紅眼航班抵達東京羽田機場！於抵達大堂甜蜜會合，第一時間送上熱飲與關懷。先由羽田機場返回百合ヶ丘大本營放下重行李，洗個舒服嘅熱水澡、稍作梳洗休息充電，神清氣爽再出發！
+              </p>
+              <div class="venue-highlight-note">
+                <strong>💡 貼心交通：</strong>由羽田機場前往百合ヶ丘，可乘搭京急利木津巴士直達「新百合ヶ丘駅」（約50-60分鐘，極方便放行李），再轉小田急1個站直達百合ヶ丘；或搭京急線至品川，轉山手線至新宿，乘小田急快速急行回百合ヶ丘。<br>
+                <strong>💰 票價：</strong>機場巴士約 ¥1,470 / 鐵路約 ¥840。
+              </div>
+              <div class="card-footer-row">
+                <span class="venue-location-text">📍 東京都大田区羽田空港2丁目</span>
+                <div class="venue-actions">
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('haneda-arrival', event)">🗺️ 路線</button>
+                  <a href="https://transit.yahoo.co.jp/search/result?from=%E7%BE%BD%E7%94%B0%E7%A9%BA%E6%B8%AF%E7%AC%AC3%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB&to=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98" target="_blank" class="btn-action-pill pill-yahoo">🚆 Yahoo! 乘換</a>
+                  <a href="https://maps.google.com/?q=Haneda+Airport+Terminal+3" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stop 2: Yurigaoka Home Rest -->
+            <div class="venue-card" id="card-yurigaoka-base" onclick="selectStopLeg('yurigaoka-base')">
+              <div class="card-top-row">
+                <span class="card-time-pill">⏰ 07:30 – 10:30 (休息整頓)</span>
+                <span class="card-status-pill pill-booking">🏠 大本營整裝出發</span>
+              </div>
+              <div class="venue-japanese-name">🏠 百合ヶ丘ベース (Yurigaoka Base Camp)</div>
+              <div class="venue-chinese-subtitle">神奈川縣川崎市麻生區 ‧ 小田急小田原線 ‧ 放下行李與梳洗充電</div>
+              <div class="card-from-leg-pill" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">
+                🚆 羽田機場 ➔ 新百合ヶ丘 / 百合ヶ丘駅 (約60分鐘) ➔ 步行回住處放行李
+              </div>
+              <p class="venue-details">
+                返到熟悉溫暖嘅百合ヶ丘！兩個人可以換返套靚靚秋日服裝、化妝整頭，沖個醒神熱水涼補眠一陣。換上輕鬆輕便隨身袋，準備前往有明東京 Big Sight 參觀一年一度嘅世界精品咖啡盛會！
+              </p>
+              <div class="venue-highlight-note">
+                <strong>💡 溫馨準備：</strong>帶定飲用水與薄外套；咖啡展現場有極多世界各國產區與烘豆師的手沖試飲，空肚試飲容易心跳加速，出發前先喺百合ヶ丘食個簡單輕食早餐。<br>
+                <strong>🎫 展覽門票：</strong>兩人門票已提早網上備妥，直接手機 QR Code 入場！
+              </div>
+              <div class="card-footer-row">
+                <span class="venue-location-text">📍 神奈川県川崎市麻生区百合丘</span>
+                <div class="venue-actions">
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('yurigaoka-base', event)">🗺️ 路線</button>
+                  <a href="https://transit.yahoo.co.jp/search/result?from=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98&to=%E5%9B%BD%E9%9A%9B%E5%B1%95%E7%A4%BA%E5%A0%B4" target="_blank" class="btn-action-pill pill-yahoo">🚆 Yahoo! 乘換</a>
+                  <a href="https://maps.google.com/?q=Yurigaoka+Station" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stop 3: SCAJ 2026 at Tokyo Big Sight -->
+            <div class="venue-card" id="card-scaj-expo" onclick="selectStopLeg('scaj-expo')">
+              <div class="card-top-row">
+                <span class="card-time-pill">⏰ 11:30 – 16:30 (咖啡朝聖)</span>
+                <span class="card-status-pill pill-sightseeing">☕ 2人入場券已備</span>
+              </div>
+              <div class="venue-japanese-name">☕ SCAJ 2026 世界精品咖啡大展 (東京ビッグサイト)</div>
+              <div class="venue-chinese-subtitle">SCAJ World Specialty Coffee Conference & Exhibition 2026 ‧ 有明西展示棟</div>
+              <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">
+                🚆 百合ヶ丘 ➔ 小田急快速急行至新宿 (22分) ➔ 轉埼京線·臨海線直通至「國際展示場駅」(24分，出口步行7分)
+              </div>
+              <p class="venue-details">
+                亞洲最大規模嘅世界頂級精品咖啡年會！匯聚全球頂尖咖啡莊園、世界冠軍咖啡師（WBC/WBrC）現場沖煮、各國頂級烘豆機與新世代手沖器具。兩個人可以一齊手牽手逐個展位品鑑稀有 Geisha 藝妓豆、厭氧發酵批次，感受咖啡香氣嘅極致浪漫！
+              </p>
+              <div class="venue-highlight-note">
+                <strong>💡 參觀重點：</strong>烘豆師村（Roaster Village）有全日本隱世神級獨立咖啡店限量咖啡豆；手沖杯測交流區；世界沖煮大賽日本選手賽事現場觀戰。<br>
+                <strong>🛍️ 必買推薦：</strong>日本烘豆名店會場限定咖啡豆（Philocoffea、Leaves Coffee、Glitch 會場聯名豆款）。
+              </div>
+              <div class="card-footer-row">
+                <span class="venue-location-text">📍 東京都江東区有明3-11-1 東京ビッグサイト</span>
+                <div class="venue-actions">
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('scaj-expo', event)">🗺️ 路線</button>
+                  <a href="https://transit.yahoo.co.jp/search/result?from=%E5%9B%BD%E9%9A%9B%E5%B1%95%E7%A4%BA%E5%A0%B4&to=%E6%BA%9C%E6%B1%A0%E5%B1%B1%E7%8E%8B" target="_blank" class="btn-action-pill pill-yahoo">🚆 Yahoo! 乘換</a>
+                  <a href="https://maps.google.com/?q=Tokyo+Big+Sight" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stop 4: Dinner at La Rochelle Sanno -->
+            <div class="venue-card" id="card-la-rochelle" onclick="selectStopLeg('la-rochelle')">
+              <div class="card-top-row">
+                <span class="card-time-pill">⏰ 19:00 (晚上 7:00 正式晚宴)</span>
+                <span class="card-status-pill pill-booking">✓ 19:00 預約確立</span>
+              </div>
+              <div class="venue-japanese-name">🍽️ ラ・ロシェル山王 (La Rochelle Sanno)</div>
+              <div class="venue-chinese-subtitle">「料理之鐵人」坂井宏行 頂級法式正餐 ‧ 東急 Capitol Tower 1F</div>
+              <div class="card-from-leg-pill" style="background:#fce7f3; color:#9d174d; border-color:#fbcfe8;">
+                🚇 國際展示場 ➔ 臨海線至大井町/新橋 ➔ 東京Metro銀座線至「溜池山王駅」6號出口直通東急Capitol Tower 1F (約35分鐘)
+              </div>
+              <p class="venue-details">
+                日本傳奇節目《料理之鐵人》法國料理鐵人——坂井宏行（Hiroyuki Sakai）創立嘅頂級法式食府！坐落於永田町東急 Capitol Tower，店內挑高穹頂水晶燈與精緻和洋古典藝術交織。主廚將細膩日本旬感食材融入傳統法式皇家醬汁，享受今晚最優雅華麗嘅法式燭光雙人晚宴！
+              </p>
+              <div class="venue-highlight-note">
+                <strong>💡 著裝禮儀：</strong>建議 Smart Casual（男士請穿著長褲與皮鞋/休閒西裝，女士穿著優雅洋裝或精緻裙裝；避免涼鞋短褲）。<br>
+                <strong>🍷 晚宴享受：</strong>主廚精選季節時令品味套餐，推薦加配侍酒師 Wine Pairing 或無酒精法式香檳特飲。<br>
+                <strong>🔗 官網資訊：</strong><a href="https://www.la-rochelle.co.jp/sp/" target="_blank" style="color:#985635; text-decoration:underline;">la-rochelle.co.jp</a> ‧ 千代田區永田町2-10-3。
+              </div>
+              <div class="card-footer-row">
+                <span class="venue-location-text">📍 東京都千代田区永田町2-10-3 東急キャピトルタワー1F</span>
+                <div class="venue-actions">
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('la-rochelle', event)">🗺️ 路線</button>
+                  <a href="https://transit.yahoo.co.jp/search/result?from=%E6%BA%9C%E6%B1%A0%E5%B1%B1%E7%8E%8B&to=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98" target="_blank" class="btn-action-pill pill-yahoo">🚆 Yahoo! 乘換</a>
+                  <a href="https://maps.google.com/?q=La+Rochelle+Sanno+Tokyo" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stop 5: Return to Yurigaoka -->
+            <div class="venue-card" id="card-day1-night" onclick="selectStopLeg('day1-night')">
+              <div class="card-top-row">
+                <span class="card-time-pill">⏰ 21:45 – 22:30 (甜蜜歸途)</span>
+                <span class="card-status-pill pill-sightseeing">🚆 小田急快速回程</span>
+              </div>
+              <div class="venue-japanese-name">🌙 百合ヶ丘駅帰着 (Return to Yurigaoka)</div>
+              <div class="venue-chinese-subtitle">溜池山王/國會議事堂前 ➔ 東京Metro千代田線直通小田急線 ➔ 百合ヶ丘</div>
+              <div class="card-from-leg-pill" style="background:#f1f5f9; color:#475569; border-color:#e2e8f0;">
+                🚇 溜池山王/國會議事堂前駅 ➔ 東京Metro千代田線直通代代木上原 ➔ 小田急快速急行至新百合ヶ丘/百合ヶ丘 (約38分鐘)
+              </div>
+              <p class="venue-details">
+                浪漫法式晚宴過後，散步至溜池山王站，搭乘千代田線/小田急直通列車舒服返百合ヶ丘。為第二日即將出發嘅湘南葉山海邊奢華別墅之旅好好休息充電！
+              </p>
+              <div class="card-footer-row">
+                <span class="venue-location-text">📍 神奈川県川崎市麻生区百合丘</span>
+                <div class="venue-actions">
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('day1-night', event)">🗺️ 路線</button>
+                  <a href="https://maps.google.com/?q=Yurigaoka+Station" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ==================== DAY 2 ==================== -->
+        <div class="day-block" id="block-day-2">
+          <div class="day-block-header" onclick="toggleDayAccordion(2, event)">
+            <div class="day-title-wrap">
+              <span class="day-badge-tag badge-d2">Day 2</span>
+              <div class="day-title-text">
+                <h3>10/18 (日) · 湘南葉山 ‧ 海邊私人桑拿露天風呂別墅</h3>
+                <span>百合ヶ丘 ➔ JR橫須賀線往逗子 ➔ STELLA STORIA HAYAMA 入住 ‧ 私人芬蘭桑拿 ‧ 海邊日落散策</span>
+              </div>
+            </div>
+            <div class="day-accordion-control">
+              <span class="accordion-chevron-text">收起</span>
+              <span class="accordion-chevron-arrow">▼</span>
+            </div>
+          </div>
+
+          <div class="day-block-body">
+
+            <!-- Stop 1: Morning Coffee & Departure -->
+            <div class="venue-card" id="card-hayama-depart" onclick="selectStopLeg('hayama-depart')">
+              <div class="card-top-row">
+                <span class="card-time-pill">⏰ 11:00 – 12:30 (悠閒出發)</span>
+                <span class="card-status-pill pill-sightseeing">☕ 慢活起步</span>
+              </div>
+              <div class="venue-japanese-name">🌿 百合ヶ丘出発 ➔ 湘南逗子·葉山へ</div>
+              <div class="venue-chinese-subtitle">收拾精緻行裝 ‧ 沿相模灣鐵道南下 ‧ 避開人潮</div>
+              <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">
+                🚆 百合ヶ丘 ➔ 町田轉 JR 橫濱線至橫濱 ➔ 轉 JR 橫須賀線直達逗子駅 (約65分鐘) ➔ 轉京急巴士7分鐘抵達清浄寺
+              </div>
+              <p class="venue-details">
+                瞓到自然醒，喺百合ヶ丘嘆杯新鮮咖啡同輕食。帶上一晚去葉山別墅嘅輕便行李，出發前往日本皇室最喜愛嘅避暑度納期勝地——神奈川葉山（Hayama）！沿途眺望湘南海岸線，心情瞬間切換成悠閒度假節奏。
+              </p>
+              <div class="venue-highlight-note">
+                <strong>💡 交通提示：</strong>喺 JR 逗子站東口3號巴士站，搭乘京濱急行巴士（葉山方向）約7-10分鐘，喺「清浄寺（しょうじょうじ）」巴士站落車，步行1-2分鐘即直達別墅大門！
+              </div>
+              <div class="card-footer-row">
+                <span class="venue-location-text">📍 JR 逗子駅 ➔ 京急巴士「清浄寺」站</span>
+                <div class="venue-actions">
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('hayama-depart', event)">🗺️ 路線</button>
+                  <a href="https://transit.yahoo.co.jp/search/result?from=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98&to=%E9%80%97%E5%AD%90" target="_blank" class="btn-action-pill pill-yahoo">🚆 Yahoo! 乘換</a>
+                  <a href="https://maps.google.com/?q=Zushi+Station" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stop 2: STELLA STORIA HAYAMA Check-in -->
+            <div class="venue-card" id="card-stella-storia" onclick="selectStopLeg('stella-storia')">
+              <div class="card-top-row">
+                <span class="card-time-pill">⏰ 15:00 (Check-in 入住)</span>
+                <span class="card-status-pill pill-booking">🏨 奢華海邊Villa</span>
+              </div>
+              <div class="venue-japanese-name">🌊 STELLA STORIA HAYAMA (ステラストーリア葉山)</div>
+              <div class="venue-chinese-subtitle">Seaside House with Private Sauna & Open-Air Bath ‧ 海景私人芬蘭桑拿與露天風呂別墅</div>
+              <div class="card-from-leg-pill" style="background:#ccfbf1; color:#0f766e; border-color:#99f6e4;">
+                🏡 清浄寺巴士站下車步行 1 分鐘 ‧ 神奈川縣三浦郡葉山町堀内255-7 ‧ 獨棟私人海濱秘境
+              </div>
+              <p class="venue-details">
+                今趟旅程最重頭戲嘅奢華住宿！座落於葉山堀內海岸第一排，整棟 Villa 專屬兩個人私人包棟。室內特設正宗木質芬蘭桑拿房（Finnish Sauna）與戶外露天深浸 Jacuzzi 風呂。推開落地玻璃大窗，相模灣無敵海景與日落晚霞盡收眼底。
+              </p>
+              <div class="venue-highlight-note">
+                <strong>🧖 私人水療特權：</strong>自己親手澆淋芬蘭桑拿香氛精油熱石（Löyly），出汗排毒後跳入清涼水冷浴，再坐喺露天海風露台 Chill 歎微風，達到最高境界嘅「Totonoi (ととのう)」深層放鬆！<br>
+                <strong>🌅 富士山夕陽：</strong>晴朗秋日傍晚，喺露天風呂就可以直接眺望相模灣對岸嘅富士山日落剪影，浪漫值爆燈！
+              </div>
+              <div class="card-footer-row">
+                <span class="venue-location-text">📍 神奈川県三浦郡葉山町堀内255-7</span>
+                <div class="venue-actions">
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('stella-storia', event)">🗺️ 路線</button>
+                  <a href="https://maps.google.com/?q=Kanagawa+Hayama+Horiuchi+255-7" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stop 3: Dual-Plan Evening in Hayama -->
+            <div class="venue-card dualplan-card" id="card-hayama-evening">
+              <div class="card-top-row">
+                <span class="card-time-pill">⏰ 18:00 – 21:30 (晚間時光)</span>
+                <span class="card-status-pill" id="current-plan-badge" style="background:#e0f2fe; color:#0369a1; border:1px solid #bae6fd;">
+                  ✨ 目前選擇：【方案A】鐙摺港海鮮割烹
+                </span>
+              </div>
+              <div class="venue-japanese-name">🌙 葉山晚間雙重方案 (Dual Evening Experience)</div>
+              <div class="venue-chinese-subtitle">海邊地道海產割烹 vs Villa 露天陽台旭屋名物星空酒會</div>
+
+              <!-- Interactive Selector Buttons -->
+              <div class="dualplan-toggle-bar">
+                <button class="dualplan-tab-btn active" id="btn-plan-seafood" onclick="switchHayamaPlan('seafood', event)">
+                  <span class="tab-icon">🐟</span>
+                  <span class="tab-title">方案 A：魚寅/魚佐鮮魚</span>
+                  <span class="tab-badge">步行6分鐘 ‧ 鐙摺港刺身煮魚</span>
+                </button>
+                <button class="dualplan-tab-btn" id="btn-plan-villa" onclick="switchHayamaPlan('villa', event)">
+                  <span class="tab-icon">🥩</span>
+                  <span class="tab-title">方案 B：旭屋牛丼 + 風呂星空</span>
+                  <span class="tab-badge">外賣葉山牛 ‧ Villa 私密慢享</span>
+                </button>
+              </div>
+
+              <!-- Side-by-side Summary Cards -->
+              <div class="dualplan-compare-grid">
+                <div class="compare-col active-col col-seafood" id="col-summary-seafood" onclick="switchHayamaPlan('seafood', event)">
+                  <div class="compare-col-header" style="color:#0369a1;">
+                    <span>🐟</span> 方案 A：鐙摺港地道海鮮割烹
+                  </div>
+                  <div class="compare-col-feature"><strong>特色：</strong>相模灣當日清晨現撈地魚刺身盛合、特製甜醬油金目鯛燉煮。</div>
+                  <div class="compare-col-feature"><strong>氣氛：</strong>漁港溫暖居酒屋木質氛圍，步行沿著海堤吹海風回別墅。</div>
+                  <div class="compare-col-feature"><strong>預算：</strong>約 ¥2,500 – ¥4,000 / 人。</div>
+                </div>
+                <div class="compare-col col-villa" id="col-summary-villa" onclick="switchHayamaPlan('villa', event)">
+                  <div class="compare-col-header" style="color:#92400e;">
+                    <span>🥩</span> 方案 B：旭屋牛肉名物 + Villa 露天星空
+                  </div>
+                  <div class="compare-col-feature"><strong>特色：</strong>葉山百年名店「旭屋牛肉店」皇室認證葉山可樂餅、特選和牛燒肉便當。</div>
+                  <div class="compare-col-feature"><strong>氣氛：</strong>Villa 私密性100%，一邊浸露天溫泉 Jacuzzi 一邊嘆清酒香檳。</div>
+                  <div class="compare-col-feature"><strong>預算：</strong>約 ¥1,500 – ¥2,500 / 人。</div>
+                </div>
+              </div>
+
+              <!-- Detail Plan A -->
+              <div id="plan-detail-seafood">
+                <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">
+                  🚶 步行路綫：由 STELLA STORIA 出發，沿海邊小徑步行約 5-6 分鐘直達鐙摺港「魚寅」或「海人市場」
+                </div>
+                <p class="venue-details">
+                  葉山鐙摺港（Abuzuri Port）係相模灣著名漁港，每天有最新鮮的在地捕撈海產。於老牌名店品嚐厚切生魚片、炭烤海螺與酥脆天婦羅，搭配神奈川在地地酒，回味無窮！
+                </p>
+                <div class="card-footer-row">
+                  <span class="venue-location-text">📍 神奈川県三浦郡葉山町堀内 鐙摺港周邊</span>
+                  <div class="venue-actions">
+                    <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('hayama-seafood', event)">🗺️ 路線</button>
+                    <a href="https://maps.google.com/?q=Hayama+Abuzuri+Port+restaurant" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Detail Plan B -->
+              <div id="plan-detail-villa" style="display:none;">
+                <div class="card-from-leg-pill" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">
+                  🛍️ 外賣推薦：葉山旭屋牛肉店 (神奈川県三浦郡葉山町堀内898，名物葉山可樂餅 & 特選燒肉) ➔ 回 Villa 慢嚐
+                </div>
+                <p class="venue-details">
+                  唔想出街？買定葉山旭屋著名嘅和牛便當與金黃香脆牛肉可樂餅，配埋便利店買返嚟嘅頂級純米大吟釀與水果甜品。全晚喺 Villa 享用芬蘭桑拿，浸喺熱水露天風呂看著繁星與相模灣黑夜浪花，極度享受！
+                </p>
+                <div class="card-footer-row">
+                  <span class="venue-location-text">📍 STELLA STORIA HAYAMA 私人露台</span>
+                  <div class="venue-actions">
+                    <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('hayama-villa', event)">🗺️ 路線</button>
+                    <a href="https://maps.google.com/?q=Hayama+Asahiya+Beef" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ==================== DAY 3 ==================== -->
+        <div class="day-block" id="block-day-3">
+          <div class="day-block-header" onclick="toggleDayAccordion(3, event)">
+            <div class="day-title-wrap">
+              <span class="day-badge-tag badge-d3">Day 3</span>
+              <div class="day-title-text">
+                <h3>10/19 (一) · 逗子遊艇會婚禮 ‧ 新宿頂級和牛壽司盛宴</h3>
+                <span>Stella Storia ➔ 的士直達逗子 Marina 遊艇會婚禮 (12:00) ➔ 新宿 かきだ鮨 (19:00 本鮪壽司無限追加)</span>
+              </div>
+            </div>
+            <div class="day-accordion-control">
+              <span class="accordion-chevron-text">收起</span>
+              <span class="accordion-chevron-arrow">▼</span>
+            </div>
+          </div>
+
+          <div class="day-block-body">
+
+            <!-- Stop 1: Morning at Villa & Dressing Up -->
+            <div class="venue-card" id="card-wedding-prep" onclick="selectStopLeg('wedding-prep')">
+              <div class="card-top-row">
+                <span class="card-time-pill">⏰ 09:30 – 11:15 (清晨海風與著裝)</span>
+                <span class="card-status-pill pill-sightseeing">👔 婚禮禮服準備</span>
+              </div>
+              <div class="venue-japanese-name">🌅 葉山朝の海風 ‧ 婚禮著裝盛裝出發</div>
+              <div class="venue-chinese-subtitle">在相模灣晨光中享用晨啡 ‧ 換上精緻西裝與優雅禮服</div>
+              <div class="card-from-leg-pill" style="background:#fce7f3; color:#9d174d; border-color:#fbcfe8;">
+                🏡 STELLA STORIA HAYAMA 晨早梳洗 ‧ 11:00 前往門口等候的士 (約 12-15 分鐘沿海直達逗子 Marina)
+              </div>
+              <p class="venue-details">
+                被清晨溫暖陽光同相模灣海浪聲喚醒。兩個人喺別墅露台歎杯晨起手沖咖啡，欣賞清早平靜蔚藍嘅海面。悠閒化妝整頭，換上隆重精緻嘅婚禮禮服（男士西裝配領帶/皮鞋，女士優雅長裙），準備見證好友人生最重要時刻！
+              </p>
+              <div class="venue-highlight-note">
+                <strong>🚕 的士安排：</strong>事前透過「GO」或「Uber」預約的士，或請別墅管家協助叫車，由葉山堀內直達逗子 Marina 約 12-15 分鐘車程（沿國道134號海岸線行駛，車費約 ¥2,000 – ¥2,500）。
+              </div>
+              <div class="card-footer-row">
+                <span class="venue-location-text">📍 STELLA STORIA HAYAMA ➔ 国道134号海岸線</span>
+                <div class="venue-actions">
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('wedding-prep', event)">🗺️ 路線</button>
+                  <a href="https://maps.google.com/?q=Riviera+Zushi+Marina" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stop 2: Friend's Wedding at Riviera Zushi Marina -->
+            <div class="venue-card" id="card-zushi-wedding" onclick="selectStopLeg('zushi-wedding')">
+              <div class="card-top-row">
+                <span class="card-time-pill">⏰ 12:00 – 15:30 (婚禮與午宴)</span>
+                <span class="card-status-pill pill-booking">💒 12:00 儀式 ‧ 12:40 午宴</span>
+              </div>
+              <div class="venue-japanese-name">💍 リビエラ逗子マリーナ (Riviera Zushi Marina 会員制ヨットハーバー)</div>
+              <div class="venue-chinese-subtitle">〒249-0008 神奈川県逗子市小坪5-23-23 ‧ 棕櫚樹環抱 ‧ 會員制海景遊艇會婚禮</div>
+              <div class="card-from-leg-pill" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">
+                🚕 的士直達：三浦郡葉山町 ➔ 逗子海岸 ➔ 小坪海岸 ➔ リビエラ逗子マリーナ 本館大堂 (約15分鐘)
+              </div>
+              <p class="venue-details">
+                關東最富盛名、充滿加州馬里布海濱風情嘅「Riviera 逗子 Marina 會員制遊艇碼頭」！椰林樹影與無際碧海相伴，在玻璃純白教堂見證好友感動婚禮宣誓。隨後移步至海景宴會廳，享用主廚精緻婚宴法日午宴（Luncheon），滿載溫馨祝福！
+              </p>
+              <div class="venue-highlight-note">
+                <strong>💒 婚禮流程：</strong><br>
+                ‧ <strong>12:00：</strong>Wedding Ceremony（婚禮儀式正式開始）<br>
+                ‧ <strong>12:40：</strong>Wedding Luncheon（逗子海景遊艇會歡宴午宴）<br>
+                ‧ <strong>15:00 – 15:30：</strong>婚宴完結，於 Marina 棕櫚大道與蔚藍海港背景拍下唯美雙人合照！
+              </div>
+              <div class="card-footer-row">
+                <span class="venue-location-text">📍 神奈川県逗子市小坪5-23-23 リビエラ逗子マリーナ</span>
+                <div class="venue-actions">
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('zushi-wedding', event)">🗺️ 路線</button>
+                  <a href="https://transit.yahoo.co.jp/search/result?from=%E9%80%97%E5%AD%90&to=%E6%96%B0%E5%AE%BF" target="_blank" class="btn-action-pill pill-yahoo">🚆 Yahoo! 乘換</a>
+                  <a href="https://maps.google.com/?q=Riviera+Zushi+Marina" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stop 3: Dinner at Kakida Sushi Shinjuku -->
+            <div class="venue-card" id="card-kakida-sushi" onclick="selectStopLeg('kakida-sushi')">
+              <div class="card-top-row">
+                <span class="card-time-pill">⏰ 19:00 (晚上 7:00 預約確立)</span>
+                <span class="card-status-pill pill-booking">✓ Tabelog 預約席</span>
+              </div>
+              <div class="venue-japanese-name">🍣 かきだ鮨 新宿総本店 (The Tokyo コース ‧ 鮨おかわり無料)</div>
+              <div class="venue-chinese-subtitle">小田急 Hotel Century Southern Tower 19F ‧ 一本買本鮪 ‧ 壽司免費無限任追加 ‧ 高森和牛すき焼き</div>
+              <div class="card-from-leg-pill" style="background:#fee2e2; color:#991b1b; border-color:#fecaca;">
+                🚆 逗子駅 ➔ JR 湘南新宿線直通新宿駅 (約60分鐘) ➔ 新宿南口步行3分鐘直達世紀南塔19F
+              </div>
+              <p class="venue-details">
+                東京話題爆棚嘅超人氣頂級壽司店！坐落於新宿小田急世紀南塔 19 樓高空，特設桌席限定「The Tokyo コース」。全條原條整尾採購嘅頂級本鮪（一本買い本マグロ）、產地直送極鮮海膽與牡丹蝦，最瘋狂嘅係所有手握壽司【無限次免費追加おかわり自由】！
+              </p>
+              <div class="venue-highlight-note">
+                <strong>🥩 夢幻高森和牛：</strong>套餐內更包山口縣岩國市每年僅生產150頭嘅絕品「高森和牛」壽喜燒！以獺祭酒粕餵飼，油脂甘甜細膩入口即溶。<br>
+                <strong>💰 預約詳情：</strong>Tabelog 官方預約頁面（代代木/新宿南口 小田急南塔 19F，電話 080-7164-5210）。今晚兩個人放開胃口，盡情大啖肥美吞拿魚與和牛！<br>
+                <strong>🔗 預約連結：</strong><a href="https://tabelog.com/tokyo/A1304/A130401/13286035/party/232871093" target="_blank" style="color:#985635; text-decoration:underline;">Tabelog The Tokyo コース詳情</a>
+              </div>
+              <div class="card-footer-row">
+                <span class="venue-location-text">📍 東京都渋谷区代々木2-2-1 小田急ホテルセンチュリーサザンタワー 19F</span>
+                <div class="venue-actions">
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('kakida-sushi', event)">🗺️ 路線</button>
+                  <a href="https://transit.yahoo.co.jp/search/result?from=%E6%96%B0%E5%AE%BF&to=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98" target="_blank" class="btn-action-pill pill-yahoo">🚆 Yahoo! 乘換</a>
+                  <a href="https://maps.google.com/?q=Hotel+Century+Southern+Tower+Tokyo" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stop 4: Return to Yurigaoka -->
+            <div class="venue-card" id="card-day3-night" onclick="selectStopLeg('day3-night')">
+              <div class="card-top-row">
+                <span class="card-time-pill">⏰ 21:30 – 22:15 (舒服返家)</span>
+                <span class="card-status-pill pill-sightseeing">🚆 小田急快速急行直達</span>
+              </div>
+              <div class="venue-japanese-name">🌙 新宿 ➔ 百合ヶ丘駅 (帰着休息)</div>
+              <div class="venue-chinese-subtitle">新宿小田急線總站 ➔ 快速急行 20 分鐘直抵新百合/百合ヶ丘</div>
+              <div class="card-from-leg-pill" style="background:#f1f5f9; color:#475569; border-color:#e2e8f0;">
+                🚆 新宿駅小田急月台 ➔ 快速急行乘車 ➔ 新百合ヶ丘 ➔ 百合ヶ丘 (全程約 22 分鐘)
+              </div>
+              <p class="venue-details">
+                食完無比滿足嘅壽司與和牛，由小田急南塔行過隔籬就係新宿小田急月台。搭乘快速急行，20分鐘就飛奔返到百合ヶ丘。摸住飽飽嘅肚仔，幸福滿足咁迎接最後一日！
+              </p>
+              <div class="card-footer-row">
+                <span class="venue-location-text">📍 神奈川県川崎市麻生区百合丘</span>
+                <div class="venue-actions">
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('day3-night', event)">🗺️ 路線</button>
+                  <a href="https://maps.google.com/?q=Yurigaoka+Station" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ==================== DAY 4 ==================== -->
+        <div class="day-block" id="block-day-4">
+          <div class="day-block-header" onclick="toggleDayAccordion(4, event)">
+            <div class="day-title-wrap">
+              <span class="day-badge-tag badge-d4">Day 4</span>
+              <div class="day-title-text">
+                <h3>10/20 (二) · 鶴川業務超市回憶巡禮 ‧ 成田特快回港</h3>
+                <span>百合ヶ丘 ➔ 業務スーパー 鶴川店 (女友珍貴回憶) ➔ 回家打包行李 ➔ 成田機場 T3 ➔ Jetstar GK27 (20:10) 回港</span>
+              </div>
+            </div>
+            <div class="day-accordion-control">
+              <span class="accordion-chevron-text">收起</span>
+              <span class="accordion-chevron-arrow">▼</span>
+            </div>
+          </div>
+
+          <div class="day-block-body">
+
+            <!-- Stop 1: Gyomu Super Tsurukawa Nostalgia -->
+            <div class="venue-card" id="card-gyomu-super" onclick="selectStopLeg('gyomu-super')">
+              <div class="card-top-row">
+                <span class="card-time-pill">⏰ 10:30 – 12:30 (回憶朝聖)</span>
+                <span class="card-status-pill pill-memory">💜 女朋友珍貴回憶</span>
+              </div>
+              <div class="venue-japanese-name">🛒 業務スーパー 鶴川店 (Gyomu Super Tsurukawa)</div>
+              <div class="chinese-subtitle venue-chinese-subtitle">東京都町田市能ヶ谷2-4-9 ‧ 小田急鶴川站旁 ‧ 重溫生活點滴與日本大採購</div>
+              <div class="card-from-leg-pill" style="background:#f3e8ff; color:#6b21a8; border-color:#e9d5ff;">
+                🚆 百合ヶ丘駅 ➔ 小田急小田原線 (2個站，只需4分鐘) ➔ 鶴川駅北口步行 300 米直達
+              </div>
+              <p class="venue-details">
+                今朝特意安排嘅深情回憶之旅！陪伴女朋友重遊充滿昔日青春回憶嘅「業務スーパー 鶴川店」。喺呢個熟悉嘅貨架走廊之間，一齊尋找當年食過嘅零食、即食拉麵同飲品，聽女朋友細說當年喺日本生活嘅酸甜苦辣，滿滿嘅愛意與溫馨！
+              </p>
+              <div class="venue-highlight-note">
+                <strong>🛍️ 掃貨好物推薦：</strong>日本原產地大包裝焙茶/抹茶粉、日式焙煎芝麻醬、明太子沙律醬、特大包米果仙貝同伴手禮零食，平靚正一次過買齊塞爆行李喼！<br>
+                <strong>📍 營業資訊：</strong>東京都町田市能ヶ谷2-4-9（鶴川站步行約3分鐘），早上 09:00 開門營業。
+              </div>
+              <div class="card-footer-row">
+                <span class="venue-location-text">📍 東京都町田市能ヶ谷2-4-9</span>
+                <div class="venue-actions">
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('gyomu-super', event)">🗺️ 路線</button>
+                  <a href="https://transit.yahoo.co.jp/search/result?from=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98&to=%E9%B6%B4%E5%B7%9D" target="_blank" class="btn-action-pill pill-yahoo">🚆 Yahoo! 乘換</a>
+                  <a href="https://maps.google.com/?q=Gyomu+Super+Tsurukawa" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stop 2: Back to Yurigaoka Packing -->
+            <div class="venue-card" id="card-packing-base" onclick="selectStopLeg('packing-base')">
+              <div class="card-top-row">
+                <span class="card-time-pill">⏰ 13:00 – 15:30 (打包與最後整裝)</span>
+                <span class="card-status-pill pill-booking">🧳 行李磅重整頓</span>
+              </div>
+              <div class="venue-japanese-name">🏠 百合ヶ丘帰着 ‧ 行李最後打包與午膳</div>
+              <div class="venue-chinese-subtitle">買齊戰利品回基地 ‧ 妥善包裝咖啡豆與零食 ‧ 準備前往成田機場</div>
+              <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">
+                🚆 鶴川駅 ➔ 小田急小田原線 (4分鐘) ➔ 百合ヶ丘駅 ➔ 返回住處
+              </div>
+              <p class="venue-details">
+                滿載業務超市嘅豐富戰利品返到百合ヶ丘。一齊享受輕鬆午餐，然後開始妥善打包行李箱：小心包好 SCAJ 買到嘅珍貴精品咖啡豆、易碎戰利品同零食，用電子秤確認好 Jetstar 行李限額，準備向機場出發！
+              </p>
+              <div class="card-footer-row">
+                <span class="venue-location-text">📍 神奈川県川崎市麻生区百合丘</span>
+                <div class="venue-actions">
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('packing-base', event)">🗺️ 路線</button>
+                  <a href="https://maps.google.com/?q=Yurigaoka+Station" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stop 3: Narita Airport Transit & Terminal 3 -->
+            <div class="venue-card" id="card-narita-transit" onclick="selectStopLeg('narita-transit')">
+              <div class="card-top-row">
+                <span class="card-time-pill">⏰ 15:30 – 18:00 (前往成田機場)</span>
+                <span class="card-status-pill pill-sightseeing">🚆 特急極速直達</span>
+              </div>
+              <div class="venue-japanese-name">🛫 成田国際空港 第3ターミナル (Narita Airport T3)</div>
+              <div class="venue-chinese-subtitle">京成特急 Skyliner (41分鐘超速) 或 JR 成田特快 N'EX ‧ 直奔成田第三航廈</div>
+              <div class="card-from-leg-pill" style="background:#dbeafe; color:#1e40af; border-color:#bfdbfe;">
+                🚆 推薦路綫：百合ヶ丘 ➔ 小田急至代代木上原 ➔ 千代田線至西日暮里 ➔ 日暮里轉乘「京成特急 Skyliner」41分鐘直抵成田機場第2·3航廈！
+              </div>
+              <p class="venue-details">
+                搭乘全日本最高速（160 km/h）嘅京成特急 Skyliner，由日暮里出發僅需 41 分鐘即可舒適飛奔至成田機場。抵達第2航廈後，沿著田徑跑道地面走廊輕鬆步行 6-8 分鐘即可抵達 Jetstar 專屬嘅第3航廈（T3）。
+              </p>
+              <div class="venue-highlight-note">
+                <strong>💡 雙重路綫任揀：</strong><br>
+                ‧ <strong>方案 A（最平最快）：</strong>日暮里轉 京成特急 Skyliner（¥2,570，41分鐘直達機場，班次極密）。<br>
+                ‧ <strong>方案 B（轉少次車）：</strong>小田急直出新宿，於新宿站轉乘 JR 成田特快 N'EX（全車指定席，直接直達機場）。
+              </div>
+              <div class="card-footer-row">
+                <span class="venue-location-text">📍 千葉県成田市取香 字上人塚148-1 第3ターミナル</span>
+                <div class="venue-actions">
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('narita-transit', event)">🗺️ 路線</button>
+                  <a href="https://transit.yahoo.co.jp/search/result?from=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98&to=%E7%A9%BA%E6%B8%AF%E7%AC%AC%EF%BC%92%E3%83%93%E3%83%AB" target="_blank" class="btn-action-pill pill-yahoo">🚆 Yahoo! 乘換</a>
+                  <a href="https://maps.google.com/?q=Narita+Airport+Terminal+3" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stop 4: Jetstar GK27 Flight to Hong Kong -->
+            <div class="venue-card" id="card-gk27-flight" onclick="selectStopLeg('gk27-flight')">
+              <div class="card-top-row">
+                <span class="card-time-pill">⏰ 20:10 (起飛) ➔ 23:55 (抵港)</span>
+                <span class="card-status-pill pill-sightseeing">✈️ Jetstar GK27</span>
+              </div>
+              <div class="venue-japanese-name">✈️ ジェットスター GK27便 ‧ 香港帰着</div>
+              <div class="venue-chinese-subtitle">成田第3航廈 (20:10) ➔ 香港國際機場第1航廈 (23:55) ‧ 圓滿完成秋日浪漫假期</div>
+              <div class="card-from-leg-pill" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">
+                🛫 18:10 抵達 T3 櫃位辦理登機與行李寄艙 ➔ 免稅店最後買伴手禮 ➔ 20:10 準時起飛
+              </div>
+              <p class="venue-details">
+                於成田 T3 美食廣場食個暖笠笠嘅讚岐烏冬或日式拉麵，再喺免稅店買埋白色戀人、Tokyo Banana 與 Royce 朱古力。女朋友搭乘 Jetstar GK27 航班啟程飛返香港，大約 23:55 順利降落赤鱲角機場。滿載咖啡香氣、海邊桑拿放鬆與摯友婚禮感動，相約下一次浪漫再會！
+              </p>
+              <div class="venue-highlight-note">
+                <strong>💡 登機貼士：</strong>Jetstar 登機櫃位於起飛前 45 分鐘截止辦理手續（即 19:25），登機閘口於起飛前 15 分鐘關閉；建議 18:30 前完成托運與過安檢，輕鬆逛免稅店！
+              </div>
+              <div class="card-footer-row">
+                <span class="venue-location-text">📍 成田国際空港 第3ターミナル 出境區</span>
+                <div class="venue-actions">
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('gk27-flight', event)">🗺️ 路線</button>
+                  <a href="https://maps.google.com/?q=Narita+Airport+Terminal+3" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </aside>
+
+    <!-- Right Map Container -->
+    <main class="map-container-wrap">
+      <div id="trip-map"></div>
+
+      <!-- OpenFreeMap Vector Theme Switcher -->
+      <div class="ofm-switcher-control" aria-label="地圖圖資樣式切換">
+        <button class="ofm-switcher-btn active" id="ofm-btn-positron" onclick="switchOpenFreeMapStyle('positron')">
+          <span>⚪ Positron (文青灰)</span>
+        </button>
+        <button class="ofm-switcher-btn" id="ofm-btn-bright" onclick="switchOpenFreeMapStyle('bright')">
+          <span>🟢 Bright (清新綠)</span>
+        </button>
+        <button class="ofm-switcher-btn" id="ofm-btn-liberty" onclick="switchOpenFreeMapStyle('liberty')">
+          <span>🔵 Liberty (標準)</span>
+        </button>
+      </div>
+
+      <!-- Floating Map Day Selector -->
+      <div class="map-overlay-controls">
+        <button class="day-selector-btn active" id="map-day-all" onclick="showAllVenuesView()">全部景點</button>
+        <button class="day-selector-btn" id="map-day-1" onclick="selectDayFromMap(1, this)">D1 羽田·SCAJ·鐵人</button>
+        <button class="day-selector-btn" id="map-day-2" onclick="selectDayFromMap(2, this)">D2 湘南葉山Villa</button>
+        <button class="day-selector-btn" id="map-day-3" onclick="selectDayFromMap(3, this)">D3 逗子婚禮·壽司</button>
+        <button class="day-selector-btn" id="map-day-4" onclick="selectDayFromMap(4, this)">D4 鶴川超市·成田</button>
+      </div>
+
+      <!-- Floating Leg Route Banner -->
+      <div class="leg-status-banner" id="mobile-route-bar">
+        <div class="leg-status-info">
+          <div class="leg-route-title" id="banner-leg-title">🚆 正在載入路綫...</div>
+          <div class="leg-sub-text" id="banner-leg-sub">點擊景點卡片即可即時追蹤行車軌跡</div>
+        </div>
+        <div class="leg-banner-actions">
+          <button class="btn-replay-leg" onclick="replayCurrentLeg()" title="重播列車動畫">
+            <span>▶ 列車重播</span>
+          </button>
+          <button class="btn-replay-leg" id="btn-view-card-banner" onclick="viewCurrentLegCard()" title="睇行程卡片詳細">
+            <span>📋 卡片詳情</span>
+          </button>
+          <a href="#" target="_blank" class="btn-replay-leg pill-yahoo" id="btn-yahoo-banner" style="background:#f0f9ff; color:#0369a1; border-color:#bae6fd;">
+            <span>🚆 Yahoo! 乘換</span>
+          </a>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-pill" id="toast-pill">已複製分享連結！</div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <!-- MapLibre GL JS -->
+  <script src="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.js" crossorigin=""></script>
+  <!-- MapLibre GL Leaflet Adapter -->
+  <script src="https://unpkg.com/@maplibre/maplibre-gl-leaflet/leaflet-maplibre-gl.js" crossorigin=""></script>
+
+  <script>
+    // EXACT POINT-TO-POINT TRANSIT LEGS (Tracing actual Tokyo & Shonan railway / highway tracks)
+    const legDefinitions = {
+      'haneda-arrival': {
+        id: 'haneda-arrival',
+        day: 1,
+        title: "羽田空港 第3ターミナル (Haneda T3)",
+        sub: "香港快運 UO624 抵達 (05:00 清晨)",
+        time: "10/17 05:00",
+        lat: 35.5444,
+        lng: 139.7686,
+        color: "#b85d19",
+        lastStopName: "香港國際機場 (HKG)",
+        vehicle: "✈️",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E7%BE%BD%E7%94%B0%E7%A9%BA%E6%B8%AF%E7%AC%AC3%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB&to=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98",
+        routeCoords: [
+          [35.4500, 139.8500], // 東京灣航線進場
+          [35.5100, 139.8100], // 羽田進場空域
+          [35.5350, 139.7800], // D跑道
+          [35.5444, 139.7686]  // 羽田空港 第3航廈
+        ]
+      },
+      'yurigaoka-base': {
+        id: 'yurigaoka-base',
+        day: 1,
+        title: "百合ヶ丘ベース (Yurigaoka Station)",
+        sub: "羽田空港 ➔ 百合ヶ丘大本營 (行李寄存·梳洗)",
+        time: "10/17 07:30",
+        lat: 35.6092,
+        lng: 139.5173,
+        color: "#b85d19",
+        lastStopName: "羽田空港 第3ターミナル",
+        vehicle: "🚆",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E7%BE%BD%E7%94%B0%E7%A9%BA%E6%B8%AF%E7%AC%AC3%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB&to=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98",
+        routeCoords: [
+          [35.5444, 139.7686], // 羽田第3航廈
+          [35.5560, 139.7350], // 京急空港線 穴守稲荷
+          [35.5615, 139.7240], // 京急蒲田駅
+          [35.5900, 139.7280], // 大森駅
+          [35.6285, 139.7387], // 品川駅 (轉山手線)
+          [35.6465, 139.7100], // 恵比寿駅
+          [35.6580, 139.7016], // 渋谷駅
+          [35.6896, 139.7006], // 新宿駅 (小田急小田原線)
+          [35.6690, 139.6795], // 代々木上原駅
+          [35.6615, 139.6670], // 下北沢駅
+          [35.6400, 139.6000], // 成城学園前駅
+          [35.6200, 139.5700], // 登戸駅
+          [35.6175, 139.5520], // 向ヶ丘遊園駅
+          [35.6092, 139.5173]  // 百合ヶ丘駅
+        ]
+      },
+      'scaj-expo': {
+        id: 'scaj-expo',
+        day: 1,
+        title: "SCAJ 2026 世界精品咖啡大展 (東京ビッグサイト)",
+        sub: "百合ヶ丘 ➔ 東京 Big Sight (2人門票已備)",
+        time: "10/17 11:30",
+        lat: 35.6298,
+        lng: 139.7944,
+        color: "#b85d19",
+        lastStopName: "百合ヶ丘駅 (神奈川県)",
+        vehicle: "🚆",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98&to=%E5%9B%BD%E9%9A%9B%E5%B1%95%E7%A4%BA%E5%A0%B4",
+        routeCoords: [
+          [35.6092, 139.5173], // 百合ヶ丘駅
+          [35.6200, 139.5700], // 登戸駅
+          [35.6615, 139.6670], // 下北沢駅
+          [35.6896, 139.7006], // 新宿駅 (轉埼京線·臨海線直通)
+          [35.6580, 139.7016], // 渋谷駅
+          [35.6465, 139.7100], // 恵比寿駅
+          [35.6190, 139.7280], // 大崎駅 (臨海線)
+          [35.6070, 139.7420], // 大井町駅
+          [35.6230, 139.7750], // 天王洲アイル
+          [35.6275, 139.7820], // 東京テレポート (お台場)
+          [35.6345, 139.7915], // 国際展示場駅
+          [35.6298, 139.7944]  // 東京ビッグサイト (SCAJ 2026 会場)
+        ]
+      },
+      'la-rochelle': {
+        id: 'la-rochelle',
+        day: 1,
+        title: "ラ・ロシェル山王 (La Rochelle Sanno)",
+        sub: "東京Big Sight ➔ 溜池山王 (法國鐵人 19:00 已預約)",
+        time: "10/17 19:00",
+        lat: 35.6740,
+        lng: 139.7405,
+        color: "#b85d19",
+        lastStopName: "東京ビッグサイト (SCAJ 2026)",
+        vehicle: "🚇",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E5%9B%BD%E9%9A%9B%E5%B1%95%E7%A4%BA%E5%A0%B4&to=%E6%BA%9C%E6%B1%A0%E5%B1%B1%E7%8E%8B",
+        routeCoords: [
+          [35.6298, 139.7944], // 東京ビッグサイト
+          [35.6345, 139.7915], // 国際展示場駅
+          [35.6470, 139.7800], // 豊洲駅
+          [35.6540, 139.7650], // 築地
+          [35.6660, 139.7580], // 新橋駅 (銀座線)
+          [35.6698, 139.7510], // 虎ノ門駅
+          [35.6730, 139.7420], // 溜池山王駅 6號出口
+          [35.6740, 139.7405]  // 東急キャピトルタワー 1F ラ・ロシェル山王
+        ]
+      },
+      'day1-night': {
+        id: 'day1-night',
+        day: 1,
+        title: "百合ヶ丘駅 (帰着休息)",
+        sub: "溜池山王 ➔ 千代田線直通小田急 ➔ 百合ヶ丘",
+        time: "10/17 21:45",
+        lat: 35.6092,
+        lng: 139.5173,
+        color: "#b85d19",
+        lastStopName: "ラ・ロシェル山王 (溜池山王)",
+        vehicle: "🚆",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E6%BA%9C%E6%B1%A0%E5%B1%B1%E7%8E%8B&to=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98",
+        routeCoords: [
+          [35.6740, 139.7405], // 溜池山王
+          [35.6720, 139.7360], // 赤坂駅 (千代田線)
+          [35.6665, 139.7265], // 乃木坂駅
+          [35.6652, 139.7123], // 表参道駅
+          [35.6690, 139.6795], // 代々木上原駅
+          [35.6615, 139.6670], // 下北沢駅
+          [35.6400, 139.6000], // 成城学園前駅
+          [35.6200, 139.5700], // 登戸駅
+          [35.6092, 139.5173]  // 百合ヶ丘駅
+        ]
+      },
+      'hayama-depart': {
+        id: 'hayama-depart',
+        day: 2,
+        title: "百合ヶ丘出発 ➔ 逗子駅 (湘南葉山方面)",
+        sub: "百合ヶ丘 ➔ 町田·橫濱 ➔ JR橫須賀線逗子駅",
+        time: "10/18 11:00",
+        lat: 35.2975,
+        lng: 139.5805,
+        color: "#2d6a82",
+        lastStopName: "百合ヶ丘駅",
+        vehicle: "🚆",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98&to=%E9%80%97%E5%AD%90",
+        routeCoords: [
+          [35.6092, 139.5173], // 百合ヶ丘駅
+          [35.5830, 139.4811], // 鶴川駅
+          [35.5420, 139.4450], // 町田駅 (轉JR橫濱線)
+          [35.5080, 139.6170], // 新横浜駅
+          [35.4660, 139.6225], // 横浜駅 (轉JR橫須賀線)
+          [35.4010, 139.5330], // 戸塚駅
+          [35.3530, 139.5315], // 大船駅
+          [35.3190, 139.5505], // 鎌倉駅
+          [35.2975, 139.5805]  // 逗子駅 (東口巴士站)
+        ]
+      },
+      'stella-storia': {
+        id: 'stella-storia',
+        day: 2,
+        title: "STELLA STORIA HAYAMA (ステラストーリア葉山)",
+        sub: "逗子駅 ➔ 京急巴士7分「清浄寺」➔ 海邊芬蘭桑拿別墅",
+        time: "10/18 15:00",
+        lat: 35.2819,
+        lng: 139.5710,
+        color: "#2d6a82",
+        lastStopName: "逗子駅 (東口バスターミナル)",
+        vehicle: "🚌",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E9%80%97%E5%AD%90&to=%E6%B8%85%E6%B5%84%E5%AF%BA",
+        routeCoords: [
+          [35.2975, 139.5805], // 逗子駅東口
+          [35.2920, 139.5780], // 新逗子·京急逗子葉山
+          [35.2890, 139.5760], // 渚橋 (逗子海岸)
+          [35.2845, 139.5732], // 鐙摺港入口
+          [35.2819, 139.5710]  // 清浄寺バス停 ‧ STELLA STORIA HAYAMA
+        ]
+      },
+      'hayama-seafood': {
+        id: 'hayama-seafood',
+        day: 2,
+        title: "葉山 鐙摺港 海鮮割烹 (魚寅 / 魚佐)",
+        sub: "【方案 A】海邊日落漫步 ‧ 相模灣現撈海鮮",
+        time: "10/18 18:00",
+        lat: 35.2845,
+        lng: 139.5732,
+        color: "#2d6a82",
+        lastStopName: "STELLA STORIA HAYAMA",
+        vehicle: "🚶",
+        yahooUrl: "https://maps.google.com/?q=Hayama+Abuzuri+Port",
+        routeCoords: [
+          [35.2819, 139.5710], // Stella Storia Hayama
+          [35.2830, 139.5720], // 堀內海邊小徑
+          [35.2845, 139.5732]  // 鐙摺港 海鮮割烹 魚寅/海人市場
+        ]
+      },
+      'hayama-villa': {
+        id: 'hayama-villa',
+        day: 2,
+        title: "旭屋牛肉店便當 ＆ Villa 露天風呂星空酒會",
+        sub: "【方案 B】葉山名物外賣 ‧ 私人桑拿星光 Jacuzzi",
+        time: "10/18 18:30",
+        lat: 35.2828,
+        lng: 139.5775,
+        color: "#2d6a82",
+        lastStopName: "STELLA STORIA HAYAMA",
+        vehicle: "🚶",
+        yahooUrl: "https://maps.google.com/?q=Hayama+Asahiya+Beef",
+        routeCoords: [
+          [35.2819, 139.5710], // Stella Storia
+          [35.2828, 139.5775], // 葉山旭屋牛肉店 (名物可樂餅&燒肉)
+          [35.2819, 139.5710]  // 返回 Stella Storia 享受私人露天風呂
+        ]
+      },
+      'wedding-prep': {
+        id: 'wedding-prep',
+        day: 3,
+        title: "STELLA STORIA 出發 ➔ リビエラ逗子マリーナ",
+        sub: "清晨海風 ‧ 西裝禮服著裝 ‧ 的士直達遊艇碼頭",
+        time: "10/19 11:15",
+        lat: 35.2819,
+        lng: 139.5710,
+        color: "#9e2a4b",
+        lastStopName: "STELLA STORIA HAYAMA",
+        vehicle: "🚕",
+        yahooUrl: "https://maps.google.com/?q=Riviera+Zushi+Marina",
+        routeCoords: [
+          [35.2819, 139.5710] // Stella Storia 出發點
+        ]
+      },
+      'zushi-wedding': {
+        id: 'zushi-wedding',
+        day: 3,
+        title: "リビエラ逗子マリーナ 会員制ヨットハーバー",
+        sub: "好友婚禮 (12:00 儀式 ‧ 12:40 午宴)",
+        time: "10/19 12:00",
+        lat: 35.2961,
+        lng: 139.5524,
+        color: "#9e2a4b",
+        lastStopName: "STELLA STORIA HAYAMA (葉山町)",
+        vehicle: "🚕",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E9%80%97%E5%AD%90&to=%E6%96%B0%E5%AE%BF",
+        routeCoords: [
+          [35.2819, 139.5710], // Stella Storia Hayama
+          [35.2855, 139.5725], // 鐙摺港沿海彎道
+          [35.2910, 139.5730], // 渚橋 (逗子海岸南端)
+          [35.2970, 139.5650], // 逗子海岸沿線 (國道134)
+          [35.2985, 139.5580], // 小坪隧道前海景
+          [35.2961, 139.5524]  // リビエラ逗子マリーナ (Riviera Zushi Marina)
+        ]
+      },
+      'kakida-sushi': {
+        id: 'kakida-sushi',
+        day: 3,
+        title: "かきだ鮨 新宿総本店 (世紀南塔 19F)",
+        sub: "逗子 ➔ 新宿 (The Tokyo コース ‧ 19:00 本鮪無限追加)",
+        time: "10/19 19:00",
+        lat: 35.6863,
+        lng: 139.7005,
+        color: "#9e2a4b",
+        lastStopName: "リビエラ逗子マリーナ (逗子市)",
+        vehicle: "🚆",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E9%80%97%E5%AD%90&to=%E6%96%B0%E5%AE%BF",
+        routeCoords: [
+          [35.2961, 139.5524], // リビエラ逗子マリーナ
+          [35.2975, 139.5805], // 逗子駅 (湘南新宿ライン直通)
+          [35.3190, 139.5505], // 鎌倉駅
+          [35.3530, 139.5315], // 大船駅
+          [35.4010, 139.5330], // 戸塚駅
+          [35.4660, 139.6225], // 横浜駅
+          [35.5780, 139.6600], // 武蔵小杉駅
+          [35.6200, 139.7280], // 大崎駅
+          [35.6465, 139.7100], // 恵比寿駅
+          [35.6580, 139.7016], // 渋谷駅
+          [35.6863, 139.7005]  // 新宿サザンタワー 19F かきだ鮨 新宿総本店
+        ]
+      },
+      'day3-night': {
+        id: 'day3-night',
+        day: 3,
+        title: "百合ヶ丘駅 (帰着休息)",
+        sub: "新宿 ➔ 小田急快速急行 ➔ 百合ヶ丘",
+        time: "10/19 21:30",
+        lat: 35.6092,
+        lng: 139.5173,
+        color: "#9e2a4b",
+        lastStopName: "かきだ鮨 新宿総本店",
+        vehicle: "🚆",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E6%96%B0%E5%AE%BF&to=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98",
+        routeCoords: [
+          [35.6863, 139.7005], // かきだ鮨 (新宿南口)
+          [35.6896, 139.7006], // 新宿駅小田急月台
+          [35.6690, 139.6795], // 代々木上原駅
+          [35.6615, 139.6670], // 下北沢駅
+          [35.6200, 139.5700], // 登戸駅
+          [35.6038, 139.5085], // 新百合ヶ丘駅
+          [35.6092, 139.5173]  // 百合ヶ丘駅
+        ]
+      },
+      'gyomu-super': {
+        id: 'gyomu-super',
+        day: 4,
+        title: "業務スーパー 鶴川店 (Gyomu Super Tsurukawa)",
+        sub: "百合ヶ丘 ➔ 鶴川 (女朋友青春回憶巡禮 ‧ 零食醬料採購)",
+        time: "10/20 10:30",
+        lat: 35.5835,
+        lng: 139.4782,
+        color: "#3d7a5a",
+        lastStopName: "百合ヶ丘駅",
+        vehicle: "🚆",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98&to=%E9%B6%B4%E5%B7%9D",
+        routeCoords: [
+          [35.6092, 139.5173], // 百合ヶ丘駅 (小田急小田原線)
+          [35.6038, 139.5085], // 新百合ヶ丘駅
+          [35.5940, 139.4950], // 柿生駅
+          [35.5830, 139.4811], // 鶴川駅
+          [35.5835, 139.4782]  // 業務スーパー 鶴川店 (町田市能ヶ谷2-4-9)
+        ]
+      },
+      'packing-base': {
+        id: 'packing-base',
+        day: 4,
+        title: "百合ヶ丘 (行李打包與最後整裝)",
+        sub: "鶴川 ➔ 百合ヶ丘 (戰利品妥善裝箱 ‧ 準備出發機場)",
+        time: "10/20 13:00",
+        lat: 35.6092,
+        lng: 139.5173,
+        color: "#3d7a5a",
+        lastStopName: "業務スーパー 鶴川店",
+        vehicle: "🚆",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E9%B6%B4%E5%B7%9D&to=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98",
+        routeCoords: [
+          [35.5835, 139.4782], // 業務スーパー 鶴川店
+          [35.5830, 139.4811], // 鶴川駅
+          [35.6038, 139.5085], // 新百合ヶ丘駅
+          [35.6092, 139.5173]  // 百合ヶ丘駅大本營
+        ]
+      },
+      'narita-transit': {
+        id: 'narita-transit',
+        day: 4,
+        title: "成田国際空港 第3ターミナル (Narita Airport T3)",
+        sub: "百合ヶ丘 ➔ 日暮里 (京成 Skyliner 41分極速直達)",
+        time: "10/20 15:30",
+        lat: 35.7795,
+        lng: 140.3855,
+        color: "#3d7a5a",
+        lastStopName: "百合ヶ丘駅",
+        vehicle: "🚆",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98&to=%E7%A9%BA%E6%B8%AF%E7%AC%AC%EF%BC%92%E3%83%93%E3%83%AB",
+        routeCoords: [
+          [35.6092, 139.5173], // 百合ヶ丘駅
+          [35.6690, 139.6795], // 代々木上原駅 (千代田線)
+          [35.7100, 139.7300], // 湯島
+          [35.7320, 139.7670], // 西日暮里駅
+          [35.7280, 139.7710], // 日暮里駅 (搭乘京成 Skyliner)
+          [35.7500, 139.8150], // 青砥駅
+          [35.7800, 140.0300], // 千葉ニュータウン中央
+          [35.8050, 140.2300], // 印旛日本医大
+          [35.7725, 140.3880], // 空港第2ビル駅 (成田第2·第3航廈)
+          [35.7795, 140.3855]  // 成田空港 第3ターミナル (Jetstar GK27 櫃位)
+        ]
+      },
+      'gk27-flight': {
+        id: 'gk27-flight',
+        day: 4,
+        title: "ジェットスター GK27便 ➔ 香港国際機場 (HKG)",
+        sub: "成田 T3 (20:10) ➔ 香港 T1 (23:55 抵達) ‧ 圓滿歸程",
+        time: "10/20 20:10",
+        lat: 35.7795,
+        lng: 140.3855,
+        color: "#3d7a5a",
+        lastStopName: "成田国際空港 第3ターミナル",
+        vehicle: "✈️",
+        yahooUrl: "https://www.jetstar.com/",
+        routeCoords: [
+          [35.7795, 140.3855], // 成田 T3 登機
+          [35.7600, 140.3950], // 成田跑道起飛
+          [35.7000, 140.4500], // 九十九里空域出海
+          [35.4000, 140.2000], // 房總半島南端
+          [34.8000, 139.5000]  // 西南方向飛往香港 (HKG)
+        ]
+      }
+    };
+
+    // Interactive Leaflet Map Initialization
+    let map = L.map('trip-map', {
+      center: [35.4800, 139.6500],
+      zoom: 10,
+      zoomControl: true
+    });
+
+    // OpenFreeMap Vector Layer with MapLibre GL
+    let currentOfmStyle = 'positron';
+    let openFreeMapLayer = null;
+
+    function initOpenFreeMapLayer(styleName) {
+      if (openFreeMapLayer) {
+        map.removeLayer(openFreeMapLayer);
+      }
+      openFreeMapLayer = L.maplibreGL({
+        style: 'https://tiles.openfreemap.org/styles/' + styleName,
+        attribution: '&copy; <a href="https://openfreemap.org">OpenFreeMap</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      }).addTo(map);
+      currentOfmStyle = styleName;
+    }
+
+    initOpenFreeMapLayer('positron');
+
+    function switchOpenFreeMapStyle(styleName) {
+      document.querySelectorAll('.ofm-switcher-btn').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.getElementById('ofm-btn-' + styleName);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      if (openFreeMapLayer) {
+        const mlMap = openFreeMapLayer.getMaplibreMap();
+        if (mlMap) {
+          mlMap.setStyle('https://tiles.openfreemap.org/styles/' + styleName);
+          currentOfmStyle = styleName;
+          return;
+        }
+      }
+      initOpenFreeMapLayer(styleName);
+    }
+
+    let mapPins = {};
+    let activeLegLayers = [];
+    let movingVehicleMarker = null;
+    let animFrameId = null;
+    let currentLegId = null;
+    let currentHayamaChoice = 'seafood';
+
+    function buildPin(color, dayNum, spotId) {
+      let iconContent = `D${dayNum}`;
+      if (spotId.includes('flight') || spotId.includes('arrival')) iconContent = '✈️';
+      else if (spotId.includes('stella') || spotId.includes('hayama')) iconContent = '🌊';
+      else if (spotId.includes('wedding')) iconContent = '💍';
+      else if (spotId.includes('sushi')) iconContent = '🍣';
+      else if (spotId.includes('rochelle')) iconContent = '🍽️';
+      else if (spotId.includes('scaj')) iconContent = '☕';
+      else if (spotId.includes('gyomu')) iconContent = '🛒';
+
+      return L.divIcon({
+        className: 'pin-holder',
+        html: `<div class="map-pin-badge" id="pin-${spotId}" style="background-color: ${color};" title="${spotId}">
+          <span>${iconContent}</span>
+        </div>`,
+        iconSize: [34, 34],
+        iconAnchor: [17, 34],
+        popupAnchor: [0, -34]
+      });
+    }
+
+    // Day 2 Hayama Evening Choice Switcher
+    function switchHayamaPlan(choice, event, updateMap = true) {
+      if (event) {
+        event.stopPropagation();
+      }
+      currentHayamaChoice = choice;
+      const isSeafood = choice === 'seafood';
+
+      const tabSeafood = document.getElementById('btn-plan-seafood');
+      const tabVilla = document.getElementById('btn-plan-villa');
+      if (tabSeafood && tabVilla) {
+        tabSeafood.classList.toggle('active', isSeafood);
+        tabVilla.classList.toggle('active', !isSeafood);
+      }
+
+      const colSeafood = document.getElementById('col-summary-seafood');
+      const colVilla = document.getElementById('col-summary-villa');
+      if (colSeafood && colVilla) {
+        colSeafood.classList.toggle('active-col', isSeafood);
+        colVilla.classList.toggle('active-col', !isSeafood);
+      }
+
+      const detailSeafood = document.getElementById('plan-detail-seafood');
+      const detailVilla = document.getElementById('plan-detail-villa');
+      if (detailSeafood && detailVilla) {
+        detailSeafood.style.display = isSeafood ? 'block' : 'none';
+        detailVilla.style.display = isSeafood ? 'none' : 'block';
+      }
+
+      const badge = document.getElementById('current-plan-badge');
+      if (badge) {
+        badge.innerHTML = isSeafood
+          ? '✨ 目前選擇：【方案A】鐙摺港海鮮割烹'
+          : '✨ 目前選擇：【方案B】旭屋牛丼 + 風呂星空';
+        badge.style.background = isSeafood ? '#e0f2fe' : '#fef3c7';
+        badge.style.color = isSeafood ? '#0369a1' : '#92400e';
+        badge.style.borderColor = isSeafood ? '#bae6fd' : '#fde68a';
+      }
+
+      if (updateMap) {
+        const targetLegId = isSeafood ? 'hayama-seafood' : 'hayama-villa';
+        selectStopLeg(targetLegId, false);
+      }
+    }
+
+    // Base Station Marker: 百合ヶ丘駅 (神奈川県)
+    const yurigaokaIcon = L.divIcon({
+      className: 'pin-holder',
+      html: `<div class="map-pin-badge" id="pin-yurigaoka" style="background-color: #1e3a8a; border-color: #60a5fa;" title="旅程大本營：百合ヶ丘駅 (神奈川県)">
+        <span>🏠</span>
+      </div>`,
+      iconSize: [34, 34],
+      iconAnchor: [17, 34],
+      popupAnchor: [0, -34]
+    });
+    const yurigaokaMarker = L.marker([35.6092, 139.5173], { icon: yurigaokaIcon }).addTo(map);
+    yurigaokaMarker.bindPopup(`
+      <div class="popup-inner">
+        <span class="popup-time-badge" style="background:#1e3a8a;">🏠 旅程大本營</span>
+        <div class="popup-title">百合ヶ丘駅 (Yurigaoka Station)</div>
+        <div class="popup-sub">神奈川県川崎市麻生区 ‧ 小田急小田原線</div>
+        <div style="font-size:0.75rem; color:#0369a1; font-weight:700; margin-top:4px;">
+          🚉 第1、2、3、4日每日起點與休息站！
+        </div>
+      </div>
+    `);
+    mapPins['yurigaoka'] = yurigaokaMarker;
+
+    // Add Markers for all venues
+    Object.keys(legDefinitions).forEach(spotId => {
+      const leg = legDefinitions[spotId];
+      const pinIcon = buildPin(leg.color, leg.day, spotId);
+      const marker = L.marker([leg.lat, leg.lng], { icon: pinIcon }).addTo(map);
+
+      const balloonHtml = `
+        <div class="popup-inner">
+          <span class="popup-time-badge" style="background:${leg.color};">Day ${leg.day} ‧ ${leg.time}</span>
+          <div class="popup-title">${leg.title}</div>
+          <div class="popup-sub">${leg.sub}</div>
+          <div style="font-size:0.75rem; color:#64748b; margin-bottom:8px;">
+            起點：<strong>${leg.lastStopName}</strong>
+          </div>
+          <div class="popup-button-row">
+            <button class="popup-btn btn-detail" onclick="viewCardDetails('${spotId}')">📋 睇行程詳情</button>
+            <a href="${leg.yahooUrl}" target="_blank" class="popup-btn btn-gmaps">🚆 Yahoo! 乘換</a>
+          </div>
+        </div>
+      `;
+      marker.bindPopup(balloonHtml);
+
+      marker.on('click', () => {
+        selectStopLeg(spotId, true);
+      });
+
+      mapPins[spotId] = marker;
+    });
+
+    function scrollToElementInPanel(targetElement) {
+      const panel = document.getElementById('panel-scroll');
+      if (!panel || !targetElement) return;
+      const panelRect = panel.getBoundingClientRect();
+      const targetRect = targetElement.getBoundingClientRect();
+      const targetTop = targetRect.top - panelRect.top + panel.scrollTop;
+      panel.scrollTo({
+        top: Math.max(0, targetTop - 20),
+        behavior: 'smooth'
+      });
+    }
+
+    let currentMobileView = 'map';
+    function setMobileView(mode) {
+      currentMobileView = mode;
+      document.querySelectorAll('.mobile-tab-btn').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.getElementById('tab-' + mode);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      const viewport = document.querySelector('.app-viewport');
+      if (viewport) {
+        viewport.classList.remove('view-mode-map', 'view-mode-list', 'view-mode-split');
+        viewport.classList.add('view-mode-' + mode);
+      }
+
+      setTimeout(() => {
+        if (typeof map !== 'undefined' && map) {
+          map.invalidateSize();
+        }
+      }, 180);
+    }
+
+    function jumpToMapFromCard(spotId, event) {
+      if (event) event.stopPropagation();
+      selectStopLeg(spotId, false);
+      if (window.innerWidth <= 960) {
+        setMobileView('map');
+      }
+    }
+
+    function viewCurrentLegCard() {
+      if (currentLegId) {
+        viewCardDetails(currentLegId);
+      }
+    }
+
+    function viewCardDetails(spotId) {
+      if (window.innerWidth <= 960) {
+        setMobileView('list');
+      }
+
+      let targetCardId = spotId;
+      if (spotId === 'hayama-seafood' || spotId === 'hayama-villa') {
+        targetCardId = 'hayama-evening';
+        switchHayamaPlan(spotId === 'hayama-seafood' ? 'seafood' : 'villa', null, false);
+      }
+
+      const cardEl = document.getElementById('card-' + targetCardId);
+      const leg = legDefinitions[spotId];
+      if (cardEl && leg) {
+        const parentBlock = document.getElementById('block-day-' + leg.day);
+        if (parentBlock && parentBlock.classList.contains('collapsed')) {
+          parentBlock.classList.remove('collapsed');
+          const txt = parentBlock.querySelector('.accordion-chevron-text');
+          if (txt) txt.textContent = '收起';
+        }
+        document.querySelectorAll('.venue-card').forEach(c => c.classList.remove('active-selected-card'));
+        cardEl.classList.add('active-selected-card');
+        setTimeout(() => {
+          scrollToElementInPanel(cardEl);
+        }, 120);
+      }
+    }
+
+    // Select Stop and draw exact polyline track
+    function selectStopLeg(spotId, autoScrollCard = true) {
+      const leg = legDefinitions[spotId];
+      if (!leg || !leg.routeCoords || leg.routeCoords.length === 0) return;
+
+      currentLegId = spotId;
+      clearActiveLegs();
+
+      // Outer Glow Polyline
+      const glowLine = L.polyline(leg.routeCoords, {
+        color: leg.color,
+        weight: 9,
+        opacity: 0.28,
+        lineCap: 'round',
+        lineJoin: 'round'
+      }).addTo(map);
+
+      // Main Polyline
+      const mainLine = L.polyline(leg.routeCoords, {
+        color: leg.color,
+        weight: 5,
+        opacity: 0.95,
+        lineCap: 'round',
+        lineJoin: 'round'
+      }).addTo(map);
+
+      activeLegLayers.push(glowLine, mainLine);
+
+      // Start Origin Marker
+      const originCoord = leg.routeCoords[0];
+      const originIcon = L.divIcon({
+        className: 'origin-marker-holder',
+        html: `<div class="origin-badge-icon" title="起點：${leg.lastStopName}">起</div>`,
+        iconSize: [24, 24],
+        iconAnchor: [12, 12]
+      });
+      const originMarker = L.marker(originCoord, { icon: originIcon }).addTo(map);
+      originMarker.bindPopup(`
+        <div class="popup-inner" style="max-width:200px;">
+          <div style="font-size:0.70rem; color:#10b981; font-weight:800;">📍 路綫出發站</div>
+          <div style="font-weight:800; font-size:0.86rem; color:#1e293b;">${leg.lastStopName}</div>
+        </div>
+      `);
+      activeLegLayers.push(originMarker);
+
+      // Zoom map to fit the route bounds
+      const legBounds = L.latLngBounds(leg.routeCoords);
+      map.fitBounds(legBounds, {
+        padding: [60, 60],
+        maxZoom: 15
+      });
+
+      // Pin highlight
+      document.querySelectorAll('.map-pin-badge').forEach(p => p.classList.remove('highlight-active'));
+      const targetPinEl = document.getElementById('pin-' + spotId);
+      if (targetPinEl) targetPinEl.classList.add('highlight-active');
+
+      const targetMarker = mapPins[spotId];
+      if (targetMarker) {
+        targetMarker.openPopup();
+      }
+
+      // Animate moving vehicle
+      animateVehicleOnLeg(leg.routeCoords, leg.vehicle || '🚆');
+
+      // Update Floating Route Banner
+      const banner = document.getElementById('mobile-route-bar');
+      const titleEl = document.getElementById('banner-leg-title');
+      const subEl = document.getElementById('banner-leg-sub');
+      if (banner && titleEl && subEl) {
+        banner.style.display = 'flex';
+        titleEl.innerHTML = `${leg.vehicle || '🚆'} ${leg.lastStopName} ➔ ${leg.title}`;
+        subEl.innerHTML = `Day ${leg.day} ‧ ${leg.time} ‧ 乘換與路線已在上方高亮`;
+      }
+      const btnViewCard = document.getElementById('btn-view-card-banner');
+      if (btnViewCard) btnViewCard.setAttribute('onclick', `viewCardDetails('${spotId}')`);
+      const btnYahooBanner = document.getElementById('btn-yahoo-banner');
+      if (btnYahooBanner) btnYahooBanner.setAttribute('href', leg.yahooUrl);
+
+      // Highlight corresponding card in drawer
+      if (autoScrollCard) {
+        let targetCardId = spotId;
+        if (spotId === 'hayama-seafood' || spotId === 'hayama-villa') {
+          targetCardId = 'hayama-evening';
+          switchHayamaPlan(spotId === 'hayama-seafood' ? 'seafood' : 'villa', null, false);
+        }
+
+        const cardEl = document.getElementById('card-' + targetCardId);
+        if (cardEl) {
+          const parentBlock = document.getElementById('block-day-' + leg.day);
+          if (parentBlock && parentBlock.classList.contains('collapsed')) {
+            parentBlock.classList.remove('collapsed');
+            const txt = parentBlock.querySelector('.accordion-chevron-text');
+            if (txt) txt.textContent = '收起';
+          }
+          document.querySelectorAll('.venue-card').forEach(c => c.classList.remove('active-selected-card'));
+          cardEl.classList.add('active-selected-card');
+          scrollToElementInPanel(cardEl);
+        }
+      }
+    }
+
+    function clearActiveLegs() {
+      if (animFrameId) {
+        cancelAnimationFrame(animFrameId);
+        animFrameId = null;
+      }
+      if (movingVehicleMarker) {
+        map.removeLayer(movingVehicleMarker);
+        movingVehicleMarker = null;
+      }
+      activeLegLayers.forEach(l => map.removeLayer(l));
+      activeLegLayers = [];
+    }
+
+    function animateVehicleOnLeg(coords, iconChar) {
+      if (!coords || coords.length < 2) return;
+
+      const vehicleIcon = L.divIcon({
+        className: 'vehicle-marker-holder',
+        html: `<div class="vehicle-marker-pulse">${iconChar}</div>`,
+        iconSize: [32, 32],
+        iconAnchor: [16, 16]
+      });
+
+      movingVehicleMarker = L.marker(coords[0], { icon: vehicleIcon, zIndexOffset: 1000 }).addTo(map);
+
+      let step = 0;
+      const totalSteps = Math.max(coords.length * 35, 120);
+
+      function runAnim() {
+        step++;
+        const progress = step / totalSteps;
+        const currentPos = interpolateLegCoords(coords, progress);
+        if (movingVehicleMarker) {
+          movingVehicleMarker.setLatLng(currentPos);
+        }
+        if (step < totalSteps) {
+          animFrameId = requestAnimationFrame(runAnim);
+        }
+      }
+      animFrameId = requestAnimationFrame(runAnim);
+    }
+
+    function interpolateLegCoords(coords, progress) {
+      const totalSegments = coords.length - 1;
+      const exactIndex = progress * totalSegments;
+      const segmentIndex = Math.min(Math.floor(exactIndex), totalSegments - 1);
+      const segmentProgress = exactIndex - segmentIndex;
+
+      const p1 = coords[segmentIndex];
+      const p2 = coords[segmentIndex + 1];
+
+      return [
+        p1[0] + (p2[0] - p1[0]) * segmentProgress,
+        p1[1] + (p2[1] - p1[1]) * segmentProgress
+      ];
+    }
+
+    function replayCurrentLeg() {
+      if (currentLegId) {
+        selectStopLeg(currentLegId, false);
+      }
+    }
+
+    function showAllVenuesView() {
+      clearActiveLegs();
+      document.querySelectorAll('.map-pin-badge').forEach(p => p.classList.remove('highlight-active'));
+      document.querySelectorAll('.day-selector-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('map-day-all').classList.add('active');
+
+      const allMarkers = Object.values(mapPins);
+      const group = new L.featureGroup(allMarkers);
+      map.fitBounds(group.getBounds(), {
+        padding: [50, 50],
+        maxZoom: 14
+      });
+
+      const banner = document.getElementById('mobile-route-bar');
+      if (banner) banner.style.display = 'none';
+
+      expandAllDays();
+    }
+
+    function selectDayFromMap(day, btnEl) {
+      clearActiveLegs();
+      document.querySelectorAll('.day-selector-btn').forEach(b => b.classList.remove('active'));
+      if (btnEl) btnEl.classList.add('active');
+
+      const dayPins = [];
+      let firstSpotIdOfDay = null;
+
+      Object.keys(legDefinitions).forEach(spotId => {
+        const leg = legDefinitions[spotId];
+        const marker = mapPins[spotId];
+        if (!marker) return;
+
+        if (leg.day === parseInt(day)) {
+          marker.addTo(map);
+          dayPins.push(marker);
+          if (!firstSpotIdOfDay) firstSpotIdOfDay = spotId;
+        } else {
+          map.removeLayer(marker);
+        }
+      });
+
+      // Include Yurigaoka Base Station marker
+      if (yurigaokaMarker) {
+        yurigaokaMarker.addTo(map);
+        dayPins.push(yurigaokaMarker);
+      }
+
+      // Expand day block in drawer
+      document.querySelectorAll('.day-block').forEach(b => b.classList.remove('active-day-block'));
+      const targetBlock = document.getElementById('block-day-' + day);
+      if (targetBlock) {
+        targetBlock.classList.remove('collapsed');
+        targetBlock.classList.add('active-day-block');
+        const txt = targetBlock.querySelector('.accordion-chevron-text');
+        if (txt) txt.textContent = '收起';
+        scrollToElementInPanel(targetBlock);
+      }
+
+      if (dayPins.length > 0) {
+        const group = new L.featureGroup(dayPins);
+        map.fitBounds(group.getBounds(), {
+          padding: [50, 50],
+          maxZoom: 14
+        });
+      }
+
+      if (firstSpotIdOfDay) {
+        selectStopLeg(firstSpotIdOfDay, true);
+      }
+    }
+
+    function toggleDayAccordion(dayNum, event) {
+      if (event) event.stopPropagation();
+      const block = document.getElementById('block-day-' + dayNum);
+      if (!block) return;
+
+      const isCollapsed = block.classList.contains('collapsed');
+      if (isCollapsed) {
+        block.classList.remove('collapsed');
+        const txt = block.querySelector('.accordion-chevron-text');
+        if (txt) txt.textContent = '收起';
+      } else {
+        block.classList.add('collapsed');
+        const txt = block.querySelector('.accordion-chevron-text');
+        if (txt) txt.textContent = '展開';
+      }
+    }
+
+    function expandAllDays() {
+      document.querySelectorAll('.day-block').forEach(b => {
+        b.classList.remove('collapsed');
+        const txt = b.querySelector('.accordion-chevron-text');
+        if (txt) txt.textContent = '收起';
+      });
+    }
+
+    function collapseAllDays() {
+      document.querySelectorAll('.day-block').forEach(b => {
+        b.classList.add('collapsed');
+        const txt = b.querySelector('.accordion-chevron-text');
+        if (txt) txt.textContent = '展開';
+      });
+    }
+
+    function togglePanelWidth() {
+      const panel = document.getElementById('itinerary-panel');
+      if (panel) {
+        panel.classList.toggle('panel-wide');
+        setTimeout(() => { map.invalidateSize(); }, 300);
+      }
+    }
+
+    function copyShareURL() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        showToast('已複製行程連結！可以即刻 Share 畀女朋友 💕');
+      }).catch(() => {
+        showToast('請直接複製瀏覽器網址 Share 畀女朋友！');
+      });
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast-pill');
+      if (!t) return;
+      t.textContent = msg;
+      t.style.display = 'flex';
+      setTimeout(() => { t.style.display = 'none'; }, 2600);
+    }
+
+    // Dynamic iCalendar (.ics) Export
+    function downloadCalendarFile() {
+      const icsData = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Tokyo Hayama Romantic Trip//ZH
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+SUMMARY:抵達：香港快運 UO624 抵達羽田機場
+DTSTART;TZID=Asia/Tokyo:20261017T050000
+DTEND;TZID=Asia/Tokyo:20261017T063000
+DESCRIPTION:女朋友抵達東京羽田機場T3入境大堂會合，出發返百合ヶ丘整頓梳洗
+LOCATION:羽田空港 第3ターミナル
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:活動：SCAJ 2026 世界精品咖啡大展
+DTSTART;TZID=Asia/Tokyo:20261017T113000
+DTEND;TZID=Asia/Tokyo:20261017T163000
+DESCRIPTION:東京 Big Sight 有明西展示棟，SCAJ 2026世界精品咖啡博覽會，兩人門票已備
+LOCATION:東京ビッグサイト (Tokyo Big Sight)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:晚宴：ラ・ロシェル山王 (坂井宏行頂級法國鐵人正餐)
+DTSTART;TZID=Asia/Tokyo:20261017T190000
+DTEND;TZID=Asia/Tokyo:20261017T213000
+DESCRIPTION:千代田區永田町東急 Capitol Tower 1F，料理之鐵人坂井宏行頂級法式晚餐，19:00 已預約，請著 Smart Casual
+LOCATION:ラ・ロシェル山王 (東京都千代田区永田町2-10-3 東急キャピトルタワー1F)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:入住：STELLA STORIA HAYAMA (私人桑拿＆露天風呂海邊別墅)
+DTSTART;TZID=Asia/Tokyo:20261018T150000
+DTEND;TZID=Asia/Tokyo:20261019T110000
+DESCRIPTION:葉山海濱包棟別墅，私人芬蘭木質桑拿房、露天風呂 Jacuzzi，欣賞相模灣與富士山日落晚霞
+LOCATION:STELLA STORIA HAYAMA (神奈川県三浦郡葉山町堀内255-7)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:晚間方案：葉山鐙摺港海鮮割烹 或 Villa 星空風呂牛丼酒會
+DTSTART;TZID=Asia/Tokyo:20261018T180000
+DTEND;TZID=Asia/Tokyo:20261018T210000
+DESCRIPTION:【方案A】鐙摺港魚寅現撈刺身燉魚 或 【方案B】旭屋牛肉店可樂餅和牛便當配Villa露天Jacuzzi星空
+LOCATION:神奈川県三浦郡葉山町堀内
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:婚禮儀式：リビエラ逗子マリーナ 会員制ヨットハーバー
+DTSTART;TZID=Asia/Tokyo:20261019T120000
+DTEND;TZID=Asia/Tokyo:20261019T124000
+DESCRIPTION:好友婚禮儀式 Ceremony，會員制逗子 Marina 椰林純白海景教堂 (著正裝西裝與禮服長裙)
+LOCATION:リビエラ逗子マリーナ (神奈川県逗子市小坪5-23-23)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:婚禮午宴：リビエラ逗子マリーナ Wedding Luncheon
+DTSTART;TZID=Asia/Tokyo:20261019T124000
+DTEND;TZID=Asia/Tokyo:20261019T153000
+DESCRIPTION:逗子遊艇會海景婚禮午宴，享用精緻法日盛宴與海港拍照合影
+LOCATION:リビエラ逗子マリーナ 本館宴會廳
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:晚飯：かきだ鮨 新宿総本店 (The Tokyo コース ‧ 鮨おかわり無料)
+DTSTART;TZID=Asia/Tokyo:20261019T190000
+DTEND;TZID=Asia/Tokyo:20261019T210000
+DESCRIPTION:小田急世紀南塔 19F，Tabelog 預約 19:00。全條本鮪一本買、產地直送壽司免費無限次任追加、高森和牛壽喜燒！
+LOCATION:かきだ鮨 新宿総本店 (東京都渋谷区代々木2-2-1 小田急ホテルセンチュリーサザンタワー 19F)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:朝聖回憶：業務スーパー 鶴川店 (女朋友回憶巡禮)
+DTSTART;TZID=Asia/Tokyo:20261020T103000
+DTEND;TZID=Asia/Tokyo:20261020T123000
+DESCRIPTION:東京都町田市能ヶ谷2-4-9，重遊女朋友昔日記憶貨架，採購日式調味料與超值伴手禮零食
+LOCATION:業務スーパー 鶴川店 (東京都町田市能ヶ谷2-4-9)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:回程：捷星航空 Jetstar GK27 飛返香港
+DTSTART;TZID=Asia/Tokyo:20261020T201000
+DTEND;TZID=Asia/Tokyo:20261020T235500
+DESCRIPTION:成田國際機場第3航廈起飛 (20:10)，抵達香港國際機場第1航廈 (23:55)
+LOCATION:成田国際空港 第3ターミナル
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR`;
+
+      const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
+      const link = document.createElement('a');
+      link.href = window.URL.createObjectURL(blob);
+      link.setAttribute('download', 'Tokyo_Hayama_Romantic_Itinerary_1017_1020.ics');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      showToast('📅 日曆檔案 (.ics) 已成功下載！可直接匯入 iPhone / Google Calendar');
+    }
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth <= 960) {
+        setMobileView(currentMobileView);
+      } else {
+        const viewport = document.querySelector('.app-viewport');
+        if (viewport) {
+          viewport.classList.remove('view-mode-map', 'view-mode-list', 'view-mode-split');
+        }
+        if (typeof map !== 'undefined' && map) {
+          map.invalidateSize();
+        }
+      }
+    });
+
+    // Default startup view
+    setTimeout(() => {
+      showAllVenuesView();
+    }, 400);
+
+  </script>
+</body>
+</html>
