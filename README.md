@@ -10,7 +10,7 @@
 * **生成腳本**：[`generate_1017.py`](file:///Users/rondey/Personal/itinerary/generate_1017.py)
 * **HTML 檔案**：[`itinerary_1017.html`](file:///Users/rondey/Personal/itinerary/itinerary_1017.html)
 * **核心重點**：
-  * **Day 1 (10/17 六)**：香港快運 UO624 抵達羽田 ➔ 百合ヶ丘整頓 ➔ SCAJ 2026 世界精品咖啡大展（東京 Big Sight） ➔ 「料理之鐵人」坂井宏行頂級法式正餐 [La Rochelle 山王](https://www.la-rochelle.co.jp/sp/) (19:00 已預約) ➔ 返回百合ヶ丘。
+  * **Day 1 (10/17 六)**：【雙人平行視角】男方宿 [天然温泉 平和島](https://www.heiwajima-onsen.jp/) 乘 04:15 早朝送迎專車 04:40 抵達羽田接機 ✕ 女方乘香港快運 UO624 05:00 抵達羽田 T3 ➔ 入境大堂甜蜜會合 ➔ 百合ヶ丘整頓 ➔ SCAJ 2026 世界精品咖啡大展（東京 Big Sight） ➔ 「料理之鐵人」坂井宏行頂級法式正餐 [La Rochelle 山王](https://www.la-rochelle.co.jp/sp/) (19:00 已預約) ➔ 返回百合ヶ丘。
   * **Day 2 (10/18 日)**：百合ヶ丘出發南下湘南 ➔ 入住海景包棟私人桑拿露天風呂別墅 [STELLA STORIA HAYAMA](https://maps.google.com/?q=Kanagawa+Hayama+Horiuchi+255-7) ➔ 私人芬蘭木質 Sauna & 露天 Jacuzzi 風呂 ➔ 晚間雙方案選擇（方案A：鐙摺港地道海鮮刺身割烹 vs 方案B：旭屋和牛便當 + Villa 星空露天溫泉酒會）。
   * **Day 3 (10/19 一)**：葉山晨起咖啡 ➔ 的士直達 [リビエラ逗子マリーナ (Riviera Zushi Marina 会員制ヨットハーバー)](https://maps.google.com/?q=Riviera+Zushi+Marina) 參加好友海景婚禮（12:00 Ceremony ‧ 12:40 Luncheon） ➔ 湘南新宿線直出新宿 ➔ [かきだ鮨 新宿総本店](https://tabelog.com/tokyo/A1304/A130401/13286035/party/232871093)（小田急世紀南塔 19F，The Tokyo コース，全條本鮪一本買、壽司無限任追加、高森和牛壽喜燒） ➔ 返回百合ヶ丘。
   * **Day 4 (10/20 二)**：百合ヶ丘出發 ➔ 重遊女朋友青春珍貴記憶：[業務スーパー 鶴川店](https://maps.google.com/?q=Gyomu+Super+Tsurukawa)（採購日本零食與調味料） ➔ 返回百合ヶ丘打包行李 ➔ 日暮里轉乘京成特急 Skyliner 41分鐘超速直達 ➔ 成田國際機場 T3 搭乘 Jetstar GK27 (20:10 起飛) 飛返香港。

@@ -946,6 +946,116 @@ html_content = '''<!DOCTYPE html>
       line-height: 1.4;
     }
 
+    /* Two-Side View Switcher for Day 1 Heiwajima & Haneda */
+    .twoside-card {
+      border: 1.5px solid #cbd5e1;
+      position: relative;
+    }
+    .twoside-toggle-bar {
+      display: flex;
+      gap: 6px;
+      margin: 12px 0 14px 0;
+      background: #f1f5f9;
+      padding: 6px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+    }
+    .twoside-tab-btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 6px;
+      border-radius: 9px;
+      border: 1.5px solid transparent;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      text-align: center;
+      gap: 2px;
+    }
+    .twoside-tab-btn .tab-icon {
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+    .twoside-tab-btn .tab-title {
+      font-size: 0.80rem;
+      font-weight: 800;
+      color: #475569;
+    }
+    .twoside-tab-btn .tab-badge {
+      font-size: 0.66rem;
+      font-weight: 600;
+      color: #64748b;
+    }
+    .twoside-tab-btn.active#btn-side-his {
+      background: #ffffff;
+      border-color: #0284c7;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.18);
+    }
+    .twoside-tab-btn.active#btn-side-his .tab-title { color: #0369a1; }
+    .twoside-tab-btn.active#btn-side-his .tab-badge { color: #0284c7; font-weight: 700; }
+
+    .twoside-tab-btn.active#btn-side-her {
+      background: #ffffff;
+      border-color: #e11d48;
+      box-shadow: 0 2px 8px rgba(225, 29, 72, 0.18);
+    }
+    .twoside-tab-btn.active#btn-side-her .tab-title { color: #be123c; }
+    .twoside-tab-btn.active#btn-side-her .tab-badge { color: #e11d48; font-weight: 700; }
+
+    .twoside-tab-btn.active#btn-side-both {
+      background: #ffffff;
+      border-color: #d97706;
+      box-shadow: 0 2px 8px rgba(217, 119, 6, 0.18);
+    }
+    .twoside-tab-btn.active#btn-side-both .tab-title { color: #b45309; }
+    .twoside-tab-btn.active#btn-side-both .tab-badge { color: #d97706; font-weight: 700; }
+
+    .twoside-compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    @media (max-width: 600px) {
+      .twoside-compare-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .twoside-col {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 0.76rem;
+    }
+    .twoside-col.col-his {
+      border: 1.5px solid #bae6fd;
+      background: #f0f9ff;
+    }
+    .twoside-col.col-her {
+      border: 1.5px solid #fbcfe8;
+      background: #fdf2f8;
+    }
+    .twoside-col-header {
+      font-weight: 800;
+      font-size: 0.84rem;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .twoside-timeline-item {
+      color: #334155;
+      margin-bottom: 6px;
+      line-height: 1.45;
+      font-size: 0.74rem;
+    }
+
     /* Map Elements */
     .map-pin-badge {
       width: 34px;
@@ -1356,8 +1466,8 @@ html_content = '''<!DOCTYPE html>
             <div class="day-title-wrap">
               <span class="day-badge-tag badge-d1">Day 1</span>
               <div class="day-title-text">
-                <h3>10/17 (六) · 東京羽田抵達 ‧ 咖啡大展 ‧ 法國鐵人料理</h3>
-                <span>UO624抵達 ➔ 百合ヶ丘整頓 ➔ SCAJ 2026咖啡展 ➔ La Rochelle 山王頂級法餐</span>
+                <h3>10/17 (六) · 平和島溫泉 ‧ 羽田接機會合 ‧ 咖啡大展 ‧ 法國鐵人正餐</h3>
+                <span>平和島早朝巴士(04:40) ✕ UO624抵達(05:00) ➔ 百合ヶ丘整頓 ➔ SCAJ 2026咖啡展 ➔ La Rochelle 山王頂級法餐</span>
               </div>
             </div>
             <div class="day-accordion-control">
@@ -1368,30 +1478,119 @@ html_content = '''<!DOCTYPE html>
 
           <div class="day-block-body">
 
-            <!-- Stop 1: UO624 Arrival & Haneda Airport -->
-            <div class="venue-card" id="card-haneda-arrival" onclick="selectStopLeg('haneda-arrival')">
+            <!-- Stop 1: Two-Side View for Morning Haneda Meetup -->
+            <div class="venue-card twoside-card" id="card-day1-twoside">
               <div class="card-top-row">
-                <span class="card-time-pill">⏰ 05:00 (清晨抵達)</span>
-                <span class="card-status-pill pill-sightseeing">✈️ 香港快運 UO624</span>
+                <span class="card-time-pill">⏰ 04:40 – 05:30 (清晨交會)</span>
+                <span class="card-status-pill pill-sightseeing" id="current-twoside-badge" style="background:#e0f2fe; color:#0369a1; border:1px solid #bae6fd;">
+                  🙋‍♂️ 目前視角：男方 (天然温泉 平和島 ➔ 04:40 抵達羽田接機)
+                </span>
               </div>
-              <div class="venue-japanese-name">✈️ 羽田空港 第3ターミナル (Haneda Airport T3)</div>
-              <div class="venue-chinese-subtitle">東京羽田國際機場 ‧ 女朋友清晨抵達東京 ‧ 浪漫接機</div>
-              <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">
-                🛫 香港起飛 (23:35) ➔ 羽田入境大堂清晨約 05:00 順利步出 ➔ 展開秋日4日浪漫假期
+              <div class="venue-japanese-name">💖 清晨羽田會合 ‧ 雙人平行視角 (Two-Side View)</div>
+              <div class="venue-chinese-subtitle">天然温泉 平和島 (04:40抵達) ✕ 香港快運 UO624 (05:00抵達) ‧ 羽田 T3 甜蜜相聚</div>
+
+              <!-- Interactive 3-way Switcher -->
+              <div class="twoside-toggle-bar">
+                <button class="twoside-tab-btn active" id="btn-side-his" onclick="switchTwoSideView('his', event)">
+                  <span class="tab-icon">🙋‍♂️</span>
+                  <span class="tab-title">男方視角 (His Side)</span>
+                  <span class="tab-badge">天然温泉 平和島 ➔ 04:40 羽田</span>
+                </button>
+                <button class="twoside-tab-btn" id="btn-side-her" onclick="switchTwoSideView('her', event)">
+                  <span class="tab-icon">🙋‍♀️</span>
+                  <span class="tab-title">女方視角 (Her Side)</span>
+                  <span class="tab-badge">香港快運 UO624 ➔ 05:00 羽田</span>
+                </button>
+                <button class="twoside-tab-btn" id="btn-side-both" onclick="switchTwoSideView('both', event)">
+                  <span class="tab-icon">💞</span>
+                  <span class="tab-title">雙人並排對照</span>
+                  <span class="tab-badge">分秒同步行程表</span>
+                </button>
               </div>
-              <p class="venue-details">
-                女朋友乘搭香港快運 UO624 紅眼航班抵達東京羽田機場！於抵達大堂甜蜜會合，第一時間送上熱飲與關懷。先由羽田機場返回百合ヶ丘大本營放下重行李，洗個舒服嘅熱水澡、稍作梳洗休息充電，神清氣爽再出發！
-              </p>
-              <div class="venue-highlight-note">
-                <strong>💡 貼心交通：</strong>由羽田機場前往百合ヶ丘，可乘搭京急利木津巴士直達「新百合ヶ丘駅」（約50-60分鐘，極方便放行李），再轉小田急1個站直達百合ヶ丘；或搭京急線至品川，轉山手線至新宿，乘小田急快速急行回百合ヶ丘。<br>
-                <strong>💰 票價：</strong>機場巴士約 ¥1,470 / 鐵路約 ¥840。
+
+              <!-- Detail His Side -->
+              <div id="side-detail-his">
+                <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">
+                  🚌 男方動線：天然温泉 平和島 (BIGFUN平和島2F) ➔ 搭乘 04:15 早朝送迎專車 ➔ 04:40 直達羽田機場第3航廈
+                </div>
+                <p class="venue-details">
+                  男方前晚入住鄰近羽田嘅著名溫泉「天然温泉 平和島」（享受深度地下2000米天然食鹽泉、高溫桑拿與放鬆躺椅睡覺充電）。清晨搭乘 04:15 的羽田機場專屬早朝送迎巴士，04:40 準時直達羽田第3航廈。喺入境大堂買定熱咖啡，精神奕奕準備守候女友入境接機！
+                </p>
+                <div class="venue-highlight-note">
+                  <strong>♨️ 天然温泉 平和島資訊：</strong>東京都大田区平和島1-1-1（BIGFUN平和島 2F）‧ 官網：<a href="https://www.heiwajima-onsen.jp/" target="_blank" style="color:#985635; text-decoration:underline;">heiwajima-onsen.jp</a><br>
+                  <strong>🚌 早朝巴士班次：</strong>平和島 04:15 出發 ➔ 04:40 抵達羽田機場第3航廈（國際線），直達航廈門口！
+                </div>
+                <div class="card-footer-row">
+                  <span class="venue-location-text">📍 天然温泉 平和島 ➔ 羽田第3航廈</span>
+                  <div class="venue-actions">
+                    <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('heiwajima-onsen', event)">🗺️ 路線</button>
+                    <a href="https://www.heiwajima-onsen.jp/bus/" target="_blank" class="btn-action-pill">🚌 平和島巴士</a>
+                    <a href="https://maps.google.com/?q=Natural+Hot+Spring+Heiwajima" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
+                  </div>
+                </div>
               </div>
-              <div class="card-footer-row">
-                <span class="venue-location-text">📍 東京都大田区羽田空港2丁目</span>
-                <div class="venue-actions">
-                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('haneda-arrival', event)">🗺️ 路線</button>
-                  <a href="https://transit.yahoo.co.jp/search/result?from=%E7%BE%BD%E7%94%B0%E7%A9%BA%E6%B8%AF%E7%AC%AC3%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB&to=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98" target="_blank" class="btn-action-pill pill-yahoo">🚆 Yahoo! 乘換</a>
-                  <a href="https://maps.google.com/?q=Haneda+Airport+Terminal+3" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
+
+              <!-- Detail Her Side -->
+              <div id="side-detail-her" style="display:none;">
+                <div class="card-from-leg-pill" style="background:#fce7f3; color:#9d174d; border-color:#fbcfe8;">
+                  ✈️ 女方動線：香港國際機場 (HKG 23:35) ➔ 香港快運 UO624 航班 ➔ 05:00 順利降落東京羽田機場 (HND T3)
+                </div>
+                <p class="venue-details">
+                  女朋友乘搭香港快運 UO624 紅眼航班，23:35 由香港起飛，喺飛機上小睡充電約 4 小時 25 分鐘。清晨約 05:00 順利降落羽田機場第3航廈。辦理入境手續、領取行李，約 05:25 步入入境大堂！
+                </p>
+                <div class="venue-highlight-note">
+                  <strong>✈️ 航班資訊：</strong>HK Express UO624（空中巴士 A321neo），預定 23:35 香港起飛，翌日清晨 05:00 抵達羽田。<br>
+                  <strong>🛬 入境指引：</strong>下機後沿 Arrival 走廊過移民局櫃位與行李提取處，步出第3航廈入境大堂即見男方！
+                </div>
+                <div class="card-footer-row">
+                  <span class="venue-location-text">📍 羽田空港 第3ターミナル 入境大堂</span>
+                  <div class="venue-actions">
+                    <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('haneda-arrival', event)">🗺️ 路線</button>
+                    <a href="https://maps.google.com/?q=Haneda+Airport+Terminal+3" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Detail Both Side-by-Side Comparison -->
+              <div id="side-detail-both" style="display:none;">
+                <div class="twoside-compare-grid">
+                  <div class="twoside-col col-his">
+                    <div class="twoside-col-header" style="color:#0369a1;">
+                      <span>🙋‍♂️</span> 男朋友視角 (His Side)
+                    </div>
+                    <div class="twoside-timeline-item">
+                      <strong>前晚 – 03:40：</strong>天然温泉 平和島 浸天然食鹽溫泉、深層放鬆睡眠。
+                    </div>
+                    <div class="twoside-timeline-item">
+                      <strong>03:50 – 04:10：</strong>更衣整頓、大堂退房準備上車。
+                    </div>
+                    <div class="twoside-timeline-item">
+                      <strong>04:15 – 04:40：</strong>乘搭平和島專屬早朝送迎巴士直奔羽田機場。
+                    </div>
+                    <div class="twoside-timeline-item">
+                      <strong>04:40 – 05:00：</strong>準時 04:40 抵達羽田 T3，買定熱咖啡於入境大堂守候！
+                    </div>
+                  </div>
+                  <div class="twoside-col col-her">
+                    <div class="twoside-col-header" style="color:#be123c;">
+                      <span>🙋‍♀️</span> 女朋友視角 (Her Side)
+                    </div>
+                    <div class="twoside-timeline-item">
+                      <strong>23:35：</strong>香港國際機場起飛（香港快運 UO624）。
+                    </div>
+                    <div class="twoside-timeline-item">
+                      <strong>23:35 – 04:40：</strong>高空巡航小睡、聽歌休息。
+                    </div>
+                    <div class="twoside-timeline-item">
+                      <strong>04:40 – 05:00：</strong>航機抵達東京空域，05:00 降落羽田機場跑道。
+                    </div>
+                    <div class="twoside-timeline-item">
+                      <strong>05:00 – 05:25：</strong>下機過關、取行李，步出入境大堂與男友相會！
+                    </div>
+                  </div>
+                </div>
+                <div class="card-from-leg-pill" style="background:#fef3c7; color:#92400e; border-color:#fde68a; text-align:center;">
+                  💞 05:25 甜蜜會合：兩個人喺羽田 T3 入境大堂相見擁抱，一起出發前往百合ヶ丘！
                 </div>
               </div>
             </div>
@@ -1942,7 +2141,7 @@ html_content = '''<!DOCTYPE html>
       <!-- Floating Map Day Selector -->
       <div class="map-overlay-controls">
         <button class="day-selector-btn active" id="map-day-all" onclick="showAllVenuesView()">全部景點</button>
-        <button class="day-selector-btn" id="map-day-1" onclick="selectDayFromMap(1, this)">D1 羽田·SCAJ·鐵人</button>
+        <button class="day-selector-btn" id="map-day-1" onclick="selectDayFromMap(1, this)">D1 平和島·羽田·SCAJ·鐵人</button>
         <button class="day-selector-btn" id="map-day-2" onclick="selectDayFromMap(2, this)">D2 湘南葉山Villa</button>
         <button class="day-selector-btn" id="map-day-3" onclick="selectDayFromMap(3, this)">D3 逗子婚禮·壽司</button>
         <button class="day-selector-btn" id="map-day-4" onclick="selectDayFromMap(4, this)">D4 鶴川超市·成田</button>
@@ -1983,15 +2182,36 @@ html_content = '''<!DOCTYPE html>
   <script>
     // EXACT POINT-TO-POINT TRANSIT LEGS (Tracing actual Tokyo & Shonan railway / highway tracks)
     const legDefinitions = {
+      'heiwajima-onsen': {
+        id: 'heiwajima-onsen',
+        day: 1,
+        title: "天然温泉 平和島 ➔ 羽田空港 (04:40抵達)",
+        sub: "男方視角：宿·天然温泉 平和島 ➔ 早朝巴士前往羽田接機",
+        time: "10/17 04:40",
+        lat: 35.5846,
+        lng: 139.7408,
+        color: "#0284c7",
+        lastStopName: "天然温泉 平和島 (BIGFUN平和島 2F)",
+        vehicle: "🚌",
+        yahooUrl: "https://www.heiwajima-onsen.jp/bus/",
+        routeCoords: [
+          [35.5846, 139.7408], // 天然温泉 平和島
+          [35.5780, 139.7420], // 平和島出口 (環七通り)
+          [35.5700, 139.7480], // 首都高速灣岸線
+          [35.5580, 139.7550], // 昭和島
+          [35.5490, 139.7650], // 羽田空港連絡道
+          [35.5444, 139.7686]  // 羽田空港 第3ターミナル (04:40 抵達)
+        ]
+      },
       'haneda-arrival': {
         id: 'haneda-arrival',
         day: 1,
-        title: "羽田空港 第3ターミナル (Haneda T3)",
-        sub: "香港快運 UO624 抵達 (05:00 清晨)",
+        title: "羽田空港 第3ターミナル (女方UO624抵達 ＆ 會合)",
+        sub: "女方視角：香港快運 UO624 抵達 (05:00 清晨) ➔ 雙人會合",
         time: "10/17 05:00",
         lat: 35.5444,
         lng: 139.7686,
-        color: "#b85d19",
+        color: "#be123c",
         lastStopName: "香港國際機場 (HKG)",
         vehicle: "✈️",
         yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E7%BE%BD%E7%94%B0%E7%A9%BA%E6%B8%AF%E7%AC%AC3%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB&to=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98",
@@ -2405,7 +2625,8 @@ html_content = '''<!DOCTYPE html>
 
     function buildPin(color, dayNum, spotId) {
       let iconContent = `D${dayNum}`;
-      if (spotId.includes('flight') || spotId.includes('arrival')) iconContent = '✈️';
+      if (spotId.includes('heiwajima') || spotId.includes('onsen')) iconContent = '♨️';
+      else if (spotId.includes('flight') || spotId.includes('arrival')) iconContent = '✈️';
       else if (spotId.includes('stella') || spotId.includes('hayama')) iconContent = '🌊';
       else if (spotId.includes('wedding')) iconContent = '💍';
       else if (spotId.includes('sushi')) iconContent = '🍣';
@@ -2422,6 +2643,72 @@ html_content = '''<!DOCTYPE html>
         iconAnchor: [17, 34],
         popupAnchor: [0, -34]
       });
+    }
+
+    // Day 1 Two-Side View Switcher (His Side / Her Side / Side-by-Side)
+    let currentDay1Side = 'his';
+    function switchTwoSideView(side, event, updateMap = true) {
+      if (event) event.stopPropagation();
+      currentDay1Side = side;
+
+      const isHis = side === 'his';
+      const isHer = side === 'her';
+      const isBoth = side === 'both';
+
+      const tabHis = document.getElementById('btn-side-his');
+      const tabHer = document.getElementById('btn-side-her');
+      const tabBoth = document.getElementById('btn-side-both');
+      if (tabHis && tabHer && tabBoth) {
+        tabHis.classList.toggle('active', isHis);
+        tabHer.classList.toggle('active', isHer);
+        tabBoth.classList.toggle('active', isBoth);
+      }
+
+      const detailHis = document.getElementById('side-detail-his');
+      const detailHer = document.getElementById('side-detail-her');
+      const detailBoth = document.getElementById('side-detail-both');
+      if (detailHis && detailHer && detailBoth) {
+        detailHis.style.display = isHis ? 'block' : 'none';
+        detailHer.style.display = isHer ? 'block' : 'none';
+        detailBoth.style.display = isBoth ? 'block' : 'none';
+      }
+
+      const badge = document.getElementById('current-twoside-badge');
+      if (badge) {
+        if (isHis) {
+          badge.innerHTML = '🙋‍♂️ 目前視角：男方 (天然温泉 平和島 ➔ 04:40 抵達羽田接機)';
+          badge.style.background = '#e0f2fe';
+          badge.style.color = '#0369a1';
+          badge.style.borderColor = '#bae6fd';
+        } else if (isHer) {
+          badge.innerHTML = '🙋‍♀️ 目前視角：女方 (香港快運 UO624 ➔ 05:00 抵達羽田)';
+          badge.style.background = '#fce7f3';
+          badge.style.color = '#9d174d';
+          badge.style.borderColor = '#fbcfe8';
+        } else {
+          badge.innerHTML = '💞 雙人並排對照：清晨同步動線 (04:40 ✕ 05:00)';
+          badge.style.background = '#fef3c7';
+          badge.style.color = '#92400e';
+          badge.style.borderColor = '#fde68a';
+        }
+      }
+
+      if (updateMap) {
+        if (isHis) {
+          selectStopLeg('heiwajima-onsen', false);
+        } else if (isHer) {
+          selectStopLeg('haneda-arrival', false);
+        } else {
+          clearActiveLegs();
+          const bounds = L.latLngBounds([
+            [35.5846, 139.7408], // Heiwajima
+            [35.5444, 139.7686], // Haneda T3
+            [35.4500, 139.8500]  // Flight approach
+          ]);
+          map.fitBounds(bounds, { padding: [50, 50], maxZoom: 13 });
+          if (mapPins['heiwajima-onsen']) mapPins['heiwajima-onsen'].openPopup();
+        }
+      }
     }
 
     // Day 2 Hayama Evening Choice Switcher
@@ -2573,7 +2860,10 @@ html_content = '''<!DOCTYPE html>
       }
 
       let targetCardId = spotId;
-      if (spotId === 'hayama-seafood' || spotId === 'hayama-villa') {
+      if (spotId === 'heiwajima-onsen' || spotId === 'haneda-arrival') {
+        targetCardId = 'day1-twoside';
+        switchTwoSideView(spotId === 'heiwajima-onsen' ? 'his' : 'her', null, false);
+      } else if (spotId === 'hayama-seafood' || spotId === 'hayama-villa') {
         targetCardId = 'hayama-evening';
         switchHayamaPlan(spotId === 'hayama-seafood' ? 'seafood' : 'villa', null, false);
       }
@@ -2677,7 +2967,10 @@ html_content = '''<!DOCTYPE html>
       // Highlight corresponding card in drawer
       if (autoScrollCard) {
         let targetCardId = spotId;
-        if (spotId === 'hayama-seafood' || spotId === 'hayama-villa') {
+        if (spotId === 'heiwajima-onsen' || spotId === 'haneda-arrival') {
+          targetCardId = 'day1-twoside';
+          switchTwoSideView(spotId === 'heiwajima-onsen' ? 'his' : 'her', null, false);
+        } else if (spotId === 'hayama-seafood' || spotId === 'hayama-villa') {
           targetCardId = 'hayama-evening';
           switchHayamaPlan(spotId === 'hayama-seafood' ? 'seafood' : 'villa', null, false);
         }
@@ -2896,7 +3189,15 @@ PRODID:-//Tokyo Hayama Romantic Trip//ZH
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
-SUMMARY:抵達：香港快運 UO624 抵達羽田機場
+SUMMARY:男方：天然温泉 平和島 早朝送迎專車前往羽田
+DTSTART;TZID=Asia/Tokyo:20261017T041500
+DTEND;TZID=Asia/Tokyo:20261017T044000
+DESCRIPTION:天然温泉 平和島搭乘 04:15 早朝送迎巴士，04:40 抵達羽田機場第3航廈，精神飽滿守候接機
+LOCATION:天然温泉 平和島 (東京都大田区平和島1-1-1)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:女方：香港快運 UO624 抵達羽田 ＆ 雙人甜蜜會合
 DTSTART;TZID=Asia/Tokyo:20261017T050000
 DTEND;TZID=Asia/Tokyo:20261017T063000
 DESCRIPTION:女朋友抵達東京羽田機場T3入境大堂會合，出發返百合ヶ丘整頓梳洗
