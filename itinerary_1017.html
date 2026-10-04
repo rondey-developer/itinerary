@@ -1402,8 +1402,8 @@
       <span style="font-size:1.2rem;">🍁</span>
       <div>
         <h1 class="brand-title">
-          <span class="brand-title-full">東京 · 葉山 · 逗子 ｜ 秋日雙人浪漫遊</span>
-          <span class="brand-title-mobile">東京 · 葉山 · 逗子</span>
+          <span class="brand-title-full">東京 · 鎌倉 · 逗子 ｜ 秋日雙人浪漫遊</span>
+          <span class="brand-title-mobile">東京 · 鎌倉 · 逗子</span>
         </h1>
       </div>
       <span class="brand-pill">10/17 – 10/20 · 4日3夜</span>
@@ -1419,7 +1419,7 @@
       <button class="btn-nav-action" onclick="downloadCalendarFile()" title="下載日曆檔案 (.ics)">
         <span>📅</span><span class="nav-btn-text-full"> 加落日曆 (.ics)</span><span class="nav-btn-text-short"> 日曆</span>
       </button>
-      <button class="btn-nav-action btn-nav-primary" onclick="copyShareURL()" title="複製分享連結">
+      <button class="btn-nav-primary btn-nav-action" onclick="copyShareURL()" title="複製分享連結">
         <span>🔗</span><span class="nav-btn-text-full"> Share 畀女朋友</span><span class="nav-btn-text-short"> 分享</span>
       </button>
     </div>
@@ -1463,8 +1463,8 @@
             <div class="day-title-wrap">
               <span class="day-badge-tag badge-d1">Day 1</span>
               <div class="day-title-text">
-                <h3>10/17 (六) · 平和島溫泉 ‧ 羽田接機會合 ‧ 咖啡大展 ‧ 法國鐵人正餐</h3>
-                <span>平和島早朝的士直達(04:40) ✕ UO624抵達(05:00) ➔ 百合ヶ丘整頓 ➔ SCAJ 2026咖啡展 ➔ La Rochelle 山王頂級法餐</span>
+                <h3>10/17 (六) · 平和島溫泉 ‧ 羽田接機會合 ‧ 咖啡大展 ‧ 澀谷鳥貴族 ‧ 傳奇酒吧 The SG Club</h3>
+                <span>平和島早朝的士直達(04:40) ✕ UO624抵達(05:00) ➔ 百合ヶ丘整頓 ➔ SCAJ 2026咖啡展 ➔ 澀谷 鳥貴族 (串燒居酒屋) ➔ 亞洲50大 The SG Club (微醺特調)</span>
               </div>
             </div>
             <div class="day-accordion-control">
@@ -1642,59 +1642,94 @@
                 <span class="venue-location-text">📍 東京都江東区有明3-11-1 東京ビッグサイト</span>
                 <div class="venue-actions">
                   <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('scaj-expo', event)">🗺️ 路線</button>
-                  <a href="https://transit.yahoo.co.jp/search/result?from=%E5%9B%BD%E9%9A%9B%E5%B1%95%E7%A4%BA%E5%A0%B4&to=%E6%BA%9C%E6%B1%A0%E5%B1%B1%E7%8E%8B" target="_blank" class="btn-action-pill pill-yahoo">🚆 Yahoo! 乘換</a>
+                  <a href="https://transit.yahoo.co.jp/search/result?from=%E5%9B%BD%E9%9A%9B%E5%B1%95%E7%A4%BA%E5%A0%B4&to=%E6%B8%8B%E8%B0%B7" target="_blank" class="btn-action-pill pill-yahoo">🚆 Yahoo! 往澀谷</a>
                   <a href="https://maps.google.com/?q=Tokyo+Big+Sight" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
                 </div>
               </div>
             </div>
 
-            <!-- Stop 4: Dinner at La Rochelle Sanno -->
-            <div class="venue-card" id="card-la-rochelle" onclick="selectStopLeg('la-rochelle')">
+            <!-- Stop 4: Dinner at Torikizoku Shibuya Jinnan -->
+            <div class="venue-card" id="card-torikizoku-shibuya" onclick="selectStopLeg('torikizoku-shibuya')">
               <div class="card-top-row">
-                <span class="card-time-pill">⏰ 19:00 (晚上 7:00 正式晚宴)</span>
-                <span class="card-status-pill pill-booking">✓ 19:00 預約確立</span>
+                <span class="card-time-pill">⏰ 18:30 – 20:30 (晚餐居酒屋串燒)</span>
+                <span class="card-status-pill pill-sightseeing" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">🍢 日式國民串燒居酒屋</span>
               </div>
-              <div class="venue-japanese-name">🍽️ ラ・ロシェル山王 (La Rochelle Sanno)</div>
-              <div class="venue-chinese-subtitle">「料理之鐵人」坂井宏行 頂級法式正餐 ‧ 東急 Capitol Tower 1F</div>
-              <div class="card-from-leg-pill" style="background:#fce7f3; color:#9d174d; border-color:#fbcfe8;">
-                🚇 國際展示場 ➔ 臨海線至大井町/新橋 ➔ 東京Metro銀座線至「溜池山王駅」6號出口直通東急Capitol Tower 1F (約35分鐘)
+              <div class="venue-japanese-name">🍢 鳥貴族 渋谷神南店 (Torikizoku Shibuya Jinnan)</div>
+              <div class="venue-chinese-subtitle">東京都渋谷区神南1-19-3 ハイマンテン神南ビル B1F ‧ 經典烤雞串燒 ‧ 熱鬧地道氛圍</div>
+              <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">
+                🚆 國際展示場駅 ➔ 臨海線直通 JR 埼京線至「澀谷駅」(約20分鐘直達免轉車) ➔ 八公口/神南方向步行5分鐘
               </div>
               <p class="venue-details">
-                日本傳奇節目《料理之鐵人》法國料理鐵人——坂井宏行（Hiroyuki Sakai）創立嘅頂級法式食府！坐落於永田町東急 Capitol Tower，店內挑高穹頂水晶燈與精緻和洋古典藝術交織。主廚將細膩日本旬感食材融入傳統法式皇家醬汁，享受今晚最優雅華麗嘅法式燭光雙人晚宴！
+                取消拘謹法餐，轉戰超有煙火氣息嘅日本國民居酒屋「鳥貴族」！坐落於澀谷潮流神南商圈地下，全品項超值均一價（每樣僅約 ¥370）。熱氣騰騰嘅炭火香氣伴隨熱鬧歡樂氛圍，兩個人可以完全無拘無束、大口食肉大啖飲酒！
               </p>
               <div class="venue-highlight-note">
-                <strong>💡 著裝禮儀：</strong>建議 Smart Casual（男士請穿著長褲與皮鞋/休閒西裝，女士穿著優雅洋裝或精緻裙裝；避免涼鞋短褲）。<br>
-                <strong>🍷 晚宴享受：</strong>主廚精選季節時令品味套餐，推薦加配侍酒師 Wine Pairing 或無酒精法式香檳特飲。<br>
-                <strong>🔗 官網資訊：</strong><a href="https://www.la-rochelle.co.jp/sp/" target="_blank" style="color:#985635; text-decoration:underline;">la-rochelle.co.jp</a> ‧ 千代田區永田町2-10-3。
+                <strong>🌟 必點招牌美食：</strong><br>
+                ‧ <strong>名物 貴族焼（たれ / 塩 / スパイス）：</strong>超大份量國產雞腿肉蔥串，外焦裏嫩汁水飽滿！<br>
+                ‧ <strong>とり釜飯（現炊雞肉釜飯）：</strong>入座必先點！生米配雞高湯現煮30分鐘，底層焦香鍋巴超級正！<br>
+                ‧ <strong>炸雞軟骨 ＆ 脆炸芝士（カマンベールコロッケ）：</strong>居酒屋佐酒極品。<br>
+                ‧ <strong>飲品：</strong>Premium The Malt's 生啤酒、翠 Gin Soda、黑糖梅酒蘇打。<br>
+                <strong>💡 步行無縫銜接：</strong>食飽後步出大廈，沿神南街道漫步僅 3 分鐘（200米）即可直達傳奇酒吧 The SG Club！
               </div>
               <div class="card-footer-row">
-                <span class="venue-location-text">📍 東京都千代田区永田町2-10-3 東急キャピトルタワー1F</span>
+                <span class="venue-location-text">📍 東京都渋谷区神南1-19-3 ハイマンテン神南ビル B1F</span>
                 <div class="venue-actions">
-                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('la-rochelle', event)">🗺️ 路線</button>
-                  <a href="https://transit.yahoo.co.jp/search/result?from=%E6%BA%9C%E6%B1%A0%E5%B1%B1%E7%8E%8B&to=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98" target="_blank" class="btn-action-pill pill-yahoo">🚆 Yahoo! 乘換</a>
-                  <a href="https://maps.google.com/?q=La+Rochelle+Sanno+Tokyo" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('torikizoku-shibuya', event)">🗺️ 路線</button>
+                  <a href="https://torikizoku.co.jp/" target="_blank" class="btn-action-pill">🍢 鳥貴族官網</a>
+                  <a href="https://maps.google.com/?q=Torikizoku+Shibuya+Jinnan" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
                 </div>
               </div>
             </div>
 
-            <!-- Stop 5: Return to Yurigaoka -->
-            <div class="venue-card" id="card-day1-night" onclick="selectStopLeg('day1-night')">
+            <!-- Stop 5: Cocktails at The SG Club -->
+            <div class="venue-card" id="card-sg-club-shibuya" onclick="selectStopLeg('sg-club-shibuya')">
               <div class="card-top-row">
-                <span class="card-time-pill">⏰ 21:45 – 22:30 (甜蜜歸途)</span>
-                <span class="card-status-pill pill-sightseeing">🚆 小田急快速回程</span>
+                <span class="card-time-pill">⏰ 20:45 – 22:30 (傳奇微醺之夜)</span>
+                <span class="card-status-pill pill-booking" style="background:#fce7f3; color:#9d174d; border-color:#fbcfe8;">🍸 World / Asia's 50 Best Bars</span>
               </div>
-              <div class="venue-japanese-name">🌙 百合ヶ丘駅帰着 (Return to Yurigaoka)</div>
-              <div class="venue-chinese-subtitle">溜池山王/國會議事堂前 ➔ 東京Metro千代田線直通小田急線 ➔ 百合ヶ丘</div>
-              <div class="card-from-leg-pill" style="background:#f1f5f9; color:#475569; border-color:#e2e8f0;">
-                🚇 溜池山王/國會議事堂前駅 ➔ 東京Metro千代田線直通代代木上原 ➔ 小田急快速急行至新百合ヶ丘/百合ヶ丘 (約38分鐘)
+              <div class="venue-japanese-name">🍸 The SG Club (ザ エスジー クラブ)</div>
+              <div class="venue-chinese-subtitle">東京都渋谷区神南1-7-8 ‧ 世界調酒巨擘「後閑信吾」旗艦名作 ‧ 跨越江戶與紐約的微醺美學</div>
+              <div class="card-from-leg-pill" style="background:#fee2e2; color:#991b1b; border-color:#fecaca;">
+                🚶 鳥貴族神南店步出 ➔ 沿神南小巷步行約 3 分鐘 (200公尺) 悠閒直達
               </div>
               <p class="venue-details">
-                浪漫法式晚宴過後，散步至溜池山王站，搭乘千代田線/小田急直通列車舒服返百合ヶ丘。為第二日即將出發嘅湘南葉山海邊奢華別墅之旅好好休息充電！
+                全球雞尾酒迷必朝聖嘅頂級殿堂！世界調酒大賽冠軍後閑信吾（Shingo Gokan）打造，連續多年高居「The World's 50 Best Bars」與「Asia's 50 Best Bars」前列。以 1860 年日本武士赴美遣歐使團為靈感，將和風食材、日本茶與西方精緻調酒完美交融。在充滿質感的復古空間中，兩人對坐品味驚艷味蕾的極致特調！
+              </p>
+              <div class="venue-highlight-note">
+                <strong>🏛️ 樓層風格特色：</strong><br>
+                ‧ <strong>1F「Guzzle」：</strong>紐約下城街頭活力風格，提供精緻 Highball、茶調酒與輕鬆小食。<br>
+                ‧ <strong>B1「Sip」：</strong>神秘典雅 Speakeasy 地下酒吧，沉浸式木質調酒台，品嚐深邃複雜嘅招牌經典雞尾酒。<br>
+                ‧ <strong>2F「Savor」：</strong>古董雪茄與珍稀干邑烈酒沙龍。<br>
+                <strong>🍸 招牌推薦：</strong>綠茶琴酒特調、SG Shochu 燒酎雞尾酒、當季秋日水果風味調酒。<br>
+                <strong>🔗 官網與預約：</strong><a href="https://tablecheck.com/shops/the-sg-club/reserve" target="_blank" style="color:#985635; text-decoration:underline;">TableCheck 線上預約 / 現場候位</a> ‧ 電話 03-6427-0204。
+              </div>
+              <div class="card-footer-row">
+                <span class="venue-location-text">📍 東京都渋谷区神南1-7-8 The SG Club</span>
+                <div class="venue-actions">
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('sg-club-shibuya', event)">🗺️ 路線</button>
+                  <a href="https://maps.google.com/?q=The+SG+Club+Tokyo" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stop 6: Return to Yurigaoka -->
+            <div class="venue-card" id="card-day1-night" onclick="selectStopLeg('day1-night')">
+              <div class="card-top-row">
+                <span class="card-time-pill">⏰ 22:45 – 23:25 (微醺回程)</span>
+                <span class="card-status-pill pill-sightseeing">🚆 純電車便捷返家</span>
+              </div>
+              <div class="venue-japanese-name">🌙 澀谷 ➔ 百合ヶ丘駅帰着 (Return to Yurigaoka)</div>
+              <div class="venue-chinese-subtitle">澀谷駅 ➔ 京王井之頭線至下北澤 ➔ 小田急快速急行至百合ヶ丘 (約35分鐘)</div>
+              <div class="card-from-leg-pill" style="background:#f1f5f9; color:#475569; border-color:#e2e8f0;">
+                🚆 澀谷駅 ➔ 京王井之頭線至下北澤 (4分) ➔ 無縫轉乘小田急快速急行直達百合ヶ丘 (約32-35分鐘純鐵路)
+              </div>
+              <p class="venue-details">
+                帶住鳥貴族串燒嘅滿足感與 The SG Club 嘅美妙微醺，漫步返回澀谷站。搭乘井之頭線於下北澤轉小田急快速急行，舒適直抵百合ヶ丘。為第二日即將啟程嘅鎌倉古都巡禮與海景酒店 BBQ 之旅好好休息充電！
               </p>
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 神奈川県川崎市麻生区百合丘</span>
                 <div class="venue-actions">
                   <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('day1-night', event)">🗺️ 路線</button>
+                  <a href="https://transit.yahoo.co.jp/search/result?from=%E6%B8%8B%E8%B0%B7&to=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98" target="_blank" class="btn-action-pill pill-yahoo">🚆 Yahoo! 乘換</a>
                   <a href="https://maps.google.com/?q=Yurigaoka+Station" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
                 </div>
               </div>
@@ -1709,8 +1744,8 @@
             <div class="day-title-wrap">
               <span class="day-badge-tag badge-d2">Day 2</span>
               <div class="day-title-text">
-                <h3>10/18 (日) · 湘南逗子海岸漫步 ‧ 頂級食材採購 ‧ 葉山別墅私廚 ‧ 桑拿星空夜</h3>
-                <span>百合ヶ丘 ➔ 逗子駅 (10:00抵達 ‧ 寄放行李) ➔ 逗子海岸 & なぎさ橋珈琲 ➔ つく志海鮮午膳 ➔ スズキヤ採購 ➔ 的士直達 (15:00 Check-in) ➔ 雙人私廚</span>
+                <h3>10/18 (日) · 古都鎌倉散策巡禮 ‧ 奢華海景酒店 THE HARBOR TERRACE ‧ 露台夕陽 Island BBQ</h3>
+                <span>百合ヶ丘 ➔ 10:00 抵達鎌倉 (小町通 ‧ 鶴岡八幡宮 ‧ 午膳) ➔ 的士沿海直達 ➔ 16:00 Check-in THE HARBOR TERRACE ➔ 海を目の前に地産食材で楽しむ【アイランドスタイルBBQプラン】</span>
               </div>
             </div>
             <div class="day-accordion-control">
@@ -1721,144 +1756,113 @@
 
           <div class="day-block-body">
 
-            <!-- Stop 1: Morning Train to Zushi -->
-            <div class="venue-card" id="card-hayama-depart" onclick="selectStopLeg('hayama-depart')">
+            <!-- Stop 1: Morning Train to Kamakura -->
+            <div class="venue-card" id="card-kamakura-depart" onclick="selectStopLeg('kamakura-depart')">
               <div class="card-top-row">
-                <span class="card-time-pill">⏰ 08:50 – 10:00 (晨光啟程 ‧ 直達湘南)</span>
-                <span class="card-status-pill pill-sightseeing">🚆 10:00 準時抵達逗子</span>
+                <span class="card-time-pill">⏰ 08:45 – 10:00 (晨光啟程 ‧ 直達鎌倉)</span>
+                <span class="card-status-pill pill-sightseeing">🚆 10:00 準時抵達鎌倉</span>
               </div>
-              <div class="venue-japanese-name">🌿 百合ヶ丘出発 ➔ 湘南逗子駅へ</div>
-              <div class="venue-chinese-subtitle">收拾一晚輕便行裝 ‧ 純鐵路南下相模灣 ‧ 10:00 抵達逗子站寄放行李</div>
+              <div class="venue-japanese-name">🌿 百合ヶ丘出発 ➔ 湘南鎌倉駅へ</div>
+              <div class="venue-chinese-subtitle">收拾一晚輕裝 ‧ 純鐵路直奔古都鎌倉 ‧ 10:00 抵達東口寄放行李</div>
               <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">
-                🚆 百合ヶ丘 ➔ 町田轉 JR 橫濱線至橫濱 ➔ 轉 JR 橫須賀線直達逗子駅 (約65分鐘) ➔ 10:00 準時抵達
+                🚆 百合ヶ丘 ➔ 町田轉 JR 橫濱線至橫濱 ➔ 轉 JR 橫須賀線直達鎌倉駅 (約65分鐘) ➔ 10:00 準時抵達
               </div>
               <p class="venue-details">
-                晨光熹微，兩個人帶上一晚去葉山別墅嘅輕便行李，搭乘純鐵路南下湘南海岸！準時早上 10:00 抵達逗子站。出閘後先將隨身行李放入車站東口嘅 Coin Locker 寄物櫃，兩手空空、無拘無束展開逗子海濱慢活漫遊！
+                晨光熹微，兩個人帶上一晚前往海景酒店嘅輕便行李，搭乘純電車南下湘南古都！準時早上 10:00 抵達鎌倉站。出閘後先將隨身行李放入車站東口嘅 Coin Locker 寄物櫃，兩手空空、無拘無束展開鎌倉古都慢活漫遊！
               </p>
               <div class="venue-highlight-note">
-                <strong>🛅 行李寄放攻略：</strong>JR 逗子站東口閘內與閘外均設有電子感應 Coin Locker，可直接用 Suica / Pasmo 寄存過夜行李，輕鬆出遊零負擔！
+                <strong>🛅 行李寄放攻略：</strong>JR 鎌倉站東口設有電子感應 Coin Locker 寄物櫃與觀光案內所行李寄存服務，可直接用 Suica / Pasmo 寄存，輕鬆遊覽鎌倉零負擔！
               </div>
               <div class="card-footer-row">
-                <span class="venue-location-text">📍 神奈川県逗子市 逗子駅東口</span>
+                <span class="venue-location-text">📍 神奈川県鎌倉市 鎌倉駅東口</span>
                 <div class="venue-actions">
-                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('hayama-depart', event)">🗺️ 路線</button>
-                  <a href="https://transit.yahoo.co.jp/search/result?from=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98&to=%E9%80%97%E5%AD%90" target="_blank" class="btn-action-pill pill-yahoo">🚆 Yahoo! 乘換</a>
-                  <a href="https://maps.google.com/?q=Zushi+Station" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('kamakura-depart', event)">🗺️ 路線</button>
+                  <a href="https://transit.yahoo.co.jp/search/result?from=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98&to=%E9%8E%8C%E5%80%89" target="_blank" class="btn-action-pill pill-yahoo">🚆 Yahoo! 乘換</a>
+                  <a href="https://maps.google.com/?q=Kamakura+Station" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
                 </div>
               </div>
             </div>
 
-            <!-- Stop 2: Morning Coastal Stroll & Seaside Cafe & Lunch -->
-            <div class="venue-card" id="card-zushi-stroll" onclick="selectStopLeg('zushi-stroll')">
+            <!-- Stop 2: Kamakura Stroll & Tsurugaoka Hachimangu & Lunch -->
+            <div class="venue-card" id="card-kamakura-stroll" onclick="selectStopLeg('kamakura-stroll')">
               <div class="card-top-row">
-                <span class="card-time-pill">⏰ 10:15 – 13:45 (海濱慢活 ‧ 露台咖啡 ‧ 地魚午膳)</span>
-                <span class="card-status-pill pill-sightseeing" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">🏖️ 逗子海岸慢活巡禮</span>
+                <span class="card-time-pill">⏰ 10:15 – 15:30 (古都漫步 ‧ 參拜祈福 ‧ 特色午膳)</span>
+                <span class="card-status-pill pill-sightseeing" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">⛩️ 鎌倉古都慢活漫遊</span>
               </div>
-              <div class="venue-japanese-name">🏖️ 逗子海岸散策 ‧ なぎさ橋珈琲 ‧ 老舗 つく志午膳</div>
-              <div class="venue-chinese-subtitle">逗子銀座老街 ➔ 逗子海岸無敵海景 ➔ なぎさ橋木棧海景露台晨啡 ➔ 73年老店相模灣現撈刺身定食</div>
+              <div class="venue-japanese-name">⛩️ 鎌倉小町通散策 ‧ 鶴岡八幡宮參拜 ‧ 在地海鮮野菜午膳</div>
+              <div class="venue-chinese-subtitle">小町通文青小食 ➔ 若宮大路段葛參道 ➔ 鶴岡八幡宮本宮祈福 ➔ 吻仔魚天婦羅定食午膳</div>
               <div class="card-from-leg-pill" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">
-                🚶 逗子站東口 ➔ 逗子銀座步行12分鐘 ➔ 逗子海岸沙灘 ➔ なぎさ橋珈琲 ➔ 步行回站前「つく志」午膳
+                🚶 鎌倉站東口出發 ➔ 穿梭小町通 ➔ 步行至鶴岡八幡宮 ➔ 享用午餐 ➔ 15:30 返回東口取行李
               </div>
               <p class="venue-details">
-                採購前嘅 4 小時湘南海濱慢活時光！由逗子站前穿過充滿地道風情嘅逗子銀座老街，漫步至金黃細沙嘅逗子海岸。踏在沙灘邊感受陣陣秋日清爽海風，遠眺相模灣海面帆船與遠處富士山日出後嘅剪影。
+                沈浸在古都鎌倉嘅悠閒秋日氛圍！穿過充滿文藝氣息嘅小町通老街，品嚐熱辣辣現烤大佛仙貝、鎌倉茶々特濃抹茶雪糕與手沖精品咖啡。沿著若宮大路段葛漫步至關東古社「鶴岡八幡宮」，登上百段石階俯瞰鎌倉市區與若宮大路參道，為兩人祈求幸福安康！
               </p>
               <div class="venue-highlight-note">
-                <strong>☕ 【晨光海景咖啡】なぎさ橋珈琲 逗子店：</strong>坐落於逗子海岸南端渚橋旁（逗子市新宿4-7-1，步行或的士4分鐘）。特設超寬闊嘅無遮蔽戶外木棧露台，正對一整片蔚藍海灣與海浪聲，點杯招牌手沖冰咖啡或法式多士，極度寫意放鬆！<br>
-                <strong>🐟 【海鮮午膳推薦】つく志（Tsukushi）：</strong>逗子 1951 年創立嘅 73 年傳奇海鮮名店（逗子站步行2分鐘，スズキヤ隔籬）。週日 11:00 起營業，當地居民極力推崇嘅「相模灣當日現撈刺身定食」、酥炸極鮮竹莢魚（アジフライ）與醬煮金目鯛，鮮味無敵！<br>
-                <strong>💡 靈活快閃備選：</strong>若當日想去古都老街，逗子搭 JR 橫須賀線<strong>只需 1 個站 4 分鐘</strong>即可直達【鎌倉站】，漫步小町通品嚐小食與參拜鶴岡八幡宮，下午 13:45 搭 4 分鐘火車回逗子站採購！
+                <strong>🍱 午膳美食推薦：</strong><br>
+                ‧ <strong>鎌倉 秋本 (Akimoto)：</strong>小町通名店，品嚐相模灣產地直送名物「生吻仔魚與酥炸天婦羅丼飯定食（生しらす丼）」，配搭色彩繽紛嘅在地鎌倉野菜。<br>
+                ‧ <strong>咖啡散策：</strong>推薦到小町通旁嘅「VERVE Coffee Roasters」或老牌「イワタ珈琲店」歎杯高水準手沖與經典厚鬆餅。<br>
+                <strong>🚕 銜接行程：</strong>約 15:30 返回鎌倉站東口取回寄存行李，站前 Taxi Rotary 搭乘的士直奔海邊酒店！
               </div>
               <div class="card-footer-row">
-                <span class="venue-location-text">📍 神奈川県逗子市 逗子海岸 ＆ なぎさ橋珈琲</span>
+                <span class="venue-location-text">📍 神奈川県鎌倉市雪ノ下2-2-1 鶴岡八幡宮 ＆ 小町通</span>
                 <div class="venue-actions">
-                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('zushi-stroll', event)">🗺️ 路線</button>
-                  <a href="https://maps.google.com/?q=Nagisabashi+Coffee+Zushi" target="_blank" class="btn-action-pill">☕ なぎさ橋珈琲</a>
-                  <a href="https://maps.google.com/?q=Tsukushi+Zushi" target="_blank" class="btn-action-pill">🐟 つく志 地圖</a>
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('kamakura-stroll', event)">🗺️ 路線</button>
+                  <a href="https://www.hachimangu.or.jp/" target="_blank" class="btn-action-pill">⛩️ 八幡宮官網</a>
+                  <a href="https://maps.google.com/?q=Tsurugaoka+Hachimangu+Kamakura" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
                 </div>
               </div>
             </div>
 
-            <!-- Stop 3: Grocery Shopping at Zushi Supermarket -->
-            <div class="venue-card" id="card-zushi-supermarket" onclick="selectStopLeg('zushi-supermarket')">
+            <!-- Stop 3: Taxi to THE HARBOR TERRACE Check-in 16:00 -->
+            <div class="venue-card" id="card-harbor-terrace-checkin" onclick="selectStopLeg('harbor-terrace-checkin')">
               <div class="card-top-row">
-                <span class="card-time-pill">⏰ 14:05 – 14:50 (站前頂級食材採購)</span>
-                <span class="card-status-pill pill-booking" style="background:#ecfdf5; color:#065f46; border-color:#a7f3d0;">🛒 逗子老牌高級超市</span>
+                <span class="card-time-pill">⏰ 15:35 – 16:00 (的士直達 ‧ 16:00 準時 Check-in)</span>
+                <span class="card-status-pill pill-booking">🏨 16:00 準時入住</span>
               </div>
-              <div class="venue-japanese-name">🛒 スズキヤ 逗子駅前店 (SUZUKIYA Zushi Station-front Store)</div>
-              <div class="venue-chinese-subtitle">神奈川県逗子市逗子1-4-1 ‧ JR逗子站東口步行50秒 ‧ 湘南セレブ御用達老牌高級精品超市</div>
-              <div class="card-from-leg-pill" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">
-                🚶 JR 逗子駅東口出閘 ➔ 站前廣場過馬路 50 秒直達 ➔ 採購完對面即是的士站
-              </div>
-              <p class="venue-details">
-                今晚喺海景別墅下廚嘅秘密武器！創立於逗子嘅老牌精品超市「スズキヤ (SUZUKIYA)」，一直係湘南葉山名流最信任嘅頂級食材庫。店內設有在地名物「葉山牛」冷藏專櫃、相模灣當日捕撈地魚鮮魚刺身、三浦新鮮蔬菜、進口高級調味料與豐富嘅清酒香檳紅白酒庫，一站式買齊今晚私廚大餐所需嘅一切！
-              </p>
-              <div class="venue-highlight-note">
-                <strong>⚠️ 別墅廚房關鍵須知：</strong><br>
-                ‧ <strong>自備調味料：</strong>STELLA STORIA 備有完整 IH 爐、平底鍋、湯鍋、刀具砧板與紅酒杯，但<strong>基於衛生法規完全不提供任何調味料</strong>！務必在此買小瓶橄欖油/沙律油、鹽、黑椒粒、牛油、醬油等。<br>
-                <strong>🥩 採購推薦清單：</strong><br>
-                ‧ <strong>極上和牛：</strong>A5 葉山牛（はやまぎゅう）沙朗牛排或壽喜燒/燒肉薄切。<br>
-                ‧ <strong>鮮魚海鮮：</strong>相模灣產地直送刺身盛合、大蝦、特大北海道帆立貝。<br>
-                ‧ <strong>蔬菜與酒水：</strong>三浦水菜/小蕃茄、日本洋蔥菇類、冰鎮法國香檳 (Champagne) 或白酒。<br>
-                <strong>🚕 銜接的士站：</strong>採購完拎住購物袋，超市正門對面 1 分鐘就係 JR 逗子站東口 Taxi Rotary，即時搭車直奔別墅！
-              </div>
-              <div class="card-footer-row">
-                <span class="venue-location-text">📍 神奈川県逗子市逗子1-4-1 スズキヤ 逗子駅前店</span>
-                <div class="venue-actions">
-                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('zushi-supermarket', event)">🗺️ 路線</button>
-                  <a href="https://www.suzukiya-inc.jp/" target="_blank" class="btn-action-pill">🛒 超市官網</a>
-                  <a href="https://maps.google.com/?q=Suzukiya+Zushi" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Stop 3: Taxi Direct & STELLA STORIA HAYAMA Check-in -->
-            <div class="venue-card" id="card-stella-storia" onclick="selectStopLeg('stella-storia')">
-              <div class="card-top-row">
-                <span class="card-time-pill">⏰ 14:53 – 15:00 (的士直達 ‧ 準時 Check-in)</span>
-                <span class="card-status-pill pill-booking">🏨 15:00 準時入住</span>
-              </div>
-              <div class="venue-japanese-name">🌊 STELLA STORIA HAYAMA (ステラストーリア葉山)</div>
-              <div class="venue-chinese-subtitle">Seaside House with Private Sauna & Open-Air Bath ‧ 海景私人芬蘭桑拿與露天風呂別墅</div>
+              <div class="venue-japanese-name">🌊 THE HARBOR TERRACE (ザ・ハーバーテラス)</div>
+              <div class="venue-chinese-subtitle">〒249-0008 神奈川県逗子市小坪5-14-7 ‧ 相模灣小坪海岸第一排 ‧ 全室富士山海景奢華露台套房</div>
               <div class="card-from-leg-pill" style="background:#ccfbf1; color:#0f766e; border-color:#99f6e4;">
-                🚕 逗子駅東口 Taxi 站上車 ➔ 7分鐘直達別墅大門 (約 ¥1,500) ➔ 15:00 準時辦理入住
+                🚕 鎌倉駅東口 Taxi 站上車 ➔ 沿海行駛 10-12 分鐘直達酒店大堂 (車費約 ¥1,800 – ¥2,200) ➔ 16:00 辦理入住
               </div>
               <p class="venue-details">
-                今趟旅程最重頭戲嘅奢華住宿！提著剛剛在スズキヤ買到嘅滿滿頂級和牛、鮮魚海鮮與香檳，喺逗子站東口直接搭乘的士，沿著相模灣海岸線 7 分鐘平穩直達別墅門口。準時於 15:00 Check-in 入住，行李與食材直入室內，隨即開啟專屬兩個人嘅私密海濱假期！
+                今趟旅程最夢幻浪漫嘅海邊奢華住宿！坐落於逗子小坪海岸懸崖海濱第一排，直面波瀾壯闊嘅相模灣、江之島與富士山。每間客房均擁有開闊私密嘅無邊際海景露台。16:00 準時辦理入住，走進房間放低行李，迎面而來就係一整片無遮擋嘅蔚藍海景與微涼海風！
               </p>
               <div class="venue-highlight-note">
-                <strong>🧊 食材妥善保存：</strong>別墅配備雙門大雪櫃與冷凍庫，抵達後先將牛排、刺身、蔬菜與香檳冷藏。<br>
-                <strong>🧖 私人芬蘭桑拿 ＆ 露天風呂：</strong>趁著日落前，先換上泳衣享受木質芬蘭桑拿（自己澆淋精油熱石 Löyly），再跳入戶外露天深浸 Jacuzzi 風呂，望住相模灣蔚藍海浪與遠處富士山日落晚霞，浪漫至極！
+                <strong>🌅 富士山夕陽絕景：</strong>秋日日落約在 17:00 左右，入住後可即時在露台躺椅上換上放鬆服裝，一邊欣賞金黃色落日將相模灣海面染成玫瑰金色，富士山剪影清晰矗立於天際！<br>
+                <strong>💍 婚禮絕佳地利：</strong>THE HARBOR TERRACE 距離明天好友婚禮嘅「Riviera 逗子 Marina」僅 200 多公尺（步行 3 分鐘），完全免塞車、免奔波！
               </div>
               <div class="card-footer-row">
-                <span class="venue-location-text">📍 神奈川県三浦郡葉山町堀内255-7</span>
+                <span class="venue-location-text">📍 神奈川県逗子市小坪5-14-7 THE HARBOR TERRACE</span>
                 <div class="venue-actions">
-                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('stella-storia', event)">🗺️ 路線</button>
-                  <a href="https://maps.google.com/?q=Kanagawa+Hayama+Horiuchi+255-7" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('harbor-terrace-checkin', event)">🗺️ 路線</button>
+                  <a href="https://the-harbor-terrace.com/" target="_blank" class="btn-action-pill">🏨 酒店官網</a>
+                  <a href="https://maps.google.com/?q=The+Harbor+Terrace+Zushi" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
                 </div>
               </div>
             </div>
 
-            <!-- Stop 4: Self-Cooking & Evening at Villa -->
-            <div class="venue-card dualplan-card" id="card-hayama-cooking" onclick="selectStopLeg('hayama-cooking')">
+            <!-- Stop 4: Island Style BBQ Dinner at Terrace -->
+            <div class="venue-card dualplan-card" id="card-harbor-terrace-bbq" onclick="selectStopLeg('harbor-terrace-bbq')">
               <div class="card-top-row">
-                <span class="card-time-pill">⏰ 17:30 – 21:30 (海景私廚時光)</span>
+                <span class="card-time-pill">⏰ 17:00 – 21:00 (海景露台私人 BBQ)</span>
                 <span class="card-status-pill" id="current-plan-badge" style="background:#e0f2fe; color:#0369a1; border:1px solid #bae6fd;">
-                  ✨ 推薦料理：【菜單A】極上葉山牛牛排 ＆ 海鮮鐵板香檳宴
+                  ✨ 預約確立：海を目の前に地産食材で楽しむ【アイランドスタイルBBQプラン】
                 </span>
               </div>
-              <div class="venue-japanese-name">🍽️ STELLA STORIA 海景雙人私廚晚宴 (Romantic Home Cooking)</div>
-              <div class="venue-chinese-subtitle">現代化開放式海景廚房 ‧ 親手烹煮極上葉山牛與相模灣海鮮 ‧ 芬蘭桑拿 ‧ 露天風呂賞富士山夕陽</div>
+              <div class="venue-japanese-name">🥩 海を目の前に地産食材で楽しむ【アイランドスタイルBBQプラン】</div>
+              <div class="venue-chinese-subtitle">THE HARBOR TERRACE 專屬私人海景露台 ‧ 美國 Weber 燒烤爐 ‧ 地產海鮮與特選和牛 ‧ 富士山落日香檳盛宴</div>
 
               <!-- Interactive Selector Buttons -->
               <div class="dualplan-toggle-bar">
                 <button class="dualplan-tab-btn active" id="btn-plan-steak" onclick="switchCookingMenu('steak', event)">
                   <span class="tab-icon">🥩</span>
-                  <span class="tab-title">菜單 A：葉山牛鐵板燒</span>
-                  <span class="tab-badge">極上牛排 ‧ 蒜香帆立貝 ‧ 香檳</span>
+                  <span class="tab-title">BBQ 盛宴：地產嚴選食材</span>
+                  <span class="tab-badge">和牛牛排 ‧ 現撈海鮮 ‧ 產地蔬菜</span>
                 </button>
                 <button class="dualplan-tab-btn" id="btn-plan-hotpot" onclick="switchCookingMenu('hotpot', event)">
-                  <span class="tab-icon">🍲</span>
-                  <span class="tab-title">菜單 B：和牛鮮魚壽喜燒</span>
-                  <span class="tab-badge">暖心鍋物 ‧ 三浦地魚 ‧ 地酒</span>
+                  <span class="tab-icon">🌅</span>
+                  <span class="tab-title">露台氣氛：日落香檳星空</span>
+                  <span class="tab-badge">富士山夕陽 ‧ 浪潮之聲 ‧ 奢華放鬆</span>
                 </button>
               </div>
 
@@ -1866,52 +1870,53 @@
               <div class="dualplan-compare-grid">
                 <div class="compare-col active-col col-seafood" id="col-summary-steak" onclick="switchCookingMenu('steak', event)">
                   <div class="compare-col-header" style="color:#0369a1;">
-                    <span>🥩</span> 菜單 A：極上葉山牛牛排 ＆ 鐵板海鮮香檳宴
+                    <span>🥩</span> 頂級食材：【アイランドスタイルBBQ】特選盛宴
                   </div>
-                  <div class="compare-col-feature"><strong>主菜：</strong>スズキヤ 買入的 A5 葉山牛厚切沙朗牛排、香蒜牛油煎相模灣新鮮帶子與大蝦。</div>
-                  <div class="compare-col-feature"><strong>配菜：</strong>三浦高原水菜沙律佐胡麻醬、微波暖法式小餐包、冰鎮法國香檳。</div>
-                  <div class="compare-col-feature"><strong>氣氛：</strong>落日餘暉下邊煎牛排邊碰杯，極度羅曼蒂克！</div>
+                  <div class="compare-col-feature"><strong>食材規格：</strong>酒店備妥相模灣新鮮捕撈大蝦、特大鮮干貝、特選厚切和牛牛排、地產三浦時令野菜串燒。</div>
+                  <div class="compare-col-feature"><strong>設備：</strong>專屬露台美國頂級 Weber 戶外燒烤爐，受熱均勻，鎖住肉汁與海鮮鮮味。</div>
+                  <div class="compare-col-feature"><strong>風味：</strong>主廚調配世界各國 Island Style 特選香料與特調 BBQ 醬汁。</div>
                 </div>
                 <div class="compare-col col-villa" id="col-summary-hotpot" onclick="switchCookingMenu('hotpot', event)">
                   <div class="compare-col-header" style="color:#92400e;">
-                    <span>🍲</span> 菜單 B：特選和牛相模灣鮮魚壽喜燒 / 暖心海鮮鍋
+                    <span>🌅</span> 露台氛圍：無邊際海景與富士夕陽微醺
                   </div>
-                  <div class="compare-col-feature"><strong>主菜：</strong>薄切葉山牛壽喜燒肉片、當季地魚魚片、特選壽喜燒甜醬油、三浦大蔥與菇菌。</div>
-                  <div class="compare-col-feature"><strong>配菜：</strong>別墅電飯煲煮熱騰騰越光米飯、產地直送生魚片盛合、冰純米大吟釀。</div>
-                  <div class="compare-col-feature"><strong>氣氛：</strong>焗完芬蘭桑拿浸完熱水風呂後，一齊食個暖暖熱湯鍋，舒服無比！</div>
+                  <div class="compare-col-feature"><strong>視野：</strong>私人露台正對相模灣海面，金黃日落緩緩落在富士山與江之島旁。</div>
+                  <div class="compare-col-feature"><strong>酒水配搭：</strong>搭配冰鎮香檳 (Champagne) 或冰爽精釀啤酒，一邊燒烤一邊乾杯。</div>
+                  <div class="compare-col-feature"><strong>夜晚享受：</strong>夜幕降臨後海風徐徐、繁星點點，聽著浪潮聲享受無人打擾嘅私密二人世界！</div>
                 </div>
               </div>
 
-              <!-- Detail Plan A: Steak -->
+              <!-- Detail Plan A: BBQ Ingredients -->
               <div id="plan-detail-steak">
                 <div class="card-from-leg-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">
-                  🍳 烹飪配搭：別墅 IH爐 ＋ 平底鍋 ＋ 現代化西式刀叉餐具 ＋ 高腳香檳杯
+                  🥩 方案內容：酒店專員已預先備妥所有燒烤用具、Weber 烤爐與冷藏嚴選食材，免準備、手ぶら極致輕鬆！
                 </div>
                 <p class="venue-details">
-                  兩個人一齊喺別墅嘅現代化開放式廚房下廚！用スズキヤ買嚟嘅少許橄欖油與牛油熱鍋，下蒜片煎香厚切葉山牛沙朗，肉香四溢；再用同一平底鍋快煎新鮮帶子與大蝦，灑上海鹽黑椒。倒兩杯冰凍香檳，端到客廳落地大窗旁一邊欣賞富士山剪影海景，一邊享用親手烹調嘅頂級浪漫晚餐！
+                  完全唔需要自己買餸洗切！THE HARBOR TERRACE 預先為兩人備妥「アイランドスタイルBBQプラン」頂級食材箱：大理石花紋細緻嘅特選和牛牛排、相模灣產地直送鮮甜大蝦、飽滿帶子以及色彩繽紛嘅三浦新鮮蔬菜串。兩個人在露台點燃烤爐，肉汁滋滋作響、海鮮香氣四溢，親手享受頂級炭烤美味！
                 </p>
                 <div class="card-footer-row">
-                  <span class="venue-location-text">📍 STELLA STORIA HAYAMA 開放式廚房 ＆ 海景餐桌</span>
+                  <span class="venue-location-text">📍 THE HARBOR TERRACE 私人海景露台</span>
                   <div class="venue-actions">
-                    <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('hayama-cooking', event)">🗺️ 路線</button>
-                    <a href="https://maps.google.com/?q=Kanagawa+Hayama+Horiuchi+255-7" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
+                    <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('harbor-terrace-bbq', event)">🗺️ 路線</button>
+                    <a href="https://the-harbor-terrace.com/" target="_blank" class="btn-action-pill">🏨 方案詳情</a>
+                    <a href="https://maps.google.com/?q=The+Harbor+Terrace+Zushi" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
                   </div>
                 </div>
               </div>
 
-              <!-- Detail Plan B: Hotpot -->
+              <!-- Detail Plan B: Terrace Sunset -->
               <div id="plan-detail-hotpot" style="display:none;">
                 <div class="card-from-leg-pill" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">
-                  🍲 烹飪配搭：別墅雙耳湯鍋 / IH電磁爐 ＋ 日式飯碗 ＋ 冷酒器
+                  🥂 露台享受：面朝大海 ‧ 富士山夕陽染紅海面 ‧ 冰鎮香檳與星空夜話
                 </div>
                 <p class="venue-details">
-                  秋夜海風微涼，最啱一齊烚下烚下！將三浦洋蔥、大蔥、豆腐同菇類放入鍋中以日式昆布柴魚高湯與壽喜燒醬油燉出甘甜蔬菜底，再輕輕涮入油花細膩嘅葉山牛肉片，沾上新鮮生生雞蛋液入口即溶。配埋清爽嘅相模灣刺身同神奈川地酒，幸福感爆棚！
+                  黃昏時分，夕陽在相模灣天際線上漸漸沉落，遠處富士山嘅雄偉輪廓在晚霞中格外清晰。倒上兩杯冰凍香檳，海風輕拂、濤聲陣陣。一邊品嚐現烤嘅熱騰騰和牛與海鮮，一邊碰杯傾心暢談，為這次秋日旅行留低最難忘、最奢華浪漫嘅一幕！
                 </p>
                 <div class="card-footer-row">
-                  <span class="venue-location-text">📍 STELLA STORIA HAYAMA 暖心餐桌</span>
+                  <span class="venue-location-text">📍 THE HARBOR TERRACE 露台夕陽夜景</span>
                   <div class="venue-actions">
-                    <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('hayama-cooking', event)">🗺️ 路線</button>
-                    <a href="https://maps.google.com/?q=Kanagawa+Hayama+Horiuchi+255-7" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
+                    <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('harbor-terrace-bbq', event)">🗺️ 路線</button>
+                    <a href="https://maps.google.com/?q=The+Harbor+Terrace+Zushi" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
                   </div>
                 </div>
               </div>
@@ -1928,7 +1933,7 @@
               <span class="day-badge-tag badge-d3">Day 3</span>
               <div class="day-title-text">
                 <h3>10/19 (一) · 逗子遊艇會婚禮 ‧ 恵比寿頂級燒肉 蕃YORONIKU ‧ 亞洲50大高空酒吧 VIRTÙ</h3>
-                <span>Stella Storia ➔ 的士直達逗子 Marina 婚禮 (12:00) ➔ 恵比寿 蕃YORONIKU (19:00 極上和牛燒肉盛宴) ➔ 四季酒店 39F VIRTÙ (21:30)</span>
+                <span>THE HARBOR TERRACE 晨起 ➔ 步行3分鐘直達逗子 Marina 婚禮 (12:00) ➔ 恵比寿 蕃YORONIKU (19:00 極上和牛燒肉盛宴) ➔ 四季酒店 39F VIRTÙ (21:30)</span>
               </div>
             </div>
             <div class="day-accordion-control">
@@ -1939,25 +1944,25 @@
 
           <div class="day-block-body">
 
-            <!-- Stop 1: Morning at Villa & Dressing Up -->
+            <!-- Stop 1: Morning at Hotel & Dressing Up -->
             <div class="venue-card" id="card-wedding-prep" onclick="selectStopLeg('wedding-prep')">
               <div class="card-top-row">
-                <span class="card-time-pill">⏰ 09:30 – 11:15 (清晨海風與著裝)</span>
+                <span class="card-time-pill">⏰ 09:30 – 11:30 (海景晨啡與著裝)</span>
                 <span class="card-status-pill pill-sightseeing">👔 婚禮禮服準備</span>
               </div>
-              <div class="venue-japanese-name">🌅 葉山朝の海風 ‧ 婚禮著裝盛裝出發</div>
-              <div class="venue-chinese-subtitle">在相模灣晨光中享用晨啡 ‧ 換上精緻西裝與優雅禮服</div>
+              <div class="venue-japanese-name">🌅 THE HARBOR TERRACE 晨光海景 ‧ 盛裝漫步前往婚禮</div>
+              <div class="venue-chinese-subtitle">露台享用晨啡與相模灣晨光 ‧ 換上精緻西裝與優雅禮服 ‧ 步行3分鐘直達遊艇會</div>
               <div class="card-from-leg-pill" style="background:#fce7f3; color:#9d174d; border-color:#fbcfe8;">
-                🏡 STELLA STORIA HAYAMA 晨早梳洗 ‧ 11:00 前往門口等候的士 (約 12-15 分鐘沿海直達逗子 Marina)
+                🏡 THE HARBOR TERRACE (小坪5-14-7) ➔ 沿棕櫚大道步行 3 分鐘 (250米) 直達 Riviera 逗子 Marina (小坪5-23-23)
               </div>
               <p class="venue-details">
-                被清晨溫暖陽光同相模灣海浪聲喚醒。兩個人喺別墅露台歎杯晨起手沖咖啡，欣賞清早平靜蔚藍嘅海面。悠閒化妝整頭，換上隆重精緻嘅婚禮禮服（男士西裝配領帶/皮鞋，女士優雅長裙），準備見證好友人生最重要時刻！
+                被清晨溫暖陽光同相模灣海浪聲喚醒。兩個人喺酒店露台歎杯晨起手沖咖啡，欣賞平靜蔚藍嘅海面與富士山晨景。悠閒化妝整頭，換上隆重精緻嘅婚禮禮服（男士西裝配領帶/皮鞋，女士優雅長裙）。因為酒店就喺婚禮會場隔離，步行 3 分鐘即達，完全零塞車風險，極度從容！
               </p>
               <div class="venue-highlight-note">
-                <strong>🚕 的士安排：</strong>事前透過「GO」或「Uber」預約的士，或請別墅管家協助叫車，由葉山堀內直達逗子 Marina 約 12-15 分鐘車程（沿國道134號海岸線行駛，車費約 ¥2,000 – ¥2,500）。
+                <strong>🚶 步行即達無縫銜接：</strong>11:30 辦理退房手續（行李可暫存酒店前台或帶至遊艇會寄放），沿著充滿南國風情嘅棕櫚樹大道漫步 3 分鐘（約 250 公尺），即可優雅步入 Riviera Zushi Marina 本館大堂！
               </div>
               <div class="card-footer-row">
-                <span class="venue-location-text">📍 STELLA STORIA HAYAMA ➔ 国道134号海岸線</span>
+                <span class="venue-location-text">📍 THE HARBOR TERRACE ➔ リビエラ逗子マリーナ</span>
                 <div class="venue-actions">
                   <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('wedding-prep', event)">🗺️ 路線</button>
                   <a href="https://maps.google.com/?q=Riviera+Zushi+Marina" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
@@ -1974,7 +1979,7 @@
               <div class="venue-japanese-name">💍 リビエラ逗子マリーナ (Riviera Zushi Marina 会員制ヨットハーバー)</div>
               <div class="venue-chinese-subtitle">〒249-0008 神奈川県逗子市小坪5-23-23 ‧ 棕櫚樹環抱 ‧ 會員制海景遊艇會婚禮</div>
               <div class="card-from-leg-pill" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">
-                🚕 的士直達：三浦郡葉山町 ➔ 逗子海岸 ➔ 小坪海岸 ➔ リビエラ逗子マリーナ 本館大堂 (約15分鐘)
+                🚶 步行 3 分鐘 / 的士 1 分鐘：THE HARBOR TERRACE ➔ リビエラ逗子マリーナ 本館大堂
               </div>
               <p class="venue-details">
                 關東最富盛名、充滿加州馬里布海濱風情嘅「Riviera 逗子 Marina 會員制遊艇碼頭」！椰林樹影與無際碧海相伴，在玻璃純白教堂見證好友感動婚禮宣誓。隨後移步至海景宴會廳，享用主廚精緻婚宴法日午宴（Luncheon），滿載溫馨祝福！
@@ -2371,166 +2376,167 @@
           [35.6298, 139.7944]  // 東京ビッグサイト (SCAJ 2026 会場)
         ]
       },
-      'la-rochelle': {
-        id: 'la-rochelle',
+      'torikizoku-shibuya': {
+        id: 'torikizoku-shibuya',
         day: 1,
-        title: "ラ・ロシェル山王 (La Rochelle Sanno)",
-        sub: "東京Big Sight ➔ 溜池山王 (法國鐵人 19:00 已預約)",
-        time: "10/17 19:00",
-        lat: 35.6740,
-        lng: 139.7405,
+        title: "鳥貴族 渋谷神南店 (Torikizoku Jinnan)",
+        sub: "東京Big Sight ➔ 臨海線直通 ➔ 澀谷神南 (平價國民串燒居酒屋)",
+        time: "10/17 18:30",
+        lat: 35.6617,
+        lng: 139.7003,
         color: "#b85d19",
         lastStopName: "東京ビッグサイト (SCAJ 2026)",
-        vehicle: "🚇",
-        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E5%9B%BD%E9%9A%9B%E5%B1%95%E7%A4%BA%E5%A0%B4&to=%E6%BA%9C%E6%B1%A0%E5%B1%B1%E7%8E%8B",
+        vehicle: "🚆",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E5%9B%BD%E9%9A%9B%E5%B1%95%E7%A4%BA%E5%A0%B4&to=%E6%B8%8B%E8%B0%B7",
         routeCoords: [
           [35.6298, 139.7944], // 東京ビッグサイト
-          [35.6345, 139.7915], // 国際展示場駅
-          [35.6470, 139.7800], // 豊洲駅
-          [35.6540, 139.7650], // 築地
-          [35.6660, 139.7580], // 新橋駅 (銀座線)
-          [35.6698, 139.7510], // 虎ノ門駅
-          [35.6730, 139.7420], // 溜池山王駅 6號出口
-          [35.6740, 139.7405]  // 東急キャピトルタワー 1F ラ・ロシェル山王
+          [35.6345, 139.7915], // 国際展示場駅 (臨海線直通JR埼京線)
+          [35.6275, 139.7820], // 東京テレポート
+          [35.6230, 139.7750], // 天王洲アイル
+          [35.6070, 139.7420], // 大井町駅
+          [35.6190, 139.7280], // 大崎駅
+          [35.6465, 139.7100], // 恵比寿駅
+          [35.6580, 139.7016], // 渋谷駅 (八公口/神南方向)
+          [35.6617, 139.7003]  // 鳥貴族 渋谷神南店 (ハイマンテン神南ビル B1F)
+        ]
+      },
+      'sg-club-shibuya': {
+        id: 'sg-club-shibuya',
+        day: 1,
+        title: "The SG Club (ザ エスジー クラブ)",
+        sub: "神南步行3分鐘 ➔ 亞洲50大傳奇酒吧 ‧ 後閑信吾微醺特調",
+        time: "10/17 20:45",
+        lat: 35.6642,
+        lng: 139.6992,
+        color: "#b85d19",
+        lastStopName: "鳥貴族 渋谷神南店",
+        vehicle: "🍸",
+        yahooUrl: "https://maps.google.com/?q=The+SG+Club+Tokyo",
+        routeCoords: [
+          [35.6617, 139.7003], // 鳥貴族 渋谷神南店
+          [35.6630, 139.7000], // 神南一丁目
+          [35.6642, 139.6992]  // The SG Club (1F Guzzle / B1 Sip)
         ]
       },
       'day1-night': {
         id: 'day1-night',
         day: 1,
         title: "百合ヶ丘駅 (帰着休息)",
-        sub: "溜池山王 ➔ 千代田線直通小田急 ➔ 百合ヶ丘",
-        time: "10/17 21:45",
+        sub: "澀谷 ➔ 井之頭線/小田急線 ➔ 百合ヶ丘",
+        time: "10/17 22:45",
         lat: 35.6092,
         lng: 139.5173,
         color: "#b85d19",
-        lastStopName: "ラ・ロシェル山王 (溜池山王)",
+        lastStopName: "The SG Club (渋谷神南)",
         vehicle: "🚆",
-        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E6%BA%9C%E6%B1%A0%E5%B1%B1%E7%8E%8B&to=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E6%B8%8B%E8%B0%B7&to=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98",
         routeCoords: [
-          [35.6740, 139.7405], // 溜池山王
-          [35.6720, 139.7360], // 赤坂駅 (千代田線)
-          [35.6665, 139.7265], // 乃木坂駅
-          [35.6652, 139.7123], // 表参道駅
-          [35.6690, 139.6795], // 代々木上原駅
-          [35.6615, 139.6670], // 下北沢駅
+          [35.6642, 139.6992], // The SG Club (渋谷神南)
+          [35.6580, 139.7016], // 渋谷駅
+          [35.6615, 139.6670], // 下北沢駅 (轉小田急快速急行)
           [35.6400, 139.6000], // 成城学園前駅
           [35.6200, 139.5700], // 登戸駅
+          [35.6038, 139.5085], // 新百合ヶ丘駅
           [35.6092, 139.5173]  // 百合ヶ丘駅
         ]
       },
-      'hayama-depart': {
-        id: 'hayama-depart',
+      'kamakura-depart': {
+        id: 'kamakura-depart',
         day: 2,
-        title: "百合ヶ丘出発 ➔ 逗子駅 (10:00抵達 ‧ 寄放行李)",
-        sub: "百合ヶ丘 ➔ 町田·橫濱 ➔ JR橫須賀線直達逗子駅 (10:00抵達)",
+        title: "百合ヶ丘出発 ➔ 鎌倉駅 (10:00抵達 ‧ 寄放行李)",
+        sub: "純鐵路直達湘南古都 ‧ 10:00 抵達鎌倉站寄物櫃",
         time: "10/18 10:00",
-        lat: 35.2975,
-        lng: 139.5805,
+        lat: 35.3190,
+        lng: 139.5505,
         color: "#2d6a82",
         lastStopName: "百合ヶ丘駅",
         vehicle: "🚆",
-        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98&to=%E9%80%97%E5%AD%90",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98&to=%E9%8E%8C%E5%80%89",
         routeCoords: [
           [35.6092, 139.5173], // 百合ヶ丘駅
           [35.5830, 139.4811], // 鶴川駅
           [35.5420, 139.4450], // 町田駅 (轉JR橫濱線)
           [35.5080, 139.6170], // 新横浜駅
-          [35.4660, 139.6225], // 横浜駅 (轉JR橫須賀線)
+          [35.4660, 139.6225], // 横浜駅 (轉JR橫須賀線直達)
           [35.4010, 139.5330], // 戸塚駅
           [35.3530, 139.5315], // 大船駅
-          [35.3190, 139.5505], // 鎌倉駅
-          [35.2975, 139.5805]  // 逗子駅 (東口 Coin Locker 寄物櫃)
+          [35.3370, 139.5440], // 北鎌倉駅
+          [35.3190, 139.5505]  // 鎌倉駅 (東口 Coin Locker 寄物櫃)
         ]
       },
-      'zushi-stroll': {
-        id: 'zushi-stroll',
+      'kamakura-stroll': {
+        id: 'kamakura-stroll',
         day: 2,
-        title: "逗子海岸 ＆ なぎさ橋珈琲 ‧ つく志地魚午膳",
-        sub: "逗子站 ➔ 逗子銀座 ➔ 逗子海岸沙灘 ➔ なぎさ橋海景露台 ➔ 73年老店つく志午膳",
+        title: "鎌倉小町通散策 ‧ 鶴岡八幡宮參拜 ‧ 在地午膳",
+        sub: "小町通老街探訪 ➔ 鶴岡八幡宮祈福 ➔ 吻仔魚天婦羅定食午膳",
         time: "10/18 10:15",
-        lat: 35.2890,
-        lng: 139.5760,
+        lat: 35.3260,
+        lng: 139.5564,
         color: "#2d6a82",
-        lastStopName: "JR 逗子駅 (東口 Coin Locker)",
-        vehicle: "☕",
-        yahooUrl: "https://maps.google.com/?q=Nagisabashi+Coffee+Zushi",
+        lastStopName: "JR 鎌倉駅 (東口)",
+        vehicle: "⛩️",
+        yahooUrl: "https://maps.google.com/?q=Tsurugaoka+Hachimangu+Kamakura",
         routeCoords: [
-          [35.2975, 139.5805], // 逗子駅東口 (寄放行李)
-          [35.2940, 139.5790], // 逗子銀座商店街
-          [35.2920, 139.5740], // 逗子海岸中央沙灘
-          [35.2890, 139.5760], // なぎさ橋珈琲 (海景露台)
-          [35.2965, 139.5800], // つく志 (老字號地魚海鮮午膳)
-          [35.2975, 139.5805]  // 返回逗子站東口
+          [35.3190, 139.5505], // 鎌倉駅東口
+          [35.3215, 139.5520], // 小町通商店街
+          [35.3235, 139.5540], // 若宮大路 段葛參道
+          [35.3260, 139.5564], // 鶴岡八幡宮 本宮
+          [35.3200, 139.5515], // 鎌倉秋本 / 午膳餐廳
+          [35.3190, 139.5505]  // 返回鎌倉站東口 取回行李
         ]
       },
-      'zushi-supermarket': {
-        id: 'zushi-supermarket',
+      'harbor-terrace-checkin': {
+        id: 'harbor-terrace-checkin',
         day: 2,
-        title: "スズキヤ 逗子駅前店 (SUZUKIYA 頂級食材採購)",
-        sub: "逗子站東口步行 50 秒 ‧ 採購葉山牛、相模灣地魚與調味料",
-        time: "10/18 14:05",
-        lat: 35.2968,
-        lng: 139.5802,
+        title: "THE HARBOR TERRACE (16:00 準時 Check-in)",
+        sub: "鎌倉駅東口 ➔ 的士 10 分鐘沿海直達 ➔ 16:00 準時辦理入住",
+        time: "10/18 16:00",
+        lat: 35.3008,
+        lng: 139.5527,
         color: "#2d6a82",
-        lastStopName: "JR 逗子駅 (東口)",
-        vehicle: "🛒",
-        yahooUrl: "https://maps.google.com/?q=Suzukiya+Zushi",
-        routeCoords: [
-          [35.2975, 139.5805], // 逗子駅東口出閘
-          [35.2968, 139.5802]  // スズキヤ 逗子駅前店 (站前步行50秒)
-        ]
-      },
-      'stella-storia': {
-        id: 'stella-storia',
-        day: 2,
-        title: "STELLA STORIA HAYAMA (15:00 準時 Check-in)",
-        sub: "スズキヤ / 逗子駅東口 ➔ 的士 7 分鐘直達 ➔ 15:00 準時辦理入住",
-        time: "10/18 14:53",
-        lat: 35.2819,
-        lng: 139.5710,
-        color: "#2d6a82",
-        lastStopName: "スズキヤ 逗子駅前店 / 逗子駅東口 Taxi 站",
+        lastStopName: "JR 鎌倉駅 (東口 Taxi 站)",
         vehicle: "🚕",
-        yahooUrl: "https://maps.google.com/?q=Kanagawa+Hayama+Horiuchi+255-7",
+        yahooUrl: "https://maps.google.com/?q=The+Harbor+Terrace+Zushi",
         routeCoords: [
-          [35.2968, 139.5802], // スズキヤ 逗子駅前店
-          [35.2975, 139.5805], // 逗子駅東口 Taxi 站
-          [35.2920, 139.5780], // 新逗子·京急逗子葉山
-          [35.2890, 139.5760], // 渚橋 (逗子海岸)
-          [35.2845, 139.5732], // 鐙摺港入口
-          [35.2819, 139.5710]  // STELLA STORIA HAYAMA (15:00 準時 Check-in)
+          [35.3190, 139.5505], // 鎌倉駅東口 Taxi 站
+          [35.3115, 139.5470], // 由比ヶ浜海岸沿線
+          [35.3050, 139.5490], // 材木座海岸沿線 (國道134)
+          [35.3015, 139.5510], // 小坪海岸
+          [35.3008, 139.5527]  // THE HARBOR TERRACE (ザ・ハーバーテラス 16:00 Check-in)
         ]
       },
-      'hayama-cooking': {
-        id: 'hayama-cooking',
+      'harbor-terrace-bbq': {
+        id: 'harbor-terrace-bbq',
         day: 2,
-        title: "STELLA STORIA 海景雙人私廚晚宴 ＆ 桑拿星空夜",
-        sub: "別墅開放式廚房 ‧ 親手烹煮極上葉山牛 ‧ 露天風呂賞富士山夕陽",
-        time: "10/18 17:30",
-        lat: 35.2819,
-        lng: 139.5710,
+        title: "海を目の前に地産食材で楽しむ【アイランドスタイルBBQプラン】",
+        sub: "私密海景露台 ‧ Weber 燒烤爐 ‧ 相模灣海鮮與特選和牛 ‧ 富士山夕陽盛宴",
+        time: "10/18 17:00",
+        lat: 35.3008,
+        lng: 139.5527,
         color: "#2d6a82",
-        lastStopName: "STELLA STORIA HAYAMA",
-        vehicle: "🍽️",
-        yahooUrl: "https://maps.google.com/?q=Kanagawa+Hayama+Horiuchi+255-7",
+        lastStopName: "THE HARBOR TERRACE",
+        vehicle: "🥩",
+        yahooUrl: "https://the-harbor-terrace.com/",
         routeCoords: [
-          [35.2819, 139.5710]  // STELLA STORIA HAYAMA 私廚與海景露台
+          [35.3008, 139.5527]  // THE HARBOR TERRACE 私人海景露台
         ]
       },
       'wedding-prep': {
         id: 'wedding-prep',
         day: 3,
-        title: "STELLA STORIA 出發 ➔ リビエラ逗子マリーナ",
-        sub: "清晨海風 ‧ 西裝禮服著裝 ‧ 的士直達遊艇碼頭",
-        time: "10/19 11:15",
-        lat: 35.2819,
-        lng: 139.5710,
+        title: "THE HARBOR TERRACE 晨起 ➔ リビエラ逗子マリーナ",
+        sub: "露台晨啡 ‧ 著裝盛裝 ‧ 步行3分鐘直達遊艇碼頭婚禮",
+        time: "10/19 11:30",
+        lat: 35.3008,
+        lng: 139.5527,
         color: "#9e2a4b",
-        lastStopName: "STELLA STORIA HAYAMA",
-        vehicle: "🚕",
+        lastStopName: "THE HARBOR TERRACE (小坪海岸)",
+        vehicle: "🚶",
         yahooUrl: "https://maps.google.com/?q=Riviera+Zushi+Marina",
         routeCoords: [
-          [35.2819, 139.5710] // Stella Storia 出發點
+          [35.3008, 139.5527], // THE HARBOR TERRACE
+          [35.2985, 139.5525], // 棕櫚林大道
+          [35.2961, 139.5524]  // リビエラ逗子マリーナ (Riviera Zushi Marina)
         ]
       },
       'zushi-wedding': {
@@ -2542,15 +2548,11 @@
         lat: 35.2961,
         lng: 139.5524,
         color: "#9e2a4b",
-        lastStopName: "STELLA STORIA HAYAMA (葉山町)",
-        vehicle: "🚕",
+        lastStopName: "THE HARBOR TERRACE (逗子小坪)",
+        vehicle: "🚶",
         yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E9%80%97%E5%AD%90&to=%E6%81%B5%E6%AF%94%E5%AF%BF",
         routeCoords: [
-          [35.2819, 139.5710], // Stella Storia Hayama
-          [35.2855, 139.5725], // 鐙摺港沿海彎道
-          [35.2910, 139.5730], // 渚橋 (逗子海岸南端)
-          [35.2970, 139.5650], // 逗子海岸沿線 (國道134)
-          [35.2985, 139.5580], // 小坪隧道前海景
+          [35.3008, 139.5527], // THE HARBOR TERRACE
           [35.2961, 139.5524]  // リビエラ逗子マリーナ (Riviera Zushi Marina)
         ]
       },
@@ -2891,15 +2893,15 @@
       const badge = document.getElementById('current-plan-badge');
       if (badge) {
         badge.innerHTML = isSteak
-          ? '✨ 推薦料理：【菜單A】極上葉山牛牛排 ＆ 海鮮鐵板香檳宴'
-          : '✨ 推薦料理：【菜單B】和牛鮮魚壽喜燒 ＆ 暖心海鮮鍋';
+          ? '✨ 預約確立：海を目の前に地産食材で楽しむ【アイランドスタイルBBQプラン】'
+          : '✨ 露台氛圍：無邊際海景 ‧ 富士山落日夕陽 ‧ 香檳微醺浪漫夜';
         badge.style.background = isSteak ? '#e0f2fe' : '#fef3c7';
         badge.style.color = isSteak ? '#0369a1' : '#92400e';
         badge.style.borderColor = isSteak ? '#bae6fd' : '#fde68a';
       }
 
       if (updateMap) {
-        selectStopLeg('hayama-cooking', false);
+        selectStopLeg('harbor-terrace-bbq', false);
       }
     }
     function switchHayamaPlan(c, e, u) { switchCookingMenu(c === 'seafood' ? 'steak' : 'hotpot', e, u); }
@@ -3011,8 +3013,8 @@
       if (spotId === 'heiwajima-onsen' || spotId === 'haneda-arrival') {
         targetCardId = 'day1-twoside';
         switchTwoSideView(spotId === 'heiwajima-onsen' ? 'his' : 'her', null, false);
-      } else if (spotId === 'hayama-cooking' || spotId === 'hayama-seafood' || spotId === 'hayama-villa') {
-        targetCardId = 'hayama-cooking';
+      } else if (spotId === 'harbor-terrace-bbq' || spotId === 'hayama-cooking' || spotId === 'hayama-seafood' || spotId === 'hayama-villa') {
+        targetCardId = 'harbor-terrace-bbq';
       }
 
       const cardEl = document.getElementById('card-' + targetCardId);
@@ -3117,8 +3119,8 @@
         if (spotId === 'heiwajima-onsen' || spotId === 'haneda-arrival') {
           targetCardId = 'day1-twoside';
           switchTwoSideView(spotId === 'heiwajima-onsen' ? 'his' : 'her', null, false);
-        } else if (spotId === 'hayama-cooking' || spotId === 'hayama-seafood' || spotId === 'hayama-villa') {
-          targetCardId = 'hayama-cooking';
+        } else if (spotId === 'harbor-terrace-bbq' || spotId === 'hayama-cooking' || spotId === 'hayama-seafood' || spotId === 'hayama-villa') {
+          targetCardId = 'harbor-terrace-bbq';
         }
 
         const cardEl = document.getElementById('card-' + targetCardId);
@@ -3359,43 +3361,43 @@ LOCATION:東京ビッグサイト (Tokyo Big Sight)
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:晚宴：ラ・ロシェル山王 (坂井宏行頂級法國鐵人正餐)
-DTSTART;TZID=Asia/Tokyo:20261017T190000
-DTEND;TZID=Asia/Tokyo:20261017T213000
-DESCRIPTION:千代田區永田町東急 Capitol Tower 1F，料理之鐵人坂井宏行頂級法式晚餐，19:00 已預約，請著 Smart Casual
-LOCATION:ラ・ロシェル山王 (東京都千代田区永田町2-10-3 東急キャピトルタワー1F)
+SUMMARY:晚餐居酒屋：鳥貴族 渋谷神南店 (Torikizoku Jinnan)
+DTSTART;TZID=Asia/Tokyo:20261017T183000
+DTEND;TZID=Asia/Tokyo:20261017T203000
+DESCRIPTION:澀谷潮流神南商圈經典國民居酒屋，大啖大份量貴族燒雞肉蔥串、現炊雞肉釜飯與生啤酒
+LOCATION:鳥貴族 渋谷神南店 (東京都渋谷区神南1-19-3 ハイマンテン神南ビル B1F)
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:漫步午膳：逗子海岸散策 ＆ なぎさ橋珈琲海景露台 ＆ つく志海鮮
-DTSTART;TZID=Asia/Tokyo:20261018T101500
-DTEND;TZID=Asia/Tokyo:20261018T134500
-DESCRIPTION:逗子站寄放行李，漫步逗子海岸沙灘，於なぎさ橋珈琲海景木棧露台享受海風晨啡，隨後品嚐73年老字號つく志現撈相模灣地魚刺身定食
-LOCATION:逗子海岸 ＆ なぎさ橋珈琲 (神奈川県逗子市新宿4-7-1)
+SUMMARY:微醺時光：The SG Club (World & Asia's 50 Best Bars)
+DTSTART;TZID=Asia/Tokyo:20261017T204500
+DTEND;TZID=Asia/Tokyo:20261017T223000
+DESCRIPTION:世界調酒巨擘後閑信吾旗艦名作，品味江戶與紐約交織的當代獨創調酒 (1F Guzzle / B1 Sip)
+LOCATION:The SG Club (東京都渋谷区神南1-7-8)
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:食材採購：スズキヤ 逗子駅前店 (SUZUKIYA 頂級超市)
-DTSTART;TZID=Asia/Tokyo:20261018T140500
-DTEND;TZID=Asia/Tokyo:20261018T145000
-DESCRIPTION:逗子站東口步行50秒老牌高級超市，採購今晚別墅私廚葉山牛、相模灣鮮魚刺身、調味料與香檳，採購完對面的士站上車直奔別墅
-LOCATION:スズキヤ 逗子駅前店 (神奈川県逗子市逗子1-4-1)
+SUMMARY:鎌倉漫遊：古都鎌倉小町通散策 ＆ 鶴岡八幡宮參拜 ＆ 在地午膳
+DTSTART;TZID=Asia/Tokyo:20261018T100000
+DTEND;TZID=Asia/Tokyo:20261018T153000
+DESCRIPTION:10:00準時抵達鎌倉站寄放行李，漫步小町通品嚐小食、參拜鶴岡八幡宮，享用相模灣吻仔魚天婦羅定食午膳
+LOCATION:鎌倉駅東口 ＆ 鶴岡八幡宮 (神奈川県鎌倉市雪ノ下2-2-1)
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:入住：STELLA STORIA HAYAMA (15:00 準時 Check-in ‧ 私人桑拿海景別墅)
-DTSTART;TZID=Asia/Tokyo:20261018T150000
-DTEND;TZID=Asia/Tokyo:20261019T110000
-DESCRIPTION:逗子站搭乘的士7分鐘準時15:00 Check-in！海濱包棟別墅，私人芬蘭桑拿、露天風呂 Jacuzzi，欣賞富士山夕陽
-LOCATION:STELLA STORIA HAYAMA (神奈川県三浦郡葉山町堀内255-7)
+SUMMARY:入住：THE HARBOR TERRACE (16:00 準時 Check-in ‧ 富士山海景酒店)
+DTSTART;TZID=Asia/Tokyo:20261018T160000
+DTEND;TZID=Asia/Tokyo:20261019T113000
+DESCRIPTION:鎌倉站搭乘的士10分鐘直達，16:00準時Check-in！小坪海岸第一排無遮擋海景奢華露台套房，直面富士山與江之島夕陽
+LOCATION:THE HARBOR TERRACE (神奈川県逗子市小坪5-14-7)
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:私廚晚宴：STELLA STORIA 海景雙人私廚料理 ＆ 露天風呂星空酒會
-DTSTART;TZID=Asia/Tokyo:20261018T173000
-DTEND;TZID=Asia/Tokyo:20261018T213000
-DESCRIPTION:在別墅開放式廚房親手烹煮極上葉山牛牛排、相模灣海鮮，配搭冰鎮香檳，享受私人桑拿與露天溫泉星空夜
-LOCATION:STELLA STORIA HAYAMA (神奈川県三浦郡葉山町堀内255-7)
+SUMMARY:露台晚宴：海を目の前に地産食材で楽しむ【アイランドスタイルBBQプラン】
+DTSTART;TZID=Asia/Tokyo:20261018T170000
+DTEND;TZID=Asia/Tokyo:20261018T210000
+DESCRIPTION:專屬海景露台使用頂級 Weber 烤爐，炭烤相模灣現撈海鮮、特選和牛牛排與三浦蔬菜，配冰鎮香檳享受富士山落日盛宴
+LOCATION:THE HARBOR TERRACE 私人海景露台 (神奈川県逗子市小坪5-14-7)
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT

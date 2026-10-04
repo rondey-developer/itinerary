@@ -6,14 +6,14 @@
 
 ## 🗺️ 行程列表 (Available Itineraries)
 
-### 1. 🍁 [東京 · 葉山 · 逗子 4日3夜 秋日雙人浪漫遊 (2026/10/17 – 10/20)](file:///Users/rondey/Personal/itinerary/itinerary_1017.html)
+### 1. 🍁 [東京 · 鎌倉 · 逗子 4日3夜 秋日雙人浪漫遊 (2026/10/17 – 10/20)](file:///Users/rondey/Personal/itinerary/itinerary_1017.html)
 * **生成腳本**：[`generate_1017.py`](file:///Users/rondey/Personal/itinerary/generate_1017.py)
 * **HTML 檔案**：[`itinerary_1017.html`](file:///Users/rondey/Personal/itinerary/itinerary_1017.html)
 * **交通原則**：**全程純鐵路（電車/地鐵）與的士直達，嚴格零巴士（免塞車、免搬行李）**。
 * **核心重點**：
-  * **Day 1 (10/17 六)**：【雙人平行視角】男方宿 [天然温泉 平和島](https://www.heiwajima-onsen.jp/) 清晨乘的士 (Taxi 12分鐘直達) 04:40 抵達羽田接機 ✕ 女方乘香港快運 UO624 05:00 抵達羽田 T3 ➔ 入境大堂甜蜜會合 ➔ 京急/小田急純鐵路直達百合ヶ丘整頓 ➔ SCAJ 2026 世界精品咖啡大展（東京 Big Sight） ➔ 「料理之鐵人」坂井宏行頂級法式正餐 [La Rochelle 山王](https://www.la-rochelle.co.jp/sp/) (19:00 已預約) ➔ 返回百合ヶ丘。
-  * **Day 2 (10/18 日)**：百合ヶ丘搭乘純鐵路南下 ➔ **10:00 準時抵達逗子站**（東口 Coin Locker 寄放行李） ➔ 漫步逗子銀座與【逗子海岸】沙灘海風 ➔ 【なぎさ橋珈琲】海景露台享受晨啡 ➔ 73年老字號【つく志】相模灣現撈海鮮定食午膳 ➔ 逗子名流老牌精品超市 [スズキヤ 逗子駅前店 (SUZUKIYA)](https://www.suzukiya-inc.jp/) 採購頂級葉山牛、地魚刺身、調味料與冰鎮香檳 ➔ 14:53 站前搭乘的士 7 分鐘 ➔ **15:00 準時 Check-in** 海景包棟私人桑拿露天風呂別墅 [STELLA STORIA HAYAMA](https://maps.google.com/?q=Kanagawa+Hayama+Horiuchi+255-7) ➔ 私人芬蘭木質 Sauna & 露天 Jacuzzi 風呂賞富士山日落夕陽 ➔ 開放式海景廚房雙人私廚晚宴（方案A：極上葉山牛牛排 ＆ 海鮮鐵板香檳宴 vs 方案B：特選和牛相模灣鮮魚壽喜燒 ＆ 暖心海鮮鍋）。
-  * **Day 3 (10/19 一)**：葉山晨起咖啡 ➔ 的士沿海直達 [リビエラ逗子マリーナ (Riviera Zushi Marina 会員制ヨットハーバー)](https://maps.google.com/?q=Riviera+Zushi+Marina) 參加好友海景婚禮（12:00 Ceremony ‧ 12:40 Luncheon） ➔ 湘南新宿線直出惠比壽 ➔ [蕃 YORONIKU (よろにく 恵比寿)](https://tabelog.com/tokyo/A1303/A130302/13211927/)（GEMS 恵比寿 8F，The Tabelog Award 銅牌燒肉名店，專人代烤極上絲綢和牛、黑松露月見壽喜燒、夏多布里昂） ➔ 的士/日比谷線直達皇居旁 [VIRTÙ (Four Seasons Hotel Tokyo at Otemachi 39F)](https://www.fourseasons.com/tokyoatotemachi/dining/lounges/virtu/) 享受 Asia's 50 Best Bars 高空法日當代微醺夜景 ➔ 千代田線直通小田急返回百合ヶ丘。
+  * **Day 1 (10/17 六)**：【雙人平行視角】男方宿 [天然温泉 平和島](https://www.heiwajima-onsen.jp/) 清晨乘的士 (Taxi 12分鐘直達) 04:40 抵達羽田接機 ✕ 女方乘香港快運 UO624 05:00 抵達羽田 T3 ➔ 入境大堂甜蜜會合 ➔ 京急/小田急純鐵路直達百合ヶ丘整頓 ➔ SCAJ 2026 世界精品咖啡大展（東京 Big Sight） ➔ 臨海線直通直達澀谷 ➔ [鳥貴族 渋谷神南店](https://torikizoku.co.jp/)（平價國民串燒居酒屋，大啖大份量貴族燒、釜飯與生啤） ➔ 步行3分鐘至世界/亞洲50大傳奇酒吧 [The SG Club](https://maps.google.com/?q=The+SG+Club+Tokyo)（品味世界調酒大師後閑信吾當代日式微醺特調） ➔ 井之頭線/小田急返回百合ヶ丘。
+  * **Day 2 (10/18 日)**：百合ヶ丘搭乘純鐵路南下 ➔ **10:00 準時抵達鎌倉站**（東口 Coin Locker 寄放行李） ➔ 漫步小町通品嚐文青小食、走過段葛參道前往【鶴岡八幡宮】參拜祈福 ➔ 享用鎌倉名物秋本吻仔魚天婦羅定食午膳 ➔ 15:35 站前搭乘的士 10 分鐘沿海直達 ➔ **16:00 準時 Check-in** 坐擁相模灣第一排海景之奢華海濱酒店 [THE HARBOR TERRACE (ザ・ハーバーテラス)](https://the-harbor-terrace.com/) ➔ 專屬私人無邊際海景露台欣賞富士山與江之島絕美落日夕陽 ➔ 享用預約名物【海を目の前に地産食材で楽しむ【アイランドスタイルBBQプラン】】（頂級 Weber 烤爐，炭烤相模灣現撈海鮮、特選和牛牛排與地產三浦時令蔬菜，搭配冰鎮香檳享受浪漫私密海邊露台晚宴）。
+  * **Day 3 (10/19 一)**：THE HARBOR TERRACE 晨起海景咖啡 ➔ 沿棕櫚大道步行 3 分鐘（250米）直達鄰近之 [リビエラ逗子マリーナ (Riviera Zushi Marina 会員制ヨットハーバー)](https://maps.google.com/?q=Riviera+Zushi+Marina) 參加好友海景婚禮（12:00 Ceremony ‧ 12:40 Luncheon） ➔ 湘南新宿線直出惠比壽 ➔ [蕃 YORONIKU (よろにく 恵比寿)](https://tabelog.com/tokyo/A1303/A130302/13211927/)（GEMS 恵比寿 8F，The Tabelog Award 銅牌燒肉名店，專人代烤極上絲綢和牛、黑松露月見壽喜燒、夏多布里昂） ➔ 的士/日比谷線直達皇居旁 [VIRTÙ (Four Seasons Hotel Tokyo at Otemachi 39F)](https://www.fourseasons.com/tokyoatotemachi/dining/lounges/virtu/) 享受 Asia's 50 Best Bars 高空法日當代微醺夜景 ➔ 千代田線直通小田急返回百合ヶ丘。
   * **Day 4 (10/20 二)**：百合ヶ丘出發 ➔ 重遊女朋友青春珍貴記憶：[業務スーパー 鶴川店](https://maps.google.com/?q=Gyomu+Super+Tsurukawa)（採購日本零食與調味料） ➔ 返回百合ヶ丘打包行李 ➔ 日暮里轉乘京成特急 Skyliner 41分鐘超速直達 ➔ 成田國際機場 T3 搭乘 Jetstar GK27 (20:10 起飛) 飛返香港。
 
 ---
