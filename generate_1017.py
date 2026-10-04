@@ -1930,8 +1930,8 @@ html_content = '''<!DOCTYPE html>
             <div class="day-title-wrap">
               <span class="day-badge-tag badge-d3">Day 3</span>
               <div class="day-title-text">
-                <h3>10/19 (一) · 逗子遊艇會婚禮 ‧ 新宿頂級壽司盛宴 ‧ 亞洲50大高空酒吧 VIRTÙ</h3>
-                <span>Stella Storia ➔ 的士直達逗子 Marina 婚禮 (12:00) ➔ 新宿 かきだ鮨 (19:00 本鮪無限追加) ➔ 四季酒店 39F VIRTÙ (21:30)</span>
+                <h3>10/19 (一) · 逗子遊艇會婚禮 ‧ 恵比寿頂級燒肉 蕃YORONIKU ‧ 亞洲50大高空酒吧 VIRTÙ</h3>
+                <span>Stella Storia ➔ 的士直達逗子 Marina 婚禮 (12:00) ➔ 恵比寿 蕃YORONIKU (19:00 極上和牛燒肉盛宴) ➔ 四季酒店 39F VIRTÙ (21:30)</span>
               </div>
             </div>
             <div class="day-accordion-control">
@@ -1992,37 +1992,41 @@ html_content = '''<!DOCTYPE html>
                 <span class="venue-location-text">📍 神奈川県逗子市小坪5-23-23 リビエラ逗子マリーナ</span>
                 <div class="venue-actions">
                   <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('zushi-wedding', event)">🗺️ 路線</button>
-                  <a href="https://transit.yahoo.co.jp/search/result?from=%E9%80%97%E5%AD%90&to=%E6%96%B0%E5%AE%BF" target="_blank" class="btn-action-pill pill-yahoo">🚆 Yahoo! 乘換</a>
+                  <a href="https://transit.yahoo.co.jp/search/result?from=%E9%80%97%E5%AD%90&to=%E6%81%B5%E6%AF%94%E5%AF%BF" target="_blank" class="btn-action-pill pill-yahoo">🚆 Yahoo! 往惠比壽</a>
                   <a href="https://maps.google.com/?q=Riviera+Zushi+Marina" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
                 </div>
               </div>
             </div>
 
-            <!-- Stop 3: Dinner at Kakida Sushi Shinjuku -->
-            <div class="venue-card" id="card-kakida-sushi" onclick="selectStopLeg('kakida-sushi')">
+            <!-- Stop 3: Dinner at 蕃 YORONIKU Ebisu -->
+            <div class="venue-card" id="card-yoroniku-ebisu" onclick="selectStopLeg('yoroniku-ebisu')">
               <div class="card-top-row">
-                <span class="card-time-pill">⏰ 19:00 – 21:00 (晚上 7:00 預約確立)</span>
-                <span class="card-status-pill pill-booking">✓ Tabelog 預約席</span>
+                <span class="card-time-pill">⏰ 19:00 – 21:00 (晚上 7:00 預約席)</span>
+                <span class="card-status-pill pill-booking">✓ Tabelog 頂級燒肉名店</span>
               </div>
-              <div class="venue-japanese-name">🍣 かきだ鮨 新宿総本店 (The Tokyo コース ‧ 鮨おかわり無料)</div>
-              <div class="venue-chinese-subtitle">小田急 Hotel Century Southern Tower 19F ‧ 一本買本鮪 ‧ 壽司免費無限任追加 ‧ 高森和牛すき焼き</div>
+              <div class="venue-japanese-name">🥩 蕃 YORONIKU (よろにく 恵比寿)</div>
+              <div class="venue-chinese-subtitle">東京都渋谷区恵比寿1-11-5 GEMS恵比寿 8F ‧ The Tabelog Award ‧ 全程專人桌邊代烤極上和牛盛宴</div>
               <div class="card-from-leg-pill" style="background:#fee2e2; color:#991b1b; border-color:#fecaca;">
-                🚆 逗子駅 ➔ JR 湘南新宿線直通新宿駅 (約60分鐘) ➔ 新宿南口步行3分鐘直達世紀南塔19F
+                🚆 逗子駅 ➔ JR 湘南新宿線直通恵比寿駅 (約54分鐘免轉車) ➔ 東口步行2分鐘直達 GEMS 恵比寿 8F
               </div>
               <p class="venue-details">
-                東京話題爆棚嘅超人氣頂級壽司店！坐落於新宿小田急世紀南塔 19 樓高空，特設桌席限定「The Tokyo コース」。全條原條整尾採購嘅頂級本鮪（一本買い本マグロ）、產地直送極鮮海膽與牡丹蝦，最瘋狂嘅係所有手握壽司【無限次免費追加おかわり自由】！
+                東京燒肉界封神級傳奇「よろにく」之恵比寿旗艦名店！坐落於 GEMS 恵比寿 8 樓，全程由專業燒烤師傅一對一桌邊代烤，將每一款頂級和牛部位控制在最完美的熟度。入口即化嘅絲綢和牛、招牌松露月見壽喜燒，為 Day 3 婚禮之夜帶嚟無與倫比嘅極致浪漫味蕾享受！
               </p>
               <div class="venue-highlight-note">
-                <strong>🥩 夢幻高森和牛：</strong>套餐內更包山口縣岩國市每年僅生產150頭嘅絕品「高森和牛」壽喜燒！以獺祭酒粕餵飼，油脂甘甜細膩入口即溶。<br>
-                <strong>💰 預約詳情：</strong>Tabelog 官方預約頁面（代代木/新宿南口 小田急南塔 19F，電話 080-7164-5210）。今晚兩個人放開胃口，盡情大啖肥美吞拿魚與和牛！<br>
-                <strong>🔗 預約連結：</strong><a href="https://tabelog.com/tokyo/A1304/A130401/13286035/party/232871093" target="_blank" style="color:#985635; text-decoration:underline;">Tabelog The Tokyo コース詳情</a>
+                <strong>🌟 經典招牌名物：</strong><br>
+                ‧ <strong>シルクロース (Silk Loin)：</strong>極致輕炙薄切絲綢和牛，輕裹特製一口白飯，肉香與甘甜油花完美融化。<br>
+                ‧ <strong>ザブトンのすき焼き (松露月見壽喜燒)：</strong>極上肩胛小排佐濃郁蛋黃與現刨黑松露，香氣極度奢華。<br>
+                ‧ <strong>シャトーブリアン (Chateaubriand)：</strong>超珍稀菲力牛柳心，軟嫩到用筷子輕輕一夾就化開。<br>
+                ‧ <strong>冷製盛合與甜品：</strong>和牛刺身、極上ユッケ配香脆法棍；結尾阿波手延素麵清口，配搭名物焙茶與白熊刨冰。<br>
+                <strong>💰 預約詳情：</strong>Tabelog / TableCheck 官方預約席（電話 03-3440-4129，東京都渋谷区恵比寿1-11-5 GEMS恵比寿 8F）。<br>
+                <strong>🔗 預約與資訊：</strong><a href="https://tabelog.com/tokyo/A1303/A130302/13211927/" target="_blank" style="color:#985635; text-decoration:underline;">Tabelog 蕃 YORONIKU 官方頁面</a>
               </div>
               <div class="card-footer-row">
-                <span class="venue-location-text">📍 東京都渋谷区代々木2-2-1 小田急ホテルセンチュリーサザンタワー 19F</span>
+                <span class="venue-location-text">📍 東京都渋谷区恵比寿1-11-5 GEMS恵比寿 8F</span>
                 <div class="venue-actions">
-                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('kakida-sushi', event)">🗺️ 路線</button>
-                  <a href="https://transit.yahoo.co.jp/search/result?from=%E6%96%B0%E5%AE%BF&to=%E5%A4%A7%E6%89%8B%E7%94%BA" target="_blank" class="btn-action-pill pill-yahoo">🚆 Yahoo! 往大手町</a>
-                  <a href="https://maps.google.com/?q=Hotel+Century+Southern+Tower+Tokyo" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
+                  <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('yoroniku-ebisu', event)">🗺️ 路線</button>
+                  <a href="https://transit.yahoo.co.jp/search/result?from=%E6%81%B5%E6%AF%94%E5%AF%BF&to=%E5%A4%A7%E6%89%8B%E7%94%BA" target="_blank" class="btn-action-pill pill-yahoo">🚆 Yahoo! 往大手町</a>
+                  <a href="https://maps.google.com/?q=GEMS+Ebisu" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
                 </div>
               </div>
             </div>
@@ -2036,10 +2040,10 @@ html_content = '''<!DOCTYPE html>
               <div class="venue-japanese-name">🍸 VIRTÙ (フォーシーズンズホテル東京大手町 39F)</div>
               <div class="venue-chinese-subtitle">東京都千代田区大手町1-2-1 ‧ 榮獲 Asia's 50 Best Bars ‧ 39樓法式日式當代調酒與皇居高空絕景</div>
               <div class="card-from-leg-pill" style="background:#fee2e2; color:#991b1b; border-color:#fecaca;">
-                🚇 東京 Metro 丸之內線 (新宿 ➔ 大手町 17分直達免轉車) 或 的士 (Taxi 15分) ➔ 直達四季酒店 39F
+                🚕 的士直達 (Taxi 約20分直抵四季酒店門口) 或 🚇 東京 Metro 日比谷線轉千代田線 (約22分) ➔ 直達四季酒店 39F
               </div>
               <p class="venue-details">
-                食完かきだ鮨嘅豐盛壽司與高森和牛，隨即展開極致浪漫嘅高空微醺之夜！由新宿搭乘丸之內線或的士直達「Four Seasons Hotel Tokyo at Otemachi」39 樓旗艦酒吧 VIRTÙ。將法國古典調香哲學融入日式頂級蒸餾工藝，俯瞰璀璨嘅皇居森林與東京繁華夜景，為甜蜜浪漫嘅 Day 3 劃上完美醉人句號！
+                品嚐完蕃 YORONIKU 頂級極上和牛燒肉盛宴後，隨即展開極致浪漫嘅高空微醺之夜！由惠比壽直接跳上的士（或乘地鐵）直達「Four Seasons Hotel Tokyo at Otemachi」39 樓旗艦酒吧 VIRTÙ。將法國古典調香哲學融入日式頂級蒸餾工藝，俯瞰璀璨嘅皇居森林與東京繁華夜景，為甜蜜浪漫嘅 Day 3 劃上完美醉人句號！
               </p>
               <div class="venue-highlight-note">
                 <strong>🍸 頂級調酒推薦：</strong>招牌七寶蒸餾特調（結合干邑白蘭地、日本柚子與和三盆糖）、當季秋日水果香檳雞尾酒。<br>
@@ -2543,7 +2547,7 @@ html_content = '''<!DOCTYPE html>
         color: "#9e2a4b",
         lastStopName: "STELLA STORIA HAYAMA (葉山町)",
         vehicle: "🚕",
-        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E9%80%97%E5%AD%90&to=%E6%96%B0%E5%AE%BF",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E9%80%97%E5%AD%90&to=%E6%81%B5%E6%AF%94%E5%AF%BF",
         routeCoords: [
           [35.2819, 139.5710], // Stella Storia Hayama
           [35.2855, 139.5725], // 鐙摺港沿海彎道
@@ -2553,18 +2557,18 @@ html_content = '''<!DOCTYPE html>
           [35.2961, 139.5524]  // リビエラ逗子マリーナ (Riviera Zushi Marina)
         ]
       },
-      'kakida-sushi': {
-        id: 'kakida-sushi',
+      'yoroniku-ebisu': {
+        id: 'yoroniku-ebisu',
         day: 3,
-        title: "かきだ鮨 新宿総本店 (世紀南塔 19F)",
-        sub: "逗子 ➔ 新宿 (The Tokyo コース ‧ 19:00 本鮪無限追加)",
+        title: "蕃 YORONIKU (よろにく 恵比寿)",
+        sub: "逗子 ➔ 恵比寿 (Tabelog 燒肉名店 ‧ 19:00 極上和牛盛宴)",
         time: "10/19 19:00",
-        lat: 35.6863,
-        lng: 139.7005,
+        lat: 35.6463,
+        lng: 139.7117,
         color: "#9e2a4b",
         lastStopName: "リビエラ逗子マリーナ (逗子市)",
         vehicle: "🚆",
-        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E9%80%97%E5%AD%90&to=%E6%96%B0%E5%AE%BF",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E6%81%B5%E6%AF%94%E5%AF%BF&to=%E5%A4%A7%E6%89%8B%E7%94%BA",
         routeCoords: [
           [35.2961, 139.5524], // リビエラ逗子マリーナ
           [35.2975, 139.5805], // 逗子駅 (湘南新宿ライン直通)
@@ -2574,34 +2578,32 @@ html_content = '''<!DOCTYPE html>
           [35.4660, 139.6225], // 横浜駅
           [35.5780, 139.6600], // 武蔵小杉駅
           [35.6200, 139.7280], // 大崎駅
-          [35.6465, 139.7100], // 恵比寿駅
-          [35.6580, 139.7016], // 渋谷駅
-          [35.6863, 139.7005]  // 新宿サザンタワー 19F かきだ鮨 新宿総本店
+          [35.6465, 139.7100], // 恵比寿駅 (東口)
+          [35.6463, 139.7117]  // GEMS 恵比寿 8F 蕃 YORONIKU
         ]
       },
       'virtu-bar': {
         id: 'virtu-bar',
         day: 3,
         title: "VIRTÙ (Four Seasons Otemachi 39F)",
-        sub: "新宿 かきだ鮨 ➔ 地鐵丸之內線/的士 ➔ 亞洲50大高空酒吧",
+        sub: "恵比寿 蕃YORONIKU ➔ 的士/日比谷線 ➔ 亞洲50大高空酒吧",
         time: "10/19 21:30",
         lat: 35.6881,
         lng: 139.7635,
         color: "#9e2a4b",
-        lastStopName: "かきだ鮨 新宿総本店",
-        vehicle: "🚇",
-        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E6%96%B0%E5%AE%BF&to=%E5%A4%A7%E6%89%8B%E7%94%BA",
+        lastStopName: "蕃 YORONIKU (恵比寿)",
+        vehicle: "🚕",
+        yahooUrl: "https://transit.yahoo.co.jp/search/result?from=%E6%81%B5%E6%AF%94%E5%AF%BF&to=%E5%A4%A7%E6%89%8B%E7%94%BA",
         routeCoords: [
-          [35.6863, 139.7005], // 新宿かきだ鮨
-          [35.6905, 139.7000], // 新宿駅 (丸ノ内線)
-          [35.6920, 139.7080], // 新宿三丁目
-          [35.6930, 139.7210], // 四谷三丁目
-          [35.6860, 139.7310], // 四ツ谷
-          [35.6795, 139.7435], // 赤坂見附
-          [35.6740, 139.7500], // 国会議事堂前
+          [35.6463, 139.7117], // 蕃 YORONIKU (GEMS恵比寿)
+          [35.6465, 139.7100], // 恵比寿駅
+          [35.6430, 139.7200], // 広尾
+          [35.6630, 139.7320], // 六本木
+          [35.6625, 139.7450], // 神谷町
+          [35.6700, 139.7500], // 虎ノ門ヒルズ
           [35.6710, 139.7530], // 霞ケ関
-          [35.6720, 139.7600], // 銀座
-          [35.6815, 139.7670], // 東京駅
+          [35.6750, 139.7600], // 日比谷
+          [35.6815, 139.7640], // 二重橋前 (丸の内)
           [35.6881, 139.7635]  // 大手町駅 ‧ フォーシーズンズホテル東京大手町 39F VIRTÙ
         ]
       },
@@ -3416,11 +3418,11 @@ LOCATION:リビエラ逗子マリーナ 本館宴會廳
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:晚飯：かきだ鮨 新宿総本店 (The Tokyo コース ‧ 鮨おかわり無料)
+SUMMARY:晚飯：蕃 YORONIKU 恵比寿 (極上和牛燒肉盛宴)
 DTSTART;TZID=Asia/Tokyo:20261019T190000
 DTEND;TZID=Asia/Tokyo:20261019T210000
-DESCRIPTION:小田急世紀南塔 19F，Tabelog 預約 19:00。全條本鮪一本買、產地直送壽司免費無限次任追加、高森和牛壽喜燒！
-LOCATION:かきだ鮨 新宿総本店 (東京都渋谷区代々木2-2-1 小田急ホテルセンチュリーサザンタワー 19F)
+DESCRIPTION:GEMS 恵比寿 8F，預約 19:00。The Tabelog Award 銅牌名店、專人代烤極上絲綢和牛、黑松露月見壽喜燒、夏多布里昂菲力牛柳！
+LOCATION:蕃 YORONIKU (東京都渋谷区恵比寿1-11-5 GEMS恵比寿 8F)
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
