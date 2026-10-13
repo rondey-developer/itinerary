@@ -1748,7 +1748,7 @@ html_content = '''<!DOCTYPE html>
     </div>
 
     <div class="nav-buttons">
-      <a href="./index.html" class="btn-nav-action" style="text-decoration:none; background:#fdf2f8; color:#9d174d; border-color:#fce7f3;" title="切換至 9/25 東京草津溫泉行程">
+      <a href="./itinerary_0925.html" class="btn-nav-action" style="text-decoration:none; background:#fdf2f8; color:#9d174d; border-color:#fce7f3;" title="切換至 9/25 東京草津溫泉行程">
         <span>🌸</span><span class="nav-btn-text-full"> 9/25 草津溫泉</span><span class="nav-btn-text-short"> 9/25</span>
       </a>
       <button class="btn-nav-action" onclick="showAllVenuesView()" title="睇晒全程所有景點">
@@ -2780,19 +2780,19 @@ html_content = '''<!DOCTYPE html>
         <div class="chef-pairing-grid">
           <div class="chef-pairing-card">
             <strong>🍶 日本清酒 (Saké Japonais / Japanese Sake)</strong>
-            <span>清冽純米香氣，完美烘托北海道帶子、真鯛及奶油燉雞腿之醇美。(Arôme pur de riz, sublime les Saint-Jacques, la daurade et le poulet crémeux.)</span>
+            <span>清冽純米香氣，完美烘托北海道帶子、真鯛及奶油燉雞腿之醇美。<br><span style="font-size:0.75rem; color:#a19b95; font-style:italic;">Sublime les Saint-Jacques, la daurade et le poulet crémeux. · Delicate rice aroma elevating seafood and creamy chicken.</span></span>
           </div>
           <div class="chef-pairing-card">
             <strong>🥂 白葡萄酒 (Vin Blanc / White Wine)</strong>
-            <span>清新果酸與圓潤質感，完美映襯開胃薄脆小點、粟米濃湯與白汁燉雞。(Fraîcheur vive et fruitée, accord harmonieux avec le velouté et le poulet.)</span>
+            <span>清新果酸與圓潤質感，完美映襯開胃薄脆小點、粟米濃湯與白汁燉雞。<br><span style="font-size:0.75rem; color:#a19b95; font-style:italic;">Fraîcheur vive et fruitée, accord harmonieux avec le velouté et le poulet. · Vibrant acidity harmonizing with the velouté and chicken.</span></span>
           </div>
           <div class="chef-pairing-card">
             <strong>🍷 紅葡萄酒 (Vin Rouge / Red Wine)</strong>
-            <span>單寧圓潤深邃，紅酒慢燉牛肋條之靈魂絕配。(Tanins soyeux et arômes profonds, compagnon idéal du bœuf bourguignon.)</span>
+            <span>單寧圓潤深邃，紅酒慢燉牛肋條之靈魂絕配。<br><span style="font-size:0.75rem; color:#a19b95; font-style:italic;">Tanins soyeux et arômes profonds, compagnon idéal du bœuf bourguignon. · Velvety tannins, the soulmate companion to beef bourguignon.</span></span>
           </div>
           <div class="chef-pairing-card">
             <strong>🥃 日本熟成梅酒 (Liqueur de Prune Japonaise / Aged Plum Liqueur)</strong>
-            <span>酸甜溫潤微醺，為肉桂紅酒燉洋梨劃下甜蜜溫暖的浪漫句點。(Douceur acidulée et élégante, touche finale harmonieuse pour le dessert.)</span>
+            <span>酸甜溫潤微醺，為肉桂紅酒燉洋梨劃下甜蜜溫暖的浪漫句點。<br><span style="font-size:0.75rem; color:#a19b95; font-style:italic;">Douceur acidulée et élégante, finale harmonieuse pour le dessert. · Gentle sweet-tart warmth, crafting a cozy romantic finale.</span></span>
           </div>
         </div>
       </div>
@@ -2800,14 +2800,15 @@ html_content = '''<!DOCTYPE html>
       <!-- Chef's Love Letter -->
       <div class="chef-love-letter">
         「全宇宙只此一張的專屬私密餐桌 ‧ 無需排隊預約 ‧ 無限時 ‧ 無限續添愛意」<br>
-        <span style="font-size:0.86em; opacity:0.85; font-style:italic;">“Une table privée unique au monde · Sans réservation ni limite de temps · Amour à volonté.”</span>
-        <div class="chef-love-sign">Chef Rondey with Infinite Love 💕 · 2026.10.19 Yurigaoka</div>
+        <span style="font-size:0.86em; opacity:0.85; font-style:italic;">“Une table privée unique au monde · Sans réservation ni limite de temps · Amour à volonté.”</span><br>
+        <span style="font-size:0.82em; opacity:0.75; font-style:italic;">“The only exclusive private dining table in the universe · No reservations · No time limit · Endless love.”</span>
+        <div class="chef-love-sign">Chef Rondey with Infinite Love 💕 · 2026.10.19 Yurigaoka Base</div>
       </div>
 
       <!-- Action Buttons -->
       <div class="chef-modal-actions">
-        <button class="btn-chef-copy" onclick="copyChefMenuText()">📋 複製完整菜單 (Copy Menu)</button>
-        <button class="btn-chef-close-bottom" onclick="closeChefMenuModal()">✕ 關閉菜單 (Close)</button>
+        <button class="btn-chef-copy" onclick="copyChefMenuText()">📋 複製完整菜單 (Copy Menu / Copier)</button>
+        <button class="btn-chef-close-bottom" onclick="closeChefMenuModal()">✕ 關閉菜單 (Close / Fermer)</button>
       </div>
 
     </div>
@@ -4293,4 +4294,8 @@ output_path = os.path.join(os.path.dirname(__file__), 'itinerary_1017.html')
 with open(output_path, 'w', encoding='utf-8') as f:
     f.write(html_content)
 
-print(f"Itinerary for 10/17 - 10/20 successfully generated at: {output_path}")
+index_path = os.path.join(os.path.dirname(__file__), 'index.html')
+with open(index_path, 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+print(f"Itinerary for 10/17 - 10/20 successfully generated at: {output_path} and {index_path}")
