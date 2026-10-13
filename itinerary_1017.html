@@ -1392,6 +1392,341 @@
       align-items: center;
       gap: 8px;
     }
+
+    /* ==================== SECRET CHEF TASTING MENU MODAL ==================== */
+    .egg-emoji-trigger {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+      -webkit-user-select: none;
+      padding: 3px 6px;
+      border-radius: 8px;
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s;
+      touch-action: manipulation;
+    }
+    .egg-emoji-trigger:hover, .egg-emoji-trigger:active {
+      transform: scale(1.35) rotate(-10deg);
+      background: rgba(244, 114, 182, 0.2);
+    }
+
+    .floating-egg-sparkle {
+      position: fixed;
+      pointer-events: none;
+      font-size: 1.6rem;
+      z-index: 999999;
+      animation: eggSparkleFloat 1.25s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    @keyframes eggSparkleFloat {
+      0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.6) rotate(0deg);
+      }
+      50% {
+        opacity: 0.95;
+        transform: translate(-50%, -80px) scale(1.3) rotate(15deg);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -150px) scale(1.6) rotate(-20deg);
+      }
+    }
+
+    .chef-menu-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(12, 10, 16, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      z-index: 99999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      box-sizing: border-box;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .chef-menu-modal-overlay.active {
+      display: flex !important;
+      opacity: 1;
+    }
+
+    .chef-menu-card-dialog {
+      background: linear-gradient(165deg, #1e1b24 0%, #15131a 55%, #1a1520 100%);
+      border: 1px solid rgba(229, 192, 123, 0.45);
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.85), 0 0 45px rgba(229, 192, 123, 0.15);
+      border-radius: 22px;
+      width: 100%;
+      max-width: 650px;
+      max-height: 88vh;
+      overflow-y: auto;
+      color: #f7f3ec;
+      padding: 34px 28px 28px;
+      position: relative;
+      transform: scale(0.92) translateY(24px);
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    @media (max-width: 600px) {
+      .chef-menu-card-dialog {
+        padding: 26px 18px 22px;
+        max-height: 90vh;
+        border-radius: 18px;
+      }
+    }
+    .chef-menu-modal-overlay.active .chef-menu-card-dialog {
+      transform: scale(1) translateY(0);
+    }
+
+    .chef-menu-close-btn {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: #e5c07b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .chef-menu-close-btn:hover {
+      background: rgba(229, 192, 123, 0.25);
+      transform: rotate(90deg);
+    }
+
+    .chef-menu-header {
+      text-align: center;
+      margin-bottom: 22px;
+      padding-bottom: 20px;
+      border-bottom: 1px dashed rgba(229, 192, 123, 0.28);
+    }
+    .chef-menu-crest {
+      font-size: 0.74rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #d4af37;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .chef-menu-title {
+      font-family: var(--font-serif);
+      font-size: 1.78rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      background: linear-gradient(135deg, #fff3d1 0%, #e5c07b 50%, #dfa856 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    @media (max-width: 600px) {
+      .chef-menu-title { font-size: 1.45rem; }
+    }
+    .chef-menu-subtitle {
+      font-size: 0.88rem;
+      color: #c9c3be;
+      margin-bottom: 10px;
+    }
+    .chef-menu-tagline {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-style: italic;
+      color: #fce7f3;
+      background: rgba(244, 114, 182, 0.12);
+      border: 1px solid rgba(244, 114, 182, 0.25);
+      padding: 4px 14px;
+      border-radius: 9999px;
+    }
+
+    .chef-menu-courses {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .chef-course-item {
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 16px 18px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .chef-course-item:hover {
+      background: rgba(229, 192, 123, 0.05);
+      border-color: rgba(229, 192, 123, 0.28);
+    }
+    .chef-course-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .chef-course-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 6px;
+      background: rgba(229, 192, 123, 0.16);
+      color: #e5c07b;
+      border: 1px solid rgba(229, 192, 123, 0.32);
+    }
+    .chef-course-link {
+      font-size: 0.74rem;
+      color: #f472b6;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(244, 114, 182, 0.12);
+      padding: 3px 10px;
+      border-radius: 9999px;
+      border: 1px solid rgba(244, 114, 182, 0.28);
+      transition: all 0.2s;
+    }
+    .chef-course-link:hover {
+      background: rgba(244, 114, 182, 0.24);
+      color: #fff;
+    }
+    .chef-course-name {
+      font-family: var(--font-serif);
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 3px;
+      line-height: 1.35;
+    }
+    .chef-course-jp {
+      font-size: 0.81rem;
+      color: #d8cec3;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+    .chef-course-desc {
+      font-size: 0.81rem;
+      color: #aba49f;
+      line-height: 1.52;
+      margin-bottom: 8px;
+    }
+    .chef-course-pairing {
+      font-size: 0.78rem;
+      color: #e5c07b;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(229, 192, 123, 0.08);
+      padding: 4px 10px;
+      border-radius: 6px;
+      width: fit-content;
+    }
+
+    .chef-pairing-block {
+      margin-top: 22px;
+      background: rgba(229, 192, 123, 0.04);
+      border: 1px solid rgba(229, 192, 123, 0.25);
+      border-radius: 14px;
+      padding: 16px 18px;
+    }
+    .chef-pairing-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #e5c07b;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .chef-pairing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    @media (max-width: 540px) {
+      .chef-pairing-grid { grid-template-columns: 1fr; }
+    }
+    .chef-pairing-card {
+      background: rgba(0, 0, 0, 0.28);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 0.8rem;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .chef-pairing-card strong {
+      color: #fff;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .chef-pairing-card span {
+      color: #aba49f;
+      font-size: 0.75rem;
+      line-height: 1.4;
+    }
+
+    .chef-love-letter {
+      margin-top: 20px;
+      text-align: center;
+      padding: 18px 16px;
+      border-top: 1px dashed rgba(229, 192, 123, 0.25);
+      color: #e6dede;
+      font-size: 0.84rem;
+      font-style: italic;
+      line-height: 1.6;
+    }
+    .chef-love-sign {
+      margin-top: 6px;
+      font-weight: 700;
+      color: #f472b6;
+      font-style: normal;
+    }
+
+    .chef-modal-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+    .btn-chef-copy {
+      background: linear-gradient(135deg, #d4af37, #b89025);
+      color: #1a1520;
+      border: none;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 9px 20px;
+      border-radius: 9999px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .btn-chef-copy:hover {
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+      transform: translateY(-1px);
+    }
+    .btn-chef-close-bottom {
+      background: rgba(255, 255, 255, 0.08);
+      color: #ddd;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 0.85rem;
+      padding: 9px 20px;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-chef-close-bottom:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -2103,18 +2438,17 @@
                 <span class="card-status-pill pill-booking" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">🛒 精品超市大採購 ‧ 為今晚煮飯仔準備</span>
               </div>
               <div class="venue-japanese-name">🛒 逗子 ➔ 百合ヶ丘駅 ＆ 特選超市食材採購 (Odakyu OX)</div>
-              <div class="venue-chinese-subtitle">逗子出發純電車直返百合ヶ丘 ‧ Odakyu OX 百合ヶ丘店 ‧ 採購頂級黑毛和牛牛排與時令美饌</div>
+              <div class="venue-chinese-subtitle">逗子出發純電車直返百合ヶ丘 ‧ Odakyu OX 百合ヶ丘店 ‧ 採購今晚料理所需時令食材與佐餐美酒</div>
               <div class="card-from-leg-pill" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">
                 🚆 逗子駅 ➔ JR 湘南新宿線/橫須賀線至橫濱/町田 ➔ 轉小田急小田原線直達百合ヶ丘 (全程純鐵路約 65 分鐘，免塞車)
               </div>
               <p class="venue-details">
-                好友海邊遊艇婚禮圓滿禮成！兩人牽著手取回行李，由逗子搭乘純鐵路舒適直返溫暖大本營百合ヶ丘。一出百合ヶ丘站，隨即走入高質生鮮超市「Odakyu OX 百合ヶ丘店」（或新百合ヶ丘生鮮市集）。今晚男方親自掌廚下廚煮飯仔！手牽手在冷藏肉櫃前挑選最上乘的特選日本產黑毛和牛牛排（厚切西冷/牛柳）、日本產時令蔬菜、現調沙律配料、新鮮海產與佐餐冰鎮紅白葡萄酒，滿滿的幸福採購儀式感！
+                好友海邊遊艇婚禮圓滿禮成！兩人牽著手取回行李，由逗子搭乘純鐵路舒適直返溫暖大本營百合ヶ丘。一出百合ヶ丘站，隨即走入高質生鮮超市「Odakyu OX 百合ヶ丘店」（或新百合ヶ丘生鮮市集）。今晚男方親自掌廚下廚煮飯仔！手牽手挑選最上乘的特選日本產時令食材、新鮮蔬菜、海產與佐餐冰鎮酒品，享受滿滿的生活幸福採購儀式感！
               </p>
               <div class="venue-highlight-note">
-                <strong>🛒 採購重點推薦：</strong><br>
-                ‧ <strong>頂級和牛牛排：</strong>日本國產黑毛和牛厚切牛排（A5 霜降油花勻稱），油脂甘甜香醇。<br>
-                ‧ <strong>時令野菜與海產：</strong>新鮮彩椒、日本溫室番茄、香濃蘑菇，搭配現調黑松露蒜香醬汁與香脆法包。<br>
-                ‧ <strong>佐餐佳釀與水果：</strong>精選日本紅酒或氣泡清酒，買齊長野麝香葡萄與手作甜品作餐後小吃！<br>
+                <strong>🛒 超市採購儀式感：</strong><br>
+                ‧ <strong>嚴選時令生鮮食材：</strong>特選日本產新鮮食材、當季海產與新鮮蔬菜，為今晚二人世界晚宴做足準備。<br>
+                ‧ <strong>佐餐佳釀與精緻水果：</strong>精選佐餐紅白葡萄酒與日本清酒，買齊長野麝香葡萄作餐後微醺水果點心。<br>
                 ‧ <strong>📍 超市位置：</strong>Odakyu OX 百合ヶ丘店（百合ヶ丘站南口直出即達，營業至 22:00，採購超從容）。
               </div>
               <div class="card-footer-row">
@@ -2131,26 +2465,28 @@
             <div class="venue-card" id="card-home-cooking" onclick="selectStopLeg('home-cooking')">
               <div class="card-top-row">
                 <span class="card-time-pill">⏰ 18:30 – 22:00 (男友愛心浪漫晚宴 ‧ 專屬二人世界)</span>
-                <span class="card-status-pill pill-booking" style="background:#fce7f3; color:#9d174d; border-color:#fbcfe8;">🍳 男友親自下廚 ‧ 浪漫家常燭光晚宴</span>
+                <span class="card-status-pill pill-booking" style="background:#fce7f3; color:#9d174d; border-color:#fbcfe8; cursor:pointer;" onclick="openChefMenuModal(event)" title="🍳 私房愛心晚宴">
+                  <span class="egg-emoji-trigger">🍳</span> 男友親自下廚 ‧ 浪漫家常燭光晚宴
+                </span>
               </div>
-              <div class="venue-japanese-name">🍳 男友愛心浪漫晚宴 ‧ 百合ヶ丘大本營雙人料理時光 (Home Cooking Night)</div>
-              <div class="venue-chinese-subtitle">神奈川縣川崎市麻生區百合丘 ‧ 大本營溫馨廚房 ‧ 香煎特選黑毛和牛牛排 ‧ 甜蜜二人世界</div>
+              <div class="venue-japanese-name"><span class="egg-emoji-trigger" onclick="openChefMenuModal(event)" title="🍳 私房驚喜">🍳</span> 男友愛心浪漫晚宴 ‧ 百合ヶ丘大本營雙人料理時光 (Home Cooking Night)</div>
+              <div class="venue-chinese-subtitle">神奈川縣川崎市麻生區百合丘 ‧ 大本營溫馨廚房 ‧ 男友親自下廚 ‧ 甜蜜二人世界</div>
               <div class="card-from-leg-pill" style="background:#fdf2f8; color:#be185d; border-color:#fbcfe8;">
                 🏡 超市步行 3 分鐘返抵大本營 ➔ 換上舒適家居服 ➔ 男友掌廚 ‧ 女友品酒放鬆 ➔ 專屬浪漫之夜
               </div>
               <p class="venue-details">
-                旅程最溫馨、最動人的一刻！取消喧囂擁擠的市區燒肉名店與遠路奔波，返到最熟悉舒適的百合ヶ丘大本營。脫下隆重的婚禮西裝與禮服，換上鬆軟舒服的家居服。男方在廚房大展身手為心愛的女朋友烹調愛心晚餐：香煎滋滋作響的特選黑毛和牛牛排、特製黑松露蒜香意粉與新鮮沙律。房間播著輕柔的爵士浪漫音樂，兩個人舉杯碰杯，一邊回味今天逗子海景婚禮的感動與前兩天的旅行點滴，享受完全屬於兩個人的純粹、私密而深情的甜蜜時光！
+                旅程最溫馨、最動人的一刻！取消喧囂擁擠的市區名店與遠路奔波，返到最熟悉舒適的百合ヶ丘大本營。脫下隆重的婚禮西裝與禮服，換上鬆軟舒服的家居服。男方在廚房大展身手為心愛的女朋友烹調專屬家常愛心晚餐。房間播著輕柔的爵士浪漫音樂，兩個人舉杯碰杯，一邊回味今天逗子海景婚禮的感動與前兩天的旅行點滴，享受完全屬於兩個人的純粹、私密而深情的甜蜜時光！
               </p>
               <div class="venue-highlight-note">
-                <strong>🌟 男友愛心菜單亮點：</strong><br>
-                ‧ <strong>香煎頂級黑毛和牛牛排：</strong>大火炙封肉汁、雙面焦香肉質粉嫩，撒上海鹽與現磨黑胡椒，甘甜肉汁爆棚！<br>
-                ‧ <strong>黑松露蘑菇蒜香意粉：</strong>香濃牛油與黑松露醬均勻包裹麵條，香氣撲鼻。<br>
-                ‧ <strong>三浦彩蔬溫沙律：</strong>鮮甜日本時令蔬菜淋上焙煎芝麻柚子醋，清爽開胃。<br>
-                ‧ <strong>專屬二人無拘無束：</strong>完全免排隊、免趕車、免盛裝拘謹，洗完熱水澡舒舒服服品嚐手作料理與長野麝香葡萄甜點，滿滿愛意！
+                <strong>🏡 浪漫大本營料理之夜 ‧ 專屬二人世界：</strong><br>
+                ‧ <strong>純粹私密二人時光：</strong>逗子海景婚禮禮成後返回大本營，換上最舒適鬆軟的家居服，洗個熱水澡徹底放鬆身心。<br>
+                ‧ <strong>大本營溫馨掌廚：</strong>男方親自在廚房大展身手烹調愛心料理，播著微醺浪漫爵士樂，女方小酌品酒放鬆。<br>
+                ‧ <strong>無拘無束微醺夜話：</strong>完全免排隊、免趕車、免市區喧囂，兩人舉杯回味旅程感動，沉浸於最私密深情的甜蜜世界。
               </div>
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 神奈川県川崎市麻生区百合丘 (旅程大本營)</span>
                 <div class="venue-actions">
+                  <button class="btn-action-pill" id="btn-chef-secret-menu" style="display:none; background:linear-gradient(135deg, #fdf2f8, #fce7f3); color:#9d174d; border-color:#fbcfe8; font-weight:700;" onclick="openChefMenuModal(event)">✨ 私房菜單</button>
                   <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('home-cooking', event)">🗺️ 路線</button>
                   <a href="https://maps.google.com/?q=Yurigaoka+Station" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
                 </div>
@@ -2340,6 +2676,139 @@
 
   <!-- Toast Notification -->
   <div class="toast-pill" id="toast-pill">已複製分享連結！</div>
+
+  <!-- Canvas Confetti Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <!-- Secret Chef Tasting Menu Modal -->
+  <div class="chef-menu-modal-overlay" id="chef-menu-modal" onclick="closeChefMenuModal()">
+    <div class="chef-menu-card-dialog" onclick="event.stopPropagation()">
+      <button class="chef-menu-close-btn" onclick="closeChefMenuModal()" title="Close / 關閉菜單">✕</button>
+
+      <div class="chef-menu-header">
+        <div class="chef-menu-crest">⚜️ BISTRO YURIGAOKA · MENU DÉGUSTATION PRIVÉ ⚜️</div>
+        <h2 class="chef-menu-title">Chef Rondey's Secret Tasting Menu</h2>
+        <div class="chef-menu-subtitle">📅 2026/10/19 (Mon) ‧ Yurigaoka Base ‧ 專屬二人世界私房晚宴 (Dîner Privé Romantique)</div>
+        <div class="chef-menu-tagline">
+          「一期一會的私密盛宴，純手工悉心烹調，只為最愛的妳。」<br>
+          <span style="font-size:0.82em; opacity:0.85; font-style:italic;">“Une expérience gastronomique exclusive, préparée avec passion pour toi seule.”</span>
+        </div>
+      </div>
+
+      <div class="chef-menu-courses">
+
+        <!-- Course 1: Amuse-Bouche -->
+        <div class="chef-course-item">
+          <div class="chef-course-top">
+            <span class="chef-course-badge">Course 01 ‧ Amuse-Bouche ‧ 開胃小品</span>
+            <a href="https://www.instagram.com/reel/DQ864nhEjFc/?psln=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==" target="_blank" class="chef-course-link">▶ Recipe Inspiration (IG Reel)</a>
+          </div>
+          <div class="chef-course-name">Canapé de Poire et Noix de Saint-Jacques</div>
+          <div class="chef-course-jp">秋月梨佐刺身級北海道帶子法式薄脆小點 ‧ Pear & Hokkaido Scallop Canapé</div>
+          <div class="chef-course-desc">刺身級鮮甜北海道帶子切粒，搭配秋日清甜秋月梨，佐以特調芥末籽初榨橄欖油、青檸汁與新鮮香草，盛於香脆薄餅之上，果甜海味交織，清新爽口。<br><span style="font-size:0.77rem; color:#8e8884; font-style:italic;">Sashimi-grade Hokkaido scallops and crisp autumn pear tossed with wholegrain mustard, fresh lime, and extra virgin olive oil atop a crisp crostini.</span></div>
+          <div class="chef-course-pairing">🍶 佐餐推薦 (Accord Mets-Vins)：冰鎮純米大吟釀 / 芳醇白葡萄酒 (Chilled Junmai Daiginjo / Vin Blanc)</div>
+        </div>
+
+        <!-- Course 2: Starter -->
+        <div class="chef-course-item">
+          <div class="chef-course-top">
+            <span class="chef-course-badge">Course 02 ‧ Hors-d'œuvre Froid ‧ 冷前菜</span>
+            <a href="https://www.instagram.com/p/DdoRQs8TGlm/" target="_blank" class="chef-course-link">▶ Recipe Inspiration (IG Reel)</a>
+          </div>
+          <div class="chef-course-name">Carpaccio de Daurade au Poivre Yuzu & Shiso</div>
+          <div class="chef-course-jp">真鯛薄切刺身佐大葉紫蘇柚子胡椒 ‧ Sea Bream Carpaccio with Yuzu Kosho</div>
+          <div class="chef-course-desc">時令真鯛薄切生魚片，鋪上清香大葉紫蘇細絲，淋上特調柚子胡椒、新鮮檸檬汁與初榨橄欖油冷榨醬汁，微辛沁涼，喚醒味蕾。<br><span style="font-size:0.77rem; color:#8e8884; font-style:italic;">Delicate slices of sea bream carpaccio accented with fragrant shiso, piquant yuzu kosho, fresh lemon, and cold-pressed olive oil.</span></div>
+          <div class="chef-course-pairing">🍶 佐餐推薦 (Accord Mets-Vins)：冷藏日本清酒 (Chilled Japanese Sake / Saké)</div>
+        </div>
+
+        <!-- Course 3: Soup -->
+        <div class="chef-course-item">
+          <div class="chef-course-top">
+            <span class="chef-course-badge">Course 03 ‧ Potage Velouté ‧ 暖胃濃湯</span>
+            <a href="https://www.instagram.com/p/DcC3iR8SyCo/" target="_blank" class="chef-course-link">▶ Recipe Inspiration (IG Reel)</a>
+          </div>
+          <div class="chef-course-name">Velouté de Maïs Doux à la Française</div>
+          <div class="chef-course-jp">極鮮甜濃郁法式甜粟米濃湯 ‧ Creamy Sweet Corn Velouté</div>
+          <div class="chef-course-desc">特選優質新鮮甜粟米，粟米芯長時間慢火浸萃香醇牛奶 30 分鐘，融合焦香榛果牛油炒製粟米粒打磨過篩，絲滑濃郁、天然甘甜。<br><span style="font-size:0.77rem; color:#8e8884; font-style:italic;">Silky sweet corn velouté infused with corn cobs simmered slowly in fresh milk, blended with nutty brown butter and strained to velvet texture.</span></div>
+          <div class="chef-course-pairing">🥂 佐餐推薦 (Accord Mets-Vins)：圓潤芳醇白葡萄酒 (Aromatic Chardonnay / Vin Blanc)</div>
+        </div>
+
+        <!-- Course 4: Main -->
+        <div class="chef-course-item">
+          <div class="chef-course-top">
+            <span class="chef-course-badge">Course 04 ‧ Plat Principal ‧ 招牌主菜</span>
+            <a href="https://www.instagram.com/reel/DScbkFIieWU/?vrfl=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==" target="_blank" class="chef-course-link">▶ Recipe Inspiration (IG Reel)</a>
+          </div>
+          <div class="chef-course-name">Poulet Poêlé en Sauce Crémeuse aux Champignons et Épinards Fondants</div>
+          <div class="chef-course-jp">法式香煎嫩雞腿佐白汁雜菌菠菜熔岩芝士 ‧ Pan-Seared Chicken Thigh with Creamy Mushroom & Spinach Cheese Sauce</div>
+          <div class="chef-course-desc">嚴選厚切嫩滑雞腿肉，橄欖油熱鍋將雞皮煎至金黃焦香酥脆，搭配嫩炒洋蔥與鮮美雜菌。倒入香醇牛奶法式高湯慢火收汁，拌入嫩菠菜與濃郁拉絲芝士，不加牛油純天然輕盈滑順，最後撒上現磨黑胡椒提香。<br><span style="font-size:0.77rem; color:#8e8884; font-style:italic;">Crispy pan-seared tender chicken thigh gently simmered in a light milk cream sauce with sautéed mushrooms, baby spinach, and melted cheese, finished with cracked black pepper.</span></div>
+          <div class="chef-course-pairing">🍶 佐餐推薦 (Accord Mets-Vins)：純米酒 / 純米吟釀（冷酒至常溫）或 圓潤白葡萄酒 (Junmai / Junmai Ginjo Saké or Chardonnay)</div>
+        </div>
+
+        <!-- Course 5: Sub-Main -->
+        <div class="chef-course-item">
+          <div class="chef-course-top">
+            <span class="chef-course-badge">Course 05 ‧ Deuxième Plat ‧ 法國名饌</span>
+            <a href="https://www.youtube.com/shorts/t_13uHS-uCM" target="_blank" class="chef-course-link">▶ Recipe Inspiration (YouTube Shorts)</a>
+          </div>
+          <div class="chef-course-name">Bœuf Bourguignon Traditionnel</div>
+          <div class="chef-course-jp">經典勃艮第紅酒慢燉牛肋條 ‧ Traditional Beef Bourguignon</div>
+          <div class="chef-course-desc">嚴選厚切牛肋條與優質紅酒、洋蔥、胡蘿蔔及新鮮香草慢火細燉，牛肋條酥軟化口，濃郁紅酒肉汁醇厚迷人。<br><span style="font-size:0.77rem; color:#8e8884; font-style:italic;">Slow-braised prime beef short ribs in rich French red wine with caramelized onions, carrots, and bouquet garni until fork-tender.</span></div>
+          <div class="chef-course-pairing">🍷 佐餐推薦 (Accord Mets-Vins)：醇厚紅葡萄酒 (Full-Bodied Red Wine / Vin Rouge)</div>
+        </div>
+
+        <!-- Course 6: Dessert -->
+        <div class="chef-course-item">
+          <div class="chef-course-top">
+            <span class="chef-course-badge">Course 06 ‧ Dessert ‧ 甜蜜收尾</span>
+            <a href="https://www.youtube.com/shorts/e70rdjGtoTE" target="_blank" class="chef-course-link">▶ Recipe Inspiration (YouTube Shorts)</a>
+          </div>
+          <div class="chef-course-name">Poires Pochées au Vin Rouge Épicé</div>
+          <div class="chef-course-jp">法式經典肉桂香料紅酒燉洋梨 ‧ Spiced Red Wine Poached Pears</div>
+          <div class="chef-course-desc">整顆新鮮西洋梨浸潤於特選紅酒、肉桂、丁香與柑橘皮之中慢火煨煮，果肉軟糯多汁，綴以閃耀食用金箔，甜蜜浪漫極致。<br><span style="font-size:0.77rem; color:#8e8884; font-style:italic;">Whole fresh pears gently poached in spiced red wine with cinnamon, cloves, and orange peel, garnished with sparkling edible gold leaf.</span></div>
+          <div class="chef-course-pairing">🥃 佐餐推薦 (Accord Mets-Vins)：熟成梅酒 / 甜點酒 (Aged Ume-shu / Vin de Dessert)</div>
+        </div>
+
+      </div>
+
+      <!-- Wine Pairing Selection -->
+      <div class="chef-pairing-block">
+        <div class="chef-pairing-title">🍷 專屬佐餐美酒四重奏 ‧ Sélection de Vins & Spiritueux (Wine Pairing Bar)</div>
+        <div class="chef-pairing-grid">
+          <div class="chef-pairing-card">
+            <strong>🍶 日本清酒 (Saké Japonais / Japanese Sake)</strong>
+            <span>清冽純米香氣，完美烘托北海道帶子、真鯛及奶油燉雞腿之醇美。(Arôme pur de riz, sublime les Saint-Jacques, la daurade et le poulet crémeux.)</span>
+          </div>
+          <div class="chef-pairing-card">
+            <strong>🥂 白葡萄酒 (Vin Blanc / White Wine)</strong>
+            <span>清新果酸與圓潤質感，完美映襯開胃薄脆小點、粟米濃湯與白汁燉雞。(Fraîcheur vive et fruitée, accord harmonieux avec le velouté et le poulet.)</span>
+          </div>
+          <div class="chef-pairing-card">
+            <strong>🍷 紅葡萄酒 (Vin Rouge / Red Wine)</strong>
+            <span>單寧圓潤深邃，紅酒慢燉牛肋條之靈魂絕配。(Tanins soyeux et arômes profonds, compagnon idéal du bœuf bourguignon.)</span>
+          </div>
+          <div class="chef-pairing-card">
+            <strong>🥃 日本熟成梅酒 (Liqueur de Prune Japonaise / Aged Plum Liqueur)</strong>
+            <span>酸甜溫潤微醺，為肉桂紅酒燉洋梨劃下甜蜜溫暖的浪漫句點。(Douceur acidulée et élégante, touche finale harmonieuse pour le dessert.)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chef's Love Letter -->
+      <div class="chef-love-letter">
+        「全宇宙只此一張的專屬私密餐桌 ‧ 無需排隊預約 ‧ 無限時 ‧ 無限續添愛意」<br>
+        <span style="font-size:0.86em; opacity:0.85; font-style:italic;">“Une table privée unique au monde · Sans réservation ni limite de temps · Amour à volonté.”</span>
+        <div class="chef-love-sign">Chef Rondey with Infinite Love 💕 · 2026.10.19 Yurigaoka</div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="chef-modal-actions">
+        <button class="btn-chef-copy" onclick="copyChefMenuText()">📋 複製完整菜單 (Copy Menu)</button>
+        <button class="btn-chef-close-bottom" onclick="closeChefMenuModal()">✕ 關閉菜單 (Close)</button>
+      </div>
+
+    </div>
+  </div>
 
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
@@ -2732,7 +3201,7 @@
         id: 'home-cooking',
         day: 3,
         title: "男友愛心浪漫晚宴 ‧ 百合ヶ丘大本營雙人料理時光",
-        sub: "大本營溫馨廚房 ‧ 男友親自下廚 ‧ 香煎頂級和牛牛排與時令美饌 ‧ 專屬二人世界",
+        sub: "大本營溫馨廚房 ‧ 男友親自下廚 ‧ 私房愛心料理與佐餐佳釀 ‧ 專屬二人世界",
         time: "10/19 18:30",
         lat: 35.6092,
         lng: 139.5173,
@@ -3568,7 +4037,7 @@ BEGIN:VEVENT
 SUMMARY:交通採購：逗子返百合丘 ＆ 特選超市食材採購 (Odakyu OX)
 DTSTART;TZID=Asia/Tokyo:20261019T153000
 DTEND;TZID=Asia/Tokyo:20261019T183000
-DESCRIPTION:逗子純鐵路舒適直返百合ヶ丘，走訪 Odakyu OX 超市採購特選日本黑毛和牛牛排、相模灣野菜海鮮與美酒，為今晚愛心晚餐做準備
+DESCRIPTION:逗子純鐵路舒適直返百合ヶ丘，走訪 Odakyu OX 超市採購特選新鮮食材、時令野菜海產與美酒，為今晚愛心晚餐做準備
 LOCATION:Odakyu OX 百合ヶ丘店 (神奈川県川崎市麻生区百合丘)
 STATUS:CONFIRMED
 END:VEVENT
@@ -3576,7 +4045,7 @@ BEGIN:VEVENT
 SUMMARY:浪漫晚宴：男友愛心料理 ‧ 百合丘大本營雙人料理時光 (專屬二人世界)
 DTSTART;TZID=Asia/Tokyo:20261019T183000
 DTEND;TZID=Asia/Tokyo:20261019T220000
-DESCRIPTION:百合ヶ丘大本營溫馨廚房，換上舒適家居服。男友親手煎製特選黑毛和牛牛排、黑松露蒜香意粉與美酒，播著爵士樂回味今日海景婚禮，享受專屬甜蜜二人世界！
+DESCRIPTION:百合ヶ丘大本營溫馨廚房，換上舒適家居服。男友親手烹調愛心料理與佐餐佳釀，播著爵士樂回味今日海景婚禮，享受專屬甜蜜二人世界！
 LOCATION:百合ヶ丘大本營 (神奈川県川崎市麻生区百合丘)
 STATUS:CONFIRMED
 END:VEVENT
@@ -3626,6 +4095,191 @@ END:VCALENDAR`;
     setTimeout(() => {
       showAllVenuesView();
     }, 400);
+
+    // ==================== CHEF'S SECRET TASTING MENU EASTER EGG ====================
+    let lastMenuModalOpenTime = 0;
+
+    function handleMenuEggTap(e) {
+      openChefMenuModal(e);
+    }
+
+    function openChefMenuModal(e) {
+      if (e) {
+        if (e.stopPropagation) e.stopPropagation();
+        if (e.preventDefault) e.preventDefault();
+      }
+
+      // Debounce rapid double events (e.g. touchend + synthetic click)
+      const now = Date.now();
+      if (now - lastMenuModalOpenTime < 500) return;
+      lastMenuModalOpenTime = now;
+
+      const modal = document.getElementById('chef-menu-modal');
+      if (!modal) return;
+
+      modal.style.display = 'flex';
+      void modal.offsetWidth; // Force reflow for smooth fade-in
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+
+      // Reveal permanent shortcut button in card footer
+      const btn = document.getElementById('btn-chef-secret-menu');
+      if (btn) btn.style.display = 'inline-flex';
+
+      try {
+        localStorage.setItem('yurigaoka_chef_menu_unlocked', 'true');
+      } catch (err) {}
+
+      if (navigator.vibrate) {
+        try { navigator.vibrate([60, 60, 120]); } catch (err) {}
+      }
+
+      try {
+        spawnEggSparkle(e);
+        fireConfettiBurst();
+      } catch (err) {}
+
+      showToast('✨ 恭喜解鎖！主廚私房浪漫 Tasting Menu 晚宴菜單 🥂');
+    }
+
+    function closeChefMenuModal() {
+      const modal = document.getElementById('chef-menu-modal');
+      if (!modal) return;
+      modal.classList.remove('active');
+      setTimeout(() => {
+        if (!modal.classList.contains('active')) {
+          modal.style.display = 'none';
+        }
+      }, 250);
+      document.body.style.overflow = '';
+    }
+
+    function spawnEggSparkle(e) {
+      const sparkle = document.createElement('div');
+      sparkle.className = 'floating-egg-sparkle';
+      const emojis = ['✨', '💕', '🥂', '🍳', '💖', '🍾', '🍷'];
+      sparkle.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      
+      let x = window.innerWidth / 2;
+      let y = window.innerHeight / 2;
+      if (e) {
+        if (e.clientX) {
+          x = e.clientX;
+          y = e.clientY;
+        } else if (e.touches && e.touches[0]) {
+          x = e.touches[0].clientX;
+          y = e.touches[0].clientY;
+        } else if (e.target && e.target.getBoundingClientRect) {
+          const rect = e.target.getBoundingClientRect();
+          x = rect.left + rect.width / 2;
+          y = rect.top + rect.height / 2;
+        }
+      }
+      sparkle.style.left = x + 'px';
+      sparkle.style.top = y + 'px';
+      document.body.appendChild(sparkle);
+      setTimeout(() => sparkle.remove(), 1250);
+    }
+
+    function fireConfettiBurst() {
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 100,
+          spread: 75,
+          origin: { y: 0.6 },
+          colors: ['#e5c07b', '#f472b6', '#ffffff', '#fbbf24', '#d97706']
+        });
+      } else {
+        for (let i = 0; i < 20; i++) {
+          setTimeout(() => spawnEggSparkle(null), i * 50);
+        }
+      }
+    }
+
+    function copyChefMenuText() {
+      const menuText = `⚜️ Bistro Yurigaoka ‧ Chef Rondey's Secret Tasting Menu ⚜️
+📅 2026/10/19 (Mon) ‧ Yurigaoka Base ‧ 專屬二人世界私房晚宴 (Dîner Privé Romantique)
+"Une expérience gastronomique exclusive, préparée avec passion pour toi seule."
+
+【Course 01 ‧ Amuse-Bouche ‧ 開胃小品】
+🍐 Canapé de Poire et Noix de Saint-Jacques
+   秋月梨佐刺身級北海道帶子法式薄脆小點 ‧ Pear & Hokkaido Scallop Canapé
+🍶 Accord Mets-Vins / 佐餐推薦：冰鎮純米大吟釀 / 芳醇白葡萄酒 (Chilled Junmai Daiginjo / Vin Blanc)
+
+【Course 02 ‧ Hors-d'œuvre Froid ‧ 冷前菜】
+🐟 Carpaccio de Daurade au Poivre Yuzu & Shiso
+   真鯛薄切刺身佐大葉紫蘇柚子胡椒 ‧ Sea Bream Carpaccio with Yuzu Kosho
+🍶 Accord Mets-Vins / 佐餐推薦：冷藏日本清酒 (Chilled Japanese Sake / Saké)
+
+【Course 03 ‧ Potage Velouté ‧ 暖胃濃湯】
+🌽 Velouté de Maïs Doux à la Française
+   極鮮甜濃郁法式甜粟米濃湯 ‧ Creamy Sweet Corn Velouté
+🥂 Accord Mets-Vins / 佐餐推薦：圓潤芳醇白葡萄酒 (Aromatic Chardonnay / Vin Blanc)
+
+【Course 04 ‧ Plat Principal ‧ 招牌主菜】
+🍗 Poulet Poêlé en Sauce Crémeuse aux Champignons et Épinards Fondants
+   法式香煎嫩雞腿佐白汁雜菌菠菜熔岩芝士 ‧ Pan-Seared Chicken Thigh with Creamy Mushroom & Spinach Cheese Sauce
+🍶 Accord Mets-Vins / 佐餐推薦：純米酒 / 純米吟釀（冷酒至常溫）或 圓潤白葡萄酒 (Junmai / Junmai Ginjo Saké or Chardonnay)
+
+【Course 05 ‧ Deuxième Plat ‧ 法國名饌】
+🥘 Bœuf Bourguignon Traditionnel
+   經典勃艮第紅酒慢燉牛肋條 ‧ Traditional Beef Bourguignon
+🍷 Accord Mets-Vins / 佐餐推薦：醇厚紅葡萄酒 (Full-Bodied Red Wine / Vin Rouge)
+
+【Course 06 ‧ Dessert ‧ 甜蜜收尾】
+🍷 Poires Pochées au Vin Rouge Épicé
+   法式經典肉桂香料紅酒燉洋梨 ‧ Spiced Red Wine Poached Pears
+🥃 Accord Mets-Vins / 佐餐推薦：熟成梅酒 / 甜點酒 (Aged Ume-shu / Vin de Dessert)
+
+【Wine Pairing Bar ‧ 佐餐美酒四重奏】
+Saké Japonais (Sake) ‧ Vin Blanc (White Wine) ‧ Vin Rouge (Red Wine) ‧ Liqueur de Prune (Ume-shu)
+
+「全宇宙只此一張的專屬私密餐桌，無需排隊預約，無限時，無限續添愛意。」
+"Une table privée unique au monde · Sans réservation ni limite de temps · Amour à volonté."
+Chef Rondey with Infinite Love 💕 · 2026.10.19 Yurigaoka`;
+
+      navigator.clipboard.writeText(menuText).then(() => {
+        showToast('📋 秘密菜單已成功複製！(Menu Copied) 💕');
+      }).catch(() => {
+        showToast('複製完成！請手動粘貼分享');
+      });
+    }
+
+    function checkChefMenuHash() {
+      const hash = (window.location.hash || '').toLowerCase();
+      if (hash === '#menu' || hash === '#chef-menu' || hash === '#secret-menu') {
+        setTimeout(() => {
+          openChefMenuModal(null);
+        }, 400);
+      }
+    }
+    window.addEventListener('hashchange', checkChefMenuHash);
+
+    // Startup checks and event bindings
+    document.addEventListener('DOMContentLoaded', () => {
+      if (localStorage.getItem('yurigaoka_chef_menu_unlocked') === 'true') {
+        const btn = document.getElementById('btn-chef-secret-menu');
+        if (btn) btn.style.display = 'inline-flex';
+      }
+      checkChefMenuHash();
+
+      // Bind direct touch/click listeners to ensure high-sensitivity trigger on mobile
+      const eggPill = document.querySelector('#card-home-cooking .card-status-pill');
+      if (eggPill) {
+        eggPill.addEventListener('click', (e) => openChefMenuModal(e));
+        eggPill.addEventListener('touchend', (e) => openChefMenuModal(e), { passive: true });
+      }
+      const eggTriggers = document.querySelectorAll('#card-home-cooking .egg-emoji-trigger');
+      eggTriggers.forEach(el => {
+        el.addEventListener('click', (e) => openChefMenuModal(e));
+        el.addEventListener('touchend', (e) => openChefMenuModal(e), { passive: true });
+      });
+    });
+
+    // Close on Escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeChefMenuModal();
+    });
 
   </script>
 </body>
