@@ -1839,6 +1839,338 @@
       color: #fff;
       border-color: rgba(212, 175, 55, 0.6);
     }
+
+    /* ============================================================
+     * BISTRO YURIGAOKA GROCERY SHOPPING CHECKLIST MODAL
+     * Emerald & Hinoki Gold Culinary Theme
+     * ============================================================ */
+    .grocery-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(8, 12, 10, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      box-sizing: border-box;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .grocery-modal-overlay.active {
+      display: flex !important;
+      opacity: 1;
+    }
+    .grocery-card-dialog {
+      background: radial-gradient(ellipse at 50% -10%, #17261f 0%, #0d1712 55%, #080e0b 100%);
+      border: 1px solid rgba(52, 211, 153, 0.45);
+      outline: 1px solid rgba(212, 175, 55, 0.25);
+      outline-offset: -7px;
+      box-shadow: 0 32px 90px rgba(0, 0, 0, 0.95),
+                  0 0 50px rgba(16, 185, 129, 0.15),
+                  inset 0 0 30px rgba(0, 0, 0, 0.6);
+      border-radius: 18px;
+      width: 100%;
+      max-width: 720px;
+      max-height: 88vh;
+      overflow-y: auto;
+      color: #f3f4f6;
+      padding: 34px 28px 28px;
+      position: relative;
+      transform: scale(0.92) translateY(24px);
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    @media (max-width: 600px) {
+      .grocery-card-dialog {
+        padding: 26px 16px 20px;
+        max-height: 92vh;
+        border-radius: 14px;
+        outline-offset: -5px;
+      }
+    }
+    .grocery-modal-overlay.active .grocery-card-dialog {
+      transform: scale(1) translateY(0);
+    }
+    .grocery-close-btn {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(52, 211, 153, 0.08);
+      border: 1px solid rgba(52, 211, 153, 0.32);
+      color: #6ee7b7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      z-index: 2;
+    }
+    .grocery-close-btn:hover {
+      background: rgba(52, 211, 153, 0.25);
+      border-color: rgba(52, 211, 153, 0.6);
+      transform: rotate(90deg);
+    }
+    .grocery-header {
+      text-align: center;
+      margin-bottom: 20px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(52, 211, 153, 0.22);
+      position: relative;
+    }
+    .grocery-crest {
+      font-family: 'Cinzel', serif;
+      font-size: 0.72rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #34d399;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .grocery-title {
+      font-family: 'Cinzel', 'Noto Serif TC', serif;
+      font-size: 1.85rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      background: linear-gradient(135deg, #ffffff 0%, #a7f3d0 45%, #34d399 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 6px;
+      line-height: 1.25;
+    }
+    @media (max-width: 600px) {
+      .grocery-title { font-size: 1.45rem; }
+    }
+    .grocery-subtitle {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 0.82rem;
+      color: #9ca3af;
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+    .grocery-progress-panel {
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(52, 211, 153, 0.25);
+      border-radius: 12px;
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .grocery-progress-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.84rem;
+      font-weight: 600;
+    }
+    .grocery-progress-stats {
+      color: #6ee7b7;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .grocery-progress-track {
+      width: 100%;
+      height: 7px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 9999px;
+      overflow: hidden;
+      position: relative;
+    }
+    .grocery-progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #10b981, #34d399, #6ee7b7);
+      border-radius: 9999px;
+      transition: width 0.3s ease;
+      box-shadow: 0 0 10px rgba(52, 211, 153, 0.5);
+    }
+    .grocery-quick-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .btn-grocery-mini {
+      font-size: 0.74rem;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      border: 1px solid rgba(52, 211, 153, 0.35);
+      background: rgba(16, 185, 129, 0.12);
+      color: #a7f3d0;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .btn-grocery-mini:hover {
+      background: rgba(16, 185, 129, 0.28);
+      color: #fff;
+    }
+    .grocery-sections-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .grocery-cat-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 12px;
+      padding: 14px 16px;
+      transition: border-color 0.2s;
+    }
+    .grocery-cat-card:hover {
+      border-color: rgba(52, 211, 153, 0.3);
+    }
+    .grocery-cat-card.highlight-special {
+      background: rgba(16, 185, 129, 0.04);
+      border-color: rgba(52, 211, 153, 0.35);
+    }
+    .grocery-cat-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .grocery-cat-title {
+      font-family: 'Cinzel', 'Noto Serif TC', serif;
+      font-size: 0.94rem;
+      font-weight: 700;
+      color: #e5e7eb;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .grocery-cat-badge {
+      font-size: 0.68rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: rgba(52, 211, 153, 0.15);
+      color: #6ee7b7;
+      border: 1px solid rgba(52, 211, 153, 0.3);
+    }
+    .grocery-items-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .grocery-item-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 8px 10px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s;
+      user-select: none;
+    }
+    .grocery-item-row:hover {
+      background: rgba(52, 211, 153, 0.06);
+      border-color: rgba(52, 211, 153, 0.18);
+    }
+    .grocery-item-row.checked {
+      background: rgba(255, 255, 255, 0.01);
+      opacity: 0.55;
+    }
+    .grocery-checkbox {
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
+      border: 2px solid rgba(52, 211, 153, 0.5);
+      background: rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+      transition: all 0.2s;
+    }
+    .grocery-item-row.checked .grocery-checkbox {
+      background: #10b981;
+      border-color: #10b981;
+    }
+    .grocery-checkbox::after {
+      content: "✓";
+      color: #ffffff;
+      font-size: 0.8rem;
+      font-weight: 900;
+      display: none;
+    }
+    .grocery-item-row.checked .grocery-checkbox::after {
+      display: block;
+    }
+    .grocery-item-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .grocery-item-main {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px 8px;
+    }
+    .grocery-name-cn {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #f3f4f6;
+    }
+    .grocery-item-row.checked .grocery-name-cn {
+      text-decoration: line-through;
+      color: #9ca3af;
+    }
+    .grocery-name-jp {
+      font-size: 0.76rem;
+      padding: 1px 7px;
+      border-radius: 4px;
+      background: rgba(245, 158, 11, 0.14);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      font-weight: 500;
+    }
+    .grocery-qty-tag {
+      font-size: 0.74rem;
+      padding: 1px 6px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #d1d5db;
+    }
+    .grocery-item-sub {
+      font-size: 0.75rem;
+      color: #9ca3af;
+      line-height: 1.35;
+    }
+    .grocery-footer-note {
+      margin-top: 20px;
+      text-align: center;
+      padding: 14px 16px;
+      border-top: 1px solid rgba(52, 211, 153, 0.2);
+      font-size: 0.78rem;
+      color: #9ca3af;
+      line-height: 1.5;
+    }
+    .grocery-modal-bottom-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
   </style>
 </head>
 <body>
@@ -2566,6 +2898,7 @@
               <div class="card-footer-row">
                 <span class="venue-location-text">📍 神奈川県川崎市麻生区百合丘 Odakyu OX</span>
                 <div class="venue-actions">
+                  <button class="btn-action-pill" style="background:#ecfdf5; color:#065f46; border-color:#a7f3d0; font-weight:700;" onclick="openGroceryModal(event)">🛒 晚宴食材清單</button>
                   <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('zushi-to-yurigaoka', event)">🗺️ 路線</button>
                   <a href="https://transit.yahoo.co.jp/search/result?from=%E9%80%97%E5%AD%90&to=%E7%99%BE%E5%90%88%E3%82%B1%E4%B8%98" target="_blank" class="btn-action-pill pill-yahoo">🚆 Yahoo! 乘換</a>
                   <a href="https://maps.google.com/?q=Odakyu+OX+Yurigaoka" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
@@ -2599,6 +2932,7 @@
                 <span class="venue-location-text">📍 神奈川県川崎市麻生区百合丘 (旅程大本營)</span>
                 <div class="venue-actions">
                   <button class="btn-action-pill" id="btn-chef-secret-menu" style="display:none; background:linear-gradient(135deg, #fdf2f8, #fce7f3); color:#9d174d; border-color:#fbcfe8; font-weight:700;" onclick="openChefMenuModal(event)">✨ 私房菜單</button>
+                  <button class="btn-action-pill" style="background:#ecfdf5; color:#065f46; border-color:#a7f3d0; font-weight:700;" onclick="openGroceryModal(event)">🛒 晚宴食材</button>
                   <button class="btn-action-pill" style="background:#f7f2ea; color:#985635; border-color:#e6ded2;" onclick="jumpToMapFromCard('home-cooking', event)">🗺️ 路線</button>
                   <a href="https://maps.google.com/?q=Yurigaoka+Station" target="_blank" class="btn-action-pill">📍 Google 地圖</a>
                 </div>
@@ -2849,12 +3183,12 @@
         <div class="chef-course-item">
           <div class="chef-course-top">
             <span class="chef-course-badge">Course 04 ‧ Plat Principal ‧ 招牌主菜</span>
-            <a href="https://www.instagram.com/reel/DScbkFIieWU/?vrfl=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==" target="_blank" class="chef-course-link">▶ Recipe Inspiration (IG Reel)</a>
+            <a href="https://www.youtube.com/watch?v=oi-xCuiWbUQ" target="_blank" class="chef-course-link">▶ Recipe Inspiration (YouTube)</a>
           </div>
-          <div class="chef-course-name">Poulet Poêlé en Sauce Crémeuse aux Champignons et Épinards Fondants</div>
-          <div class="chef-course-jp">法式香煎嫩雞腿佐白汁雜菌菠菜熔岩芝士 ‧ Pan-Seared Chicken Thigh with Creamy Mushroom & Spinach Cheese Sauce</div>
-          <div class="chef-course-desc">嚴選厚切嫩滑雞腿肉，橄欖油熱鍋將雞皮煎至金黃焦香酥脆，搭配嫩炒洋蔥與鮮美雜菌。倒入香醇牛奶法式高湯慢火收汁，拌入嫩菠菜與濃郁拉絲芝士，不加牛油純天然輕盈滑順，最後撒上現磨黑胡椒提香。<br><span style="font-size:0.77rem; color:#8e8884; font-style:italic;">Crispy pan-seared tender chicken thigh gently simmered in a light milk cream sauce with sautéed mushrooms, baby spinach, and melted cheese, finished with cracked black pepper.</span></div>
-          <div class="chef-course-pairing">🍶 佐餐推薦 (Accord Mets-Vins)：純米酒 / 純米吟釀（冷酒至常溫）或 圓潤白葡萄酒 (Junmai / Junmai Ginjo Saké or Chardonnay)</div>
+          <div class="chef-course-name">Poulet à l'Estragon Traditionnel en Sauce Crème aux Champignons</div>
+          <div class="chef-course-jp">法式經典茵陳蒿白汁燴雞腿佐野菌 ‧ Traditional Poulet à l'Estragon (French Tarragon Cream Chicken)</div>
+          <div class="chef-course-desc">嚴選厚切嫩滑雞腿肉拍上薄粉，將雞皮煎至金黃焦香酥脆鎖住肉汁，佐以嫩炒洋蔥、香蒜與鮮美綜合野菌。倒入白葡萄酒與濃郁法式雞高湯慢火煨燴，最後拌入醇厚鮮奶油與法式經典靈魂香草「茵陳蒿 (Estragon)」，草本芳香清雅深邃，甘美濃郁、層次豐厚。<br><span style="font-size:0.77rem; color:#8e8884; font-style:italic;">Crispy pan-seared tender chicken thighs braised with sautéed mushrooms, onions, and white wine broth, gently bound in velvety heavy cream infused with fresh aromatic tarragon.</span></div>
+          <div class="chef-course-pairing">🥂 佐餐推薦 (Accord Mets-Vins)：圓潤芳醇白葡萄酒 (Aromatic Chardonnay / Vin Blanc) 或 純米酒 / 純米吟釀 (Junmai Ginjo Saké)</div>
         </div>
 
         <!-- Course 5: Sub-Main -->
@@ -2889,11 +3223,11 @@
         <div class="chef-pairing-grid">
           <div class="chef-pairing-card">
             <strong>🍶 日本清酒 (Saké Japonais / Japanese Sake)</strong>
-            <span>清冽純米香氣，完美烘托北海道帶子、真鯛及奶油燉雞腿之醇美。<br><span style="font-size:0.75rem; color:#a19b95; font-style:italic;">Sublime les Saint-Jacques, la daurade et le poulet crémeux. · Delicate rice aroma elevating seafood and creamy chicken.</span></span>
+            <span>清冽純米香氣，完美烘托北海道帶子、真鯛及茵陳蒿白汁燴雞腿之醇美。<br><span style="font-size:0.75rem; color:#a19b95; font-style:italic;">Sublime les Saint-Jacques, la daurade et le poulet à l'estragon. · Delicate rice aroma elevating seafood and creamy tarragon chicken.</span></span>
           </div>
           <div class="chef-pairing-card">
             <strong>🥂 白葡萄酒 (Vin Blanc / White Wine)</strong>
-            <span>清新果酸與圓潤質感，完美映襯開胃薄脆小點、粟米濃湯與白汁燉雞。<br><span style="font-size:0.75rem; color:#a19b95; font-style:italic;">Fraîcheur vive et fruitée, accord harmonieux avec le velouté et le poulet. · Vibrant acidity harmonizing with the velouté and chicken.</span></span>
+            <span>清新果酸與圓潤質感，完美映襯開胃薄脆小點、粟米濃湯與香草白汁燉雞。<br><span style="font-size:0.75rem; color:#a19b95; font-style:italic;">Fraîcheur vive et fruitée, accord harmonieux avec le velouté et le poulet. · Vibrant acidity harmonizing with the velouté and chicken.</span></span>
           </div>
           <div class="chef-pairing-card">
             <strong>🍷 紅葡萄酒 (Vin Rouge / Red Wine)</strong>
@@ -2917,7 +3251,467 @@
       <!-- Action Buttons -->
       <div class="chef-modal-actions">
         <button class="btn-chef-copy" onclick="copyChefMenuText()">📋 複製完整菜單 (Copy Menu / Copier)</button>
+        <button class="btn-chef-copy" style="background: linear-gradient(135deg, #059669 0%, #047857 100%); color: #ffffff; box-shadow: 0 4px 18px rgba(5, 150, 105, 0.35);" onclick="openGroceryModal(event)">🛒 晚宴食材採購清單 (Grocery Checklist)</button>
         <button class="btn-chef-close-bottom" onclick="closeChefMenuModal()">✕ 關閉菜單 (Close / Fermer)</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Interactive Supermarket Grocery Checklist Modal -->
+  <div class="grocery-modal-overlay" id="grocery-modal" onclick="closeGroceryModal()">
+    <div class="grocery-card-dialog" onclick="event.stopPropagation()">
+      <button class="grocery-close-btn" onclick="closeGroceryModal()" title="Close / 關閉清單">✕</button>
+
+      <div class="grocery-header">
+        <div class="grocery-crest">🛒 ODAKYU OX YURIGAOKA · BISTRO SHOPPING CHECKLIST 🛒</div>
+        <h2 class="grocery-title">晚宴食材採購清單 ‧ Grocery Checklist</h2>
+        <div class="grocery-subtitle">📅 2026/10/19 (Mon) ‧ Odakyu OX 百合ヶ丘店 ‧ Chef Rondey 私房晚宴特選食材</div>
+
+        <div class="grocery-progress-panel">
+          <div class="grocery-progress-top">
+            <span class="grocery-progress-stats">
+              <span>🛒 採購進度：</span>
+              <strong id="grocery-progress-count" style="color:#34d399;">0</strong> / <span id="grocery-total-count">28</span> 項
+              <span id="grocery-progress-percent" style="color:#6ee7b7; font-size:0.8rem; margin-left:4px;">(0%)</span>
+            </span>
+            <div class="grocery-quick-actions">
+              <button class="btn-grocery-mini" onclick="copyGroceryListText(event)">📋 複製文字</button>
+              <button class="btn-grocery-mini" style="background:rgba(239, 68, 68, 0.15); border-color:rgba(239, 68, 68, 0.35); color:#fca5a5;" onclick="resetGroceryChecklist()">🔄 重設勾選</button>
+            </div>
+          </div>
+          <div class="grocery-progress-track">
+            <div class="grocery-progress-bar" id="grocery-progress-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grocery-sections-wrap">
+
+        <!-- Section 1: Special Feature Chicken Recipe -->
+        <div class="grocery-cat-card highlight-special">
+          <div class="grocery-cat-header">
+            <div class="grocery-cat-title">
+              <span>🍗 招牌主菜特選：法式經典香草茵陳蒿白汁燴雞</span>
+            </div>
+            <a href="https://www.youtube.com/watch?v=oi-xCuiWbUQ" target="_blank" class="chef-course-link" style="color:#34d399; background:rgba(52, 211, 153, 0.12); border-color:rgba(52, 211, 153, 0.3);">▶ YouTube Recipe #49</a>
+          </div>
+          <div class="grocery-items-list">
+            <div class="grocery-item-row" data-id="chk-chicken" onclick="toggleGroceryItem('chk-chicken')">
+              <div class="grocery-checkbox"></div>
+              <div class="grocery-item-body">
+                <div class="grocery-item-main">
+                  <span class="grocery-name-cn">日本國產厚切雞腿肉</span>
+                  <span class="grocery-name-jp">鶏もも肉 (国産)</span>
+                  <span class="grocery-qty-tag">2 枚 (約 500-600g)</span>
+                </div>
+                <div class="grocery-item-sub">招牌主菜 ‧ 厚切多汁，拍上薄粉下鍋煎至金黃酥脆</div>
+              </div>
+            </div>
+
+            <div class="grocery-item-row" data-id="chk-tarragon" onclick="toggleGroceryItem('chk-tarragon')">
+              <div class="grocery-checkbox"></div>
+              <div class="grocery-item-body">
+                <div class="grocery-item-main">
+                  <span class="grocery-name-cn">茵陳蒿 / 龍艾草 (靈魂草本)</span>
+                  <span class="grocery-name-jp">エストラゴン / タラゴン</span>
+                  <span class="grocery-qty-tag">生鮮香草 或 S&B 乾香草瓶</span>
+                </div>
+                <div class="grocery-item-sub">法式白汁靈魂！冷藏生鮮櫃（生ハーブ）或調味品區 S&B 瓶裝乾葉</div>
+              </div>
+            </div>
+
+            <div class="grocery-item-row" data-id="chk-cream" onclick="toggleGroceryItem('chk-cream')">
+              <div class="grocery-checkbox"></div>
+              <div class="grocery-item-body">
+                <div class="grocery-item-main">
+                  <span class="grocery-name-cn">動物性純鮮奶油</span>
+                  <span class="grocery-name-jp">生クリーム (純乳脂 35% 或 47%)</span>
+                  <span class="grocery-qty-tag">1 盒 200ml (使用 60cc)</span>
+                </div>
+                <div class="grocery-item-sub">出鍋前微火輕拌，乳化成絲絨般香濃白汁（勿選植物鮮奶油）</div>
+              </div>
+            </div>
+
+            <div class="grocery-item-row" data-id="chk-bouillon" onclick="toggleGroceryItem('chk-bouillon')">
+              <div class="grocery-checkbox"></div>
+              <div class="grocery-item-body">
+                <div class="grocery-item-main">
+                  <span class="grocery-name-cn">法式雞高湯粉/塊</span>
+                  <span class="grocery-name-jp">チキンブイヨン / コンソメ</span>
+                  <span class="grocery-qty-tag">1 盒 (兌水 150cc)</span>
+                </div>
+                <div class="grocery-item-sub">慢火煨燴雞肉底湯（推薦 Ohne 系列或味之素コンソメ）</div>
+              </div>
+            </div>
+
+            <div class="grocery-item-row" data-id="chk-mushrooms" onclick="toggleGroceryItem('chk-mushrooms')">
+              <div class="grocery-checkbox"></div>
+              <div class="grocery-item-body">
+                <div class="grocery-item-main">
+                  <span class="grocery-name-cn">綜合鮮菇 (2-3 種)</span>
+                  <span class="grocery-name-jp">舞茸・マッシュルーム・しめじ</span>
+                  <span class="grocery-qty-tag">各約 30-50g</span>
+                </div>
+                <div class="grocery-item-sub">舞茸 (マイタケ)、棕色蘑菇或鴻喜菇，與洋蔥一同以雞油炒香</div>
+              </div>
+            </div>
+
+            <div class="grocery-item-row" data-id="chk-flour" onclick="toggleGroceryItem('chk-flour')">
+              <div class="grocery-checkbox"></div>
+              <div class="grocery-item-body">
+                <div class="grocery-item-main">
+                  <span class="grocery-name-cn">低筋麵粉 / 小麥粉</span>
+                  <span class="grocery-name-jp">薄力粉 / 小麦粉</span>
+                  <span class="grocery-qty-tag">適量</span>
+                </div>
+                <div class="grocery-item-sub">雞腿肉抹鹽後均勻拍上薄粉，鎖住肉汁並使燴汁自然稠滑</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2: Beef & Bacon -->
+        <div class="grocery-cat-card">
+          <div class="grocery-cat-header">
+            <div class="grocery-cat-title">
+              <span>🥩 精肉＆培根區：紅酒燉牛肋條</span>
+            </div>
+            <span class="grocery-cat-badge">Course 05</span>
+          </div>
+          <div class="grocery-items-list">
+            <div class="grocery-item-row" data-id="chk-beef" onclick="toggleGroceryItem('chk-beef')">
+              <div class="grocery-checkbox"></div>
+              <div class="grocery-item-body">
+                <div class="grocery-item-main">
+                  <span class="grocery-name-cn">牛肋條 / 燉煮用牛肉</span>
+                  <span class="grocery-name-jp">牛バラ肉 / 牛煮込み用</span>
+                  <span class="grocery-qty-tag">400-500g</span>
+                </div>
+                <div class="grocery-item-sub">勃艮第紅酒慢燉牛肋條，酥軟化口醇厚多汁</div>
+              </div>
+            </div>
+
+            <div class="grocery-item-row" data-id="chk-bacon" onclick="toggleGroceryItem('chk-bacon')">
+              <div class="grocery-checkbox"></div>
+              <div class="grocery-item-body">
+                <div class="grocery-item-main">
+                  <span class="grocery-name-cn">厚切煙肉 / 培根塊</span>
+                  <span class="grocery-name-jp">ベーコンブロック</span>
+                  <span class="grocery-qty-tag">1 塊</span>
+                </div>
+                <div class="grocery-item-sub">切粗條煸出香氣，法式燉肉不可或缺的煙燻層次</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: Seafood & Sashimi -->
+        <div class="grocery-cat-card">
+          <div class="grocery-cat-header">
+            <div class="grocery-cat-title">
+              <span>🐟 刺身生鮮海產區：帶子薄餅 ＆ 真鯛 Carpaccio</span>
+            </div>
+            <span class="grocery-cat-badge">Course 01 & 02</span>
+          </div>
+          <div class="grocery-items-list">
+            <div class="grocery-item-row" data-id="chk-scallops" onclick="toggleGroceryItem('chk-scallops')">
+              <div class="grocery-checkbox"></div>
+              <div class="grocery-item-body">
+                <div class="grocery-item-main">
+                  <span class="grocery-name-cn">生食級北海道帆立貝 / 帶子</span>
+                  <span class="grocery-name-jp">刺身用ホタテ</span>
+                  <span class="grocery-qty-tag">1 盒 (4-6 顆)</span>
+                </div>
+                <div class="grocery-item-sub">刺身級鮮甜，切小粒與秋月梨拌製開胃小點薄脆 Canapé</div>
+              </div>
+            </div>
+
+            <div class="grocery-item-row" data-id="chk-seabream" onclick="toggleGroceryItem('chk-seabream')">
+              <div class="grocery-checkbox"></div>
+              <div class="grocery-item-body">
+                <div class="grocery-item-main">
+                  <span class="grocery-name-cn">生食級真鯛魚柳</span>
+                  <span class="grocery-name-jp">真鯛 刺身用サク</span>
+                  <span class="grocery-qty-tag">1 條</span>
+                </div>
+                <div class="grocery-item-sub">薄切刺身，佐特調柚子胡椒紫蘇橄欖油醬汁</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 4: Fresh Produce & Fruits -->
+        <div class="grocery-cat-card">
+          <div class="grocery-cat-header">
+            <div class="grocery-cat-title">
+              <span>🥬 野菜、新鮮香草與時令秋日果物區</span>
+            </div>
+            <span class="grocery-cat-badge">Produce & Fruits</span>
+          </div>
+          <div class="grocery-items-list">
+            <div class="grocery-item-row" data-id="chk-corn" onclick="toggleGroceryItem('chk-corn')">
+              <div class="grocery-checkbox"></div>
+              <div class="grocery-item-body">
+                <div class="grocery-item-main">
+                  <span class="grocery-name-cn">新鮮甜粟米</span>
+                  <span class="grocery-name-jp">とうもろこし</span>
+                  <span class="grocery-qty-tag">2-3 支</span>
+                </div>
+                <div class="grocery-item-sub">整支帶芯慢火浸萃牛奶 30 分鐘，打磨過篩絲滑濃郁法式濃湯</div>
+              </div>
+            </div>
+
+            <div class="grocery-item-row" data-id="chk-shiso" onclick="toggleGroceryItem('chk-shiso')">
+              <div class="grocery-checkbox"></div>
+              <div class="grocery-item-body">
+                <div class="grocery-item-main">
+                  <span class="grocery-name-cn">大葉 / 青紫蘇葉</span>
+                  <span class="grocery-name-jp">大葉 / 青じそ</span>
+                  <span class="grocery-qty-tag">1 包 (5-10 片)</span>
+                </div>
+                <div class="grocery-item-sub">切細絲鋪於真鯛刺身之上，清新爽朗</div>
+              </div>
+            </div>
+
+            <div class="grocery-item-row" data-id="chk-pear-autumn" onclick="toggleGroceryItem('chk-pear-autumn')">
+              <div class="grocery-checkbox"></div>
+              <div class="grocery-item-body">
+                <div class="grocery-item-main">
+                  <span class="grocery-name-cn">新鮮秋月梨 / 日本水梨</span>
+                  <span class="grocery-name-jp">秋月梨 / 和梨</span>
+                  <span class="grocery-qty-tag">1-2 顆</span>
+                </div>
+                <div class="grocery-item-sub">切微粒與北海道帶子交織，果甜海味完美清甜</div>
+              </div>
+            </div>
+
+            <div class="grocery-item-row" data-id="chk-pear-western" onclick="toggleGroceryItem('chk-pear-western')">
+              <div class="grocery-checkbox"></div>
+              <div class="grocery-item-body">
+                <div class="grocery-item-main">
+                  <span class="grocery-name-cn">西洋梨</span>
+                  <span class="grocery-name-jp">ラ・フランス / 洋梨</span>
+                  <span class="grocery-qty-tag">2 顆</span>
+                </div>
+                <div class="grocery-item-sub">甜蜜收尾！整顆去皮慢火浸潤肉桂香料紅酒煨煮</div>
+              </div>
+            </div>
+
+            <div class="grocery-item-row" data-id="chk-muscat" onclick="toggleGroceryItem('chk-muscat')">
+              <div class="grocery-checkbox"></div>
+              <div class="grocery-item-body">
+                <div class="grocery-item-main">
+                  <span class="grocery-name-cn">長野麝香葡萄</span>
+                  <span class="grocery-name-jp">シャインマスカット</span>
+                  <span class="grocery-qty-tag">1 串</span>
+                </div>
+                <div class="grocery-item-sub">餐後甜蜜微醺果物點心，皮脆肉甜無籽</div>
+              </div>
+            </div>
+
+            <div class="grocery-item-row" data-id="chk-onion-veg" onclick="toggleGroceryItem('chk-onion-veg')">
+              <div class="grocery-checkbox"></div>
+              <div class="grocery-item-body">
+                <div class="grocery-item-main">
+                  <span class="grocery-name-cn">洋蔥 ＆ 胡蘿蔔</span>
+                  <span class="grocery-name-jp">玉ねぎ・人参</span>
+                  <span class="grocery-qty-tag">洋蔥 2-3 個 / 胡蘿蔔 1 條</span>
+                </div>
+                <div class="grocery-item-sub">分用於燴雞與紅酒慢燉牛肉</div>
+              </div>
+            </div>
+
+            <div class="grocery-item-row" data-id="chk-lemon" onclick="toggleGroceryItem('chk-lemon')">
+              <div class="grocery-checkbox"></div>
+              <div class="grocery-item-body">
+                <div class="grocery-item-main">
+                  <span class="grocery-name-cn">檸檬 ＆ 青檸 ＆ 大蒜</span>
+                  <span class="grocery-name-jp">レモン・ライム・にんにく</span>
+                  <span class="grocery-qty-tag">各 1-2 顆</span>
+                </div>
+                <div class="grocery-item-sub">鮮榨果汁用於冷盤 Carpaccio 與帶子薄餅；大蒜爆香</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 5: Dairy & Refrigerated -->
+        <div class="grocery-cat-card">
+          <div class="grocery-cat-header">
+            <div class="grocery-cat-title">
+              <span>🥛 乳製品與冷藏區</span>
+            </div>
+            <span class="grocery-cat-badge">Dairy</span>
+          </div>
+          <div class="grocery-items-list">
+            <div class="grocery-item-row" data-id="chk-milk" onclick="toggleGroceryItem('chk-milk')">
+              <div class="grocery-checkbox"></div>
+              <div class="grocery-item-body">
+                <div class="grocery-item-main">
+                  <span class="grocery-name-cn">全脂成分無調整牛乳</span>
+                  <span class="grocery-name-jp">成分無調整牛乳</span>
+                  <span class="grocery-qty-tag">1 盒 (1000ml)</span>
+                </div>
+                <div class="grocery-item-sub">慢萃粟米芯製作絲滑濃湯</div>
+              </div>
+            </div>
+
+            <div class="grocery-item-row" data-id="chk-butter" onclick="toggleGroceryItem('chk-butter')">
+              <div class="grocery-checkbox"></div>
+              <div class="grocery-item-body">
+                <div class="grocery-item-main">
+                  <span class="grocery-name-cn">無鹽發酵牛油</span>
+                  <span class="grocery-name-jp">無塩バター</span>
+                  <span class="grocery-qty-tag">1 塊</span>
+                </div>
+                <div class="grocery-item-sub">製作焦香榛果牛油炒製粟米粒</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 6: Pantry, Spices & Bakery -->
+        <div class="grocery-cat-card">
+          <div class="grocery-cat-header">
+            <div class="grocery-cat-title">
+              <span>🥫 調味醬料、香辛料與烘焙乾貨</span>
+            </div>
+            <span class="grocery-cat-badge">Pantry & Spices</span>
+          </div>
+          <div class="grocery-items-list">
+            <div class="grocery-item-row" data-id="chk-mustard" onclick="toggleGroceryItem('chk-mustard')">
+              <div class="grocery-checkbox"></div>
+              <div class="grocery-item-body">
+                <div class="grocery-item-main">
+                  <span class="grocery-name-cn">粒狀第戎芥末籽醬</span>
+                  <span class="grocery-name-jp">粒マスタード</span>
+                  <span class="grocery-qty-tag">1 罐 (MAILLE等)</span>
+                </div>
+                <div class="grocery-item-sub">帶子秋月梨特調油醋醬</div>
+              </div>
+            </div>
+
+            <div class="grocery-item-row" data-id="chk-yuzukosho" onclick="toggleGroceryItem('chk-yuzukosho')">
+              <div class="grocery-checkbox"></div>
+              <div class="grocery-item-body">
+                <div class="grocery-item-main">
+                  <span class="grocery-name-cn">九州柚子胡椒</span>
+                  <span class="grocery-name-jp">柚子胡椒</span>
+                  <span class="grocery-qty-tag">1 小罐</span>
+                </div>
+                <div class="grocery-item-sub">真鯛薄切靈魂冷搾醬汁</div>
+              </div>
+            </div>
+
+            <div class="grocery-item-row" data-id="chk-crostini" onclick="toggleGroceryItem('chk-crostini')">
+              <div class="grocery-checkbox"></div>
+              <div class="grocery-item-body">
+                <div class="grocery-item-main">
+                  <span class="grocery-name-cn">法式長棍麵包 或 原味薄脆餅</span>
+                  <span class="grocery-name-jp">バゲット / クラッカー</span>
+                  <span class="grocery-qty-tag">1 包</span>
+                </div>
+                <div class="grocery-item-sub">烤香切片作為前菜酥脆薄底</div>
+              </div>
+            </div>
+
+            <div class="grocery-item-row" data-id="chk-tomatopaste" onclick="toggleGroceryItem('chk-tomatopaste')">
+              <div class="grocery-checkbox"></div>
+              <div class="grocery-item-body">
+                <div class="grocery-item-main">
+                  <span class="grocery-name-cn">番茄膏</span>
+                  <span class="grocery-name-jp">トマトペースト</span>
+                  <span class="grocery-qty-tag">1 盒/小袋</span>
+                </div>
+                <div class="grocery-item-sub">慢燉牛肋條增加自然甘甜果酸</div>
+              </div>
+            </div>
+
+            <div class="grocery-item-row" data-id="chk-spices" onclick="toggleGroceryItem('chk-spices')">
+              <div class="grocery-checkbox"></div>
+              <div class="grocery-item-body">
+                <div class="grocery-item-main">
+                  <span class="grocery-name-cn">肉桂棒 ＆ 月桂葉</span>
+                  <span class="grocery-name-jp">シナモンスティック・ローリエ</span>
+                  <span class="grocery-qty-tag">各 1 小包</span>
+                </div>
+                <div class="grocery-item-sub">肉桂棒燉西洋梨；月桂葉慢燉牛肋條</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 7: Wine & Sake Selection -->
+        <div class="grocery-cat-card">
+          <div class="grocery-cat-header">
+            <div class="grocery-cat-title">
+              <span>🍷 專屬佐餐美酒四重奏 (Wine Pairing Bar)</span>
+            </div>
+            <span class="grocery-cat-badge">Wine & Spirits</span>
+          </div>
+          <div class="grocery-items-list">
+            <div class="grocery-item-row" data-id="chk-whitewine" onclick="toggleGroceryItem('chk-whitewine')">
+              <div class="grocery-checkbox"></div>
+              <div class="grocery-item-body">
+                <div class="grocery-item-main">
+                  <span class="grocery-name-cn">圓潤芳醇白葡萄酒</span>
+                  <span class="grocery-name-jp">白ワイン (Chardonnay / 霞多麗)</span>
+                  <span class="grocery-qty-tag">1 瓶 (750ml)</span>
+                </div>
+                <div class="grocery-item-sub">料理燴雞用 60cc，剩餘冰鎮佐前菜、粟米濃湯與白汁燴雞</div>
+              </div>
+            </div>
+
+            <div class="grocery-item-row" data-id="chk-redwine" onclick="toggleGroceryItem('chk-redwine')">
+              <div class="grocery-checkbox"></div>
+              <div class="grocery-item-body">
+                <div class="grocery-item-main">
+                  <span class="grocery-name-cn">深邃醇厚紅葡萄酒</span>
+                  <span class="grocery-name-jp">赤ワイン (Pinot Noir / Bourgogne)</span>
+                  <span class="grocery-qty-tag">1 瓶 (750ml)</span>
+                </div>
+                <div class="grocery-item-sub">燉牛肉、慢燉洋梨及佐餐牛肋條靈魂絕配</div>
+              </div>
+            </div>
+
+            <div class="grocery-item-row" data-id="chk-sake" onclick="toggleGroceryItem('chk-sake')">
+              <div class="grocery-checkbox"></div>
+              <div class="grocery-item-body">
+                <div class="grocery-item-main">
+                  <span class="grocery-name-cn">日本清酒 (純米大吟釀 / 純米吟釀)</span>
+                  <span class="grocery-name-jp">日本酒 (純米大吟醸 / 純米吟醸)</span>
+                  <span class="grocery-qty-tag">1 瓶 (720ml)</span>
+                </div>
+                <div class="grocery-item-sub">冷藏冰鎮，烘托北海道帶子、真鯛與白汁燴雞</div>
+              </div>
+            </div>
+
+            <div class="grocery-item-row" data-id="chk-umeshu" onclick="toggleGroceryItem('chk-umeshu')">
+              <div class="grocery-checkbox"></div>
+              <div class="grocery-item-body">
+                <div class="grocery-item-main">
+                  <span class="grocery-name-cn">日本熟成梅酒</span>
+                  <span class="grocery-name-jp">熟成梅酒</span>
+                  <span class="grocery-qty-tag">1 瓶</span>
+                </div>
+                <div class="grocery-item-sub">酸甜微醺，為肉桂紅酒燉洋梨劃下浪漫句點</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="grocery-footer-note">
+        💡 提示：點擊任何食材項目即可直接勾選／取消勾選，進度將自動儲存於手機瀏覽器。<br>
+        採買位置：<strong>Odakyu OX 百合ヶ丘店</strong>（百合ヶ丘站南口直出即達，營業至 22:00）。
+      </div>
+
+      <div class="grocery-modal-bottom-actions">
+        <button class="btn-chef-copy" style="background:linear-gradient(135deg, #10b981 0%, #059669 100%); color:#fff;" onclick="copyGroceryListText(event)">📋 複製清單文字</button>
+        <button class="btn-chef-copy" onclick="openChefMenuModal(event)">⚜️ 查看完整主廚菜單</button>
+        <button class="btn-chef-close-bottom" onclick="closeGroceryModal()">✕ 關閉 (Close)</button>
       </div>
 
     </div>
@@ -4330,9 +5124,9 @@ END:VCALENDAR`;
 🥂 Accord Mets-Vins / 佐餐推薦：圓潤芳醇白葡萄酒 (Aromatic Chardonnay / Vin Blanc)
 
 【Course 04 ‧ Plat Principal ‧ 招牌主菜】
-🍗 Poulet Poêlé en Sauce Crémeuse aux Champignons et Épinards Fondants
-   法式香煎嫩雞腿佐白汁雜菌菠菜熔岩芝士 ‧ Pan-Seared Chicken Thigh with Creamy Mushroom & Spinach Cheese Sauce
-🍶 Accord Mets-Vins / 佐餐推薦：純米酒 / 純米吟釀（冷酒至常溫）或 圓潤白葡萄酒 (Junmai / Junmai Ginjo Saké or Chardonnay)
+🍗 Poulet à l'Estragon Traditionnel en Sauce Crème aux Champignons
+   法式經典茵陳蒿白汁燴雞腿佐野菌 ‧ Traditional Poulet à l'Estragon (French Tarragon Cream Chicken)
+🥂 Accord Mets-Vins / 佐餐推薦：圓潤芳醇白葡萄酒 (Aromatic Chardonnay / Vin Blanc) 或 純米酒 / 純米吟釀
 
 【Course 05 ‧ Deuxième Plat ‧ 法國名饌】
 🥘 Bœuf Bourguignon Traditionnel
@@ -4358,6 +5152,200 @@ Chef Rondey with Infinite Love 💕 · 2026.10.19 Yurigaoka`;
       });
     }
 
+    function copyGroceryListText(e) {
+      if (e) {
+        if (e.stopPropagation) e.stopPropagation();
+        if (e.preventDefault) e.preventDefault();
+      }
+      const groceryText = `🛒【Bistro Yurigaoka 浪漫晚宴 ‧ 超市食材採購清單 (Odakyu OX 百合ヶ丘)】
+
+【🍗 招牌主菜：法式經典茵陳蒿白汁燴雞 Poulet à l'Estragon】
+□ 雞腿肉 (鶏もも肉)：2塊 (約500-600g，推薦日本產厚切雞腿肉)
+□ 洋蔥 (玉ねぎ)：1個 (約100g)
+□ 綜合鮮菇 (きのこ)：2~3種 (舞茸 マイタケ、棕色蘑菇 マッシュルーム、鴻喜菇 しめじ 各約30-50g)
+□ 大蒜 (にんにく)：1頭 (使用2瓣)
+□ 白葡萄酒 (白ワイン)：1瓶 (烹調需60cc，剩餘冰鎮佐餐)
+□ 法式雞高湯 (チキンブイヨン / コンソメ)：1盒 (使用1-2小塊/條，兌水150cc)
+□ 動物性鮮奶油 (生クリーム 純乳脂35%或47%)：1盒 (使用60cc)
+□ 茵陳蒿 / 龍艾草 (エストラゴン / フレンチタラゴン)：新鮮香草或S&B香草瓶裝乾葉
+□ 橄欖油 (オリーブオイル)：煎雞腿與炒蔬菜適量
+□ 小麥粉/低筋麵粉 (小麦粉 / 薄力粉)：煎雞腿前拍薄粉
+□ 鹽、現磨黑胡椒 (塩、粗挽き黒胡椒)
+
+【🍐 開胃冷盤＆前菜：帶子薄餅 Canapé ＆ 鯛魚生牛肉風 Carpaccio】
+□ 生食級刺身用帶子 (刺身用ホタテ)：1盒 (約4-6顆)
+□ 新鮮秋月梨 (秋月梨 或 日本水梨)：1-2顆
+□ 粒狀第戎芥末籽醬 (粒マスタード)：1罐
+□ 蘇打薄脆餅乾/長棍麵包 (クラッカー / バゲット)：1份
+□ 生食級真鯛刺身 (真鯛 刺身用サク)：1份
+□ 大葉/青紫蘇葉 (大葉 / 青じそ)：1包 (約5-10片)
+□ 柚子胡椒 (柚子胡椒)：1小罐
+□ 檸檬 / 青檸 (レモン / ライム)：各1顆
+
+【🌽 暖胃濃湯：法式甜粟米濃湯 Velouté de Maïs】
+□ 新鮮甜粟米 (とうもろこし)：2~3支
+□ 全脂鮮奶 (成分無調整牛乳)：1盒
+□ 無鹽牛油 (無塩バター)：1塊
+
+【🥘 第二主菜：勃艮第紅酒慢燉牛肋條 Bœuf Bourguignon】
+□ 牛肋條/燉牛肉 (牛バラ肉 / 牛すじ肉 / 牛煮込み用)：400-500g
+□ 料理用紅酒 (赤ワイン)：1瓶 (勃艮第/黑皮諾風味佳)
+□ 胡蘿蔔 (人参)：1條
+□ 培根/煙肉厚切 (ベーコンブロック)：1塊
+□ 法式香草束 (ローリエ 月桂葉、タイム 百里香)：各1包
+□ 番茄膏 (トマトペースト)：1盒/小包
+
+【🍷 甜點＆果物：肉桂紅酒燉洋梨 Poires Pochées】
+□ 西洋梨 (ラ・フランス / 洋梨)：2顆
+□ 肉桂棒 (シナモンスティック)：1包
+□ 丁香/八角 (クローブ、スターアニス)：少許
+□ 砂糖/蜂蜜 (グラニュー糖 / ハチミツ)
+□ 長野麝香葡萄 (シャインマスカット)：1串 (餐後水果)
+
+【🥂 專屬佐餐美酒 (Wine Pairing Bar)】
+□ 日本純米酒 / 純米吟釀 (冷酒)
+□ 圓潤白葡萄酒 (Chardonnay / 霞多麗)
+□ 醇厚紅葡萄酒 (Pinot Noir / Bordeaux)
+□ 熟成日本梅酒 (Ume-shu)`;
+
+      navigator.clipboard.writeText(groceryText).then(() => {
+        showToast('🛒 超市採購清單已成功複製！(Grocery List Copied) 💕');
+      }).catch(() => {
+        showToast('採購清單複製完成！請手動粘貼分享');
+      });
+    }
+
+    // ============================================================
+    // GROCERY SHOPPING CHECKLIST INTERACTIVITY & LOCALSTORAGE
+    // ============================================================
+    const GROCERY_STORAGE_KEY = 'yurigaoka_bistro_grocery_checked_items';
+
+    function getCheckedGroceryItems() {
+      try {
+        const raw = localStorage.getItem(GROCERY_STORAGE_KEY);
+        return raw ? JSON.parse(raw) : [];
+      } catch (err) {
+        return [];
+      }
+    }
+
+    function saveCheckedGroceryItems(checkedArray) {
+      try {
+        localStorage.setItem(GROCERY_STORAGE_KEY, JSON.stringify(checkedArray));
+      } catch (err) {}
+    }
+
+    function toggleGroceryItem(id) {
+      let checkedList = getCheckedGroceryItems();
+      const idx = checkedList.indexOf(id);
+      if (idx > -1) {
+        checkedList.splice(idx, 1);
+      } else {
+        checkedList.push(id);
+        if (navigator.vibrate) {
+          try { navigator.vibrate(30); } catch (e) {}
+        }
+      }
+      saveCheckedGroceryItems(checkedList);
+      applyGroceryCheckedState();
+    }
+
+    function applyGroceryCheckedState() {
+      const checkedList = getCheckedGroceryItems();
+      const allRows = document.querySelectorAll('.grocery-item-row');
+      let checkedCount = 0;
+
+      allRows.forEach(row => {
+        const id = row.getAttribute('data-id');
+        if (checkedList.includes(id)) {
+          row.classList.add('checked');
+          checkedCount++;
+        } else {
+          row.classList.remove('checked');
+        }
+      });
+
+      const totalCount = allRows.length;
+      const countEl = document.getElementById('grocery-progress-count');
+      const totalEl = document.getElementById('grocery-total-count');
+      const percentEl = document.getElementById('grocery-progress-percent');
+      const barEl = document.getElementById('grocery-progress-bar');
+
+      if (totalEl) totalEl.textContent = totalCount;
+      if (countEl) countEl.textContent = checkedCount;
+
+      const percent = totalCount > 0 ? Math.round((checkedCount / totalCount) * 100) : 0;
+      if (percentEl) percentEl.textContent = `(${percent}%)`;
+      if (barEl) barEl.style.width = `${percent}%`;
+
+      if (checkedCount === totalCount && totalCount > 0) {
+        if (typeof confetti === 'function') {
+          confetti({ particleCount: 80, spread: 70, origin: { y: 0.6 } });
+        }
+      }
+    }
+
+    function resetGroceryChecklist() {
+      if (!confirm('確定要重設所有食材勾選進度嗎？')) return;
+      saveCheckedGroceryItems([]);
+      applyGroceryCheckedState();
+      showToast('🔄 已重設所有食材勾選！');
+    }
+
+    let lastGroceryModalOpenTime = 0;
+    function openGroceryModal(e) {
+      if (e) {
+        if (e.stopPropagation) e.stopPropagation();
+        if (e.preventDefault) e.preventDefault();
+      }
+      const now = Date.now();
+      if (now - lastGroceryModalOpenTime < 400) return;
+      lastGroceryModalOpenTime = now;
+
+      // Close chef menu modal if open
+      const chefModal = document.getElementById('chef-menu-modal');
+      if (chefModal && chefModal.classList.contains('active')) {
+        closeChefMenuModal();
+      }
+
+      const modal = document.getElementById('grocery-modal');
+      if (!modal) return;
+
+      modal.style.display = 'flex';
+      void modal.offsetWidth;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+
+      applyGroceryCheckedState();
+
+      if (navigator.vibrate) {
+        try { navigator.vibrate([40, 40]); } catch (err) {}
+      }
+      showToast('🛒 已打開百合ヶ丘超市採購清單！');
+    }
+
+    function closeGroceryModal() {
+      const modal = document.getElementById('grocery-modal');
+      if (!modal) return;
+      modal.classList.remove('active');
+      setTimeout(() => {
+        if (!modal.classList.contains('active')) {
+          modal.style.display = 'none';
+        }
+      }, 250);
+      document.body.style.overflow = '';
+    }
+
+    function checkGroceryHash() {
+      const hash = (window.location.hash || '').toLowerCase();
+      if (hash === '#grocery' || hash === '#checklist' || hash === '#shopping' || hash === '#grocery-list') {
+        setTimeout(() => {
+          openGroceryModal(null);
+        }, 400);
+      }
+    }
+    window.addEventListener('hashchange', checkGroceryHash);
+
     function checkChefMenuHash() {
       const hash = (window.location.hash || '').toLowerCase();
       if (hash === '#menu' || hash === '#chef-menu' || hash === '#secret-menu') {
@@ -4375,6 +5363,8 @@ Chef Rondey with Infinite Love 💕 · 2026.10.19 Yurigaoka`;
         if (btn) btn.style.display = 'inline-flex';
       }
       checkChefMenuHash();
+      checkGroceryHash();
+      applyGroceryCheckedState();
 
       // Bind direct touch/click listeners to ensure high-sensitivity trigger on mobile
       const eggPill = document.querySelector('#card-home-cooking .card-status-pill');
@@ -4385,13 +5375,16 @@ Chef Rondey with Infinite Love 💕 · 2026.10.19 Yurigaoka`;
       const eggTriggers = document.querySelectorAll('#card-home-cooking .egg-emoji-trigger');
       eggTriggers.forEach(el => {
         el.addEventListener('click', (e) => openChefMenuModal(e));
-        el.addEventListener('touchend', (e) => openChefMenuModal(e), { passive: true });
+        eggTriggers.forEach(el => el.addEventListener('touchend', (e) => openChefMenuModal(e), { passive: true }));
       });
     });
 
     // Close on Escape key
     window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeChefMenuModal();
+      if (e.key === 'Escape') {
+        closeChefMenuModal();
+        closeGroceryModal();
+      }
     });
 
   </script>
